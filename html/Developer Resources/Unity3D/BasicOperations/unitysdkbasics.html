@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic operations with StratisUnitySDK &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="NFT with StratisUnity3dSDK" href="../NFTDeployMint/nft.html" />
+    <link rel="prev" title="Unity3D Integration" href="../Integration/unitytutorial.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PyStratis%20Reference/pystratis.html">PyStratis Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../unity3d-intro.html">Unity3D</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Integration/unitytutorial.html">Integration</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Basic operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-required-to-work-with-basic-functionality-of-the-sdk">What is required to work with basic functionality of the SDK?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-stratisunitymanager-and-creating-a-wallet">Setting up StratisUnityManager and creating a wallet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-a-wallet-balance">Getting a wallet balance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sending-coins-waiting-for-a-receipt">Sending coins &amp; waiting for a receipt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../NFTDeployMint/nft.html">NFT Deployment and Minting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SmartContractInteraction/smartcontracts.html">Smart Contract Interaction</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../unity3d-intro.html">Stratis Unity 3D SDK</a> &raquo;</li>
+        
+      <li>Basic operations with StratisUnitySDK</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/Unity3D/BasicOperations/unitysdkbasics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="basic-operations-with-stratisunitysdk">
+<h1>Basic operations with StratisUnitySDK<a class="headerlink" href="#basic-operations-with-stratisunitysdk" title="Permalink to this heading">¶</a></h1>
+<p>This tutorial will show you how to use the basic functionality of the Stratis Unity SDK: create a wallet, check your balance, and send coins to another address.</p>
+<section id="what-is-required-to-work-with-basic-functionality-of-the-sdk">
+<h2>What is required to work with basic functionality of the SDK?<a class="headerlink" href="#what-is-required-to-work-with-basic-functionality-of-the-sdk" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference external" href="https://academy.stratisplatform.com/Developer%20Resources/Unity3D/Integration/unitytutorial.html">Stratis Unity Integration</a> guide can be followed to get information about public node API references.</p>
+</section>
+<section id="setting-up-stratisunitymanager-and-creating-a-wallet">
+<h2>Setting up StratisUnityManager and creating a wallet<a class="headerlink" href="#setting-up-stratisunitymanager-and-creating-a-wallet" title="Permalink to this heading">¶</a></h2>
+<p>First of all, we need to set up <code class="docutils literal notranslate"><span class="pre">StratisUnityManager</span></code> to be able to use all of the API methods provided by the SDK.</p>
+<p>Let’s create a new script inherited from <code class="docutils literal notranslate"><span class="pre">MonoBehaviour</span></code>:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TutorialScript</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviourß</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">async</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// TODO: place for your code</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We’ll use this class to set up and hold the <code class="docutils literal notranslate"><span class="pre">Unity3dClient</span></code> and the <code class="docutils literal notranslate"><span class="pre">StratisUnityManager</span></code> instances and to run some code inside the <code class="docutils literal notranslate"><span class="pre">Start</span></code> method later.</p>
+<p>Now we’re going to set up base URL, network, and wallet mnemonic.</p>
+<p>Let’s walk through the steps:</p>
+<ol class="arabic simple">
+<li><p>Set base URL. To use Stratis Unity SDK, you need a full node to be running locally or remotely. Find your node’s address (IP or domain) if you’re going to use a remote Cirrus node in testnet then use <code class="docutils literal notranslate"><span class="pre">https://cirrustest-api-ha.stratisplatform.com/</span></code>, or if you’re running your Cirrus node locally in test network then use <code class="docutils literal notranslate"><span class="pre">http://localhost:38223/</span></code>. We recommend to use remote public node as running Fullnode locally may take more time for synchronisation.</p></li>
+<li><p>Set the network you want to operate on. Use <code class="docutils literal notranslate"><span class="pre">CirrusTest</span></code> or <code class="docutils literal notranslate"><span class="pre">CirrusMain</span></code> to operate on Cirrus testnet or production networks. For development and learning purpose we recommend to use test network where you don’t need real money, you can use Test coins.</p></li>
+<li><p>Set a mnemonic for your wallet. Mnemonic is a sequence of words used to define the private key of your wallet. You can create mnemonic <a class="reference external" href="https://armantheparman.com/dicev1/">using just a pen, a paper, and a dice</a>, or use different hardware &amp; software mnemonic generators.</p></li>
+</ol>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Network</span><span class="w"> </span><span class="n">network</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CirrusTest</span><span class="p">();</span>
+<span class="n">StratisNodeClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StratisNodeClient</span><span class="p">(</span><span class="s">&quot;https://cirrustest-api-ha.stratisplatform.com/&quot;</span><span class="p">);</span>
+<span class="n">Mnemonic</span><span class="w"> </span><span class="n">mnemonic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Mnemonic</span><span class="p">(</span><span class="s">&quot;legal door leopard fire attract stove similar response photo prize seminar frown&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Wordlist</span><span class="p">.</span><span class="n">English</span><span class="p">);</span>
+<span class="n">StratisUnityManager</span><span class="w"> </span><span class="n">stratisUnityManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StratisUnityManager</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BlockCoreApi</span><span class="p">(</span><span class="s">&quot;https://cirrustestindexer.stratisnetwork.com/api/&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">network</span><span class="p">,</span><span class="w"> </span><span class="n">mnemonic</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Now, let’s print current wallet’s address to the console:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Your address: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">stratisUnityManager</span><span class="p">.</span><span class="n">GetAddress</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>Now we need to attach this script to game object on the scene and run the game. An address of our wallet will be printed after the game started.</p>
+</section>
+<section id="getting-a-wallet-balance">
+<h2>Getting a wallet balance<a class="headerlink" href="#getting-a-wallet-balance" title="Permalink to this heading">¶</a></h2>
+<p>Now let’s learn how we can get a balance of our wallet.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="kt">decimal</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">stratisUnityManager</span><span class="p">.</span><span class="n">GetBalanceAsync</span><span class="p">();</span>
+<span class="w">   </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Your balance: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">balance</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Balance request failed, got error:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+<span class="w">   </span><span class="k">throw</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This code will print your balance if the call succeeds, and print an error otherwise.</p>
+</section>
+<section id="sending-coins-waiting-for-a-receipt">
+<h2>Sending coins &amp; waiting for a receipt<a class="headerlink" href="#sending-coins-waiting-for-a-receipt" title="Permalink to this heading">¶</a></h2>
+<p>Now let’s try to implement a more complex logic: send some coins and wait for transaction’s receipt.</p>
+<p>At first, define a couple of variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">destinationAddress</span></code>: in this example, we’re using <code class="docutils literal notranslate"><span class="pre">tD5aDZSu4Go4A23R7VsjuJTL51YMyeoLyS</span></code> for <strong>Cirrus Test network</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: the number of satoshis we want to send. Let’s send 10.000 satoshis (= 0.0001 CIRRUS).</p></li>
+</ul>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">destinationAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tD5aDZSu4Go4A23R7VsjuJTL51YMyeoLyS&quot;</span><span class="p">;</span>
+<span class="kt">long</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10000</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Now, send <code class="docutils literal notranslate"><span class="pre">amount</span></code> of coins to <code class="docutils literal notranslate"><span class="pre">destinationAddress</span></code> with the code shown below:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">txId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">stratisUnityManager</span><span class="p">.</span><span class="n">SendTransactionAsync</span><span class="p">(</span><span class="n">destinationAddress</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Well, now we want to know when the receipt for this transaction is available.
+To achieve this, you can use the code shown below:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">receipt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">stratisUnityManager</span><span class="p">.</span><span class="n">WaitTillReceiptAvailable</span><span class="p">(</span><span class="n">txId</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<p>You can find more examples in the Examples folder.</p>
+<p><cite>AssetsCodeExamplesTestApiMethods.cs</cite> - general example that covers usage of basic wallet functionality.</p>
+<p>To run this or another examples just add their scripts to any object in your scene or use prebuilt scenes from <code class="docutils literal notranslate"><span class="pre">\Assets\Scenes</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../NFTDeployMint/nft.html" class="btn btn-primary float-right" title="NFT with StratisUnity3dSDK" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../Integration/unitytutorial.html" class="btn btn-neutral" title="Unity3D Integration" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

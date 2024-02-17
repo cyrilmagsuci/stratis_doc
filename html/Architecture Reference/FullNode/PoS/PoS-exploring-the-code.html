@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exploring the Proof-of-Stake code &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Proof-of-Authority (PoA) implementation" href="../PoA/PoA-introduction.html" />
+    <link rel="prev" title="Hitting the target with a Proof-of-Stake algorithm" href="PoS-algorithm.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../full-node-introduction.html">Full Node</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ConsoleOutput/ConsoleOutput.html">Console Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Features/features.html">Creating custom builds and extending the feature set</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="PoS-introduction.html">Proof-of-Stake (PoS) implementation</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="PoS-algorithm.html">Hitting the target with a Proof-of-Stake algorithm</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Exploring the Proof-of-Stake code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Consensus/consensus-introduction.html">Consensus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ProvenHeaders/proven-headers-introduction.html">Proven Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ColdStaking/ColdStaking.html">Cold Staking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="../full-node-introduction.html">Stratis Full Node</a> &raquo;</li>
+        
+          <li><a href="PoS-introduction.html">Proof-of-Stake (PoS) implementation</a> &raquo;</li>
+        
+      <li>Exploring the Proof-of-Stake code</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Architecture Reference/FullNode/PoS/PoS-exploring-the-code.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="exploring-the-proof-of-stake-code">
+<h1>Exploring the Proof-of-Stake code<a class="headerlink" href="#exploring-the-proof-of-stake-code" title="Permalink to this heading">¶</a></h1>
+<p>There are two classes that implement Proof-of-Stake: <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Miner/Staking/PosMinting.cs">PosMinting</a> and <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/StakeValidator.cs">StakeValidator</a>. The <code class="docutils literal notranslate"><span class="pre">PosMinting</span></code> class implements the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Miner/Interfaces/IPosMinting.cs">IPosMinting</a> interface and the <code class="docutils literal notranslate"><span class="pre">StakeValidator</span></code> class implements the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/Interfaces/IStakeValidator.cs">IStakeValidator</a> interface. <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Miner/MiningFeature.cs">MiningFeature</a> holds a reference to a <code class="docutils literal notranslate"><span class="pre">PosMinting</span></code> singleton, which references a <code class="docutils literal notranslate"><span class="pre">StakeValidator</span></code> singleton.</p>
+<p>Within the <code class="docutils literal notranslate"><span class="pre">PoSMinting</span></code> and <code class="docutils literal notranslate"><span class="pre">StakeValidator</span></code> singletons, the code takes the following path when checking to see if a miner’s staked coins (UTXOs) hit the target:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PosMinting.Stake()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PosMinting.GenerateBlocksAsync()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PosMinting.StakeAndSignBlockAsync()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PosMinting.CreateCoinstakeAsync()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PosMinting.CoinstakeWorker()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">StakeValidator.CheckKernel()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">StakeValidator.CheckStakeKernelHash()</span></code></p></li>
+</ol>
+<p>Staking begins with a call to <code class="docutils literal notranslate"><span class="pre">MiningFeature.StartStaking()</span></code>, which in turn calls <code class="docutils literal notranslate"><span class="pre">PosMinting.Stake()</span></code>. <code class="docutils literal notranslate"><span class="pre">PosMinting.Stake()</span></code> operates by running a staking loop. The loop attempts, by calling <code class="docutils literal notranslate"><span class="pre">PosMinting.GenerateBlocksAsync()</span></code> as an asynchronous task, to create a block by finding a coinstake kernel for the block. Three notable things that happen within GenerateBlocksAsync() are: the generation of the coinstake timestamp, the gathering of the UTXOs that make up the miner’s stake, and the creation of a block template holding the transactions for the block the miner is attempting to mine.</p>
+<p>The timestamp is one of the pieces of information which is later used to randomize each staked UTXO’s attempt to hit the target. You can see how the rule which states that the timestamp has to increment 16 seconds at a time is implemented here:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">uint</span><span class="w"> </span><span class="n">coinstakeTimestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="k">this</span><span class="p">.</span><span class="n">dateTimeProvider</span><span class="p">.</span><span class="n">GetAdjustedTimeAsUnixTimestamp</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="o">~</span><span class="n">PosTimeMaskRule</span><span class="p">.</span><span class="n">StakeTimestampMask</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The attempt to create the block progresses further via a call to <code class="docutils literal notranslate"><span class="pre">PosMinting.StakeAndSignBlockAsync()</span></code>. Using the coinstake timestamp generated previously, a coinstake transaction is created to use if the miner turns out to be staking a valid coinstake kernel. The Full Node now checks to see if the coinstake hash can be calculated from any of the miner’s staked UTXOs by making a call to <code class="docutils literal notranslate"><span class="pre">PosMinting.CreateCoinstakeAsync()</span></code>. If the call to <code class="docutils literal notranslate"><span class="pre">CreateCoinstakeAsync()</span></code> is successful, three things happen:</p>
+<ol class="arabic simple">
+<li><p>The coinstake transaction (which provides a reference to the coinstake kernel) is added to the new block.</p></li>
+<li><p>Any transactions within the block which have a date further in the future than the coinstake transaction are removed.</p></li>
+<li><p>The miner signs the block.</p></li>
+</ol>
+<section id="what-defines-a-coinstake-transaction">
+<span id="coinstake-tx-definition"></span><h2>What defines a coinstake transaction?<a class="headerlink" href="#what-defines-a-coinstake-transaction" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/NBitcoin/Transaction.cs">Transaction.IsCoinStake()</a> provides a useful definition of a coinstake transaction:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>public bool IsCoinStake
+{
+    get
+    {
+        // ppcoin: the coin stake transaction is marked with the first output empty
+        return this.Inputs.Any()
+            &amp;&amp; !this.Inputs.First().PrevOut.IsNull
+            &amp;&amp; this.Outputs.Count() &gt;= 2
+            &amp;&amp; this.Outputs.First().IsEmpty;
+    }
+}
+</pre></div>
+</div>
+<p>There are four criteria that need to be met here:</p>
+<ol class="arabic simple">
+<li><p>At least one transaction input is required.</p></li>
+<li><p>The previous output (a UTXO from another transaction) of the first transaction input cannot be Null. <em>This is a reference to the coinstake kernel.</em></p></li>
+<li><p>At least two transaction outputs are required. The second of these contains a UTXO that reimburses the coinstake kernel UTXO and pays the mining reward of 1 STRAX.</p></li>
+<li><p>The first transaction output must be empty. A first transaction output containing a UTXO is a characteristic of a <a class="reference external" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch10.asciidoc#the-coinbase-transaction">coinbase transaction on a PoW network</a>.</p></li>
+</ol>
+<p>You might be wondering why the second output needs to reimburse the coinstake kernel. This is because the unlocking script must be presented to prove miner ownership when the coinstake kernel is added to the first transaction input. Doing this spends the coinstake kernel on one side of the transaction, so the miner needs to be reinbursed. If this didn’t happen, the value of the coinstake kernel would disappear from the miner’s wallet. For an example, if a coinstake kernel was worth 100 STRAX, the second output UTXO would be worth 101 STRAX.</p>
+</section>
+<section id="how-workers-calculate-if-a-utxo-can-be-the-coinstake-kernel">
+<h2>How workers calculate if a UTXO can be the coinstake kernel<a class="headerlink" href="#how-workers-calculate-if-a-utxo-can-be-the-coinstake-kernel" title="Permalink to this heading">¶</a></h2>
+<p>Now let’s take a closer look at <code class="docutils literal notranslate"><span class="pre">CreateCoinstakeAsync()</span></code>. This function creates “workers” to check the UTXOs. The number of workers created depends on the number of UTXOs that need to be checked. Each worker checks their UTXOs via a call to <code class="docutils literal notranslate"><span class="pre">PosMinting.CoinstakeWorker()</span></code>. A call is then made to <code class="docutils literal notranslate"><span class="pre">StakeValidator.CheckKernel()</span></code> to check each UTXO in turn and see if any of them can be the coinstake kernel. Some checks are made on the UTXO and then an attempt is made to calculate a hash which meets the target. This is done within <code class="docutils literal notranslate"><span class="pre">StakeValidator.CheckStakeKernelHash()</span></code>. Exploring the code within this function gives an excellent opportunity the see exactly how the hash is calculated and how the target is reduced (made easier) according to the value of the UTXO.</p>
+<p id="coinstake-hash-formula">First, let’s look at the formula which checks if a coinstake hash meets the target and can be used for the next block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hash256</span><span class="p">(</span><span class="s2">&quot;Stake Modifier V2&quot;</span> <span class="o">+</span> <span class="s2">&quot;UTXO Transaction Timestamp&quot;</span> <span class="o">+</span> <span class="s2">&quot;UTXO Transaction Hash&quot;</span> <span class="o">+</span> <span class="s2">&quot;UTXO Output Number&quot;</span> <span class="o">+</span> <span class="s2">&quot;Coinstake Transaction Time&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">Target</span> <span class="o">*</span> <span class="n">Weight</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="coinstake-hash-params-table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stake Modifier V2</p></td>
+<td><p>Taken from the best chain tip. Effectively links the new block to the block at the tip of the best chain.</p></td>
+</tr>
+<tr class="row-odd"><td><p>UTXO Transaction Timestamp</p></td>
+<td><p>The timestamp of the transaction that the UTXO is from.</p></td>
+</tr>
+<tr class="row-even"><td><p>UTXO Transaction Hash</p></td>
+<td><p>A hash of the transaction that the UTXO is from.</p></td>
+</tr>
+<tr class="row-odd"><td><p>UTXO Output Number</p></td>
+<td><p>The index of the UTXO in the transaction it is from.</p></td>
+</tr>
+<tr class="row-even"><td><p>Coinstake Transaction Timestamp</p></td>
+<td><p>The timestamp for the coinstake transaction of the block the miner is trying to mine.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The Stake Modifier V2 comes from the tip of the best chain of block headers since the genesis block (that the node is aware of), The block currently at the tip is potentially the <em>previous block</em> to the one the miner is trying to write. Stake Modifier V2 is calculated as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hash256</span><span class="p">(</span><span class="s2">&quot;Hash of transaction the coinstake kernel is from&quot;</span> <span class="o">+</span> <span class="s2">&quot;Previous Block Stake Modifier V2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>So, you can see how the Stake Modifier V2 ties each block into the transaction containing the coinstake kernel <em>and</em> forms a “link” right back to the genesis block.</p>
+<p>The main idea behind including the other parameters is to scramble the value which is hashed so no miner hashes the same value as another. If two miners hash the same value at roughly the same time, one will end up being rejected even though they both hit the target. So which parameters, in particular, prevent this? Other miners mining at this time will use the same Coinstake Transaction Timestamp, and there is also a tiny chance they will have the same UTXO Transaction Timestamp. This would be the case if they are both staking UTXOs from a single transaction (meaning they were both involved in the transaction). However, no miner will have the same combination of UTXO Transaction Hash and UTXO Output Number, so this is what significantly reduces the chance of two miners hitting the target at the same time.</p>
+</section>
+<section id="looking-at-the-coinstake-kernel-calculations-in-code">
+<span id="looking-at-the-coinstake-kernel-calculations"></span><h2>Looking at the coinstake kernel calculations in code<a class="headerlink" href="#looking-at-the-coinstake-kernel-calculations-in-code" title="Permalink to this heading">¶</a></h2>
+<p>We are now going to look at how this translates into code, which you can find in <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/StakeValidator.cs">StakeValidator.cs</a>. Firstly, the unadjusted target is obtained from the header bits:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BigInteger</span> <span class="n">target</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Target</span><span class="p">(</span><span class="n">headerBits</span><span class="p">)</span><span class="o">.</span><span class="n">ToBigInteger</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Next, the value of the UTXO is obtained in Satoshi, and the target is multiplied by the UTXO value to give a weighted target.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">long</span> <span class="n">valueIn</span> <span class="o">=</span> <span class="n">stakingCoins</span><span class="o">.</span><span class="n">Outputs</span><span class="p">[</span><span class="n">prevout</span><span class="o">.</span><span class="n">N</span><span class="p">]</span><span class="o">.</span><span class="n">Value</span><span class="o">.</span><span class="n">Satoshi</span><span class="p">;</span>
+<span class="n">BigInteger</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">BigInteger</span><span class="o">.</span><span class="n">ValueOf</span><span class="p">(</span><span class="n">valueIn</span><span class="p">);</span>
+<span class="n">BigInteger</span> <span class="n">weightedTarget</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">Multiply</span><span class="p">(</span><span class="n">weight</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Hitting the target involves generating a hash that is lower than the target, and you can see in the code that the larger the value of the UTXO, the more chance you have of hitting the target. In other words, the larger the target, the more the target is weighted in your favor.</p>
+<p>Stake Modifier V2 is then retrieved for the previous block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uint256</span> <span class="n">stakeModifierV2</span> <span class="o">=</span> <span class="n">prevBlockStake</span><span class="o">.</span><span class="n">StakeModifierV2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The hash for the UTXO being checked is calculated:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">using</span> <span class="p">(</span><span class="n">var</span> <span class="n">ms</span> <span class="o">=</span> <span class="n">new</span> <span class="n">MemoryStream</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">var</span> <span class="n">serializer</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BitcoinStream</span><span class="p">(</span><span class="n">ms</span><span class="p">,</span> <span class="n">true</span><span class="p">);</span>
+    <span class="n">serializer</span><span class="o">.</span><span class="n">ReadWrite</span><span class="p">(</span><span class="n">stakeModifierV2</span><span class="p">);</span>
+    <span class="n">serializer</span><span class="o">.</span><span class="n">ReadWrite</span><span class="p">(</span><span class="n">stakingCoins</span><span class="o">.</span><span class="n">Time</span><span class="p">);</span>
+    <span class="n">serializer</span><span class="o">.</span><span class="n">ReadWrite</span><span class="p">(</span><span class="n">prevout</span><span class="o">.</span><span class="n">Hash</span><span class="p">);</span>
+    <span class="n">serializer</span><span class="o">.</span><span class="n">ReadWrite</span><span class="p">(</span><span class="n">prevout</span><span class="o">.</span><span class="n">N</span><span class="p">);</span>
+    <span class="n">serializer</span><span class="o">.</span><span class="n">ReadWrite</span><span class="p">(</span><span class="n">transactionTime</span><span class="p">);</span>
+
+    <span class="n">context</span><span class="o">.</span><span class="n">HashProofOfStake</span> <span class="o">=</span> <span class="n">Hashes</span><span class="o">.</span><span class="n">Hash256</span><span class="p">(</span><span class="n">ms</span><span class="o">.</span><span class="n">ToArray</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the code excerpt above, the parameters which are summed and hashed are added to the <code class="docutils literal notranslate"><span class="pre">BitcoinStream</span></code> object in the order they are listed in the <a class="reference internal" href="#coinstake-hash-params-table"><span class="std std-ref">above table</span></a>; the UTXO Transaction Timestamp is held by <code class="docutils literal notranslate"><span class="pre">stakingCoins.Time</span></code>, UTXO Transaction Hash is held by <code class="docutils literal notranslate"><span class="pre">prevout.Hash</span></code>, and so on.</p>
+<p>Finally, the coinstake hash is checked against the target:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Now</span> <span class="n">check</span> <span class="k">if</span> <span class="n">proof</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">stake</span> <span class="nb">hash</span> <span class="n">meets</span> <span class="n">target</span> <span class="n">protocol</span><span class="o">.</span>
+<span class="n">var</span> <span class="n">hashProofOfStakeTarget</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BigInteger</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">context</span><span class="o">.</span><span class="n">HashProofOfStake</span><span class="o">.</span><span class="n">ToBytes</span><span class="p">(</span><span class="n">false</span><span class="p">));</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">hashProofOfStakeTarget</span><span class="o">.</span><span class="n">CompareTo</span><span class="p">(</span><span class="n">weightedTarget</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">this</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">LogTrace</span><span class="p">(</span><span class="s2">&quot;(-)[TARGET_MISSED]&quot;</span><span class="p">);</span>
+    <span class="n">ConsensusErrors</span><span class="o">.</span><span class="n">StakeHashInvalidTarget</span><span class="o">.</span><span class="n">Throw</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Failure to meet the target is handled by an exception, so the code directly after the call to <code class="docutils literal notranslate"><span class="pre">StakeValidator.CheckKernel()</span></code> in <code class="docutils literal notranslate"><span class="pre">PosMinting.CoinstakeWorker()</span></code> is executed in the event that the target was met. The worker then stops work and the new block can be prepared.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../PoA/PoA-introduction.html" class="btn btn-primary float-right" title="Proof-of-Authority (PoA) implementation" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="PoS-algorithm.html" class="btn btn-neutral" title="Hitting the target with a Proof-of-Stake algorithm" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

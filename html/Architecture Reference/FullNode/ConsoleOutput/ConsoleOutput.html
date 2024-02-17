@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Console Output &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Creating custom builds and extending the feature set" href="../Features/features.html" />
+    <link rel="prev" title="Components and Features Overview" href="../ComponentsOverview/full-node-components-and-features-overview.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../full-node-introduction.html">Full Node</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Console Output</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#page-1-node-benchmarks">Page 1 - Node benchmarks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#page-2-node-data">Page 2 - Node data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Features/features.html">Creating custom builds and extending the feature set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Consensus/consensus-introduction.html">Consensus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ProvenHeaders/proven-headers-introduction.html">Proven Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ColdStaking/ColdStaking.html">Cold Staking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="../full-node-introduction.html">Stratis Full Node</a> &raquo;</li>
+        
+      <li>Console Output</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Architecture Reference/FullNode/ConsoleOutput/ConsoleOutput.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="console-output">
+<h1>Console Output<a class="headerlink" href="#console-output" title="Permalink to this heading">¶</a></h1>
+<p>When you run the Stratis Full Node from the command line, a stream of information is returned to your console to keep you informed about what is going on. The first thing displayed is the Stratis banner:</p>
+<a class="reference internal image-reference" href="../../../_images/FullNodeBannerHeading.jpg"><img alt="alternate text" class="align-center" src="../../../_images/FullNodeBannerHeading.jpg" style="width: 250px; height: 250px;" /></a>
+<p>After the banner has been displayed, the node will start to initialize, and while this is going on, information will be displayed on the console to update you on the node’s progress. This information may be:</p>
+<ul class="simple">
+<li><p>Prefixed by an “info:” label in <strong>green font</strong> for lines that are “for information only”. For example:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">info</span><span class="p">:</span> <span class="n">Stratis</span><span class="o">.</span><span class="n">Bitcoin</span><span class="o">.</span><span class="n">FullNode</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">Full</span> <span class="n">node</span> <span class="n">initialized</span> <span class="n">on</span> <span class="n">StratisTest</span><span class="o">.</span>
+<span class="n">info</span><span class="p">:</span> <span class="n">Stratis</span><span class="o">.</span><span class="n">Bitcoin</span><span class="o">.</span><span class="n">FullNode</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">Starting</span> <span class="n">node</span><span class="o">.</span>
+<span class="n">info</span><span class="p">:</span> <span class="n">Stratis</span><span class="o">.</span><span class="n">Bitcoin</span><span class="o">.</span><span class="n">Base</span><span class="o">.</span><span class="n">BaseFeature</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">Loading</span> <span class="n">finalized</span> <span class="n">block</span> <span class="n">height</span><span class="o">.</span>
+<span class="n">info</span><span class="p">:</span> <span class="n">Stratis</span><span class="o">.</span><span class="n">Bitcoin</span><span class="o">.</span><span class="n">Base</span><span class="o">.</span><span class="n">BaseFeature</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">Loading</span> <span class="n">chain</span><span class="o">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In a <strong>yellow font</strong> for warnings that do not necessarily require any action to be taken.</p></li>
+<li><p>In a <strong>red font</strong>, which denotes errors that need to be addressed.</p></li>
+</ul>
+<p>Eventually, the following “Application started” notice appears:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Application</span> <span class="n">started</span><span class="o">.</span> <span class="n">Press</span> <span class="n">Ctrl</span><span class="o">+</span><span class="n">C</span> <span class="n">to</span> <span class="n">shut</span> <span class="n">down</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Following the “Application started” notice, logging begins with the display and regular update of two pages of statistics, which relate to the operation of the Full Node. The refresh frequency varies but is typically every 30-60 seconds. The statistics are displayed in the format described in the following sections, and each of the two pages is prefixed by the following information line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">info</span><span class="p">:</span> <span class="n">Stratis</span><span class="o">.</span><span class="n">Bitcoin</span><span class="o">.</span><span class="n">FullNode</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>More detail on the components mentioned in the following sections can be found in <a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html"><span class="doc">Components and Features Overview</span></a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The node benchmarks are only outputted when the node is running in <a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html#ibd-mode"><span class="std std-ref">IBD mode</span></a>.</p>
+</div>
+<section id="page-1-node-benchmarks">
+<h2>Page 1 - Node benchmarks<a class="headerlink" href="#page-1-node-benchmarks" title="Permalink to this heading">¶</a></h2>
+<p>The first page records the time taken for various activities during block validation and is introduced by the following information line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">info</span><span class="p">:</span> <span class="n">Stratis</span><span class="o">.</span><span class="n">Bitcoin</span><span class="o">.</span><span class="n">FullNode</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<section id="consensus-manager-benchmarks">
+<h3>Consensus Manager benchmarks<a class="headerlink" href="#consensus-manager-benchmarks" title="Permalink to this heading">¶</a></h3>
+<p>This section of the log records the time taken for various tasks comprising the consensus process:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">======</span><span class="n">ConsensusManager</span> <span class="n">Bench</span><span class="o">======</span>
+<span class="n">Total</span> <span class="n">connection</span> <span class="n">time</span> <span class="p">(</span><span class="n">FV</span><span class="p">,</span> <span class="n">CHT</span> <span class="n">upd</span><span class="p">,</span> <span class="n">Rewind</span><span class="p">,</span> <span class="n">Signaling</span><span class="p">):</span> <span class="mf">8.336</span> <span class="n">ms</span>
+<span class="n">Block</span> <span class="n">connection</span> <span class="p">(</span><span class="n">FV</span> <span class="n">excluding</span> <span class="n">rewind</span><span class="p">):</span> <span class="mf">7.0731</span> <span class="n">ms</span>
+<span class="n">Block</span> <span class="n">connected</span> <span class="n">signal</span><span class="p">:</span> <span class="mf">0.2497</span> <span class="n">ms</span>
+<span class="n">Block</span> <span class="n">disconnected</span> <span class="n">signal</span><span class="p">:</span> <span class="n">NaN</span> <span class="n">ms</span>
+</pre></div>
+</div>
+</section>
+<section id="consensus-rules-benchmarks">
+<h3>Consensus Rules benchmarks<a class="headerlink" href="#consensus-rules-benchmarks" title="Permalink to this heading">¶</a></h3>
+<p>This section of the log records the time taken executing the <a class="reference internal" href="../Consensus/customising-consensus-rule-engines.html#consensus-rules"><span class="std std-ref">consensus rules</span></a> used in each block validation process (Header Validation, Block Integrity Validation, Partial Validation, and Full Validation):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">======</span><span class="n">ConsensusRules</span> <span class="n">Bench</span><span class="o">======</span>
+<span class="n">Header</span> <span class="n">validation</span> <span class="n">rules</span><span class="o">.</span> <span class="n">Average</span> <span class="n">total</span> <span class="n">execution</span> <span class="n">time</span><span class="p">:</span> <span class="mf">3.8234</span> <span class="n">ms</span><span class="o">.</span>
+    <span class="n">HeaderTimeChecksRule</span><span class="o">------------------------------</span><span class="mf">0.0036</span> <span class="n">ms</span><span class="o">---</span><span class="mi">0</span> <span class="o">%</span>
+    <span class="n">HeaderTimeChecksPosRule</span><span class="o">---------------------------</span><span class="mf">0.0002</span> <span class="n">ms</span><span class="o">---</span><span class="mi">0</span> <span class="o">%</span>
+    <span class="n">StratisBugFixPosFutureDriftRule</span><span class="o">-------------------</span><span class="mf">0.0009</span> <span class="n">ms</span><span class="o">---</span><span class="mi">0</span> <span class="o">%</span>
+    <span class="n">CheckDifficultyPosRule</span><span class="o">----------------------------</span><span class="mf">0.0061</span> <span class="n">ms</span><span class="o">---</span><span class="mi">0</span> <span class="o">%</span>
+    <span class="n">StratisHeaderVersionRule</span><span class="o">--------------------------</span><span class="mf">0.0002</span> <span class="n">ms</span><span class="o">---</span><span class="mi">0</span> <span class="o">%</span>
+    <span class="n">ProvenHeaderSizeRule</span><span class="o">------------------------------</span><span class="mf">0.0004</span> <span class="n">ms</span><span class="o">---</span><span class="mi">0</span> <span class="o">%</span>
+    <span class="n">ProvenHeaderCoinstakeRule</span><span class="o">-------------------------</span><span class="mf">3.8118</span> <span class="n">ms</span><span class="o">---</span><span class="mi">100</span> <span class="o">%</span>
+
+<span class="n">Integrity</span> <span class="n">validation</span> <span class="n">rules</span><span class="o">.</span> <span class="n">Average</span> <span class="n">total</span> <span class="n">execution</span> <span class="n">time</span><span class="p">:</span> <span class="mf">1.9799</span> <span class="n">ms</span><span class="o">.</span>
+    <span class="n">BlockMerkleRootRule</span><span class="o">-------------------------------</span><span class="mf">0.0701</span> <span class="n">ms</span><span class="o">---</span><span class="mi">4</span> <span class="o">%</span>
+    <span class="n">PosBlockSignatureRepresentationRule</span><span class="o">---------------</span><span class="mf">0.0037</span> <span class="n">ms</span><span class="o">---</span><span class="mi">0</span> <span class="o">%</span>
+    <span class="n">PosBlockSignatureRule</span><span class="o">-----------------------------</span><span class="mf">1.9082</span> <span class="n">ms</span><span class="o">---</span><span class="mi">96</span> <span class="o">%</span>
+
+<span class="n">Partial</span> <span class="n">validation</span> <span class="n">rules</span><span class="o">.</span> <span class="n">Average</span> <span class="n">total</span> <span class="n">execution</span> <span class="n">time</span><span class="p">:</span> <span class="mf">0.1628</span> <span class="n">ms</span><span class="o">.</span>
+    <span class="n">SetActivationDeploymentsPartialValidationRule</span><span class="o">-----</span><span class="mf">0.0316</span> <span class="n">ms</span><span class="o">---</span><span class="mi">19</span> <span class="o">%</span>
+    <span class="n">PosTimeMaskRule</span><span class="o">-----------------------------------</span><span class="mf">0.0099</span> <span class="n">ms</span><span class="o">---</span><span class="mi">6</span> <span class="o">%</span>
+    <span class="n">TransactionLocktimeActivationRule</span><span class="o">-----------------</span><span class="mf">0.0034</span> <span class="n">ms</span><span class="o">---</span><span class="mi">2</span> <span class="o">%</span>
+    <span class="n">CoinbaseHeightActivationRule</span><span class="o">----------------------</span><span class="mf">0.0128</span> <span class="n">ms</span><span class="o">---</span><span class="mi">8</span> <span class="o">%</span>
+    <span class="n">WitnessCommitmentsRule</span><span class="o">----------------------------</span><span class="mf">0.0023</span> <span class="n">ms</span><span class="o">---</span><span class="mi">1</span> <span class="o">%</span>
+    <span class="n">BlockSizeRule</span><span class="o">-------------------------------------</span><span class="mf">0.0579</span> <span class="n">ms</span><span class="o">---</span><span class="mi">36</span> <span class="o">%</span>
+    <span class="n">EnsureCoinbaseRule</span><span class="o">--------------------------------</span><span class="mf">0.0013</span> <span class="n">ms</span><span class="o">---</span><span class="mi">1</span> <span class="o">%</span>
+    <span class="n">CheckPowTransactionRule</span><span class="o">---------------------------</span><span class="mf">0.0196</span> <span class="n">ms</span><span class="o">---</span><span class="mi">12</span> <span class="o">%</span>
+    <span class="n">CheckPosTransactionRule</span><span class="o">---------------------------</span><span class="mf">0.0021</span> <span class="n">ms</span><span class="o">---</span><span class="mi">1</span> <span class="o">%</span>
+    <span class="n">CheckSigOpsRule</span><span class="o">-----------------------------------</span><span class="mf">0.0173</span> <span class="n">ms</span><span class="o">---</span><span class="mi">11</span> <span class="o">%</span>
+    <span class="n">PosCoinstakeRule</span><span class="o">----------------------------------</span><span class="mf">0.0042</span> <span class="n">ms</span><span class="o">---</span><span class="mi">3</span> <span class="o">%</span>
+
+<span class="n">Full</span> <span class="n">validation</span> <span class="n">rules</span><span class="o">.</span> <span class="n">Average</span> <span class="n">total</span> <span class="n">execution</span> <span class="n">time</span><span class="p">:</span> <span class="mf">6.9494</span> <span class="n">ms</span><span class="o">.</span>
+    <span class="n">SetActivationDeploymentsFullValidationRule</span><span class="o">--------</span><span class="mf">0.0202</span> <span class="n">ms</span><span class="o">---</span><span class="mi">0</span> <span class="o">%</span>
+    <span class="n">CheckDifficultyHybridRule</span><span class="o">-------------------------</span><span class="mf">0.0173</span> <span class="n">ms</span><span class="o">---</span><span class="mi">0</span> <span class="o">%</span>
+    <span class="n">LoadCoinviewRule</span><span class="o">----------------------------------</span><span class="mf">0.3465</span> <span class="n">ms</span><span class="o">---</span><span class="mi">5</span> <span class="o">%</span>
+    <span class="n">TransactionDuplicationActivationRule</span><span class="o">--------------</span><span class="mf">0.0014</span> <span class="n">ms</span><span class="o">---</span><span class="mi">0</span> <span class="o">%</span>
+    <span class="n">PosCoinviewRule</span><span class="o">-----------------------------------</span><span class="mf">6.1095</span> <span class="n">ms</span><span class="o">---</span><span class="mi">88</span> <span class="o">%</span>
+    <span class="n">PosColdStakingRule</span><span class="o">--------------------------------</span><span class="mf">0.0035</span> <span class="n">ms</span><span class="o">---</span><span class="mi">0</span> <span class="o">%</span>
+    <span class="n">SaveCoinviewRule</span><span class="o">----------------------------------</span><span class="mf">0.4636</span> <span class="n">ms</span><span class="o">---</span><span class="mi">7</span> <span class="o">%</span>
+</pre></div>
+</div>
+</section>
+<section id="utxo-benchmarks">
+<h3>UTXO Benchmarks<a class="headerlink" href="#utxo-benchmarks" title="Permalink to this heading">¶</a></h3>
+<p>The Coin View represents the set of unspent transactions (UTXOs) that have been recorded and is recalculated each time the consensus tip moves forward. It makes use of a database and cache, and is the last thing to be updated during the full validation process, hence it appears at the end of this page of benchmark statistics:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">======</span><span class="n">DBreezeCoinView</span> <span class="n">Bench</span><span class="o">======</span>
+<span class="n">Insert</span> <span class="n">time</span><span class="p">:</span>        <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+<span class="n">Inserted</span> <span class="n">UTXO</span><span class="p">:</span>      <span class="mi">0</span>
+<span class="n">Query</span> <span class="n">speed</span><span class="p">:</span>        <span class="mf">1.0710</span> <span class="n">ms</span><span class="o">/</span><span class="n">utxo</span>
+<span class="n">Query</span> <span class="n">time</span><span class="p">:</span>         <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">01.8431845</span>
+<span class="n">Queried</span> <span class="n">UTXO</span><span class="p">:</span>       <span class="mi">1721</span>
+
+<span class="o">======</span><span class="n">CashedCoinView</span> <span class="n">Bench</span><span class="o">======</span>
+<span class="n">Cache</span> <span class="n">entries</span>       <span class="mi">74280</span>
+<span class="o">====</span><span class="n">Cache</span> <span class="n">Stats</span><span class="p">(</span><span class="o">%</span><span class="p">)</span><span class="o">====</span>
+<span class="n">Hit</span><span class="p">:</span>                <span class="mf">60.48</span> <span class="o">%</span>
+<span class="n">Miss</span><span class="p">:</span>               <span class="mf">39.52</span> <span class="o">%</span>
+
+<span class="o">======</span><span class="n">ProvenBlockHeaderStore</span> <span class="n">Bench</span><span class="o">======</span>
+<span class="n">Insert</span> <span class="n">time</span><span class="p">:</span>        <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+<span class="n">Inserted</span> <span class="n">UTXO</span><span class="p">:</span>      <span class="mi">0</span>
+<span class="n">Query</span> <span class="n">time</span><span class="p">:</span>         <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+<span class="n">Queried</span> <span class="n">UTXO</span><span class="p">:</span>       <span class="mi">0</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="page-2-node-data">
+<h2>Page 2 - Node data<a class="headerlink" href="#page-2-node-data" title="Permalink to this heading">¶</a></h2>
+<p>The second page records data that is related to block validation and comprises information about chain height, connections, and block and transaction storage. It is introduced by the same information line as the first page:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">info</span><span class="p">:</span> <span class="n">Stratis</span><span class="o">.</span><span class="n">Bitcoin</span><span class="o">.</span><span class="n">FullNode</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<section id="node-statistics">
+<h3>Node statistics<a class="headerlink" href="#node-statistics" title="Permalink to this heading">¶</a></h3>
+<p>The node statistics display information about the current chain heights:</p>
+<div class="highlight-default notranslate" id="node-stats"><div class="highlight"><pre><span></span><span class="o">======</span><span class="n">Node</span> <span class="n">stats</span><span class="o">======</span> <span class="mi">12</span><span class="o">/</span><span class="mi">13</span><span class="o">/</span><span class="mi">2018</span> <span class="mi">13</span><span class="p">:</span><span class="mi">39</span><span class="p">:</span><span class="mi">27</span>
+<span class="n">Headers</span><span class="o">.</span><span class="n">Height</span><span class="p">:</span>      <span class="mi">1079403</span>  <span class="n">Headers</span><span class="o">.</span><span class="n">Hash</span><span class="p">:</span>     <span class="n">a376389e702233e59c99b1bf9e4ade0555fec570151f38cd167d9b4a20249eeb</span>
+<span class="n">Consensus</span><span class="o">.</span><span class="n">Height</span><span class="p">:</span>    <span class="mi">1078700</span>  <span class="n">Consensus</span><span class="o">.</span><span class="n">Hash</span><span class="p">:</span>   <span class="mi">71</span><span class="n">b535824158acca7092510233129c72bdde6a6bfc848a6cbe61829f05534529</span>
+<span class="n">BlockStore</span><span class="o">.</span><span class="n">Height</span><span class="p">:</span>   <span class="mi">1076500</span>  <span class="n">BlockStore</span><span class="o">.</span><span class="n">Hash</span><span class="p">:</span>  <span class="mi">46</span><span class="n">b7a1525ef128e55243b252fc7bd3fb9a03b807ed3384bd86c1758dd531de27</span>
+<span class="n">Wallet</span><span class="o">.</span><span class="n">Height</span><span class="p">:</span>       <span class="mi">1078700</span>  <span class="n">Wallet</span><span class="o">.</span><span class="n">Hash</span><span class="p">:</span>      <span class="mi">71</span><span class="n">b535824158acca7092510233129c72bdde6a6bfc848a6cbe61829f05534529</span>
+</pre></div>
+</div>
+<p>These heights will generally be slightly different, depending on the relative progress of various activities on the blockchain:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Headers.Height</span></code> shows the current number of block headers that have been read. Headers are relatively quick to read, and this height will always be the largest of the four heights listed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Consensus.Height</span></code> is the point in the blockchain up to which consensus has been validated, so this will generally be a little lower than <code class="docutils literal notranslate"><span class="pre">Headers.Height</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BlockStore.Height</span></code> indicates the point in the blockchain up to which block data has been downloaded. <code class="docutils literal notranslate"><span class="pre">Headers.Height</span></code> always reads ahead of this slower block reading process, and this height will be somewhere below that of <code class="docutils literal notranslate"><span class="pre">Headers.Height</span></code> and <code class="docutils literal notranslate"><span class="pre">Consensus.Height</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Wallet.Height</span></code> shows the height of blocks recorded in any wallets detected as residing on the node. “No Wallet” will be displayed here if no wallet has been detected; otherwise you will see the height of the blocks recorded by the wallet. The wallet keeps a record of blockchain transactions in order to calculate the Unspent Transaction Outputs (UTXOs) available for the wallet owner to spend. If more than one wallet is detected, then you will see more than one entry here.</p></li>
+</ul>
+</section>
+<section id="connection-data">
+<h3>Connection data<a class="headerlink" href="#connection-data" title="Permalink to this heading">¶</a></h3>
+<p>This section in the log lists the other “agent” nodes or peers to which the node is connected. Initially this number will be low, maybe 2 or 3, but will build as the node discovers more peers. In the example below, 16 peers have been discovered:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">======</span><span class="n">Connection</span><span class="o">======</span> <span class="n">agent</span> <span class="n">StratisNode</span><span class="p">:</span><span class="mf">3.0.0</span> <span class="p">(</span><span class="mi">70012</span><span class="p">)</span> <span class="p">[</span><span class="ow">in</span><span class="p">:</span><span class="mi">0</span> <span class="n">out</span><span class="p">:</span><span class="mi">14</span><span class="p">]</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">209.202.207.27</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>      <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1000000</span><span class="o">/</span><span class="mi">1000000</span>       <span class="n">agent</span><span class="p">:</span><span class="o">/</span><span class="n">Stratis</span><span class="p">:</span><span class="mf">2.0.0.5</span><span class="o">/</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">86.19.203.97</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>        <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1000000</span><span class="o">/</span><span class="mi">1000000</span>       <span class="n">agent</span><span class="p">:</span><span class="o">/</span><span class="n">Stratis</span><span class="p">:</span><span class="mf">2.0.0.5</span><span class="o">/</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">52.151.86.242</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>       <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1006000</span><span class="o">/</span><span class="mi">1006000</span>       <span class="n">agent</span><span class="p">:</span><span class="n">StratisNode</span><span class="p">:</span><span class="mf">3.0.0</span> <span class="p">(</span><span class="mi">70012</span><span class="p">)</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">46.147.243.193</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>      <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1000000</span><span class="o">/</span><span class="mi">1000000</span>       <span class="n">agent</span><span class="p">:</span><span class="o">/</span><span class="n">Stratis</span><span class="p">:</span><span class="mf">2.0.0.5</span><span class="o">/</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">94.10.209.236</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>       <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1000000</span><span class="o">/</span><span class="mi">1000000</span>       <span class="n">agent</span><span class="p">:</span><span class="o">/</span><span class="n">Stratis</span><span class="p">:</span><span class="mf">2.0.0.5</span><span class="o">/</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">137.116.46.151</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>      <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1018304</span><span class="o">/</span><span class="mi">1018304</span>       <span class="n">agent</span><span class="p">:</span><span class="n">StratisNode</span><span class="p">:</span><span class="mf">3.0.0</span> <span class="p">(</span><span class="mi">70012</span><span class="p">)</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">86.20.236.108</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>       <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1079403</span><span class="o">/</span><span class="mi">1079403</span>       <span class="n">agent</span><span class="p">:</span><span class="n">jbaz</span><span class="o">-</span><span class="n">StratisNode</span><span class="p">:</span><span class="mf">1.2.6</span> <span class="p">(</span><span class="mi">70012</span><span class="p">)</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">40.74.67.242</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>        <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1004000</span><span class="o">/</span><span class="mi">1004000</span>       <span class="n">agent</span><span class="p">:</span><span class="n">StratisNode</span><span class="p">:</span><span class="mf">3.0.0</span> <span class="p">(</span><span class="mi">70012</span><span class="p">)</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">52.231.68.191</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>       <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1004000</span><span class="o">/</span><span class="mi">1004000</span>       <span class="n">agent</span><span class="p">:</span><span class="n">StratisNode</span><span class="p">:</span><span class="mf">1.2.6</span> <span class="p">(</span><span class="mi">70012</span><span class="p">)</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">191.234.163.134</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>     <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1004000</span><span class="o">/</span><span class="mi">1004000</span>       <span class="n">agent</span><span class="p">:</span><span class="n">StratisNode</span><span class="p">:</span><span class="mf">1.2.6</span> <span class="p">(</span><span class="mi">70012</span><span class="p">)</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">40.91.203.186</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>       <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1000000</span><span class="o">/</span><span class="mi">1000000</span>       <span class="n">agent</span><span class="p">:</span><span class="n">StratisBitcoin</span><span class="p">:</span><span class="mf">1.1.2</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">52.233.170.176</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>      <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1000000</span><span class="o">/</span><span class="mi">1000000</span>       <span class="n">agent</span><span class="p">:</span><span class="o">/</span><span class="n">Stratis</span><span class="p">:</span><span class="mf">2.0.0.3</span><span class="o">/</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">163.172.142.218</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>     <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">1000000</span><span class="o">/</span><span class="mi">1000000</span>       <span class="n">agent</span><span class="p">:</span><span class="o">/</span><span class="n">Stratis</span><span class="p">:</span><span class="mf">2.0.0.3</span><span class="o">/</span>
+<span class="n">Peer</span><span class="p">:[::</span><span class="n">ffff</span><span class="p">:</span><span class="mf">1.11.2.31</span><span class="p">]:</span><span class="mi">16178</span><span class="p">,</span>           <span class="n">connected</span><span class="p">:</span><span class="n">outbound</span><span class="p">,</span>       <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">s</span><span class="p">):</span><span class="mi">729640</span><span class="o">/</span><span class="mi">729640</span>         <span class="n">agent</span><span class="p">:</span><span class="o">/</span><span class="n">Stratis</span><span class="p">:</span><span class="mf">2.0.0.5</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>A peer designated as “outbound” is one which the node is pulling data from, and “inbound” denotes peers that are pulling data from the node. Because the example above is a snapshot taken during the initialization cycle, all peers are outbound and will remain so until initialization is complete. At this point, the node is ready to send data to connected peers:</p>
+<p>The third column in the above table shows the height of the chain data requested from each of the communicating nodes. As time progresses, these values will approach the <code class="docutils literal notranslate"><span class="pre">Consensus.Height</span></code> displayed under <a class="reference internal" href="#node-stats"><span class="std std-ref">“Node Stats”</span></a>.</p>
+<p>The fourth column lists the version of the Stratis Full Node being run on each of the connected peers. In this example, most of the peers are running versions of the C# node (StratisNode:1.2.x) available at the time, although you will see a couple of the peers are running older, but still compatible, StratisX nodes (/Stratis:2.0.0.5/).</p>
+</section>
+<section id="consensus-manager-data">
+<h3>Consensus Manager data<a class="headerlink" href="#consensus-manager-data" title="Permalink to this heading">¶</a></h3>
+<p><a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html#ibd-mode"><span class="std std-ref">Initial Block Download (IBD)</span></a> is one of two modes used to download blocks. IBD mode is used when the Block Puller is not operating near the consensus tip of the chain:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">======</span><span class="n">Consensus</span> <span class="n">Manager</span><span class="o">======</span>
+<span class="n">IBD</span> <span class="n">Stage</span>
+<span class="n">Unconsumed</span> <span class="n">blocks</span><span class="p">:</span> <span class="mi">537</span> <span class="o">--</span> <span class="p">(</span><span class="mi">463</span><span class="p">,</span><span class="mi">582</span> <span class="o">/</span> <span class="mi">209</span><span class="p">,</span><span class="mi">715</span><span class="p">,</span><span class="mi">200</span> <span class="nb">bytes</span><span class="p">)</span><span class="o">.</span> <span class="n">Cache</span> <span class="ow">is</span> <span class="n">filled</span> <span class="n">by</span><span class="p">:</span> <span class="mf">0.22</span><span class="o">%</span>
+</pre></div>
+</div>
+</section>
+<section id="block-puller-data">
+<h3>Block Puller data<a class="headerlink" href="#block-puller-data" title="Permalink to this heading">¶</a></h3>
+<p>This section of the log provides statistics about the <a class="reference internal" href="../Consensus/consensus-architecture.html"><span class="doc">block pulling process</span></a> that is currently going on inside the node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">======</span><span class="n">Block</span> <span class="n">Puller</span><span class="o">======</span>
+<span class="n">Blocks</span> <span class="n">being</span> <span class="n">downloaded</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">Queueued</span> <span class="n">downloads</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">Average</span> <span class="n">block</span> <span class="n">size</span><span class="p">:</span> <span class="mf">0.69</span> <span class="n">KB</span>
+<span class="n">Total</span> <span class="n">download</span> <span class="n">speed</span><span class="p">:</span> <span class="mf">46074.36</span> <span class="n">KB</span><span class="o">/</span><span class="n">sec</span>
+<span class="n">Average</span> <span class="n">time</span> <span class="n">to</span> <span class="n">download</span> <span class="n">a</span> <span class="n">block</span><span class="p">:</span> <span class="mf">0.01</span> <span class="n">ms</span>
+<span class="n">Amount</span> <span class="n">of</span> <span class="n">blocks</span> <span class="n">node</span> <span class="n">can</span> <span class="n">download</span> <span class="ow">in</span> <span class="mi">1</span> <span class="n">second</span><span class="p">:</span> <span class="mf">67227.92</span>
+</pre></div>
+</div>
+</section>
+<section id="block-store-data">
+<h3>Block Store data<a class="headerlink" href="#block-store-data" title="Permalink to this heading">¶</a></h3>
+<p>This section of the log contains information about the blocks that have been downloaded for storage on disk:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">======</span><span class="n">BlockStore</span><span class="o">======</span>
+<span class="n">Batch</span> <span class="n">Size</span><span class="p">:</span> <span class="mi">1172</span> <span class="n">kb</span> <span class="o">/</span> <span class="mi">5000</span> <span class="n">kb</span>  <span class="p">(</span><span class="mi">2200</span> <span class="n">blocks</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="proven-header-data">
+<h3>Proven Header data<a class="headerlink" href="#proven-header-data" title="Permalink to this heading">¶</a></h3>
+<p>This section of the log contains information about the <a class="reference internal" href="../ProvenHeaders/proven-headers-introduction.html"><span class="doc">proven headers</span></a> that have been downloaded for storage on disk:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">======</span><span class="n">ProvenBlockHeaderStore</span><span class="o">======</span>
+<span class="n">Batch</span> <span class="n">Size</span><span class="p">:</span> <span class="mf">1.07</span> <span class="n">Mb</span> <span class="p">(</span><span class="mi">2632</span> <span class="n">headers</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="mempool-data">
+<h3>Mempool data<a class="headerlink" href="#mempool-data" title="Permalink to this heading">¶</a></h3>
+<p>The Mempool is a transient store where transaction records are stored during validation, before they are incorporated into blocks. In this example, the Mempool is empty:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=======</span><span class="n">Mempool</span><span class="o">=======</span>
+<span class="n">MempoolSize</span><span class="p">:</span> <span class="mi">0</span>    <span class="n">DynamicSize</span><span class="p">:</span> <span class="mi">0</span> <span class="n">kb</span>   <span class="n">OrphanSize</span><span class="p">:</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</section>
+<section id="wallets-data">
+<h3>Wallets data<a class="headerlink" href="#wallets-data" title="Permalink to this heading">¶</a></h3>
+<p>If you have one or more wallets running associated with the node, then data about your wallets will appear here:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">======</span><span class="n">Wallets</span><span class="o">======</span>
+<span class="n">academy_wallet</span><span class="o">/</span><span class="n">account</span> <span class="mi">0</span><span class="p">,</span>                <span class="n">Confirmed</span> <span class="n">balance</span><span class="p">:</span> <span class="mf">0.00000000</span>           <span class="n">Unconfirmed</span> <span class="n">balance</span><span class="p">:</span> <span class="mf">0.00000000</span>
+</pre></div>
+</div>
+<p>In the example shown, you can see a wallet called “academy_wallet” has been detected, and that it is currently empty. The current state of the UTXOs belonging to the wallet is calculated and saved in a cached Coin View, which you can see here displaying a zero balance. By keeping track of this balance, a node does not have to reconstruct this balance from primary transactions whenever it receives a spend request.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../Features/features.html" class="btn btn-primary float-right" title="Creating custom builds and extending the feature set" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../ComponentsOverview/full-node-components-and-features-overview.html" class="btn btn-neutral" title="Components and Features Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

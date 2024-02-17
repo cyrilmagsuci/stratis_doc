@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Setup Local Environment &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="A “HelloWorld” smart contract" href="../Tutorial2-HelloWorld/hello-world-tutorial-introduction.html" />
+    <link rel="prev" title="Stratis Smart Contracts" href="../smartcontracts-introduction.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../operation-guides-introduction.html">Operation Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cold-Staking/coldstaking-introduction.html">Cold-Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Full%20Node/fullnode-introduction.html">Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../InterFlux%20Masternodes/masternode-introduction.html">InterFlux Masternodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechain/sidechain-introduction.html">Sidechains</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../smartcontracts-introduction.html">Smart Contracts</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Setup Local Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#starting-a-node">Starting a Node</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial2-HelloWorld/hello-world-tutorial-introduction.html">A “HelloWorld” smart contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial3-ExtendingHelloWorld/hello-world-extension-tutorial-introduction.html">Extending the “Hello World” example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial4-DeployingOnALiveNetwork/deploying-smart-contract-on-cirrus.html">Deploying a Smart Contract on Mainnet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SDA/sda-introduction.html">Stratis Decentralized Accelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../STO/sto-introduction.html">STO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Token%20Swap/tokenswap-introduction.html">Token Swap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../operation-guides-introduction.html">Operation Guides</a> &raquo;</li>
+        
+          <li><a href="../smartcontracts-introduction.html">Stratis Smart Contracts</a> &raquo;</li>
+        
+      <li>Setup Local Environment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Operation Guides/SmartContracts/Tutorial1-LocalSidechain/creating-a-local-chain.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="setup-local-environment">
+<span id="gui-tutorials"></span><h1>Setup Local Environment<a class="headerlink" href="#setup-local-environment" title="Permalink to this heading">¶</a></h1>
+<p>A ‘Development Edition’ of the Cirrus Core Wallet has been made
+available to greatly simplify the local development process; this
+version is known as the “Private Net” version. This wallet is
+pre-configured to launch a new chain, providing a local development
+environment to deploy contracts and build solutions without any external
+interference.</p>
+<p>The “Cirrus Core Private Net” wallet is essentially a GUI that interacts
+with an instance of the Stratis Full Node, specifically the
+‘Stratis.CirrusMinerD’ project. The environment can be run in a headless
+manner on a remote machine by performing the following steps.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/stratisproject/StratisFullNode
+<span class="nb">cd</span><span class="w"> </span>./StratisFullNode/src/Stratis.CirrusMinerD
+dotnet<span class="w"> </span>run<span class="w"> </span>-devmode<span class="o">=</span>miner
+</pre></div>
+</div>
+</div></blockquote>
+<p>This guide will focus on utilizing the Cirrus Core GUI as this
+simplifies the contract deployment and overall management process.</p>
+<p>If you would prefer to run the environment in Docker, you can follow the below guide:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../Developer%20Resources/SmartContracts/Tutorial1-LocalSidechain/creating-a-local-chain.html#creating-headless-network"><span class="std std-ref">Creating a Network</span></a></p></li>
+</ul>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h2>
+<p>Cirrus Core Private Net can be downloaded from the Cirrus Core
+repository and is available for all leading Operating Systems.</p>
+<p><a class="reference external" href="https://github.com/stratisproject/CirrusCore/releases/tag/1.6.1.0-privatenet">https://github.com/stratisproject/CirrusCore/releases/tag/1.6.1.0-privatenet</a></p>
+<p>For the purpose of this tutorial, we will focus on using the Windows x64
+instance of the Cirrus Core Private Net wallet.</p>
+<p>Once downloaded, run the installer through to completion.</p>
+</section>
+<section id="starting-a-node">
+<h2>Starting a Node<a class="headerlink" href="#starting-a-node" title="Permalink to this heading">¶</a></h2>
+<p>Once Cirrus Core Private Net has been installed, you can now launch the
+wallet via the shortcut created on your desktop. This will start a node.</p>
+<section id="interacting-with-the-ui">
+<h3>Interacting with the UI<a class="headerlink" href="#interacting-with-the-ui" title="Permalink to this heading">¶</a></h3>
+<p>You would have noticed that when launching the node via Command Prompt,
+an additional application appeared on your taskbar. This is the Cirrus
+Core GUI, which can be seen below for reference.</p>
+<a class="reference internal image-reference" href="../../../_images/image114.png"><img alt="../../../_images/image114.png" src="../../../_images/image114.png" style="width: 6.26806in; height: 3.34028in;" /></a>
+<p>In addition to the GUI, DevTools has been made available within the GUI
+so you can see what calls are being made to the respective API endpoints
+when interacting with the Cirrus Core GUI. As part of the Private Net Edition, wallets are automatically created to
+save you time; log into the wallet by using the username <cite>cirrusdev</cite>
+and password <cite>password</cite> as seen in the password text field.</p>
+<a class="reference internal image-reference" href="../../../_images/image215.png"><img alt="../../../_images/image215.png" src="../../../_images/image215.png" style="width: 6.26806in; height: 3.34028in;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even though the Stratis Blockchain is built upon a UTXO model,
+to improve user experience vastly, we have introduced an account-based
+model look and feel to the Cirrus Core Private Net wallet. This change
+provides the end-user with the ability to interact with Smart Contracts
+in a more efficient manner.</p>
+</div>
+<p>Upon entering the password and logging into the wallet, you will be
+presented with the above screen, requesting you to select an address.
+Select the first address, <cite>Address[0]</cite> and continue.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Initially, you may notice that there is no balance within the wallet that has been
+automatically created. The pre-mine will be allocated after the second
+block has been mined. The current block time is set at 16 seconds; it
+will not be long before you see a balance credited to the wallet.</p>
+</div>
+<p>You can see in the above image; you have 1,000,000 TCRS which you can
+utilize to deploy and call a contract for your development and testing
+purpose.</p>
+<a class="reference internal image-reference" href="../../../_images/image215.png"><img alt="../../../_images/image215.png" src="../../../_images/image215.png" style="width: 6.26806in; height: 3.34028in;" /></a>
+<p>The <cite>Dashboard</cite> displays all information specific to your wallet. Since
+this is a local chain this is the only node currently running on the
+network, and all funds issued on-chain reside within this wallet.</p>
+<p>There are several ways that the Stratis Full Node can be interacted with
+within the Cirrus Core UI; aside from basic wallet functions, there is
+also the ability to issue tokens and deploy and interact with Smart Contracts. If you are
+interested in other API’s that are available, the Swagger interface can
+be accessed via browse swagger. Swagger is utilized to provide a
+graphical representation of the APIs that are available on the Stratis
+Full Node. These APIs are fully documented on the Academy and can be
+accessed via the <a class="reference external" href="https://academy.stratisplatform.com/Developer%20Resources/API%20Reference/api.html">API Documentation</a> section.</p>
+<a class="reference internal image-reference" href="../../../_images/image38.png"><img alt="../../../_images/image38.png" src="../../../_images/image38.png" style="width: 6.26806in; height: 3.14514in;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, only a single node can be running if utilizing the Cirrus Core Private Net Wallet. Additional nodes can be launched from the source code by passing the below parameters to the Stratis.CirrusMinerD project.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">port</span><span class="o">=&lt;&gt;</span>
+<span class="o">-</span><span class="n">signalruri</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="o">&lt;&gt;</span>
+<span class="o">-</span><span class="n">apiuri</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="o">&lt;&gt;</span>
+<span class="o">-</span><span class="n">datadir</span><span class="o">=&lt;&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>This concludes the network setup and configuration; you can now deploy a
+contract on the local network in Tutorial 2.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../Tutorial2-HelloWorld/hello-world-tutorial-introduction.html" class="btn btn-primary float-right" title="A “HelloWorld” smart contract" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../smartcontracts-introduction.html" class="btn btn-neutral" title="Stratis Smart Contracts" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

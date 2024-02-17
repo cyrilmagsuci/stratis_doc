@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Headless Cold-Staking &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Headless Cold-Staking with Docker" href="../Headless%20-%20Docker/cold-staking-headless-setup.html" />
+    <link rel="prev" title="STRAX-Wallet Cold-Staking" href="../STRAX%20Wallet/Cold-Staking-Guide.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../operation-guides-introduction.html">Operation Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../coldstaking-introduction.html">Cold-Staking</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../STRAX%20Wallet/Cold-Staking-Guide.html">STRAX Wallet Cold-Staking</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Headless Cold-Staking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cold-wallet-configuration">Cold-Wallet Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hot-wallet-configuration">Hot-Wallet Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sign-cold-staking-setup-transaction">Sign Cold-Staking Setup Transaction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#broadcast-cold-staking-setup-transaction">Broadcast Cold-Staking Setup Transaction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#staking-with-the-hot-wallet">Staking with the Hot-Wallet</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Headless%20-%20Docker/cold-staking-headless-setup.html">Docker Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Full%20Node/fullnode-introduction.html">Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../InterFlux%20Masternodes/masternode-introduction.html">InterFlux Masternodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechain/sidechain-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SDA/sda-introduction.html">Stratis Decentralized Accelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../STO/sto-introduction.html">STO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Token%20Swap/tokenswap-introduction.html">Token Swap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../operation-guides-introduction.html">Operation Guides</a> &raquo;</li>
+        
+          <li><a href="../coldstaking-introduction.html">Stratis Cold-Staking</a> &raquo;</li>
+        
+      <li>Headless Cold-Staking</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Operation Guides/Cold-Staking/Headless/cold-staking-headless-setup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="headless-cold-staking">
+<h1>Headless Cold-Staking<a class="headerlink" href="#headless-cold-staking" title="Permalink to this heading">¶</a></h1>
+<p>We would recommend the utilization of an ‘air-gapped’ device for the Cold-Wallet, transferring necessary information with the use of a secure device. The STRAX-TEST Blockchain Network is utilized throughout this guide; however, the same steps can be followed on the STRAX Blockchain Network by simply amending the request examples.</p>
+<p>This guide assumes that you already have two wallets configured, one on a cold-device and another on your hot-device.</p>
+<section id="cold-wallet-configuration">
+<h2>Cold-Wallet Configuration<a class="headerlink" href="#cold-wallet-configuration" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>An additional account must be created via the coldstaking/cold-staking-account endpoint</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s1">&#39;http://localhost:27103/api/coldstaking/cold-staking-account&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span>--data-binary<span class="w"> </span><span class="s2">&quot;{\&quot;walletName\&quot;:\&quot;STRAX-Cold-Wallet\&quot;,\&quot;walletPassword\&quot;:\&quot;ColdWalletPassword\&quot;,\&quot;isColdWalletAccount\&quot;:true}&quot;</span>
+</pre></div>
+</div>
+<p>A successful call will return the account name.</p>
+<ol class="arabic simple" start="3">
+<li><p>We must now retrieve an address relating to the Cold-Staking account that was just created. The coldstaking/cold-staking-address will return an address</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s1">&#39;http://localhost:27103/api/coldstaking/cold-staking-address?walletName=STRAX-Cold-Wallet&amp;isColdWalletAddress=true&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>A new address is returned, please keep a note of this address as it
+will be defined later in the process. We will refer to this address
+as the <strong>Cold-Staking Wallet Cold Address</strong></p></li>
+<li><p>Finally, we must acquire the ExtPubKey of the Cold-Wallet to enable
+us to build a transaction offline. This is retrieved from the
+Wallet/extpubkey endpoint</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s1">&#39;http://localhost:27103/api/Wallet/extpubkey?WalletName=STRAX-Cold-Wallet&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="hot-wallet-configuration">
+<h2>Hot-Wallet Configuration<a class="headerlink" href="#hot-wallet-configuration" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>An additional account must be created via the
+coldstaking/cold-staking-account endpoint</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s1">&#39;http://localhost:27103/api/coldstaking/cold-staking-account&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span>--data-binary<span class="w"> </span><span class="s2">&quot;{\&quot;walletName\&quot;:\&quot;STRAX-Hot-Wallet\&quot;,\&quot;walletPassword\&quot;:\&quot;HotWalletPassword\&quot;,\&quot;isColdWalletAccount\&quot;:false}&quot;</span>
+</pre></div>
+</div>
+<p>A successful call will return the account name.</p>
+<ol class="arabic simple" start="2">
+<li><p>We must now retrieve an address relating to the Cold-Staking account
+that was just created. The coldstaking/cold-staking-address will
+return an address</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s1">&#39;http://localhost:27103/api/coldstaking/cold-staking-address?walletName=STRAX-Hot-Wallet&amp;isColdWalletAddress=false&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/json&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span>
+</pre></div>
+</div>
+<p>A new address is returned, please keep a note of this address as it will
+be defined later in the process. We will refer to this address as the
+<strong>Cold-Staking Wallet Hot Address</strong></p>
+<ol class="arabic simple" start="3">
+<li><p>The wallet/recover-via-extpubkey endpoint is utilized to create a
+‘Watch Only’ wallet on the Stratis Full Node. Providing the ability
+to monitor a wallet address(es) without the ability to spend.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s1">&#39;http://localhost:27103/api/wallet/recover-via-extpubkey&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span>--data-binary<span class="w"> </span><span class="s2">&quot;{\&quot;extPubKey\&quot;:\&quot;xpub6CKmpE2VpXuW4x4kjh3Esa17T5rCoZoCnohBNT9WVAGuEgHPtsbvpqU55p9ATnhb7oHzv2b8u77soBa78iYWKp2sztVABBaq5XUKDpQumqD\&quot;,\&quot;accountIndex\&quot;:0,\&quot;name\&quot;:\&quot;STRAX-Cold-Wallet\&quot;,\&quot;creationDate\&quot;:\&quot;2020-12-31T11:36:32.000Z\&quot;}&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>After the above request has been executed, the balance of the wallet
+can be queried utilizing the Wallet/balance endpoint. Initially, the
+balance may return as zero synchronisation takes place.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s1">&#39;http://localhost:27103/api/Wallet/balance?WalletName=STRAX-Cold-Wallet&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;accept: \*/*&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>The synchronization status can be queried with the Node/status
+endpoint</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s1">&#39;http://localhost:27103/api/Node/status&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;accept: \*/*&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Once synchronization has completed and the expected balance is returned,
+we can begin to create the unsigned transaction that details the cold-staking
+setup.</p></li>
+</ol>
+<p>7. First, we must establish the fee required to perform the transaction so it can be definitively defined. This is achieved through the coldstaking/estimate-offline-cold-staking-setup-tx-fee endpoint
+The important values to define below are both <strong>coldWalletAddress</strong> and <strong>hotWalletAddress</strong>. You should define the respective addresses that you have kept a record of whilst progressing through this process. In this example, we can see that both the <strong>Cold-Staking Wallet Cold Address</strong> and <strong>Cold-Staking Wallet Hot Address</strong> are defined.
+The <strong>walletName</strong> has to be the wallet name you choose when creating the watch only wallet.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s1">&#39;http://localhost:27103/api/coldstaking/estimate-offline-cold-staking-setup-tx-fee&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span>--data-binary<span class="w"> </span><span class="s2">&quot;{\&quot;coldWalletAddress\&quot;:\&quot;qSSpa7uEsocW17f8wvkFbujB2RGAZewDqe\&quot;,\&quot;hotWalletAddress\&quot;:\&quot;qZoPtiEGkgNNGz2cyXXoBb9HR82Y5QEYZd\&quot;,\&quot;walletName\&quot;:\&quot;STRAX-Cold-Wallet\&quot;,\&quot;walletAccount\&quot;:\&quot;account 0\&quot;,\&quot;amount\&quot;:\&quot;100000\&quot;,\&quot;fees\&quot;:0,\&quot;walletPassword\&quot;:null,\&quot;subtractFeeFromAmount\&quot;:true}&quot;</span>
+</pre></div>
+</div>
+<p>The response returns a fee amount in satoshi – This must be divided by 1e8 (100,000,000) to establish the fee amount that will be defined within the unsigned transaction.</p>
+<ol class="arabic simple" start="8">
+<li><p>We can now build the body of the unsigned transaction to setup
+cold-staking. Again, the important values to define below are
+both <strong>coldWalletAddress</strong> and <strong>hotWalletAddress</strong>.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s1">&#39;http://localhost:27103/api/coldstaking/setup-offline-cold-staking&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span>--data-binary<span class="w"> </span><span class="s2">&quot;{\&quot;coldWalletAddress\&quot;:\&quot;qSSpa7uEsocW17f8wvkFbujB2RGAZewDqe\&quot;,\&quot;hotWalletAddress\&quot;:\&quot;qZoPtiEGkgNNGz2cyXXoBb9HR82Y5QEYZd\&quot;,\&quot;walletName\&quot;:\&quot;STRAX-Cold-Wallet\&quot;,\&quot;walletAccount\&quot;:\&quot;account 0\&quot;,\&quot;amount\&quot;:100000,\&quot;fees\&quot;:0.0001,\&quot;walletPassword\&quot;:null,\&quot;subtractFeeFromAmount\&quot;:true}&quot;</span>
+</pre></div>
+</div>
+<p>The response will be a transaction signing request that can be processed
+safely and securely on another device, in this example our Docker
+Container that has no network connectivity.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s2">&quot;walletName&quot;</span>:<span class="s2">&quot;STRAX-Cold-Wallet&quot;</span>,<span class="s2">&quot;walletAccount&quot;</span>:<span class="s2">&quot;account 0&quot;</span>,<span class="s2">&quot;unsignedTransaction&quot;</span>:<span class="s2">&quot;010000000139ba5c83cb756e7cd90d618c25b758bd0df17c1eab895ca02fe949a700fe2adb0100000000ffffffff020080ca39612400001976a914685757640e4953f5854060e50ab557e73d79e4e088acf078724e180900003376a97b63b914b22873455ecf330f3e877a6cd0fe3d7bdc0033e16714617b6f9b2614a09d4859089906126bc799a2cf3f6888ac00000000&quot;</span>,<span class="s2">&quot;fee&quot;</span>:<span class="s2">&quot;0.0001&quot;</span>,<span class="s2">&quot;utxos&quot;</span>:<span class="o">[{</span><span class="s2">&quot;transactionId&quot;</span>:<span class="s2">&quot;db2afe00a749e92fa05c89ab1e7cf10dbd58b7258c610dd97c6e75cb835cba39&quot;</span>,<span class="s2">&quot;index&quot;</span>:<span class="s2">&quot;1&quot;</span>,<span class="s2">&quot;scriptPubKey&quot;</span>:<span class="s2">&quot;76a9146c673e92c1e5aaf490d1bf44b60d177cf83e1bc388ac&quot;</span>,<span class="s2">&quot;amount&quot;</span>:<span class="s2">&quot;500000&quot;</span><span class="o">}]</span>,<span class="s2">&quot;addresses&quot;</span>:<span class="o">[{</span><span class="s2">&quot;address&quot;</span>:<span class="s2">&quot;qTSZpJD9VXN2wsHAQveH9Lc2kTBuWSJYzq&quot;</span>,<span class="s2">&quot;keyPath&quot;</span>:<span class="s2">&quot;m/44&#39;/1&#39;/0&#39;/0/0&quot;</span>,<span class="s2">&quot;addressType&quot;</span>:<span class="s2">&quot;p2pkh&quot;</span><span class="o">}]}</span>
+</pre></div>
+</div>
+<ol class="arabic" start="9">
+<li><p>Before the unsigned transaction can be processed, we must also
+include the walletPassword property and specify the password
+relative to the Cold-Staking Cold Wallet. If your wallet name that
+you used when recovering from the extpubkey was different to your
+cold wallet name, also adjust the walletName parameter.</p>
+<p>This can be added to the beginning of the request body as seen below.</p>
+</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s2">&quot;walletPassword&quot;</span>:<span class="s2">&quot;ColdWalletPassword&quot;</span>,<span class="s2">&quot;walletName&quot;</span>:<span class="s2">&quot;STRAX-Cold-Wallet&quot;</span>,<span class="s2">&quot;walletAccount&quot;</span>:<span class="s2">&quot;account 0&quot;</span>,<span class="s2">&quot;unsignedTransaction&quot;</span>:<span class="s2">&quot;010000000139ba5c83cb756e7cd90d618c25b758bd0df17c1eab895ca02fe949a700fe2adb0100000000ffffffff020080ca39612400001976a914685757640e4953f5854060e50ab557e73d79e4e088acf078724e180900003376a97b63b914b22873455ecf330f3e877a6cd0fe3d7bdc0033e16714617b6f9b2614a09d4859089906126bc799a2cf3f6888ac00000000&quot;</span>,<span class="s2">&quot;fee&quot;</span>:<span class="s2">&quot;0.0001&quot;</span>,<span class="s2">&quot;utxos&quot;</span>:<span class="o">[{</span><span class="s2">&quot;transactionId&quot;</span>:<span class="s2">&quot;db2afe00a749e92fa05c89ab1e7cf10dbd58b7258c610dd97c6e75cb835cba39&quot;</span>,<span class="s2">&quot;index&quot;</span>:<span class="s2">&quot;1&quot;</span>,<span class="s2">&quot;scriptPubKey&quot;</span>:<span class="s2">&quot;76a9146c673e92c1e5aaf490d1bf44b60d177cf83e1bc388ac&quot;</span>,<span class="s2">&quot;amount&quot;</span>:<span class="s2">&quot;500000&quot;</span><span class="o">}]</span>,<span class="s2">&quot;addresses&quot;</span>:<span class="o">[{</span><span class="s2">&quot;address&quot;</span>:<span class="s2">&quot;qTSZpJD9VXN2wsHAQveH9Lc2kTBuWSJYzq&quot;</span>,<span class="s2">&quot;keyPath&quot;</span>:<span class="s2">&quot;m/44&#39;/1&#39;/0&#39;/0/0&quot;</span>,<span class="s2">&quot;addressType&quot;</span>:<span class="s2">&quot;p2pkh&quot;</span><span class="o">}]}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>The request body must now be converted to incorporate JavaScript
+escaped indentation. A tool such as
+<a class="reference external" href="https://www.freeformatter.com/json-formatter.html">https://www.freeformatter.com/json-formatter.html</a> can be used to
+achieve this.</p></li>
+</ol>
+</section>
+<section id="sign-cold-staking-setup-transaction">
+<h2>Sign Cold-Staking Setup Transaction<a class="headerlink" href="#sign-cold-staking-setup-transaction" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Revert to your air-gapped Cold-Wallet device.</p></li>
+<li><p>The request body we created and formatted to JavaScript Escaped JSON
+can now be utilized as the request body for a call made to the
+offline-sign-request endpoint on the Cold-Wallet device.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s1">&#39;http://localhost:27103/api/wallet/offline-sign-request&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/json&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>--data-binary<span class="w"> </span><span class="s2">&quot;{\&quot;walletPassword\&quot;:\&quot;ColdWalletPassword\&quot;,\&quot;walletName\&quot;:\&quot;STRAX-Cold-Wallet\&quot;,\&quot;walletAccount\&quot;:\&quot;account 0\&quot;,\&quot;unsignedTransaction\&quot;:\&quot;010000000139ba5c83cb756e7cd90d618c25b758bd0df17c1eab895ca02fe949a700fe2adb0100000000ffffffff020080ca39612400001976a914685757640e4953f5854060e50ab557e73d79e4e088acf078724e180900003376a97b63b914b22873455ecf330f3e877a6cd0fe3d7bdc0033e16714617b6f9b2614a09d4859089906126bc799a2cf3f6888ac00000000\&quot;,\&quot;fee\&quot;:\&quot;0.0001\&quot;,\&quot;utxos\&quot;:[{\&quot;transactionId\&quot;:\&quot;db2afe00a749e92fa05c89ab1e7cf10dbd58b7258c610dd97c6e75cb835cba39\&quot;,\&quot;index\&quot;:\&quot;1\&quot;,\&quot;scriptPubKey\&quot;:\&quot;76a9146c673e92c1e5aaf490d1bf44b60d177cf83e1bc388ac\&quot;,\&quot;amount\&quot;:\&quot;500000\&quot;}],\&quot;addresses\&quot;:[{\&quot;address\&quot;:\&quot;qTSZpJD9VXN2wsHAQveH9Lc2kTBuWSJYzq\&quot;,\&quot;keyPath\&quot;:\&quot;m\/44\&#39;\/1\&#39;\/0\&#39;\/0\/0\&quot;,\&quot;addressType\&quot;:\&quot;p2pkh\&quot;}]}&quot;</span>
+</pre></div>
+</div>
+<p>The response provides you with the signed transaction in a hexadecimal
+format. Take note of this string as it can now be broadcast to the
+blockchain network for acceptance.</p>
+</section>
+<section id="broadcast-cold-staking-setup-transaction">
+<h2>Broadcast Cold-Staking Setup Transaction<a class="headerlink" href="#broadcast-cold-staking-setup-transaction" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>The Cold-Staking Setup Transaction can now be broadcast to the
+network, utilizing the value of the hex property, taken from the
+signing of the Cold-Staking Setup transaction that was undertaken on
+the Cold-Wallet Docker Container.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;http://localhost:27103/api/Wallet/send-transaction&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;accept: \*/*&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json-patch+json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;{\&quot;hex\&quot;:\&quot;010000000139ba5c83cb756e7cd90d618c25b758bd0df17c1eab895ca02fe949a700fe2adb010000006b483045022100e2a45f8aed8d49df77aea5447571685f6ca73443375de6b47f56a0521517c5190220271f2c99b19136316a725a7c276c3d23658bca2c4467e7f6cc6c9ce978387ac7012103f6660f0a636262cc786e5e2677beb7ab4fcb156f4e5b55e9a1363635f6405169ffffffff020080ca39612400001976a914685757640e4953f5854060e50ab557e73d79e4e088acf078724e180900003376a97b63b914b22873455ecf330f3e877a6cd0fe3d7bdc0033e16714617b6f9b2614a09d4859089906126bc799a2cf3f6888ac00000000\&quot;}&quot;</span>
+</pre></div>
+</div>
+<p>The response details the transaction ID, confirming that the transaction
+has now been broadcast to the network.</p>
+<ol class="arabic simple" start="2">
+<li><p>The setup can be confirmed by querying the Hot-Wallet’s Cold-Staking
+Hot Addresses account for a balance.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:27103/api/Wallet/balance?WalletName=STRAX-Hot-Wallet&amp;AccountName=coldStakingHotAddresses&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;accept: \*/*&quot;</span>
+</pre></div>
+</div>
+<p>The response evidences the setup has been successful as the balance can
+be confirmed.</p>
+</section>
+<section id="staking-with-the-hot-wallet">
+<h2>Staking with the Hot-Wallet<a class="headerlink" href="#staking-with-the-hot-wallet" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Staking can be enabled simply, by interacting with the
+Staking/startstaking endpoint, as seen below.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:27103/api/Staking/startstaking&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;accept: \*/*&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json-patch+json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;{\&quot;password\&quot;:\&quot;HotWalletPassword\&quot;,\&quot;name\&quot;:\&quot;STRAX-Hot-Wallet\&quot;}&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>The staking status can be confirmed by interacting with the
+Staking/startstaking endpoint as seen below.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:27103/api/Staking/getstakinginfo&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;accept: \*/*&quot;</span>
+</pre></div>
+</div>
+<p>The response will highlight the staking status in addition, staking
+information relating to the network is returned also.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s2">&quot;enabled&quot;</span>:true,<span class="s2">&quot;staking&quot;</span>:true,<span class="s2">&quot;errors&quot;</span>:null,<span class="s2">&quot;currentBlockSize&quot;</span>:230,<span class="s2">&quot;currentBlockTx&quot;</span>:1,<span class="s2">&quot;pooledTx&quot;</span>:0,<span class="s2">&quot;difficulty&quot;</span>:4627133.56490853,<span class="s2">&quot;searchInterval&quot;</span>:16,<span class="s2">&quot;weight&quot;</span>:10000899990000,<span class="s2">&quot;netStakeWeight&quot;</span>:6484304056772607,<span class="s2">&quot;immature&quot;</span>:0,<span class="s2">&quot;expectedTime&quot;</span>:29176<span class="o">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Staking can be stopped by simply shutting down the node.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../Headless%20-%20Docker/cold-staking-headless-setup.html" class="btn btn-primary float-right" title="Headless Cold-Staking with Docker" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../STRAX%20Wallet/Cold-Staking-Guide.html" class="btn btn-neutral" title="STRAX-Wallet Cold-Staking" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

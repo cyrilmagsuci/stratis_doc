@@ -1,0 +1,732 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ColdStaking &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Collateral" href="pystratis.api.collateral.html" />
+    <link rel="prev" title="BlockStore" href="pystratis.api.blockstore.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pystratis.html">PyStratis Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pystratis.api.html">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.nodes.html">Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.core.html">Core</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pystratis.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../pystratis.html">PyStratis Reference</a> &raquo;</li>
+        
+          <li><a href="modules.html">pyStratis</a> &raquo;</li>
+        
+          <li><a href="pystratis.api.html">API</a> &raquo;</li>
+        
+      <li>ColdStaking</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/PyStratis Reference/source/pystratis.api.coldstaking.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="coldstaking">
+<h1>ColdStaking<a class="headerlink" href="#coldstaking" title="Permalink to this heading">¶</a></h1>
+<section id="id1">
+<h2>ColdStaking<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ColdStaking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements the coldstaking api endpoints.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.coldstaking.responsemodels.infomodel.InfoModel" title="pystratis.api.coldstaking.responsemodels.infomodel.InfoModel"><span class="pre">InfoModel</span></a></span></span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets general information related to cold staking.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The cold staking account information for the given wallet.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.coldstaking.responsemodels.infomodel.InfoModel" title="pystratis.api.coldstaking.responsemodels.infomodel.InfoModel"><em>InfoModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking.account">
+<span class="sig-name descname"><span class="pre">account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_cold_wallet_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extpubkey</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.html#pystratis.core.extpubkey.ExtPubKey" title="pystratis.core.extpubkey.ExtPubKey"><span class="pre">ExtPubKey</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.coldstaking.responsemodels.accountmodel.AccountModel" title="pystratis.api.coldstaking.responsemodels.accountmodel.AccountModel"><span class="pre">AccountModel</span></a></span></span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking.account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a cold staking account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>wallet_password</strong> (<em>str</em>) – The wallet password.</p></li>
+<li><p><strong>is_cold_wallet_account</strong> (<em>bool</em><em>, </em><em>optional</em>) – If this account is for a cold wallet. Default=False.</p></li>
+<li><p><strong>extpubkey</strong> (<a class="reference internal" href="pystratis.core.html#pystratis.core.extpubkey.ExtPubKey" title="pystratis.core.extpubkey.ExtPubKey"><em>ExtPubKey</em></a><em>, </em><em>str</em><em>, </em><em>optional</em>) – The extpubkey for the cold wallet.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about the cold staking account.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.coldstaking.responsemodels.accountmodel.AccountModel" title="pystratis.api.coldstaking.responsemodels.accountmodel.AccountModel"><em>AccountModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking.address">
+<span class="sig-name descname"><span class="pre">address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_cold_wallet_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segwit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.coldstaking.responsemodels.addressmodel.AddressModel" title="pystratis.api.coldstaking.responsemodels.addressmodel.AddressModel"><span class="pre">AddressModel</span></a></span></span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a cold staking address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>is_cold_wallet_address</strong> (<em>bool</em><em>, </em><em>optional</em>) – If this address is for a cold wallet. Default=False.</p></li>
+<li><p><strong>segwit</strong> (<em>bool</em><em>, </em><em>optional</em>) – If this is a segwit address. Default=False.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about the cold staking address.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.coldstaking.responsemodels.addressmodel.AddressModel" title="pystratis.api.coldstaking.responsemodels.addressmodel.AddressModel"><em>AddressModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking.setup">
+<span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cold_wallet_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hot_wallet_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fees</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtract_fee_from_amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segwit_change_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.coldstaking.responsemodels.setupmodel.SetupModel" title="pystratis.api.coldstaking.responsemodels.setupmodel.SetupModel"><span class="pre">SetupModel</span></a></span></span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Spends funds from a normal wallet addresses to the cold staking script.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cold_wallet_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The cold wallet address.</p></li>
+<li><p><strong>hot_wallet_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The hot wallet address.</p></li>
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>wallet_account</strong> (<em>str</em>) – The wallet account.</p></li>
+<li><p><strong>wallet_password</strong> (<em>str</em>) – The wallet password.</p></li>
+<li><p><strong>amount</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The amount to send to the old wallet.</p></li>
+<li><p><strong>fees</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The transaction fee.</p></li>
+<li><p><strong>subtract_fee_from_amount</strong> (<em>bool</em><em>, </em><em>optional</em>) – If fee should be subtracted from amount. Default=True.</p></li>
+<li><p><strong>split_count</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of transactions to split over. Default=1.</p></li>
+<li><p><strong>segwit_change_address</strong> (<em>bool</em><em>, </em><em>optional</em>) – If change address is a segwit address. Default=False.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The transaction hex for the cold staking setup transaction.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.coldstaking.responsemodels.setupmodel.SetupModel" title="pystratis.api.coldstaking.responsemodels.setupmodel.SetupModel"><em>SetupModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking.setup_offline">
+<span class="sig-name descname"><span class="pre">setup_offline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cold_wallet_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hot_wallet_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fees</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtract_fee_from_amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segwit_change_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel" title="pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel"><span class="pre">BuildOfflineSignModel</span></a></span></span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking.setup_offline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a cold staking setup transaction in an unsigned state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cold_wallet_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The cold wallet address.</p></li>
+<li><p><strong>hot_wallet_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The hot wallet address.</p></li>
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>wallet_account</strong> (<em>str</em>) – The wallet account.</p></li>
+<li><p><strong>amount</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The amount to send to the old wallet.</p></li>
+<li><p><strong>fees</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The transaction fee.</p></li>
+<li><p><strong>subtract_fee_from_amount</strong> (<em>bool</em><em>, </em><em>optional</em>) – If fee should be subtracted from amount. Default=True.</p></li>
+<li><p><strong>split_count</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of transactions to split over. Default=1.</p></li>
+<li><p><strong>segwit_change_address</strong> (<em>bool</em><em>, </em><em>optional</em>) – If change address is a segwit address. Default=False.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The built transaction for signing offline.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel" title="pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel"><em>BuildOfflineSignModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking.estimate_setup_tx_fee">
+<span class="sig-name descname"><span class="pre">estimate_setup_tx_fee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cold_wallet_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hot_wallet_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fees</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtract_fee_from_amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segwit_change_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking.estimate_setup_tx_fee" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate the cold staking setup tx fee.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cold_wallet_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The cold wallet address.</p></li>
+<li><p><strong>hot_wallet_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The hot wallet address.</p></li>
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>wallet_account</strong> (<em>str</em>) – The wallet account.</p></li>
+<li><p><strong>wallet_password</strong> (<em>str</em>) – The wallet password.</p></li>
+<li><p><strong>amount</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The amount to send to the old wallet.</p></li>
+<li><p><strong>fees</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The transaction fee.</p></li>
+<li><p><strong>subtract_fee_from_amount</strong> (<em>bool</em><em>, </em><em>optional</em>) – If fee should be subtracted from amount. Default=True.</p></li>
+<li><p><strong>split_count</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of transactions to split over. Default=1.</p></li>
+<li><p><strong>segwit_change_address</strong> (<em>bool</em><em>, </em><em>optional</em>) – If change address is a segwit address. Default=False.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The cold staking fee estimate.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking.estimate_offline_setup_tx_fee">
+<span class="sig-name descname"><span class="pre">estimate_offline_setup_tx_fee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cold_wallet_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hot_wallet_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fees</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtract_fee_from_amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segwit_change_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking.estimate_offline_setup_tx_fee" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate the cold staking offline setup tx fee.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cold_wallet_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The cold wallet address.</p></li>
+<li><p><strong>hot_wallet_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The hot wallet address.</p></li>
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>wallet_account</strong> (<em>str</em>) – The wallet account.</p></li>
+<li><p><strong>amount</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The amount to send to the old wallet.</p></li>
+<li><p><strong>fees</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The transaction fee.</p></li>
+<li><p><strong>subtract_fee_from_amount</strong> (<em>bool</em><em>, </em><em>optional</em>) – If fee should be subtracted from amount. Default=True.</p></li>
+<li><p><strong>split_count</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of transactions to split over. Default=1.</p></li>
+<li><p><strong>segwit_change_address</strong> (<em>bool</em><em>, </em><em>optional</em>) – If change address is a segwit address. Default=False.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The offline cold staking fee estimate.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking.withdrawal">
+<span class="sig-name descname"><span class="pre">withdrawal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">receiving_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fees</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtract_fee_from_amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.coldstaking.responsemodels.withdrawalmodel.WithdrawalModel" title="pystratis.api.coldstaking.responsemodels.withdrawalmodel.WithdrawalModel"><span class="pre">WithdrawalModel</span></a></span></span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking.withdrawal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Spends funds from the cold staking wallet account back to a normal wallet account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>receiving_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The receiving address.</p></li>
+<li><p><strong>wallet_password</strong> (<em>str</em>) – The wallet password.</p></li>
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>amount</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The amount to withdraw to the receiving address.</p></li>
+<li><p><strong>fees</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em><em>, </em><em>optional</em>) – The amount paid in fees.</p></li>
+<li><p><strong>subtract_fee_from_amount</strong> (<em>bool</em><em>, </em><em>optional</em>) – If fee should be subtracted from amount. Default=True.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The withdrawal transaction model.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.coldstaking.responsemodels.withdrawalmodel.WithdrawalModel" title="pystratis.api.coldstaking.responsemodels.withdrawalmodel.WithdrawalModel"><em>WithdrawalModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking.offline_withdrawal">
+<span class="sig-name descname"><span class="pre">offline_withdrawal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">receiving_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fees</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtract_fee_from_amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel" title="pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel"><span class="pre">BuildOfflineSignModel</span></a></span></span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking.offline_withdrawal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a request to spend funds from a cold staking wallet account back to a normal wallet account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>receiving_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The receiving address.</p></li>
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>account_name</strong> (<em>str</em>) – The account name.</p></li>
+<li><p><strong>amount</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The amount to withdraw to the receiving address.</p></li>
+<li><p><strong>fees</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The amount paid in fees.</p></li>
+<li><p><strong>subtract_fee_from_amount</strong> (<em>bool</em><em>, </em><em>optional</em>) – If fee should be subtracted from amount. Default=True.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The built withdrawal transaction model for offline signing.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel" title="pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel"><em>BuildOfflineSignModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking.estimate_offline_withdrawal_tx_fee">
+<span class="sig-name descname"><span class="pre">estimate_offline_withdrawal_tx_fee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiving_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtract_fee_from_amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking.estimate_offline_withdrawal_tx_fee" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate the fee for an offline cold staking withdrawal transaction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>account_name</strong> (<em>str</em>) – The account name.</p></li>
+<li><p><strong>receiving_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The receiving address.</p></li>
+<li><p><strong>amount</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The amount to withdraw to the receiving address.</p></li>
+<li><p><strong>subtract_fee_from_amount</strong> (<em>bool</em><em>, </em><em>optional</em>) – If fee should be subtracted from amount. Default=True.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The estimate for offline withdrawal transaction fee.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking.estimate_withdrawal_tx_fee">
+<span class="sig-name descname"><span class="pre">estimate_withdrawal_tx_fee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">receiving_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fees</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtract_fee_from_amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking.estimate_withdrawal_tx_fee" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate the fee for a cold staking withdrawal transaction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>receiving_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The receiving address.</p></li>
+<li><p><strong>wallet_password</strong> (<em>str</em>) – The wallet password.</p></li>
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>amount</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The amount to withdraw to the receiving address.</p></li>
+<li><p><strong>fees</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em><em>, </em><em>optional</em>) – The amount paid in fees.</p></li>
+<li><p><strong>subtract_fee_from_amount</strong> (<em>bool</em><em>, </em><em>optional</em>) – If fee should be subtracted from amount. Default=True.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The estimate for the withdrawal transaction fee.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.ColdStaking.retrieve_filtered_utxos">
+<span class="sig-name descname"><span class="pre">retrieve_filtered_utxos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trx_hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadcast</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pystratis.api.coldstaking.ColdStaking.retrieve_filtered_utxos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate the fee for a cold staking withdrawal transaction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>wallet_password</strong> (<em>str</em>) – The wallet password.</p></li>
+<li><p><strong>wallet_account</strong> (<em>str</em>) – The wallet account.</p></li>
+<li><p><strong>trx_hex</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><em>hexstr</em></a>) – The transaction id hex.</p></li>
+<li><p><strong>broadcast</strong> (<em>bool</em>) – If true, broadcast the transaction to the network after being built. Default=False.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of hex encoded coldstaking transactions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><em>hexstr</em></a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.coldstaking.responsemodels.accountmodel">
+<span id="accountmodel"></span><h2>AccountModel<a class="headerlink" href="#module-pystratis.api.coldstaking.responsemodels.accountmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.responsemodels.accountmodel.AccountModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AccountModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accountName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.coldstaking.responsemodels.accountmodel.AccountModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a cold staking account.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.responsemodels.accountmodel.AccountModel.account_name">
+<span class="sig-name descname"><span class="pre">account_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.coldstaking.responsemodels.accountmodel.AccountModel.account_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The cold staking account name.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.coldstaking.responsemodels.addressmodel">
+<span id="addressmodel"></span><h2>AddressModel<a class="headerlink" href="#module-pystratis.api.coldstaking.responsemodels.addressmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.responsemodels.addressmodel.AddressModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AddressModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.coldstaking.responsemodels.addressmodel.AddressModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a cold staking address.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.responsemodels.addressmodel.AddressModel.address">
+<span class="sig-name descname"><span class="pre">address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></em><a class="headerlink" href="#pystratis.api.coldstaking.responsemodels.addressmodel.AddressModel.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>The cold staking address.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="buildofflinesignmodel">
+<h2>BuildOfflineSignModel<a class="headerlink" href="#buildofflinesignmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BuildOfflineSignModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walletName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walletAccount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsignedTransaction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">utxos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor" title="pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor"><span class="pre">UtxoDescriptor</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addresses</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor" title="pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor"><span class="pre">AddressDescriptor</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>A pydantic model for a built offline sign request.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">wallet_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em></dt>
+<dd><p>The wallet name.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">wallet_account</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em></dt>
+<dd><p>The wallet account.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">unsigned_transaction</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em></dt>
+<dd><p>The unsigned transaction hex.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">fee</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em></dt>
+<dd><p>The transaction fee.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">utxos</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor" title="pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor"><span class="pre">UtxoDescriptor</span></a><span class="p"><span class="pre">]</span></span></em></dt>
+<dd><p>The utxos included in the transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">addresses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor" title="pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor"><span class="pre">AddressDescriptor</span></a><span class="p"><span class="pre">]</span></span></em></dt>
+<dd><p>The addresses and amounts receiving outputs.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.coldstaking.responsemodels.infomodel">
+<span id="infomodel"></span><h2>InfoModel<a class="headerlink" href="#module-pystratis.api.coldstaking.responsemodels.infomodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.responsemodels.infomodel.InfoModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">InfoModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coldWalletAccountExists</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hotWalletAccountExists</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.coldstaking.responsemodels.infomodel.InfoModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for cold wallet information.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.responsemodels.infomodel.InfoModel.cold_wallet_account_exists">
+<span class="sig-name descname"><span class="pre">cold_wallet_account_exists</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.coldstaking.responsemodels.infomodel.InfoModel.cold_wallet_account_exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if cold wallet account exists.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.responsemodels.infomodel.InfoModel.hot_wallet_account_exists">
+<span class="sig-name descname"><span class="pre">hot_wallet_account_exists</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.coldstaking.responsemodels.infomodel.InfoModel.hot_wallet_account_exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if hot wallet account exists.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.coldstaking.responsemodels.setupmodel">
+<span id="setupmodel"></span><h2>SetupModel<a class="headerlink" href="#module-pystratis.api.coldstaking.responsemodels.setupmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.responsemodels.setupmodel.SetupModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SetupModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transactionHex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.coldstaking.responsemodels.setupmodel.SetupModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a cold staking wallet setup transaction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.responsemodels.setupmodel.SetupModel.transaction_hex">
+<span class="sig-name descname"><span class="pre">transaction_hex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em><a class="headerlink" href="#pystratis.api.coldstaking.responsemodels.setupmodel.SetupModel.transaction_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>The hex serialized cold staking wallet setup transaction.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.coldstaking.responsemodels.withdrawalmodel">
+<span id="withdrawalmodel"></span><h2>WithdrawalModel<a class="headerlink" href="#module-pystratis.api.coldstaking.responsemodels.withdrawalmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.responsemodels.withdrawalmodel.WithdrawalModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WithdrawalModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transactionHex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.coldstaking.responsemodels.withdrawalmodel.WithdrawalModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a cold staking withdrawal transaction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.coldstaking.responsemodels.withdrawalmodel.WithdrawalModel.transaction_hex">
+<span class="sig-name descname"><span class="pre">transaction_hex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em><a class="headerlink" href="#pystratis.api.coldstaking.responsemodels.withdrawalmodel.WithdrawalModel.transaction_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>A hex serialized cold staking wallet withdrawal transaction.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="pystratis.api.collateral.html" class="btn btn-primary float-right" title="Collateral" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="pystratis.api.blockstore.html" class="btn btn-neutral" title="BlockStore" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

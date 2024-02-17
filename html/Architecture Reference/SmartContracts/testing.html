@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Testing &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Support" href="support.html" />
+    <link rel="prev" title="Testing Locally with TestChain" href="testing-locally-with-testchain.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../FullNode/full-node-introduction.html">Full Node</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="smartcontracts-introduction.html">Smart Contracts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="smart-contracts-basic-theory.html">Basic Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uses-of-smart-contracts.html">Uses of Smart Contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="account-abstraction-layer.html">Account Abstraction Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="working-with-contracts.html">Working with Contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contracts-in-depth.html">Smart Contracts In-Depth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auction-smart-contract.html">The Auction Smart Contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing-locally-with-testchain.html">Testing Locally with TestChain</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-basics">The Basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#state-injection">State Injection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#an-example">An Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix-future-enhancements-to-smart-contracts.html">Appendix - Future Enhancements to Stratis Smart Contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix-gas-prices.html">Appendix - Gas Prices and Memory Limit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="smartcontracts-introduction.html">Stratis Smart Contracts</a> &raquo;</li>
+        
+      <li>Testing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Architecture Reference/SmartContracts/testing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="testing">
+<h1>Testing<a class="headerlink" href="#testing" title="Permalink to this heading">¶</a></h1>
+<p>Stratis Smart Contracts are unit-testable in the same way as any other C# class. Unit tests can be written with the testing framework of your choice. Tests can be developed and debugged with Visual Studio’s step-through debugger.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While contracts are fully testable, the available testing utilities are still primitive. Future versions of smart contracts will enable testing on top of a local test blockchain with resource tracking code injected.</p>
+</div>
+<section id="the-basics">
+<h2>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this heading">¶</a></h2>
+<p>The smart contract <a class="reference external" href="https://github.com/stratisproject/StratisSmartContractsSamples/tree/master/src/Stratis.SmartContracts.Samples/Stratis.SmartContracts.Samples">token sample contract</a> also contains tests for this contract. The tests described here verify that your smart contract logic executes as intended before you deploy it to a live network. The tests use the <code class="docutils literal notranslate"><span class="pre">Microsoft.VisualStudio.TestTools.UnitTesting</span></code> library, which may be familiar to C# developers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[TestClass]</span></code> defines a class in which tests are defined.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[TestInitialize]</span></code> is used to mark a method to be run before tests execute, most commonly to set up some testing context.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[TestMethod]</span></code> marks the actual tests to be run.</p></li>
+<li><p>The static class <code class="docutils literal notranslate"><span class="pre">Assert</span></code> provides access to a range of methods to validate the results of whatever execution you perform inside your tests.</p></li>
+</ul>
+<p>To run the tests together, right click on <code class="docutils literal notranslate"><span class="pre">[TestClass]</span></code> and select <cite>Run Tests</cite> in Visual Studio. To run tests individually, right click on the individual method and select <cite>Run Tests</cite>. Once clicked, the solution will take a couple of seconds to build and then the Test Explorer will open. You should see your tests listed next to a green tick, which indicates the tests have passed.</p>
+<p>You can also debug contract execution in Visual Studio. If breakpoints are set in the Auction smart contract methods and you then right click and select <cite>Debug Tests</cite> on the test methods, you will reach any breakpoints set in the methods being tested. You can then inspect the current state of the contract and step through execution as with any other C# application.</p>
+</section>
+<section id="state-injection">
+<h2>State Injection<a class="headerlink" href="#state-injection" title="Permalink to this heading">¶</a></h2>
+<p>A Stratis smart contract’s constructor has a single mandatory parameter: <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">ExampleContract(ISmartContractState</span> <span class="pre">state)</span></code>. Contextual blockchain state is injected into this parameter at contract execution time. Because state is abstracted behind the <code class="docutils literal notranslate"><span class="pre">ISmartContractState</span></code> interface, it allows any possible state of the blockchain to be mocked and injected while unit testing is being carried out.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ISmartContractState</span></code> interface contains these members:</p>
+<ul class="simple">
+<li><p>IBlock Block - Contains information about the block in which the smart contract transaction has been included.</p></li>
+<li><p>IMessage Message - Contains information about the contract invocation environment.</p></li>
+<li><p>IPersistentState PersistentState - Represents the persistent storage available to a contract.</p></li>
+<li><p>IGasMeter GasMeter - Represents an object used to measure the amount of gas consumed during contract execution.</p></li>
+<li><p>IInternalTransactionExecutor InternalTransactionExecutor - Represents an executor used to process transactions generated from within the contract.</p></li>
+<li><p>IInternalHashHelper InternalHashHelper - Provides hashing functions to the contract.</p></li>
+<li><p>Func&lt;ulong&gt; GetBalance - A function which provides the current balance of the contract.</p></li>
+</ul>
+<p>A unit test can define its own representations of these interfaces and then inject them into the contract under test.</p>
+</section>
+<section id="an-example">
+<h2>An Example<a class="headerlink" href="#an-example" title="Permalink to this heading">¶</a></h2>
+<p>Stepping through the <cite>Constructor_Assigns_TotalSupply_To_Owner()</cite> method from tests should help you understand the basic approach to unit testing your contracts with a mock contract state.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">standardToken</span> <span class="o">=</span> <span class="n">new</span> <span class="n">StandardToken</span><span class="p">(</span><span class="n">this</span><span class="o">.</span><span class="n">mockContractState</span><span class="o">.</span><span class="n">Object</span><span class="p">,</span> <span class="mi">100_000</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The first step to testing your contracts is initialising them. A <code class="docutils literal notranslate"><span class="pre">mockContractState</span></code> object is injected into the <code class="docutils literal notranslate"><span class="pre">StandardToken</span></code> object. This <code class="docutils literal notranslate"><span class="pre">TestSmartContractState</span></code> object is a mock implementation of the same <code class="docutils literal notranslate"><span class="pre">ISmartContractState</span></code> interface that is injected when smart contracts are initialised on-chain. The only difference is that in this case all of the properties can be set by you. This is really useful if you want to explicitly target scenarios in your contract’s execution.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>this.mockPersistentState.Verify(s =&gt; s.SetUInt64($&quot;Balance:{this.owner}&quot;, totalSupply));
+</pre></div>
+</div>
+<p>This checks that a call was made to the PersistentState class to set the initial balance of the contract’s owner.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="support.html" class="btn btn-primary float-right" title="Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="testing-locally-with-testchain.html" class="btn btn-neutral" title="Testing Locally with TestChain" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

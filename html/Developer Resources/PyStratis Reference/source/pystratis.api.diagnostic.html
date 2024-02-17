@@ -1,0 +1,503 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Diagnostic &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ExternalAPI" href="pystratis.api.externalapi.html" />
+    <link rel="prev" title="Dashboard" href="pystratis.api.dashboard.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pystratis.html">PyStratis Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pystratis.api.html">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.nodes.html">Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.core.html">Core</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pystratis.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../pystratis.html">PyStratis Reference</a> &raquo;</li>
+        
+          <li><a href="modules.html">pyStratis</a> &raquo;</li>
+        
+          <li><a href="pystratis.api.html">API</a> &raquo;</li>
+        
+      <li>Diagnostic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/PyStratis Reference/source/pystratis.api.diagnostic.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="diagnostic">
+<h1>Diagnostic<a class="headerlink" href="#diagnostic" title="Permalink to this heading">¶</a></h1>
+<section id="id1">
+<h2>Diagnostic<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.Diagnostic">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Diagnostic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.diagnostic.Diagnostic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements the diagnostic api endpoints.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.Diagnostic.get_connectedpeers_info">
+<span class="sig-name descname"><span class="pre">get_connectedpeers_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel.GetConnectedPeersInfoModel" title="pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel.GetConnectedPeersInfoModel"><span class="pre">GetConnectedPeersInfoModel</span></a></span></span><a class="headerlink" href="#pystratis.api.diagnostic.Diagnostic.get_connectedpeers_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get connected peers info.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Extra keyword arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information on connected peers.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel.GetConnectedPeersInfoModel" title="pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel.GetConnectedPeersInfoModel"><em>GetConnectedPeersInfoModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.Diagnostic.get_status">
+<span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.diagnostic.responsemodels.getstatusmodel.GetStatusModel" title="pystratis.api.diagnostic.responsemodels.getstatusmodel.GetStatusModel"><span class="pre">GetStatusModel</span></a></span></span><a class="headerlink" href="#pystratis.api.diagnostic.Diagnostic.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the diagnostic feature status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Extra keyword arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The feature status.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.diagnostic.responsemodels.getstatusmodel.GetStatusModel" title="pystratis.api.diagnostic.responsemodels.getstatusmodel.GetStatusModel"><em>GetStatusModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.Diagnostic.get_peer_statistics">
+<span class="sig-name descname"><span class="pre">get_peer_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connected_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel" title="pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel"><span class="pre">PeerStatisticsModel</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pystratis.api.diagnostic.Diagnostic.get_peer_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets statistics for connected peers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connected_only</strong> (<em>bool</em>) – To show data for only connected nodes.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of statistics on the connected peers.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="#pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel" title="pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel"><em>PeerStatisticsModel</em></a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.Diagnostic.start_collecting_peerstatistics">
+<span class="sig-name descname"><span class="pre">start_collecting_peerstatistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pystratis.api.diagnostic.Diagnostic.start_collecting_peerstatistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start collecting peer statistics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Extra keyword arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The status of the feature.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>str</em></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.Diagnostic.stop_collecting_peerstatistics">
+<span class="sig-name descname"><span class="pre">stop_collecting_peerstatistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pystratis.api.diagnostic.Diagnostic.stop_collecting_peerstatistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop collecting peer statistics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Extra keyword arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The status of the feature.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>str</em></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel">
+<span id="connectedpeerinfomodel"></span><h2>ConnectedPeerInfoModel<a class="headerlink" href="#module-pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConnectedPeerInfoModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isConnected</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disconnectReason</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endPoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model representing connected peer information.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel.is_connected" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the peer is connected</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel.disconnect_reason">
+<span class="sig-name descname"><span class="pre">disconnect_reason</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel.disconnect_reason" title="Permalink to this definition">¶</a></dt>
+<dd><p>The reason for disconnection.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel.state">
+<span class="sig-name descname"><span class="pre">state</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>The connection state.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel.endpoint">
+<span class="sig-name descname"><span class="pre">endpoint</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel.endpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>The peer’s endpoint.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel">
+<span id="getconnectedpeersinfomodel"></span><h2>GetConnectedPeersInfoModel<a class="headerlink" href="#module-pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel.GetConnectedPeersInfoModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GetConnectedPeersInfoModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peersByPeerId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel" title="pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel"><span class="pre">ConnectedPeerInfoModel</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectedPeers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel" title="pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel"><span class="pre">ConnectedPeerInfoModel</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectedPeersNotInPeersByPeerId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel" title="pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel"><span class="pre">ConnectedPeerInfoModel</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel.GetConnectedPeersInfoModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for connected peer information.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel.GetConnectedPeersInfoModel.peers_by_peer_id">
+<span class="sig-name descname"><span class="pre">peers_by_peer_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel" title="pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel"><span class="pre">ConnectedPeerInfoModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel.GetConnectedPeersInfoModel.peers_by_peer_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of peers by id.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel.GetConnectedPeersInfoModel.connected_peers">
+<span class="sig-name descname"><span class="pre">connected_peers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel" title="pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel"><span class="pre">ConnectedPeerInfoModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel.GetConnectedPeersInfoModel.connected_peers" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of connected peers.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel.GetConnectedPeersInfoModel.connected_peers_not_in_peers_by_peer_id">
+<span class="sig-name descname"><span class="pre">connected_peers_not_in_peers_by_peer_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel" title="pystratis.api.diagnostic.responsemodels.connectedpeerinfomodel.ConnectedPeerInfoModel"><span class="pre">ConnectedPeerInfoModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.getconnectedpeersinfomodel.GetConnectedPeersInfoModel.connected_peers_not_in_peers_by_peer_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of known peer ls not connected to.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.diagnostic.responsemodels.getstatusmodel">
+<span id="getstatusmodel"></span><h2>GetStatusModel<a class="headerlink" href="#module-pystratis.api.diagnostic.responsemodels.getstatusmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.getstatusmodel.GetStatusModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GetStatusModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peerStatistics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.getstatusmodel.GetStatusModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for status of diagnostics collection service.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.getstatusmodel.GetStatusModel.peer_statistics">
+<span class="sig-name descname"><span class="pre">peer_statistics</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.getstatusmodel.GetStatusModel.peer_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>The status of the service.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.diagnostic.responsemodels.peerstatisticsmodel">
+<span id="peerstatisticsmodel"></span><h2>PeerStatisticsModel<a class="headerlink" href="#module-pystratis.api.diagnostic.responsemodels.peerstatisticsmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PeerStatisticsModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peerEndPoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connected</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inbound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytesSent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytesReceived</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receivedMessages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentMessages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latestEvents</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for peer statistics.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.peer_endpoint">
+<span class="sig-name descname"><span class="pre">peer_endpoint</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.peer_endpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>The peer endpoint.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.connected">
+<span class="sig-name descname"><span class="pre">connected</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.connected" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, peer is connected.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.inbound">
+<span class="sig-name descname"><span class="pre">inbound</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.inbound" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, peer is inbound connection.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.bytes_sent">
+<span class="sig-name descname"><span class="pre">bytes_sent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.bytes_sent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bytes sent to peer.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.bytes_received">
+<span class="sig-name descname"><span class="pre">bytes_received</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.bytes_received" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bytes received from peer.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.received_messages">
+<span class="sig-name descname"><span class="pre">received_messages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.received_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of received messages from peer.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.send_messages">
+<span class="sig-name descname"><span class="pre">send_messages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.send_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of sent  messages to peer.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.latest_events">
+<span class="sig-name descname"><span class="pre">latest_events</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.diagnostic.responsemodels.peerstatisticsmodel.PeerStatisticsModel.latest_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of peer events.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="pystratis.api.externalapi.html" class="btn btn-primary float-right" title="ExternalAPI" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="pystratis.api.dashboard.html" class="btn btn-neutral" title="Dashboard" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

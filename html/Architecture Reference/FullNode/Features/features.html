@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating custom builds and extending the feature set &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="The supplied console application builds" href="console-application-builds.html" />
+    <link rel="prev" title="Console Output" href="../ConsoleOutput/ConsoleOutput.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../full-node-introduction.html">Full Node</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ConsoleOutput/ConsoleOutput.html">Console Output</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating custom builds and extending the feature set</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="console-application-builds.html">The supplied console application builds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exploring-the-base-feature.html">Exploring the Base Feature of the Full Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="creating-a-new-feature-summary.html">Creating a new feature summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Consensus/consensus-introduction.html">Consensus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ProvenHeaders/proven-headers-introduction.html">Proven Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ColdStaking/ColdStaking.html">Cold Staking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="../full-node-introduction.html">Stratis Full Node</a> &raquo;</li>
+        
+      <li>Creating custom builds and extending the feature set</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Architecture Reference/FullNode/Features/features.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="creating-custom-builds-and-extending-the-feature-set">
+<h1>Creating custom builds and extending the feature set<a class="headerlink" href="#creating-custom-builds-and-extending-the-feature-set" title="Permalink to this heading">¶</a></h1>
+<p>The Stratis Full Node has a componentized architecture. This makes it easy to add and remove features and thereby customize a build to your own requirements.</p>
+<p>The audience for this document is anyone who wants to create their own custom build of the Full Node. This could involve simply mixing and matching from the existing features. Alternatively, you might want to modify the capabilities of an existing feature or create an entirely new feature. The document begins by looking at how the projects supplied with the Full Node are put together before diving into the code behind one of the features.</p>
+<p>A knowledge of C# is assumed. In particular, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods">extension methods</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Fluent_interface">fluid interfaces</a> and <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions">lambda functions</a> are used frequently in the feature code, so if any of these topics are new to you, you might want to read up on them. In addition, the <a class="reference external" href="https://en.wikipedia.org/wiki/Dependency_injection">dependency injection (DI) software design pattern</a> is used for instantiating all the main classes and interfaces that make up a feature. The Full Node uses the default DI facility available in .NET Core, which you can read more about <a class="reference external" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2">here</a>.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="console-application-builds.html">The supplied console application builds</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="console-application-builds.html#what-happens-in-main">What happens in Main()?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exploring-the-base-feature.html">Exploring the Base Feature of the Full Node</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="exploring-the-base-feature.html#other-full-node-features">Other Full Node features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="creating-a-new-feature-summary.html">Creating a new feature summary</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="console-application-builds.html" class="btn btn-primary float-right" title="The supplied console application builds" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../ConsoleOutput/ConsoleOutput.html" class="btn btn-neutral" title="Console Output" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

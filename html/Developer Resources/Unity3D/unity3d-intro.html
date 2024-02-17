@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Stratis Unity 3D SDK &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Unity3D Integration" href="Integration/unitytutorial.html" />
+    <link rel="prev" title="Interacting with the Cirrus Node" href="../Stratis%20Full%20Node/Cirrus.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PyStratis%20Reference/pystratis.html">PyStratis Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Unity3D</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Integration/unitytutorial.html">Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BasicOperations/unitysdkbasics.html">Basic operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NFTDeployMint/nft.html">NFT Deployment and Minting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContractInteraction/smartcontracts.html">Smart Contract Interaction</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+      <li>Stratis Unity 3D SDK</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Developer Resources/Unity3D/unity3d-intro.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="stratis-unity-3d-sdk">
+<h1>Stratis Unity 3D SDK<a class="headerlink" href="#stratis-unity-3d-sdk" title="Permalink to this heading">¶</a></h1>
+<p>Developed by Unity Technologies, Unity is a cross-platform game engine
+with a built-in IDE and is used to create video games for web plugins,
+consoles, desktop platforms, and mobile devices.</p>
+<p>Stratis Unity SDK allows the STRAX Token to be used in game creation as well as the InterFlux Hub, opening up a world of possibilities through Stratis Smart Contracts written in C#.</p>
+<p>Non-Fungible Tokens “NFTs” are of special relevance to game developers
+that want to include in-game currency. By implementing an NFT, in-game
+things can be truly held by the player, eliminating the possibility of
+losing acquired things due to lost login credentials or account
+termination.</p>
+<p>Blockchain is a perfect fit for gaming, and now that blockchain and crypto currencies have hit the mainstream, platforms like the Stratis has introduced are likely to attract a substantial number of developers.
+In addition, some of the earliest opposition that cryptos found was due to the fact that they are a form of digital money that competes with fiat currency.</p>
+<p>Stratis Blockchain Technologies expanded Unity 3D support to include a light wallet and SDK for Stratis Blockchain Technologies. This achievement enables both the STRAX Token to be supported within game
+development and the InterFlux Hub, enabling endless use-cases through the utilization of Stratis Smart Contracts in C#.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Integration/unitytutorial.html">Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Integration/unitytutorial.html#pre-requisites">Pre-Requisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Integration/unitytutorial.html#stratis-public-node-for-integration">Stratis Public Node for Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Integration/unitytutorial.html#running-unity">Running Unity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Integration/unitytutorial.html#performing-transactions">Performing Transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Integration/unitytutorial.html#preparing-stratis-full-node-locally">Preparing Stratis Full Node Locally</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BasicOperations/unitysdkbasics.html">Basic operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BasicOperations/unitysdkbasics.html#what-is-required-to-work-with-basic-functionality-of-the-sdk">What is required to work with basic functionality of the SDK?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicOperations/unitysdkbasics.html#setting-up-stratisunitymanager-and-creating-a-wallet">Setting up StratisUnityManager and creating a wallet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicOperations/unitysdkbasics.html#getting-a-wallet-balance">Getting a wallet balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicOperations/unitysdkbasics.html#sending-coins-waiting-for-a-receipt">Sending coins &amp; waiting for a receipt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicOperations/unitysdkbasics.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="NFTDeployMint/nft.html">NFT Deployment and Minting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="NFTDeployMint/nft.html#what-is-required-to-work-with-stratis-smart-contracts-and-nfts">What is required to work with Stratis Smart Contracts and NFTs?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NFTDeployMint/nft.html#deploying-a-new-nft">Deploying a new NFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NFTDeployMint/nft.html#minting-nft">Minting NFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NFTDeployMint/nft.html#getting-nft-balance">Getting NFT balance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NFTDeployMint/nft.html#transferring-nft-to-another-address">Transferring NFT to another address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NFTDeployMint/nft.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SmartContractInteraction/smartcontracts.html">Smart Contract Interaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SmartContractInteraction/smartcontracts.html#what-is-required-to-work-with-stratis-smart-contracts">What is required to work with Stratis Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContractInteraction/smartcontracts.html#transaction-level-api">Transaction-level API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContractInteraction/smartcontracts.html#smart-contract-wrappers">Smart Contract Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContractInteraction/smartcontracts.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="Integration/unitytutorial.html" class="btn btn-primary float-right" title="Unity3D Integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../Stratis%20Full%20Node/Cirrus.html" class="btn btn-neutral" title="Interacting with the Cirrus Node" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

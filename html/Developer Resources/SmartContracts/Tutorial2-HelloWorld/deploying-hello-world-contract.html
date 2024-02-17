@@ -1,0 +1,496 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How the concept of a class links to a smart contract &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Extending the “Hello World” example" href="../Tutorial3-ExtendingHelloWorld/hello-world-extension-tutorial-introduction.html" />
+    <link rel="prev" title="A “Hello World” smart contract" href="hello-world-tutorial-introduction.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PyStratis%20Reference/pystratis.html">PyStratis Reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../smartcontracts-introduction.html">Smart Contracts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial1-LocalSidechain/local-network-tutorial-introduction.html">Getting Started</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="hello-world-tutorial-introduction.html">HelloWorld!</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">How the concept of a class links to a smart contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#greeting-a-smart-contract-property">Greeting - a smart contract property</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compiling-the-hello-world-smart-contract">Compiling the Hello World smart contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interact-with-the-wallet">Interact with the Wallet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deploying-the-helloworld-contract">Deploying the HelloWorld contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calling-the-sayhello-method">Calling the SayHello() method</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial3-ExtendingHelloWorld/hello-world-extension-tutorial-introduction.html">Extending HelloWorld!</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../smartcontracts-introduction.html">Smart Contracts</a> &raquo;</li>
+        
+          <li><a href="hello-world-tutorial-introduction.html">A “Hello World” smart contract</a> &raquo;</li>
+        
+      <li>How the concept of a class links to a smart contract</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/SmartContracts/Tutorial2-HelloWorld/deploying-hello-world-contract.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="how-the-concept-of-a-class-links-to-a-smart-contract">
+<h1>How the concept of a class links to a smart contract<a class="headerlink" href="#how-the-concept-of-a-class-links-to-a-smart-contract" title="Permalink to this heading">¶</a></h1>
+<p>Smart contracts in C# are intrinsically linked to object-oriented design even when they are very basic.</p>
+<p>Being object-oriented also enables smart contracts to inherit methods and properties. This allows a level of basic smart contract functionality to be readily available to all smart contracts via base class methods and properties.</p>
+<section id="the-smart-contract-constructor">
+<h2>The smart contract constructor<a class="headerlink" href="#the-smart-contract-constructor" title="Permalink to this heading">¶</a></h2>
+<p>Deployment of a smart contract involves calling the constructor for the smart contract class. This is where any initialization of the smart contract should take place. Before we look at what the constructor does, let’s examine its syntax.</p>
+<p>Firstly, as previously mentioned, all smart contracts in C# inherit from <code class="docutils literal notranslate"><span class="pre">SmartContract</span></code>. It is mandatory to include the following line at the top of the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">using</span> <span class="n">Stratis</span><span class="o">.</span><span class="n">SmartContracts</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This allows a smart contract to inherit from the base <code class="docutils literal notranslate"><span class="pre">SmartContract</span></code> class.</p>
+<p>The class declaration specifies that your class inherits from the <code class="docutils literal notranslate"><span class="pre">SmartContract</span></code> class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Deploy</span><span class="p">]</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">:</span> <span class="n">SmartContract</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">[Deploy]</span></code> attribute only needs to be specified when more than one class is declared in the file, but specifying it anyway is fine. When a smart contract is deployed, the entire C# file is compiled into Common Intermediate Language (CIL), which is then supplied to the deployment call.</p>
+<p>The first parameter passed to the constructor must be an object conforming to the <code class="docutils literal notranslate"><span class="pre">ISmartContractState</span></code> interface:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">HelloWorld</span><span class="p">(</span><span class="n">ISmartContractState</span> <span class="n">smartContractState</span><span class="p">)</span>
+    <span class="p">:</span> <span class="n">base</span><span class="p">(</span><span class="n">smartContractState</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can define additional parameters, and when you deploy the smart contract, you only need to specify arguments for the parameters you defined. The first parameter is handled internally. The <code class="docutils literal notranslate"><span class="pre">base</span></code> constructor (the <code class="docutils literal notranslate"><span class="pre">SmartContract</span></code> constructor) must also be called with the <code class="docutils literal notranslate"><span class="pre">ISmartContractState</span></code> parameter, and you can see this in the code above. The name of the first parameter could theoretically be changed, but <code class="docutils literal notranslate"><span class="pre">smartContractState</span></code> will work fine.</p>
+</section>
+</section>
+<section id="greeting-a-smart-contract-property">
+<h1>Greeting - a smart contract property<a class="headerlink" href="#greeting-a-smart-contract-property" title="Permalink to this heading">¶</a></h1>
+<p>In our Hello World example, we do one thing and that is initialize the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">this</span><span class="o">.</span><span class="n">Greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The actual line initiating the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property is fairly self-explanatory. Let’s take a look at the property getter and setters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">private</span> <span class="n">string</span> <span class="n">Greeting</span>
+<span class="p">{</span>
+    <span class="n">get</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">this</span><span class="o">.</span><span class="n">PersistentState</span><span class="o">.</span><span class="n">GetString</span><span class="p">(</span><span class="s2">&quot;Greeting&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nb">set</span>
+    <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">PersistentState</span><span class="o">.</span><span class="n">SetString</span><span class="p">(</span><span class="s2">&quot;Greeting&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">PersistentState</span></code> property belongs to the <code class="docutils literal notranslate"><span class="pre">SmartContract</span></code> class and facilitates the storage and retrieval of data (in this case a string). Smart contract data is stored as a series of key-value pairs and in this case <strong>Greeting</strong> is used as the key. The <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property is marked as private as there is no need for it to be accessed from anywhere other than inside the smart contract. Unlike methods, C# properties on a smart contract cannot be called even if they are public.</p>
+<section id="sayhello-a-smart-contract-method">
+<h2>SayHello() - a smart contract method<a class="headerlink" href="#sayhello-a-smart-contract-method" title="Permalink to this heading">¶</a></h2>
+<p>Finally, let’s look at the simple method <code class="docutils literal notranslate"><span class="pre">Greeting()</span></code>, which returns the “Hello World!” string.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">string</span> <span class="n">SayHello</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">this</span><span class="o">.</span><span class="n">Greeting</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As you can see, this method just accesses the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property.</p>
+</section>
+</section>
+<section id="compiling-the-hello-world-smart-contract">
+<span id="compiling-the-hello-world-smart-contract-dev"></span><h1>Compiling the Hello World smart contract<a class="headerlink" href="#compiling-the-hello-world-smart-contract" title="Permalink to this heading">¶</a></h1>
+<p>A smart contract in C# must be compiled into CIL before it can be deployed. For this, we are going to use the <a class="reference external" href="https://github.com/stratisproject/Stratis.SmartContracts.Tools.Sct">Stratis Smart Contract Tool</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">stratisproject</span><span class="o">/</span><span class="n">Stratis</span><span class="o">.</span><span class="n">SmartContracts</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">Sct</span>
+</pre></div>
+</div>
+<p>Execute the following command: <code class="docutils literal notranslate"><span class="pre">dotnet</span> <span class="pre">run</span> <span class="pre">validate</span> <span class="pre">[PATH_TO_SMART_CONTRACT]</span> <span class="pre">-sb</span></code>. A relative path to <code class="docutils literal notranslate"><span class="pre">`HelloWorld.cs</span></code> in your Stratis Full Node repository should work fine.</p>
+<p>To see more information on the options available for the sct <code class="docutils literal notranslate"><span class="pre">validate</span></code> command, use the following command: <code class="docutils literal notranslate"><span class="pre">dotnet</span> <span class="pre">run</span> <span class="pre">validate</span> <span class="pre">--help</span></code></p>
+<p>To see the general help on the sct, use the following command: <code class="docutils literal notranslate"><span class="pre">dotnet</span> <span class="pre">run</span> <span class="pre">--help</span></code></p>
+<p>The output from executing the Smart Contract validation will look like the below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Smart</span> <span class="n">Contract</span> <span class="n">Validator</span>
+
+<span class="n">Compiling</span> <span class="o">..</span>\<span class="n">HelloWorld</span><span class="o">.</span><span class="n">cs</span><span class="o">...</span>
+<span class="n">Compilation</span> <span class="n">OK</span>
+
+<span class="n">Building</span> <span class="n">ModuleDefinition</span>
+<span class="n">ModuleDefinition</span> <span class="n">built</span> <span class="n">successfully</span>
+
+<span class="n">Validating</span> <span class="n">file</span> <span class="o">..</span>\<span class="n">HelloWorld</span><span class="o">.</span><span class="n">cs</span><span class="o">...</span>
+
+<span class="o">======</span> <span class="n">Smart</span> <span class="n">Contract</span> <span class="n">Validation</span> <span class="n">results</span> <span class="k">for</span> <span class="n">file</span> <span class="o">..</span>\<span class="n">HelloWorld</span><span class="o">.</span><span class="n">cs</span> <span class="o">======</span>
+<span class="n">Compilation</span> <span class="n">Result</span>
+<span class="n">Compilation</span> <span class="n">OK</span><span class="p">:</span> <span class="kc">True</span>
+
+<span class="n">Format</span> <span class="n">Validation</span> <span class="n">Result</span>
+<span class="n">Format</span> <span class="n">Valid</span><span class="p">:</span> <span class="kc">True</span>
+
+<span class="n">Determinism</span> <span class="n">Validation</span> <span class="n">Result</span>
+<span class="n">Determinism</span> <span class="n">Valid</span><span class="p">:</span> <span class="kc">True</span>
+
+
+
+<span class="n">Hash</span>
+<span class="n">e6cff849009d3bd01d2db606a10bb5a792ce4a0a995f33a2621bcc1c06d8a766</span>
+
+<span class="n">ByteCode</span>
+<span class="mi">4</span><span class="n">D5A90000300000004000000FFFF0000B800000000000000400000000000000000000000000000000000000000000000000000000000000000000000800000000E1FBA0E00B409CD21B8014CCD21546869732070726F6772616D2063616E6E6F742062652072756E20696E20444F53206D6F64652E0D0D0A2400000000000000504500004C010200D45806930000000000000000E00022200B0130000006000000020000000000003A250000002000000040000000000010002000000002000004000000000000000400000000000000006000000002000000000000030040850000100000100000000010000010000000000000100000000000000000000000E82400004F000000000000000000000000000000000000000000000000000000004000000C000000CC2400001C0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000080000000000000000000000082000004800000000000000000000002E7465787400000040050000002000000006000000020000000000000000000000000000200000602E72656C6F6300000C0000000040000000020000000800000000000000000000000000004000004200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C250000000000004800000002000500942000003804000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004602280500000A72010000706F0600000A2A4A02280500000A7201000070036F0700000A2A4E0203280800000A02721300007028020000062A1E0228010000062A00000042534A4201000100000000000C00000076342E302E33303331390000000005006C00000080010000237E0000EC0100009801000023537472696E677300000000840300003000000023555300B4030000100000002347554944000000C40300007400000023426C6F6200000000000000020000014715A0010900000000FA01330016000001000000080000000200000004000000020000000800000004000000010000000100000002000000010000000200000000000E0101000000000006008C0042010600BC004201060078002F010F00620100000A00AC0071010A00880171010A002C0071010A0053007101000000000100000000000100010001001000210000001900010001005020000000008108F4002F00010062200000000081080101330001007520000000008618290120000200892000000000860020012F00030000000100DA00000001004000090029010100110029010600190029010A002900290106003100640010004100E00015004100EA001A003100290120002E000B003C002E00130045002E001B006400430023006D00020001000000050138000200010003000100020003000480000000000000000000000000000000008801000004000000000000000000000026000A000000000001000200010000000000000000007101000000000000003C4D6F64756C653E0053797374656D2E507269766174652E436F72654C69620048656C6C6F576F726C640049536D617274436F6E7472616374537461746500736D617274436F6E74726163745374617465004950657273697374656E745374617465006765745F50657273697374656E7453746174650044656275676761626C6541747472696275746500436F6D70696C6174696F6E52656C61786174696F6E73417474726962757465004465706C6F794174747269627574650052756E74696D65436F6D7061746962696C6974794174747269627574650076616C756500476574537472696E6700536574537472696E67006765745F4772656574696E67007365745F4772656574696E6700536D617274436F6E74726163742E646C6C0053617948656C6C6F002E63746F720053797374656D2E446961676E6F73746963730053797374656D2E52756E74696D652E436F6D70696C6572536572766963657300446562756767696E674D6F64657300537472617469732E536D617274436F6E74726163747300536D617274436F6E747261637400000000114700720065006500740069006E0067000019480065006C006C006F00200057006F0072006C006400210000000000434394DDB1A99046A0225689C4922D470004200101080320000105200101111104200012210420010E0E052002010E0E05200101121D087CEC85D7BEA7798E0320000E042001010E0328000E0801000800000000001E01000100540216577261704E6F6E457863657074696F6E5468726F77730108010002000000000004010000000000000000000000000000000000100000000000000000000000000000001025000000000000000000002A2500000020000000000000000000000000000000000000000000001C250000000000000000000000005F436F72446C6C4D61696E006D73636F7265652E646C6C0000000000FF2500200010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000C0000003C3500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</span>
+<span class="o">======</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are building the Stratis Smart Contract Tool from source and have previously cloned the repository, please ensure that before you compile any smart contracts, you sync the repository to the latest version of the source code and rebuild the tool.</p>
+</div>
+</section>
+<section id="interact-with-the-wallet">
+<h1>Interact with the Wallet<a class="headerlink" href="#interact-with-the-wallet" title="Permalink to this heading">¶</a></h1>
+<p>Begin by making sure that you have the local development network running.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">container</span> <span class="n">ls</span>
+</pre></div>
+</div>
+<p>You should now be in possession of 100,000,000 CRS-TEST tokens within your wallet! You can confirm this by interacting with the Balance endpoint, but first, let’s confirm the name of the wallet.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;http://localhost:38223/api/Wallet/list-wallets&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;accept: application/json&quot;</span>
+</pre></div>
+</div>
+<p>You should get a response like the below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;walletNames&quot;</span><span class="p">:[</span><span class="s2">&quot;cirrusdev&quot;</span><span class="p">],</span><span class="s2">&quot;watchOnlyWallets&quot;</span><span class="p">:[]}</span>
+</pre></div>
+</div>
+<p>The balance can now be queried by listing the addresses related to the previously discovered wallet.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;http://localhost:38223/api/Wallet/addresses?WalletName=cirrusdev&amp;AccountName=account%200&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;accept: application/json&quot;</span> <span class="o">|</span> <span class="n">jq</span> <span class="s1">&#39;.&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>jq has been utilised to prettify the JSON repsonse.</p>
+</div>
+<p>The above GET will return a list of addresses, we need to find the address that has reiceved the pre-mine amount, this will be evident by the <code class="docutils literal notranslate"><span class="pre">amountConfirmed</span></code> value.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;P9zz49VdoPrirKhU2DBytwVTdCupcR4wYh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;isUsed&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;isChange&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;amountConfirmed&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;amountUnconfirmed&quot;</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="deploying-the-helloworld-contract">
+<span id="deploying-the-hello-world-smart-contract-dev"></span><h1>Deploying the HelloWorld contract<a class="headerlink" href="#deploying-the-helloworld-contract" title="Permalink to this heading">¶</a></h1>
+<p>Now we have interacted with the wallet, we have an address that we know has a balance to fund the associated costs with deploying the contract in question.</p>
+<p>The contract can be deployed by utilising the SmartContractWallet/Create endpoint.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="s2">&quot;http://localhost:38223/api/SmartContractWallet/create&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;accept: application/json&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json-patch+json&quot;</span> <span class="o">-</span><span class="n">d</span> <span class="s2">&quot;{ </span><span class="se">\&quot;</span><span class="s2">walletName</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">cirrusdev</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">amount</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">0</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">feeAmount</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">0.001</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">password</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">stratis</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">contractCode</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">4D5A90000300000004000000FFFF0000B800000000000000400000000000000000000000000000000000000000000000000000000000000000000000800000000E1FBA0E00B409CD21B8014CCD21546869732070726F6772616D2063616E6E6F742062652072756E20696E20444F53206D6F64652E0D0D0A2400000000000000504500004C010200D45806930000000000000000E00022200B0130000006000000020000000000003A250000002000000040000000000010002000000002000004000000000000000400000000000000006000000002000000000000030040850000100000100000000010000010000000000000100000000000000000000000E82400004F000000000000000000000000000000000000000000000000000000004000000C000000CC2400001C0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000080000000000000000000000082000004800000000000000000000002E7465787400000040050000002000000006000000020000000000000000000000000000200000602E72656C6F6300000C0000000040000000020000000800000000000000000000000000004000004200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C250000000000004800000002000500942000003804000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004602280500000A72010000706F0600000A2A4A02280500000A7201000070036F0700000A2A4E0203280800000A02721300007028020000062A1E0228010000062A00000042534A4201000100000000000C00000076342E302E33303331390000000005006C00000080010000237E0000EC0100009801000023537472696E677300000000840300003000000023555300B4030000100000002347554944000000C40300007400000023426C6F6200000000000000020000014715A0010900000000FA01330016000001000000080000000200000004000000020000000800000004000000010000000100000002000000010000000200000000000E0101000000000006008C0042010600BC004201060078002F010F00620100000A00AC0071010A00880171010A002C0071010A0053007101000000000100000000000100010001001000210000001900010001005020000000008108F4002F00010062200000000081080101330001007520000000008618290120000200892000000000860020012F00030000000100DA00000001004000090029010100110029010600190029010A002900290106003100640010004100E00015004100EA001A003100290120002E000B003C002E00130045002E001B006400430023006D00020001000000050138000200010003000100020003000480000000000000000000000000000000008801000004000000000000000000000026000A000000000001000200010000000000000000007101000000000000003C4D6F64756C653E0053797374656D2E507269766174652E436F72654C69620048656C6C6F576F726C640049536D617274436F6E7472616374537461746500736D617274436F6E74726163745374617465004950657273697374656E745374617465006765745F50657273697374656E7453746174650044656275676761626C6541747472696275746500436F6D70696C6174696F6E52656C61786174696F6E73417474726962757465004465706C6F794174747269627574650052756E74696D65436F6D7061746962696C6974794174747269627574650076616C756500476574537472696E6700536574537472696E67006765745F4772656574696E67007365745F4772656574696E6700536D617274436F6E74726163742E646C6C0053617948656C6C6F002E63746F720053797374656D2E446961676E6F73746963730053797374656D2E52756E74696D652E436F6D70696C6572536572766963657300446562756767696E674D6F64657300537472617469732E536D617274436F6E74726163747300536D617274436F6E747261637400000000114700720065006500740069006E0067000019480065006C006C006F00200057006F0072006C006400210000000000434394DDB1A99046A0225689C4922D470004200101080320000105200101111104200012210420010E0E052002010E0E05200101121D087CEC85D7BEA7798E0320000E042001010E0328000E0801000800000000001E01000100540216577261704E6F6E457863657074696F6E5468726F77730108010002000000000004010000000000000000000000000000000000100000000000000000000000000000001025000000000000000000002A2500000020000000000000000000000000000000000000000000001C250000000000000000000000005F436F72446C6C4D61696E006D73636F7265652E646C6C0000000000FF2500200010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000C0000003C3500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">gasPrice</span><span class="se">\&quot;</span><span class="s2">: 100, </span><span class="se">\&quot;</span><span class="s2">gasLimit</span><span class="se">\&quot;</span><span class="s2">: 100000, </span><span class="se">\&quot;</span><span class="s2">sender</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">P9zz49VdoPrirKhU2DBytwVTdCupcR4wYh</span><span class="se">\&quot;</span><span class="s2">}&quot;</span>
+</pre></div>
+</div>
+<p>A prettified instance of the data passed can be seen below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;walletName&quot;</span><span class="p">:</span> <span class="s2">&quot;cirrusdev&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;feeAmount&quot;</span><span class="p">:</span> <span class="s2">&quot;0.001&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;password&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;contractCode&quot;</span><span class="p">:</span><span class="s2">&quot;4D5A90000300000004000000FFFF0000B800000000000000400000000000000000000000000000000000000000000000000000000000000000000000800000000E1FBA0E00B409CD21B8014CCD21546869732070726F6772616D2063616E6E6F742062652072756E20696E20444F53206D6F64652E0D0D0A2400000000000000504500004C010200D45806930000000000000000E00022200B0130000006000000020000000000003A250000002000000040000000000010002000000002000004000000000000000400000000000000006000000002000000000000030040850000100000100000000010000010000000000000100000000000000000000000E82400004F000000000000000000000000000000000000000000000000000000004000000C000000CC2400001C0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000080000000000000000000000082000004800000000000000000000002E7465787400000040050000002000000006000000020000000000000000000000000000200000602E72656C6F6300000C0000000040000000020000000800000000000000000000000000004000004200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C250000000000004800000002000500942000003804000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004602280500000A72010000706F0600000A2A4A02280500000A7201000070036F0700000A2A4E0203280800000A02721300007028020000062A1E0228010000062A00000042534A4201000100000000000C00000076342E302E33303331390000000005006C00000080010000237E0000EC0100009801000023537472696E677300000000840300003000000023555300B4030000100000002347554944000000C40300007400000023426C6F6200000000000000020000014715A0010900000000FA01330016000001000000080000000200000004000000020000000800000004000000010000000100000002000000010000000200000000000E0101000000000006008C0042010600BC004201060078002F010F00620100000A00AC0071010A00880171010A002C0071010A0053007101000000000100000000000100010001001000210000001900010001005020000000008108F4002F00010062200000000081080101330001007520000000008618290120000200892000000000860020012F00030000000100DA00000001004000090029010100110029010600190029010A002900290106003100640010004100E00015004100EA001A003100290120002E000B003C002E00130045002E001B006400430023006D00020001000000050138000200010003000100020003000480000000000000000000000000000000008801000004000000000000000000000026000A000000000001000200010000000000000000007101000000000000003C4D6F64756C653E0053797374656D2E507269766174652E436F72654C69620048656C6C6F576F726C640049536D617274436F6E7472616374537461746500736D617274436F6E74726163745374617465004950657273697374656E745374617465006765745F50657273697374656E7453746174650044656275676761626C6541747472696275746500436F6D70696C6174696F6E52656C61786174696F6E73417474726962757465004465706C6F794174747269627574650052756E74696D65436F6D7061746962696C6974794174747269627574650076616C756500476574537472696E6700536574537472696E67006765745F4772656574696E67007365745F4772656574696E6700536D617274436F6E74726163742E646C6C0053617948656C6C6F002E63746F720053797374656D2E446961676E6F73746963730053797374656D2E52756E74696D652E436F6D70696C6572536572766963657300446562756767696E674D6F64657300537472617469732E536D617274436F6E74726163747300536D617274436F6E747261637400000000114700720065006500740069006E0067000019480065006C006C006F00200057006F0072006C006400210000000000434394DDB1A99046A0225689C4922D470004200101080320000105200101111104200012210420010E0E052002010E0E05200101121D087CEC85D7BEA7798E0320000E042001010E0328000E0801000800000000001E01000100540216577261704E6F6E457863657074696F6E5468726F77730108010002000000000004010000000000000000000000000000000000100000000000000000000000000000001025000000000000000000002A2500000020000000000000000000000000000000000000000000001C250000000000000000000000005F436F72446C6C4D61696E006D73636F7265652E646C6C0000000000FF2500200010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000C0000003C3500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gasPrice&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;gasLimit&quot;</span><span class="p">:</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="s2">&quot;sender&quot;</span><span class="p">:</span> <span class="s2">&quot;P9zz49VdoPrirKhU2DBytwVTdCupcR4wYh&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The password for the wallet <strong>password</strong>.</p>
+</div>
+<p>The response recieved will be a Transaction ID.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;8241686211eb182a0a153f9b2e9440a703fd848eb92c26e18be403090da05f7b&quot;</span>
+</pre></div>
+</div>
+<p>This Transaction ID can be used to confirm that the contract deployment has been accepted and also provide information about the deployment. This is done by interacting with the /SmartContracts/receipt endpoint.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;http://localhost:38223/api/SmartContracts/receipt?txHash=8241686211eb182a0a153f9b2e9440a703fd848eb92c26e18be403090da05f7b&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;accept: application/json&quot;</span>
+</pre></div>
+</div>
+<p>The response of this will tell you several things, the amount of GAS that was consumed, the status of the deployment and importantly, the address of the deployed contract.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;transactionHash&quot;</span><span class="p">:</span> <span class="s2">&quot;8241686211eb182a0a153f9b2e9440a703fd848eb92c26e18be403090da05f7b&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;blockHash&quot;</span><span class="p">:</span> <span class="s2">&quot;bd033d197b6f6f7b7962ef2a42c29e2be6a7de9d278a0aa4d61e335bcb4ddb61&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;postState&quot;</span><span class="p">:</span> <span class="s2">&quot;1bed6aa13b7eb3a8714a2c81bde8c7442afbb8695a9cb3be6f59f216bbc90617&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gasUsed&quot;</span><span class="p">:</span> <span class="mi">12428</span><span class="p">,</span>
+        <span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;P9zz49VdoPrirKhU2DBytwVTdCupcR4wYh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;newContractAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;PWyA6fYiGFbJxaLqpPq3aSyGkHw9QNv9kY&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;bloom&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;logs&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We have now deployed the contract and verified the contract address, in this instance we can see that the address is <code class="docutils literal notranslate"><span class="pre">PWyA6fYiGFbJxaLqpPq3aSyGkHw9QNv9kY</span></code>.</p>
+</section>
+<section id="calling-the-sayhello-method">
+<span id="id1"></span><h1>Calling the SayHello() method<a class="headerlink" href="#calling-the-sayhello-method" title="Permalink to this heading">¶</a></h1>
+<p>We are going to call the <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> method, to do this we need to interact with the contract.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="s2">&quot;http://localhost:38223/api/contract/PWyA6fYiGFbJxaLqpPq3aSyGkHw9QNv9kY/method/SayHello&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;accept: application/json&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;GasPrice: 100&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;GasLimit: 100000&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Amount: 0&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;FeeAmount: 0.01&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;WalletName: cirrusdev&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;WalletPassword: password&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Sender: P9zz49VdoPrirKhU2DBytwVTdCupcR4wYh&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="o">-</span><span class="n">d</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s important that we specify the <code class="docutils literal notranslate"><span class="pre">newContractAddress</span></code> in the URI and use an address that has a sufficient balance for the <code class="docutils literal notranslate"><span class="pre">sender</span></code> paramater.</p>
+</div>
+<p>The response will tell us if the call was successfull and will also provide us with a Transaction ID to query.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;fee&quot;</span><span class="p">:</span> <span class="mi">11000000</span><span class="p">,</span>
+        <span class="s2">&quot;hex&quot;</span><span class="p">:</span> <span class="s2">&quot;0100000002088b9aee9e7e1f824678b90d034ab4bef6f4745fda3b5085c5a01e165ed7ca96000000006a47304402202fdb8e52a4d4543206b64c3860f0f46c92b3f02733e6f95284e763a9261d4fd902207f65c8ff1ab2b5b96820b4caa6a7d3e9643f5aa04c8935f2336049727683b93f012102d8d7e4e8c427038596e69f4ce944986eeeb1fc3eb7327fe7b39d71eb6b72f0a2ffffffff6096e216aeb1b12a4fe8b4fd7c7f05490d53cb6ca56cc391d88b1b9170d7bbb4010000006a4730440220309a929541f1680108c758a8af789e82cfe45cce0a13787f4c694752a07de651022020c9ffe6454cef09b7479f44a9f0af798c7fee47ddbdad5d283de60a931ab475012102d8d7e4e8c427038596e69f4ce944986eeeb1fc3eb7327fe7b39d71eb6b72f0a2ffffffff0200b60300000000001976a914bf64d5ee5f797568ac5624053fda4a9ee52a5e3f88ac000000000000000034c1010000006400000000000000a086010000000000ab687f2579fe17d447e20c6d188590a766dd9a54ca8853617948656c6c6f8000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Your CALL method SayHello transaction was successfully built.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;transactionId&quot;</span><span class="p">:</span> <span class="s2">&quot;67c707f5e85029e9f38586e28caed900b4653cc04db2d8c76780197472287a84&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>From the above we can see that the call was successfull and we have been provided a Transaction ID. Pass this Transaction ID as a paramater to the /SmartContracts/receipt endpoint.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;http://localhost:38223/api/SmartContracts/receipt?txHash=67c707f5e85029e9f38586e28caed900b4653cc04db2d8c76780197472287a84&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;accept: application/json&quot;</span>
+</pre></div>
+</div>
+<p>The response from the above will give us a summary of the transaction but also a response from the call that was made.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;transactionHash&quot;</span><span class="p">:</span> <span class="s2">&quot;67c707f5e85029e9f38586e28caed900b4653cc04db2d8c76780197472287a84&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;blockHash&quot;</span><span class="p">:</span> <span class="s2">&quot;67e058904b32ad9546713788105d0d5d2d7283a0e317adfad522e59f51e749b6&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;postState&quot;</span><span class="p">:</span> <span class="s2">&quot;1bed6aa13b7eb3a8714a2c81bde8c7442afbb8695a9cb3be6f59f216bbc90617&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gasUsed&quot;</span><span class="p">:</span> <span class="mi">10038</span><span class="p">,</span>
+        <span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;P9zz49VdoPrirKhU2DBytwVTdCupcR4wYh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;PWyA6fYiGFbJxaLqpPq3aSyGkHw9QNv9kY&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;newContractAddress&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;returnValue&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bloom&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;logs&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World!</span></code> is returned from the call, as expected.</p>
+<p>Now we have deployed a basic HellowWorld contract, we can now look at extending the functionality.</p>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../Tutorial3-ExtendingHelloWorld/hello-world-extension-tutorial-introduction.html" class="btn btn-primary float-right" title="Extending the “Hello World” example" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="hello-world-tutorial-introduction.html" class="btn btn-neutral" title="A “Hello World” smart contract" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

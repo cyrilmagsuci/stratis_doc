@@ -1,0 +1,313 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Acquiring the CRS Token &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Stratis Smart Contracts" href="../../SmartContracts/smartcontracts-introduction.html" />
+    <link rel="prev" title="Stratis Sidechains" href="../sidechain-introduction.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../operation-guides-introduction.html">Operation Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cold-Staking/coldstaking-introduction.html">Cold-Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Full%20Node/fullnode-introduction.html">Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../InterFlux%20Masternodes/masternode-introduction.html">InterFlux Masternodes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../sidechain-introduction.html">Sidechains</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Performing a Cross-Chain Transfer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SDA/sda-introduction.html">Stratis Decentralized Accelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../STO/sto-introduction.html">STO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Token%20Swap/tokenswap-introduction.html">Token Swap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../operation-guides-introduction.html">Operation Guides</a> &raquo;</li>
+        
+          <li><a href="../sidechain-introduction.html">Stratis Sidechains</a> &raquo;</li>
+        
+      <li>Acquiring the CRS Token</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Operation Guides/Sidechain/AcquiringCRS/cross-chain-transfer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="acquiring-the-crs-token">
+<h1>Acquiring the CRS Token<a class="headerlink" href="#acquiring-the-crs-token" title="Permalink to this heading">¶</a></h1>
+<p>The CRS Token can be obtained in a genuinely trustless and decentralized
+manner, achieved by utilizing a two-way-pegged sidechain. This operation
+guide will take you through the simple steps required to get the CRS
+Token.</p>
+<ol class="arabic simple">
+<li><p>Firstly, you must install both the Cirrus Core Wallet and the STRAX
+Wallet. Both wallets can be obtained from the <a class="reference external" href="https://www.stratisplatform.com/wallets/">Stratis
+Wallets</a> webpage.
+Once installed, open up your Cirrus Core wallet, create a new Wallet
+or Restore using a set of stored recovery phrases.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image113.png"><img alt="../../../_images/image113.png" src="../../../_images/image113.png" style="width: 6.26806in; height: 3.54792in;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Obtain an address relative to your wallet by selecting the receive
+button</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image214.png"><img alt="../../../_images/image214.png" src="../../../_images/image214.png" style="width: 6.26806in; height: 3.54792in;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Open your STRAX Wallet and create a new Wallet or Restore using a set
+of stored recovery phrases.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image37.png"><img alt="../../../_images/image37.png" src="../../../_images/image37.png" style="width: 6.26806in; height: 5.73194in;" /></a>
+<ol class="arabic" start="4">
+<li><p>You will need at least 1.01 STRAX to perform a cross-chain transfer.
+Any transfers under 1 STRAX will be burned and unrecoverable. Obtain
+an address relative to your STRAX Wallet and send an amount of STRAX
+you wish to swap for CRS.</p>
+<p><strong>Please note: A fee of 0.001 will be applied to every cross-chain
+transfer</strong></p>
+<a class="reference internal image-reference" href="../../../_images/image46.png"><img alt="../../../_images/image46.png" src="../../../_images/image46.png" style="width: 6.26806in; height: 5.73194in;" /></a>
+</li>
+<li><p>Now that a STRAX Balance is present, STRAX Tokens can be transferred
+to the Cirrus Sidechain and exchanged for CRS Token(s) by navigating
+to the Send Page.</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../../_images/image56.png"><img alt="../../../_images/image56.png" src="../../../_images/image56.png" style="width: 6.26806in; height: 5.73194in;" /></a>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>Populate the relevant fields, using the Cirrus Address that was
+obtained from your Cirrus Wallet</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../../_images/image65.png"><img alt="../../../_images/image65.png" src="../../../_images/image65.png" style="width: 6.26806in; height: 5.73194in;" /></a>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>Once you’re happy with the amounts and have confirmed the address is
+accurate, select the send button.</p></li>
+</ol>
+<blockquote>
+<div><p>The confirmation time changes, depending on the size of the
+transaction, a summary of confirmation times can be found below.</p>
+<a class="reference internal image-reference" href="../../../_images/image74.png"><img alt="../../../_images/image74.png" src="../../../_images/image74.png" style="width: 6.26806in; height: 1.01944in;" /></a>
+<p>Each confirmation constitutes a mined block on the Stratis Blockchain; a
+block is mined, on average, every 45 seconds. This results in a transfer
+under 50 STRAX being confirmed in under 20 minutes.</p>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>Once the respective amount of confirmations have occurred, the CRS
+Token balance can be observed in the Cirrus Core Wallet.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image84.png"><img alt="../../../_images/image84.png" src="../../../_images/image84.png" style="width: 6.26806in; height: 3.54792in;" /></a>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../../SmartContracts/smartcontracts-introduction.html" class="btn btn-primary float-right" title="Stratis Smart Contracts" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../sidechain-introduction.html" class="btn btn-neutral" title="Stratis Sidechains" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

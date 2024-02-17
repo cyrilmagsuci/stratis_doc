@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The role of the federation on PoA networks &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Consensus" href="../Consensus/consensus-introduction.html" />
+    <link rel="prev" title="Proof-of-Authority (PoA) implementation" href="PoA-introduction.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../full-node-introduction.html">Full Node</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ConsoleOutput/ConsoleOutput.html">Console Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Features/features.html">Creating custom builds and extending the feature set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="PoA-introduction.html">Proof-of-Authority (PoA) implementation</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">The role of the federation on PoA networks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Consensus/consensus-introduction.html">Consensus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ProvenHeaders/proven-headers-introduction.html">Proven Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ColdStaking/ColdStaking.html">Cold Staking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="../full-node-introduction.html">Stratis Full Node</a> &raquo;</li>
+        
+          <li><a href="PoA-introduction.html">Proof-of-Authority (PoA) implementation</a> &raquo;</li>
+        
+      <li>The role of the federation on PoA networks</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Architecture Reference/FullNode/PoA/the-role-of-the-federation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="the-role-of-the-federation-on-poa-networks">
+<h1>The role of the federation on PoA networks<a class="headerlink" href="#the-role-of-the-federation-on-poa-networks" title="Permalink to this heading">¶</a></h1>
+<p>Setting up a PoA network involves selecting real-world entities, who function as “authorities” and make up the federation. Each federation member controls one node on the network. When a block is created by a federation member, the block is signed using the private key of the authority to <a class="reference external" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asciidoc#pay-to-public-key-hash-p2pkh">create a signature</a>. A hash of the block header is signed to produce the signature. <em>If the private key’s corresponding public key is available along with the header hash, it can be proved that the signer is also the owner of the public key.</em> Because the public keys of each federation member are available to all nodes on the network, any node can check that a block has been signed by a valid federation member.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../../_images/PoA.svg"><img alt="PoA" class="align-center" src="../../../_images/PoA.svg" width="906px" /></a>
+</div></blockquote>
+<p>In the figure above, the federation has 3 members: Member A, Member B, and Member C. The network has a target spacing of 16 seconds. The figure shows three blocks being added to the chain, one from each member respectively. Member A creates the first of the three blocks, signs it, and then adds it to the blockchain. After 16 seconds have elapsed, Member B signs a block and adds it to the blockchain. Member C adds their block after 32 seconds. After 48 seconds, it is again the turn of Member A to write another block although the figure does not show this.</p>
+<p>The following figure shows what happens if Member B is unavailable (offline for example):</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../../_images/PoA_One_Member_Missing.svg"><img alt="PoA" class="align-center" src="../../../_images/PoA_One_Member_Missing.svg" width="906px" /></a>
+</div></blockquote>
+<p>In this case, Member C does not create a block any sooner. A consensus rule stipulates that a federation member can only create a block in a time slot allocated to them. The second block is only mined by after 32 seconds by Member C, so after 48 seconds, only two blocks have been mined instead of three.</p>
+<p>Next, let’s take a look at the scenario where there is a disagreement between the members. In the above figure, this is, in fact, the reason for Member B’s absence, and Member B is mining an alternative chain containing fake transactions:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../../_images/PoA_Member_B_Rogue.svg"><img alt="PoA" class="align-center" src="../../../_images/PoA_Member_B_Rogue.svg" width="906px" /></a>
+</div></blockquote>
+<p>However, after 48 seconds, Member B has only succeeded in creating one block as opposed to two. Because there is less chainwork on the chain produced by Member B, the nodes on the network will prefer the correct chain produced by Member A and Member C.</p>
+<section id="is-there-an-optimal-size-for-a-federation">
+<h2>Is there an optimal size for a federation?<a class="headerlink" href="#is-there-an-optimal-size-for-a-federation" title="Permalink to this heading">¶</a></h2>
+<p>Larger federations are desirable as long as all of the members participate in block creation. It is better to have less members, if those members maintain a permanent online presence, than have more members whose presence online is intermittent.</p>
+<p>The security model of the PoA algorithm relies on 51% of miners being honest. As long as it’s true, fake chains will always have less chainwork. Although it is not enforced by the consensus algorithm, the strongest security model is when the number of members in a federation is not divisible by 2: 3,5,7,9 and so on. Having an odd number of federation members means the network will never become deadlocked with 50% of members supporting one chain and the other 50% supporting another chain.</p>
+</section>
+<section id="do-federation-members-receive-a-reward-for-mining">
+<h2>Do federation members receive a reward for mining?<a class="headerlink" href="#do-federation-members-receive-a-reward-for-mining" title="Permalink to this heading">¶</a></h2>
+<p>Unlike the miners on a PoW or PoS blockchain, the federation members do not receive a reward for mining the blocks. Because of this, federation members do not include coinbase or coinstake transactions in the blocks that they create. However, in the event that smart contracts are involved in the transactions, gas will still be collected by the federation members.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../Consensus/consensus-introduction.html" class="btn btn-primary float-right" title="Consensus" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="PoA-introduction.html" class="btn btn-neutral" title="Proof-of-Authority (PoA) implementation" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Consensus architecture &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Customizing consensus rule engines and their rulesets" href="customising-consensus-rule-engines.html" />
+    <link rel="prev" title="Consensus" href="consensus-introduction.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../full-node-introduction.html">Full Node</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ConsoleOutput/ConsoleOutput.html">Console Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Features/features.html">Creating custom builds and extending the feature set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="consensus-introduction.html">Consensus</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Consensus architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customising-consensus-rule-engines.html">Customizing consensus rule engines and their rulesets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="custom-consensus-algorithm-steps.html">Creating a custom consensus algorithm summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ProvenHeaders/proven-headers-introduction.html">Proven Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ColdStaking/ColdStaking.html">Cold Staking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="../full-node-introduction.html">Stratis Full Node</a> &raquo;</li>
+        
+          <li><a href="consensus-introduction.html">Consensus</a> &raquo;</li>
+        
+      <li>Consensus architecture</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Architecture Reference/FullNode/Consensus/consensus-architecture.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="consensus-architecture">
+<h1>Consensus architecture<a class="headerlink" href="#consensus-architecture" title="Permalink to this heading">¶</a></h1>
+<p>The following figure shows the components that make up the consensus architecture. The components within blue shapes are algorithm specific, which is to say that they are added to a Full Node build depending on the consensus algorithm/s the build needs to support.</p>
+<a class="reference internal image-reference" href="../../../_images/consensus-architecture.svg"><img alt="Consensus Architecture" class="align-center" src="../../../_images/consensus-architecture.svg" width="738px" /></a>
+<p>The Consensus Manager, which is a <code class="docutils literal notranslate"><span class="pre">ConsensusManager</span></code> singleton, is the central part of the consensus architecture and implements the <code class="docutils literal notranslate"><span class="pre">IConsensusManager</span></code> interface. It interacts closely with the Chained Header Tree (a <code class="docutils literal notranslate"><span class="pre">ChainedHeaderTree</span></code> singleton). The Consensus Manager receives headers via the Consensus Behavior Manager and these are forwarded to the Chained Header Tree. The Chained Header Tree decides which of the headers are interesting and requests the Consensus Manager retrieves the headers’ blocks. The Block Puller is responsible for handling the block retrieval from the network.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The decisions on what level block validation needs to go to are taken by the Consensus Manager, which may rely on feedback from the Chained Header Tree. When looking at the routes taken by blocks on their way to validation, be aware that blocks undergoing full validation will have passed at least partial validation first. Blocks that are required to undergo only partial validation will have passed integrity verification.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">ConsensusRulesEngine</span></code> is an abstract class that the algorithm-specific <code class="docutils literal notranslate"><span class="pre">PowConsensusRulesEngine</span></code>, <code class="docutils literal notranslate"><span class="pre">PosConsensusRulesEngine</span></code>, and <code class="docutils literal notranslate"><span class="pre">PoAConsensusRulesEngine</span></code> classes inherit from. Each <code class="docutils literal notranslate"><span class="pre">ConsensusRulesEngine</span></code> object contains a list of rules for the four types of validation. The Consensus Manager does not interact directly with the instances of <code class="docutils literal notranslate"><span class="pre">PowConsensusRulesEngine</span></code>, <code class="docutils literal notranslate"><span class="pre">PosConsensusRulesEngine</span></code>, and <code class="docutils literal notranslate"><span class="pre">PoAConsensusRulesEngine</span></code> which are created. Instead, the Consensus Manager calls into three wrapper class singletons: <code class="docutils literal notranslate"><span class="pre">IntegrityValidator</span></code>, <code class="docutils literal notranslate"><span class="pre">Partial</span> <span class="pre">Validator</span></code>, and the <code class="docutils literal notranslate"><span class="pre">FullValidator</span></code>. These lean objects provide, internally, a logging facility and implement the <code class="docutils literal notranslate"><span class="pre">IIntegrityValidator</span></code>, <code class="docutils literal notranslate"><span class="pre">IPartialValidator</span></code>, and <code class="docutils literal notranslate"><span class="pre">IFullValidator</span></code> interfaces respectively. Except for <code class="docutils literal notranslate"><span class="pre">IPartialValidator</span></code>, each of these singletons implements a single method, and it is these methods the Consensus Manager calls.</p>
+<p>The Chained Header Tree follows the same pattern and interacts with the required header validation rules list via a <code class="docutils literal notranslate"><span class="pre">HeaderValidator</span></code> wrapper singleton, which implements the <code class="docutils literal notranslate"><span class="pre">IHeaderValidation</span></code> interface.</p>
+<p>The table below provides links to the source files in which the C# classes and related interfaces (were relevant) for these components can be found:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>C# Class</p></th>
+<th class="head"><p>C# Interface</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PoW Mining</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Miner/PowMining.cs">PowMining</a></p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Miner/Interfaces/IPowMining.cs">IPowMining</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PoS Minting</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Miner/Staking/PosMinting.cs">PosMinting</a></p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Miner/Interfaces/IPosMinting.cs">IPosMinting</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PoA Miner</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.PoA/PoAMiner.cs">PoAMiner</a></p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.PoA/PoAMiner.cs">IPoAMiner</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Chained Header Tree</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/ChainedHeaderTree.cs">ChainedHeaderTree</a></p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/ChainedHeaderTree.cs">IChainedHeaderTree</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Consensus Manager</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/ConsensusManager.cs">ConsensusManager</a></p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/IConsensusManager.cs">IConsensusManager</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Consensus Manager Behavior</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/ConsensusManagerBehavior.cs">Consensus Manager Behavior</a></p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>Header Validator</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/Validators/BlockValidator.cs">HeaderValidator</a></p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/Validators/BlockValidator.cs">IHeaderValidator</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Integrity Validator</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/Validators/BlockValidator.cs">IntegrityValidator</a></p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/Validators/BlockValidator.cs">IIntegrity Validator</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Partial Validator</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/Validators/BlockValidator.cs">PartialValidator</a></p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/Validators/BlockValidator.cs">IPartialValidator</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Full Validator</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/Validators/BlockValidator.cs">FullValidator</a></p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/Validators/BlockValidator.cs">IFullValidator</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Consensus Rule Engine</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/ConsensusRuleEngine.cs">ConsensusRuleEngine</a></p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/IConsensusRuleEngine.cs">IConsensusRuleEngine</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PoW Consensus Rule Engine</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/Rules/PowConsensusRuleEngine.cs">PowConsensusRuleEngine</a></p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>PoS Consensus Rule Engine</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/Rules/PosConsensusRuleEngine.cs">PosConsensusRuleEngine</a></p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>PoA Consensus Rule Engine</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.PoA/PoAConsensusRuleEngine.cs">PoAConsensusRuleEngine</a></p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>Block Puller</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/BlockPulling/BlockPuller.cs">BlockPuller</a></p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/BlockPulling/BlockPuller.cs">IBlockPuller</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Block Puller Behavior</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/BlockPulling/BlockPullerBehavior.cs">BlockPullerBehavior</a></p></td>
+<td><p>N/A</p></td>
+</tr>
+</tbody>
+</table>
+<section id="when-does-the-consensus-manager-request-block-validation">
+<h2>When does the Consensus Manager request block validation?<a class="headerlink" href="#when-does-the-consensus-manager-request-block-validation" title="Permalink to this heading">¶</a></h2>
+<p>Let’s look in the code at the situations which require that the Consensus Manager performs validation:</p>
+<ol class="arabic simple">
+<li><p>PoW Mining, PoS Minting, and PoA Miner singletons call into the Consensus Manager, via the <code class="docutils literal notranslate"><span class="pre">ConsensusManager.BlockMinedAsync()</span></code> method, when a new block is created. Calling <code class="docutils literal notranslate"><span class="pre">BlockMinedAsync()</span></code> results in the new block undergoing both partial and full validation. As older blocks mined prior to the last checkpoint do not require full validation, partial validation includes a check to see if a block requires full validation. However, if a supposedly new block does not require full validation, something has gone wrong, and an error is raised.</p></li>
+<li><p>The Consensus Manager holds a reference to the Block Puller component. When the Consensus Manager is initialized, it supplies <code class="docutils literal notranslate"><span class="pre">ConsensusManager.BlockDownloaded()</span></code> to the Block Puller as a callback. The <code class="docutils literal notranslate"><span class="pre">ConsensusManager.HeadersPresented()</span></code> method is used to request that the Consensus Manager initiates block downloading for a set of block headers. The request is forwarded to the Block Puller. Each block retrieved from the network by the Block Puller is pushed into the ConsensusManager via the supplied <code class="docutils literal notranslate"><span class="pre">BlockDownloaded()</span></code> callback. In this callback, the integrity of the downloaded block is verified with a call to <code class="docutils literal notranslate"><span class="pre">IntegrityValidator.VerifyBlockIntegrity()</span></code>. All requests to the Block Puller are made via the ConsensusManager.</p></li>
+<li><p>Within <code class="docutils literal notranslate"><span class="pre">ConsensusManager.HeadersPresented()</span></code> is a call to the private function <code class="docutils literal notranslate"><span class="pre">ConsensusManager.DownloadBlocks()</span></code>, which takes a callback function as its second parameter. In the call to <code class="docutils literal notranslate"><span class="pre">DownloadBlocks()</span></code>, <code class="docutils literal notranslate"><span class="pre">ConsensusManager.ProcessDownloadedBlock()</span></code> is supplied as the callback and is held in the <code class="docutils literal notranslate"><span class="pre">ConsensusManager.callbacksByBlocksRequestedHash</span></code> dictionary. <code class="docutils literal notranslate"><span class="pre">ProcessDownloadedBlock()</span></code> ultimately gets retrieved from the dictionary and called in <code class="docutils literal notranslate"><span class="pre">ConsensusManager.BlockDownloaded()</span></code>, and here it matches up a downloaded block with the block’s chained header in the Chained Header Tree. This is achieved via a call to <code class="docutils literal notranslate"><span class="pre">ChainedHeaderTree.BlockDataDownloaded()</span></code>, which returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the downloaded block requires partial validation and false if it does not. If partial validation is required, a call is made to <code class="docutils literal notranslate"><span class="pre">PartialValidator.StartPartialValidation()</span></code>. If partial validation succeeds at this point, full validation may be required.</p></li>
+<li><p>The decision to proceed with full validation is made by the Chained Header Tree. Specifically, this occurs when <code class="docutils literal notranslate"><span class="pre">ChainedHeaderTree.PartialValidationSucceeded()</span></code> is called at two points in the Consensus Manager code: within <code class="docutils literal notranslate"><span class="pre">BlockMinedAsync()</span></code> and within <code class="docutils literal notranslate"><span class="pre">ConsensusManager.OnPartialValidationSucceededAsync()</span></code>, which is called from the callback passed to <code class="docutils literal notranslate"><span class="pre">PartialValidator.StartPartialValidation()</span></code>. Importantly, <code class="docutils literal notranslate"><span class="pre">PartialValidationSucceeded()</span></code> has an <code class="docutils literal notranslate"><span class="pre">out</span></code> parameter which returns whether full validation is required. It decides this by checking if the block has more chainwork than the current consensus tip. If this is the case, the new block will become the consensus tip if it passes full validation.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Chained Header Tree component does not hold a reference to the Consensus Manager. Communication with the Consensus Manager occurs when it calls the <code class="docutils literal notranslate"><span class="pre">IChainedHeaderTree</span></code> interface, and the Chain Header Tree’s response is either by return values or <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/out-parameter-modifier">out</a> parameters. Therefore, the communication can be thought of as two-way.</p>
+</div>
+</section>
+<section id="when-does-the-chained-header-tree-request-header-validation">
+<h2>When does the Chained Header Tree request header validation?<a class="headerlink" href="#when-does-the-chained-header-tree-request-header-validation" title="Permalink to this heading">¶</a></h2>
+<p>The Chained Header Tree tries to create a new chained header (an instance of <code class="docutils literal notranslate"><span class="pre">ChainedHeader</span></code>) each time it receives a header (an instance of <code class="docutils literal notranslate"><span class="pre">BlockHeader</span></code>). Straight after the new chained header is created, it is validated with a call to <code class="docutils literal notranslate"><span class="pre">HeaderValidator.ValidateHeader()</span></code>. The creation of the new chained header takes place in <code class="docutils literal notranslate"><span class="pre">ChainedHeaderTree.CreateAndValidateNewChainedHeader()</span></code>, and this private function is ultimately only invoked in response to two public functions: <code class="docutils literal notranslate"><span class="pre">ChainedHeaderTree.ConnectNewHeaders()</span></code> and <code class="docutils literal notranslate"><span class="pre">ChainedHeaderTree.CreateChainedHeaderOfMinedBlock()</span></code>. These public functions are only ever called by <code class="docutils literal notranslate"><span class="pre">ConsensusManager.HeadersPresented()</span></code> and <code class="docutils literal notranslate"><span class="pre">ConsensusManager.BlockMinedAsync()</span></code> respectively.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="customising-consensus-rule-engines.html" class="btn btn-primary float-right" title="Customizing consensus rule engines and their rulesets" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="consensus-introduction.html" class="btn btn-neutral" title="Consensus" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

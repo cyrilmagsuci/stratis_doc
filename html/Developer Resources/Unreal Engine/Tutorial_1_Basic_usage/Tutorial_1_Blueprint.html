@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial #1 - Basic plugin usage &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Tutorial #1 - Basic plugin usage" href="Tutorial_1_CPP.html" />
+    <link rel="prev" title="Getting Started" href="../Tutorial_0_Plugin_set_up/Tutorial_0.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PyStratis%20Reference/pystratis.html">PyStratis Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../unreal-engine-introduction.html">Unreal Engine</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_0_Plugin_set_up/Tutorial_0.html">Getting Started</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tutorial #1 - Basic plugin usage (Blueprint Edition)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisite">Prerequisite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-stratisunrealmanager-and-creating-a-wallet">Setting up StratisUnrealManager and creating a wallet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-a-wallet-balance">Getting a wallet balance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-unspent-transaction-outputs">Getting unspent transaction outputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sending-coins-waiting-for-a-receipt">Sending coins &amp; waiting for a receipt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-s-next">What’s next?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Tutorial_1_CPP.html">Tutorial #1 - Basic plugin usage (C++ Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_2_Smart_Contracts/Tutorial_2_Blueprint.html">Tutorial #2 - Interacting with smart contracts (Blueprint Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_2_Smart_Contracts/Tutorial_2_CPP.html">Tutorial #2 - Interacting with smart contracts (C++ Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_3_NFT/Tutorial_3_Blueprint.html">Tutorial #3 - Working with NFT (Blueprint Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_3_NFT/Tutorial_3_CPP.html">Tutorial #3 - Working with NFT (C++ Edition)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../unreal-engine-introduction.html">Unreal Engine Plugin</a> &raquo;</li>
+        
+      <li>Tutorial #1 - Basic plugin usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/Unreal Engine/Tutorial_1_Basic_usage/Tutorial_1_Blueprint.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="tutorial-1-basic-plugin-usage">
+<h1>Tutorial #1 - Basic plugin usage<a class="headerlink" href="#tutorial-1-basic-plugin-usage" title="Permalink to this heading">¶</a></h1>
+<p>In this tutorial we’ll show you how to use the basic functionality of the Stratis Unreal plugin: create a wallet, check your balance and unspent transaction outputs (UTXOs), and send coins to another address.</p>
+<p><strong>Of we go!</strong></p>
+<section id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this heading">¶</a></h2>
+<p>You need to set up your project and Stratis Unreal Plugin within it. If you looking for a tutorial about basic project setup, please check our <a class="reference internal" href="../Tutorial_0_Plugin_set_up/Tutorial_0.html"><span class="doc">Tutorial #0</span></a>.</p>
+</section>
+<section id="setting-up-stratisunrealmanager-and-creating-a-wallet">
+<h2>Setting up StratisUnrealManager and creating a wallet<a class="headerlink" href="#setting-up-stratisunrealmanager-and-creating-a-wallet" title="Permalink to this heading">¶</a></h2>
+<p>First of all, we need to set up <code class="docutils literal notranslate"><span class="pre">StratisUnrealManager</span></code> to be able to use all of the API methods provided by the plugin.</p>
+<p>Let’s click on the <strong>Blueprints</strong> menu in the toolbar and click <strong>Open Level Blueprint</strong>.</p>
+<a class="reference external image-reference" href="images/0-blueprint-menu.png"><img alt="Menu" src="../../../_images/0-blueprint-menu.png" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now we see blueprint editor, let’s create a variable <code class="docutils literal notranslate"><span class="pre">stratisManager</span></code> with the type <code class="docutils literal notranslate"><span class="pre">Stratis</span> <span class="pre">Unreal</span> <span class="pre">Manager</span></code>.</p>
+<p>Also, let’s create a function called <code class="docutils literal notranslate"><span class="pre">InitializeStratisUnrealManager</span></code>, where we will define the initialization logic for our manager.</p>
+<a class="reference external image-reference" href="images/1-blueprint_components.png"><img alt="Components" src="../../../_images/1-blueprint_components.png" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Define <code class="docutils literal notranslate"><span class="pre">InitializeStratisUnrealManager</span></code> like below:</p>
+<a class="reference external image-reference" href="images/2-initialize-manager.png"><img alt="Object construction" src="../../../_images/2-initialize-manager.png" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now we’re going to set up base URL, network, and wallet mnemonic.</p>
+<p>Let’s walk through the parameters:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Mnemonic</span></code>. Mnemonic is a sequence of words used to define the private key of your wallet. You can create mnemonic <a class="reference external" href="https://armantheparman.com/dicev1/">using just a pen, a paper, and a dice</a>, or using different hardware &amp; software mnemonic generators.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Base</span> <span class="pre">Url</span></code>. To use Stratis Unreal Plugin, you need a full node to be running locally or remotely. Find your node’s address (IP or domain) if you’re running a remote node, or use <code class="docutils literal notranslate"><span class="pre">http://localhost:44336</span></code> if you’re running your node locally.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Network</span></code>. The network you want to operate on. Use <code class="docutils literal notranslate"><span class="pre">Cirrus</span></code> and <code class="docutils literal notranslate"><span class="pre">CirrusTest</span></code> for production and testing respectively.</p></li>
+</ol>
+<p>The last thing we need to do is call our new function <code class="docutils literal notranslate"><span class="pre">Initialize</span> <span class="pre">Stratis</span> <span class="pre">Manager</span></code> on the <code class="docutils literal notranslate"><span class="pre">BeginPlay</span></code> event:</p>
+<a class="reference external image-reference" href="images/3-initialization-event.png"><img alt="Initialization event" src="../../../_images/3-initialization-event.png" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="getting-a-wallet-balance">
+<h2>Getting a wallet balance<a class="headerlink" href="#getting-a-wallet-balance" title="Permalink to this heading">¶</a></h2>
+<p>Now let’s learn how we can get a balance of our wallet.</p>
+<p>First, let’s make a function for printing balance response to screen. Implement a blueprint like below:</p>
+<a class="reference external image-reference" href="images/4-print-balance-scheme.png"><img alt="Print balance" src="../../../_images/4-print-balance-scheme.png" /></a>
+<blockquote>
+<div><p>Note: <code class="docutils literal notranslate"><span class="pre">Value</span></code> has a type of <code class="docutils literal notranslate"><span class="pre">FUInt64</span></code>.</p>
+</div></blockquote>
+<p>Now, let’s make a very similar function for the <code class="docutils literal notranslate"><span class="pre">Error</span></code> type:</p>
+<a class="reference external image-reference" href="images/5-print-error-scheme.png"><img alt="Print error" src="../../../_images/5-print-error-scheme.png" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Well, now we can call the <code class="docutils literal notranslate"><span class="pre">GetBalance</span></code> function and await the result. Add <code class="docutils literal notranslate"><span class="pre">GetBalance</span></code> to the event graph (right after manager initialization or after delay like in the example) and set its <code class="docutils literal notranslate"><span class="pre">Delegate</span></code> and <code class="docutils literal notranslate"><span class="pre">Error</span> <span class="pre">Delegate</span></code> fields to custom events via <strong>Get Custom Event</strong>.</p>
+<a class="reference external image-reference" href="images/6-bind-delegate.png"><img alt="Bind delegate" src="../../../_images/6-bind-delegate.png" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Bind newly-created events to the functions we defined: <code class="docutils literal notranslate"><span class="pre">Print</span> <span class="pre">Balance</span></code> and <code class="docutils literal notranslate"><span class="pre">Print</span> <span class="pre">Error</span></code>.</p>
+<p>Desired event graph is shown below (<code class="docutils literal notranslate"><span class="pre">Delay</span></code> node is not necessary):</p>
+<a class="reference external image-reference" href="images/7-get-balance-scheme.png"><img alt="Get balance final scheme" src="../../../_images/7-get-balance-scheme.png" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now, just press the <strong>Play</strong> key, and the balance will be printed on your screen &amp; debug console.</p>
+</section>
+<section id="getting-unspent-transaction-outputs">
+<h2>Getting unspent transaction outputs<a class="headerlink" href="#getting-unspent-transaction-outputs" title="Permalink to this heading">¶</a></h2>
+<p>Okay, now we will try to find unspent transaction outputs for our wallet.</p>
+<p>At first, let’s create a method <code class="docutils literal notranslate"><span class="pre">Print</span> <span class="pre">UTXOs</span></code> and add the input parameter <code class="docutils literal notranslate"><span class="pre">UTXOs</span></code> with type <code class="docutils literal notranslate"><span class="pre">Array</span></code> of <code class="docutils literal notranslate"><span class="pre">UTXO</span></code>. Now we’re going to iterate over UTXO’s array using <strong>For Each Loop</strong> node:</p>
+<a class="reference external image-reference" href="images/8-iterate-utxos.png"><img alt="Iterate over UTXOs" src="../../../_images/8-iterate-utxos.png" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now let’s just print every UTXO using <strong>Break…</strong> and <strong>Format Text</strong> nodes:</p>
+<a class="reference external image-reference" href="images/9-print-utxos-function-scheme.png"><img alt="Print UTXOs function" src="../../../_images/9-print-utxos-function-scheme.png" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>We are almost done. Now we just need to call the <strong>Get Coins</strong> node as we did for <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">Balance</span></code> node, and use functions (<code class="docutils literal notranslate"><span class="pre">Print</span> <span class="pre">UTXOs</span></code> and <code class="docutils literal notranslate"><span class="pre">Print</span> <span class="pre">Error</span></code>) we made previously. The final scheme is shown below:</p>
+<a class="reference external image-reference" href="images/10-get-utxos-scheme.png"><img alt="Print UTXOs scheme" src="../../../_images/10-get-utxos-scheme.png" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="sending-coins-waiting-for-a-receipt">
+<h2>Sending coins &amp; waiting for a receipt<a class="headerlink" href="#sending-coins-waiting-for-a-receipt" title="Permalink to this heading">¶</a></h2>
+<p>Now let’s try to implement a more complex logic: send some coins <em>and</em> await for transaction’s receipt.</p>
+<p>At first, add the <code class="docutils literal notranslate"><span class="pre">Send</span> <span class="pre">Coins</span> <span class="pre">Transaction</span></code> node and set its inputs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Destination</span> <span class="pre">address</span></code>: in this example, we’re using <code class="docutils literal notranslate"><span class="pre">tD5aDZSu4Go4A23R7VsjuJTL51YMyeoLyS</span></code> for <strong>Cirrus Test network</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Money</span></code>: the number of satoshis we want to send. Let’s send 10.000 satoshis (= 0.0001 STRAX).</p></li>
+</ul>
+<a class="reference external image-reference" href="images/11-send-coins-scheme.png"><img alt="Send Coins" src="../../../_images/11-send-coins-scheme.png" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>And now we need to join the <code class="docutils literal notranslate"><span class="pre">Transaction</span> <span class="pre">ID</span></code> output of the <code class="docutils literal notranslate"><span class="pre">TransactionSent</span></code> event to the <code class="docutils literal notranslate"><span class="pre">Transaction</span> <span class="pre">ID</span></code> input of the <code class="docutils literal notranslate"><span class="pre">Wait</span> <span class="pre">Till</span> <span class="pre">Receipt</span> <span class="pre">Available</span></code> node.</p>
+<p>At last, add some printing logic to see when receipt is available, and we’re done!</p>
+<a class="reference external image-reference" href="images/12-await-receipt-scheme.png"><img alt="Await receipt" src="../../../_images/12-await-receipt-scheme.png" /></a>
+<p>(See this scheme on <a class="reference external" href="https://blueprintue.com/blueprint/zxawrzdx/">blueprintue.com</a>)</p>
+</section>
+<section id="what-s-next">
+<h2>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this heading">¶</a></h2>
+<p>In this tutorial, we’ve learned how to use some core plugin functions: get balance, send coins, and wait for a receipt. In the next tutorial, we’ll cover more advanced functionality of the plugin - interacting with smart contracts.</p>
+<p>If you found a problem, you can <a class="reference external" href="https://github.com/stratisproject/UnrealEnginePlugin/issues">open an issue</a> on the project’s Github page.
+If you still have questions, feel free to ask them in <a class="reference external" href="https://discord.gg/9tDyfZs">our Discord channel</a>.</p>
+<p>Stay tuned!</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="Tutorial_1_CPP.html" class="btn btn-primary float-right" title="Tutorial #1 - Basic plugin usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../Tutorial_0_Plugin_set_up/Tutorial_0.html" class="btn btn-neutral" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

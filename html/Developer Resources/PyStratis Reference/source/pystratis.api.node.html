@@ -1,0 +1,987 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Node &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Notifications" href="pystratis.api.notifications.html" />
+    <link rel="prev" title="Network" href="pystratis.api.network.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pystratis.html">PyStratis Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pystratis.api.html">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.nodes.html">Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.core.html">Core</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pystratis.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../pystratis.html">PyStratis Reference</a> &raquo;</li>
+        
+          <li><a href="modules.html">pyStratis</a> &raquo;</li>
+        
+          <li><a href="pystratis.api.html">API</a> &raquo;</li>
+        
+      <li>Node</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/PyStratis Reference/source/pystratis.api.node.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="node">
+<h1>Node<a class="headerlink" href="#node" title="Permalink to this heading">¶</a></h1>
+<section id="id1">
+<h2>Node<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.node.Node">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.node.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements the node api endpoints.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.status">
+<span class="sig-name descname"><span class="pre">status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">publish</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel" title="pystratis.api.node.responsemodels.statusmodel.StatusModel"><span class="pre">StatusModel</span></a></span></span><a class="headerlink" href="#pystratis.api.node.Node.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the node status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>publish</strong> (<em>bool</em>) – If true, publish a full node event with the status.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about the node status.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel" title="pystratis.api.node.responsemodels.statusmodel.StatusModel"><em>StatusModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.get_blockheader">
+<span class="sig-name descname"><span class="pre">get_blockheader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_hash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_json_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel" title="pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel"><span class="pre">BlockHeaderModel</span></a></span></span><a class="headerlink" href="#pystratis.api.node.Node.get_blockheader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the specified block header.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block_hash</strong> (<em>str</em><em>, </em><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><em>uint256</em></a>) – The specified block hash.</p></li>
+<li><p><strong>is_json_format</strong> (<em>bool</em><em>, </em><em>optional</em>) – If block header should be returned as json. Default=True.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The block headers.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel" title="pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel"><em>BlockHeaderModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.get_raw_transaction">
+<span class="sig-name descname"><span class="pre">get_raw_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trxid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.transactionmodel.TransactionModel" title="pystratis.api.global_responsemodels.transactionmodel.TransactionModel"><span class="pre">TransactionModel</span></a></span></span><a class="headerlink" href="#pystratis.api.node.Node.get_raw_transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a raw transaction from a transaction id.</p>
+<p>Requires txindex=1 in node configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trxid</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><em>uint256</em></a><em>, </em><em>str</em>) – The transaction hash.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) – If output should include verbose transaction data. Default=False.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A raw transaction.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Union</em>[<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><em>hexstr</em></a>, <a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.transactionmodel.TransactionModel" title="pystratis.api.global_responsemodels.transactionmodel.TransactionModel"><em>TransactionModel</em></a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.decode_raw_transaction">
+<span class="sig-name descname"><span class="pre">decode_raw_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.transactionmodel.TransactionModel" title="pystratis.api.global_responsemodels.transactionmodel.TransactionModel"><span class="pre">TransactionModel</span></a></span></span><a class="headerlink" href="#pystratis.api.node.Node.decode_raw_transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decodes raw transaction hex into a transaction model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_hex</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><em>hexstr</em></a><em>, </em><em>str</em>) – The transaction hexstring.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A transaction model.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.transactionmodel.TransactionModel" title="pystratis.api.global_responsemodels.transactionmodel.TransactionModel"><em>TransactionModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.validate_address">
+<span class="sig-name descname"><span class="pre">validate_address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel" title="pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel"><span class="pre">ValidateAddressModel</span></a></span></span><a class="headerlink" href="#pystratis.api.node.Node.validate_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate an address</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>str</em>) – The address to validate.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information on the validity of the provided address, and if valid, if it is a witness or script address.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel" title="pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel"><em>ValidateAddressModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.get_txout">
+<span class="sig-name descname"><span class="pre">get_txout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trxid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_mempool</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel" title="pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel"><span class="pre">GetTxOutModel</span></a></span></span><a class="headerlink" href="#pystratis.api.node.Node.get_txout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a specified txout from a given transaction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trxid</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><em>uint256</em></a><em>, </em><em>str</em>) – The trxid to check.</p></li>
+<li><p><strong>vout</strong> (<em>int</em>) – The vout.</p></li>
+<li><p><strong>include_mempool</strong> (<em>bool</em><em>, </em><em>optional</em>) – Include mempool in check. Default=True.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The specified txout.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel" title="pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel"><em>GetTxOutModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.get_txout_proof">
+<span class="sig-name descname"><span class="pre">get_txout_proof</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">txids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_hash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></span><a class="headerlink" href="#pystratis.api.node.Node.get_txout_proof" title="Permalink to this definition">¶</a></dt>
+<dd><p>The merkle proof that the specified transaction exist in a given block.</p>
+<p>Should have txindex enabled if not specifying blockhash.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>txids</strong> (<em>List</em><em>[</em><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><em>uint256</em></a><em>]</em>) – A list of transaction hashes.</p></li>
+<li><p><strong>block_hash</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><em>uint256</em></a><em>, </em><em>optional</em>) – The block hash to check.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The merkle proof.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><em>hexstr</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.shutdown">
+<span class="sig-name descname"><span class="pre">shutdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pystratis.api.node.Node.shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggers node shutdown.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Extra keyword arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pystratis.api.node.Node.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggers node shutdown.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Extra keyword arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.log_levels">
+<span class="sig-name descname"><span class="pre">log_levels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_rules</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.api.html#pystratis.api.logrule.LogRule" title="pystratis.api.logrule.LogRule"><span class="pre">LogRule</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pystratis.api.node.Node.log_levels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes log level for the specified loggers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>log_rules</strong> (<em>List</em><em>[</em><a class="reference internal" href="pystratis.api.html#pystratis.api.logrule.LogRule" title="pystratis.api.logrule.LogRule"><em>LogRule</em></a><em>]</em>) – A list of log rules to change.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.log_rules">
+<span class="sig-name descname"><span class="pre">log_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.api.html#pystratis.api.logrule.LogRule" title="pystratis.api.logrule.LogRule"><span class="pre">LogRule</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pystratis.api.node.Node.log_rules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the enabled log rules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Extra keyword arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of active log rules.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="pystratis.api.html#pystratis.api.logrule.LogRule" title="pystratis.api.logrule.LogRule"><em>LogRule</em></a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.async_loops">
+<span class="sig-name descname"><span class="pre">async_loops</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.node.responsemodels.asyncloopsmodel.AsyncLoopsModel" title="pystratis.api.node.responsemodels.asyncloopsmodel.AsyncLoopsModel"><span class="pre">AsyncLoopsModel</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pystratis.api.node.Node.async_loops" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the currently running async loops.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Extra keyword arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of active asynchronous loops.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="#pystratis.api.node.responsemodels.asyncloopsmodel.AsyncLoopsModel" title="pystratis.api.node.responsemodels.asyncloopsmodel.AsyncLoopsModel"><em>AsyncLoopsModel</em></a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.delete_datafolder_chain">
+<span class="sig-name descname"><span class="pre">delete_datafolder_chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pystratis.api.node.Node.delete_datafolder_chain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedules data folder storing chain state in the datafolder for deletion on the next graceful shutdown.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Extra keyword arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.node.Node.rewind">
+<span class="sig-name descname"><span class="pre">rewind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pystratis.api.node.Node.rewind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signals the node to rewind to the specified height. This will be done via writing a flag to the .conf file so that on startup it be executed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>height</strong> (<em>int</em>) – The specified height to rewind to on restart.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.node.responsemodels.asyncloopsmodel">
+<span id="asyncloopsmodel"></span><h2>AsyncLoopsModel<a class="headerlink" href="#module-pystratis.api.node.responsemodels.asyncloopsmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.asyncloopsmodel.AsyncLoopsModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AsyncLoopsModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loopName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.node.responsemodels.asyncloopsmodel.AsyncLoopsModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for async loops.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.asyncloopsmodel.AsyncLoopsModel.loop_name">
+<span class="sig-name descname"><span class="pre">loop_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.asyncloopsmodel.AsyncLoopsModel.loop_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The loop name.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.asyncloopsmodel.AsyncLoopsModel.status">
+<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.asyncloopsmodel.AsyncLoopsModel.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>The loop status.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.node.responsemodels.blockheadermodel">
+<span id="blockheadermodel"></span><h2>BlockHeaderModel<a class="headerlink" href="#module-pystratis.api.node.responsemodels.blockheadermodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BlockHeaderModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merkleroot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nonce</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">previousblockhash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model representing the block header.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel.version">
+<span class="sig-name descname"><span class="pre">version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The version of the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel.merkleroot">
+<span class="sig-name descname"><span class="pre">merkleroot</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em><a class="headerlink" href="#pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel.merkleroot" title="Permalink to this definition">¶</a></dt>
+<dd><p>The merkle root of the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel.nonce">
+<span class="sig-name descname"><span class="pre">nonce</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel.nonce" title="Permalink to this definition">¶</a></dt>
+<dd><p>The nonce.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel.bits">
+<span class="sig-name descname"><span class="pre">bits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel.bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block’s bits.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel.previous_blockhash">
+<span class="sig-name descname"><span class="pre">previous_blockhash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel.previous_blockhash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The previous blockhash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.blockheadermodel.BlockHeaderModel.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time of the block.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.node.responsemodels.connectedpeermodel">
+<span id="connectedpeermodel"></span><h2>ConnectedPeerModel<a class="headerlink" href="#module-pystratis.api.node.responsemodels.connectedpeermodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConnectedPeerModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remoteSocketEndpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tipHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A  pydantic model representing a connected peer.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel.version">
+<span class="sig-name descname"><span class="pre">version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The connectedpeer’s version.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel.remote_socket_endpoint">
+<span class="sig-name descname"><span class="pre">remote_socket_endpoint</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel.remote_socket_endpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>The connected peer’s remote socket endpoint.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel.tip_height">
+<span class="sig-name descname"><span class="pre">tip_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel.tip_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The connected peer’s tip height.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.node.responsemodels.featuresdatamodel">
+<span id="featuresdatamodel"></span><h2>FeaturesDataModel<a class="headerlink" href="#module-pystratis.api.node.responsemodels.featuresdatamodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.featuresdatamodel.FeaturesDataModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FeaturesDataModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.api.html#pystratis.api.featureinitializationstate.FeatureInitializationState" title="pystratis.api.featureinitializationstate.FeatureInitializationState"><span class="pre">FeatureInitializationState</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.node.responsemodels.featuresdatamodel.FeaturesDataModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for features data.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.featuresdatamodel.FeaturesDataModel.namespace">
+<span class="sig-name descname"><span class="pre">namespace</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.featuresdatamodel.FeaturesDataModel.namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>The feature namespace.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.featuresdatamodel.FeaturesDataModel.state">
+<span class="sig-name descname"><span class="pre">state</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.html#pystratis.api.featureinitializationstate.FeatureInitializationState" title="pystratis.api.featureinitializationstate.FeatureInitializationState"><span class="pre">FeatureInitializationState</span></a></em><a class="headerlink" href="#pystratis.api.node.responsemodels.featuresdatamodel.FeaturesDataModel.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>The feature initialization state.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.node.responsemodels.gettxoutmodel">
+<span id="gettxoutmodel"></span><h2>GetTxOutModel<a class="headerlink" href="#module-pystratis.api.node.responsemodels.gettxoutmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GetTxOutModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bestblock</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">confirmations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">scriptPubKey</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey" title="pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey"><span class="pre">ScriptPubKey</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">coinbase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for get tx out response.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel.best_block">
+<span class="sig-name descname"><span class="pre">best_block</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em><a class="headerlink" href="#pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel.best_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>The highest block where utxo was present.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel.confirmations">
+<span class="sig-name descname"><span class="pre">confirmations</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel.confirmations" title="Permalink to this definition">¶</a></dt>
+<dd><p>The numberof confirmations.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The value of the utxo.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel.script_pubkey">
+<span class="sig-name descname"><span class="pre">script_pubkey</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey" title="pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey"><span class="pre">ScriptPubKey</span></a></em><a class="headerlink" href="#pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel.script_pubkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>The utxo scriptpubkey.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel.coinbase">
+<span class="sig-name descname"><span class="pre">coinbase</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.gettxoutmodel.GetTxOutModel.coinbase" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, the utxo originated as a coinbase transaction.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.node.responsemodels.statusmodel">
+<span id="statusmodel"></span><h2>StatusModel<a class="headerlink" href="#module-pystratis.api.node.responsemodels.statusmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StatusModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">externalAddress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coinTicker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">consensusHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blockStoreHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bestPeerHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inboundPeers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel" title="pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel"><span class="pre">ConnectedPeerModel</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outboundPeers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel" title="pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel"><span class="pre">ConnectedPeerModel</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">featuresData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.node.responsemodels.featuresdatamodel.FeaturesDataModel" title="pystratis.api.node.responsemodels.featuresdatamodel.FeaturesDataModel"><span class="pre">FeaturesDataModel</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataDirectoryPath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runningTime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">difficulty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocolVersion</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">testnet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relayFee</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.api.html#pystratis.api.fullnodestate.FullNodeState" title="pystratis.api.fullnodestate.FullNodeState"><span class="pre">FullNodeState</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">inIbd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headerHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for node status information.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.agent">
+<span class="sig-name descname"><span class="pre">agent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node’s agent string.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.version">
+<span class="sig-name descname"><span class="pre">version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node version.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.external_address">
+<span class="sig-name descname"><span class="pre">external_address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.external_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node external address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.network">
+<span class="sig-name descname"><span class="pre">network</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.network" title="Permalink to this definition">¶</a></dt>
+<dd><p>The network.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.coin_ticker">
+<span class="sig-name descname"><span class="pre">coin_ticker</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.coin_ticker" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ticker string of the current network’s coin.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.process_id">
+<span class="sig-name descname"><span class="pre">process_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.process_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The process id of the node.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.consensus_height">
+<span class="sig-name descname"><span class="pre">consensus_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.consensus_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current consensus height.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.blockstore_height">
+<span class="sig-name descname"><span class="pre">blockstore_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.blockstore_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current blockstore height.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.best_peer_height">
+<span class="sig-name descname"><span class="pre">best_peer_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.best_peer_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The highest block height among connected peers.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.inbound_peers">
+<span class="sig-name descname"><span class="pre">inbound_peers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel" title="pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel"><span class="pre">ConnectedPeerModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.inbound_peers" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of inbound connected peers.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.outbound_peers">
+<span class="sig-name descname"><span class="pre">outbound_peers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel" title="pystratis.api.node.responsemodels.connectedpeermodel.ConnectedPeerModel"><span class="pre">ConnectedPeerModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.outbound_peers" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of outbound connected peers.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.features_data">
+<span class="sig-name descname"><span class="pre">features_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.node.responsemodels.featuresdatamodel.FeaturesDataModel" title="pystratis.api.node.responsemodels.featuresdatamodel.FeaturesDataModel"><span class="pre">FeaturesDataModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.features_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of features active on the node.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.data_directory_path">
+<span class="sig-name descname"><span class="pre">data_directory_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.data_directory_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>The path to the node’s data directory.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.running_time">
+<span class="sig-name descname"><span class="pre">running_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.running_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node’s current running time.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.difficulty">
+<span class="sig-name descname"><span class="pre">difficulty</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.difficulty" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current difficulty, if applicable.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.protocol_version">
+<span class="sig-name descname"><span class="pre">protocol_version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.protocol_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current protocol version.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.testnet">
+<span class="sig-name descname"><span class="pre">testnet</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.testnet" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, node is on testnet.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.relay_fee">
+<span class="sig-name descname"><span class="pre">relay_fee</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.relay_fee" title="Permalink to this definition">¶</a></dt>
+<dd><p>The network transaction relay fee.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.state">
+<span class="sig-name descname"><span class="pre">state</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.html#pystratis.api.fullnodestate.FullNodeState" title="pystratis.api.fullnodestate.FullNodeState"><span class="pre">FullNodeState</span></a></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node state model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.in_ibd">
+<span class="sig-name descname"><span class="pre">in_ibd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.in_ibd" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, the node is in IBD state.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.statusmodel.StatusModel.header_height">
+<span class="sig-name descname"><span class="pre">header_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.statusmodel.StatusModel.header_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The header height.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="transactionmodel">
+<h2>TransactionModel<a class="headerlink" href="#transactionmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TransactionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">txid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">hash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locktime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.vin.VIn" title="pystratis.api.global_responsemodels.vin.VIn"><span class="pre">VIn</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.vout.VOut" title="pystratis.api.global_responsemodels.vout.VOut"><span class="pre">VOut</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blockhash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">confirmations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocktime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>A pydantic model for a transaction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">hex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em></dt>
+<dd><p>The transaction hex.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">txid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em></dt>
+<dd><p>The transaction hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em></dt>
+<dd><p>The transaction hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em></dt>
+<dd><p>The transaction version.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em></dt>
+<dd><p>The transaction size.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">vsize</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em></dt>
+<dd><p>The transaction vsize.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em></dt>
+<dd><p>The transaction weight.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">locktime</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em></dt>
+<dd><p>The transaction locktime.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">vin</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.vin.VIn" title="pystratis.api.global_responsemodels.vin.VIn"><span class="pre">VIn</span></a><span class="p"><span class="pre">]</span></span></em></dt>
+<dd><p>A list of VIn.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">vout</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.vout.VOut" title="pystratis.api.global_responsemodels.vout.VOut"><span class="pre">VOut</span></a><span class="p"><span class="pre">]</span></span></em></dt>
+<dd><p>A list of VOut.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">blockhash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em></dt>
+<dd><p>The hash of the block containing the transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">confirmations</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em></dt>
+<dd><p>The number of confirmations of the transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em></dt>
+<dd><p>The transaction time.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">blocktime</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em></dt>
+<dd><p>The blocktime.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.node.responsemodels.validateaddressmodel">
+<span id="validateaddressmodel"></span><h2>ValidateAddressModel<a class="headerlink" href="#module-pystratis.api.node.responsemodels.validateaddressmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ValidateAddressModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isvalid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">scriptPubKey</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isscript</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iswitness</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for address validation.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel.isvalid">
+<span class="sig-name descname"><span class="pre">isvalid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel.isvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the address is valid.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel.address">
+<span class="sig-name descname"><span class="pre">address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></em><a class="headerlink" href="#pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>The address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel.scriptPubKey">
+<span class="sig-name descname"><span class="pre">scriptPubKey</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel.scriptPubKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>The scriptPubKey.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel.isscript">
+<span class="sig-name descname"><span class="pre">isscript</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel.isscript" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if is a script address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel.iswitness">
+<span class="sig-name descname"><span class="pre">iswitness</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.node.responsemodels.validateaddressmodel.ValidateAddressModel.iswitness" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if is a witness address.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="pystratis.api.notifications.html" class="btn btn-primary float-right" title="Notifications" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="pystratis.api.network.html" class="btn btn-neutral" title="Network" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>An overview of the code &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Getting Started" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html" />
+    <link rel="prev" title="Extending the “Hello World” example" href="hello-world-extension-tutorial-introduction.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PyStratis%20Reference/pystratis.html">PyStratis Reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../smartcontracts-introduction.html">Smart Contracts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial1-LocalSidechain/local-network-tutorial-introduction.html">Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial2-HelloWorld/hello-world-tutorial-introduction.html">HelloWorld!</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="hello-world-extension-tutorial-introduction.html">Extending HelloWorld!</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">An overview of the code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-a-dictionary-approach">Using a dictionary approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-and-deploying-the-helloworld2-contract">Building and deploying the HelloWorld2 contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calling-a-method-on-the-contract-for-the-first-time">Calling a method on the contract for the first time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-multiple-greetings-to-the-smart-contract">Adding multiple greetings to the smart contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cycling-through-the-greetings">Cycling through the greetings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-happens-if-sayhello-is-called-by-a-different-node">What happens if SayHello() is called by a different node?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../smartcontracts-introduction.html">Smart Contracts</a> &raquo;</li>
+        
+          <li><a href="hello-world-extension-tutorial-introduction.html">Extending the “Hello World” example</a> &raquo;</li>
+        
+      <li>An overview of the code</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/SmartContracts/Tutorial3-ExtendingHelloWorld/deploying-hello-world2-contract.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="an-overview-of-the-code">
+<h1>An overview of the code<a class="headerlink" href="#an-overview-of-the-code" title="Permalink to this heading">¶</a></h1>
+<p>The upgrade to the smart contract essentially involves modifying the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property to hold an array of strings. The first thing to be aware of is that smart contracts do not persist arrays, but if you want to store a group of a particular type of data, you can adapt key-value pairs to do this. The accessors for the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property wrap up the logic but rely on two other integer properties to maintain the array: <code class="docutils literal notranslate"><span class="pre">Index</span></code> and <code class="docutils literal notranslate"><span class="pre">Bounds</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">private</span> <span class="nb">int</span> <span class="n">Index</span>
+<span class="p">{</span>
+    <span class="n">get</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">this</span><span class="o">.</span><span class="n">PersistentState</span><span class="o">.</span><span class="n">GetInt32</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nb">set</span>
+    <span class="p">{</span>
+        <span class="n">PersistentState</span><span class="o">.</span><span class="n">SetInt32</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">private</span> <span class="nb">int</span> <span class="n">Bounds</span>
+<span class="p">{</span>
+    <span class="n">get</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">this</span><span class="o">.</span><span class="n">PersistentState</span><span class="o">.</span><span class="n">GetInt32</span><span class="p">(</span><span class="s2">&quot;Bounds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nb">set</span>
+    <span class="p">{</span>
+        <span class="n">PersistentState</span><span class="o">.</span><span class="n">SetInt32</span><span class="p">(</span><span class="s2">&quot;Bounds&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">private</span> <span class="n">string</span> <span class="n">Greeting</span>
+<span class="p">{</span>
+    <span class="n">get</span>
+    <span class="p">{</span>
+        <span class="n">Index</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Index</span> <span class="o">&gt;=</span> <span class="n">Bounds</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">this</span><span class="o">.</span><span class="n">PersistentState</span><span class="o">.</span><span class="n">GetString</span><span class="p">(</span><span class="s2">&quot;Greeting&quot;</span> <span class="o">+</span> <span class="n">Index</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nb">set</span>
+    <span class="p">{</span>
+        <span class="n">PersistentState</span><span class="o">.</span><span class="n">SetString</span><span class="p">(</span><span class="s2">&quot;Greeting&quot;</span> <span class="o">+</span> <span class="n">Bounds</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+        <span class="n">Bounds</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can see that the indexes are built into the keys and as far as the smart contract is concerned, it is just persisting individual pieces of data.</p>
+<p>Because the properties contain the “array maintenance logic”, the <code class="docutils literal notranslate"><span class="pre">AddGreeting()</span></code> method just uses the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property set accessor to add new greetings and, as before, the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property get accessor supplies the <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> method with a greeting.</p>
+</section>
+<section id="using-a-dictionary-approach">
+<h1>Using a dictionary approach<a class="headerlink" href="#using-a-dictionary-approach" title="Permalink to this heading">¶</a></h1>
+<p>Because smart contracts use the key-value pairs, you may want to approach storing grouped data from a dictionary approach and not iterate through grouped data from start to finish at all. Take a look at this code excerpt from a <a class="reference external" href="https://github.com/stratisproject/StratisSmartContractsSamples/blob/master/src/Stratis.SmartContracts.Samples/Stratis.SmartContracts.Samples/StandardToken.cs">C# version of an ERC-20 smart contract</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>private void SetApproval(Address owner, Address spender, ulong value)
+{
+    PersistentState.SetUInt64($&quot;Allowance:{owner}:{spender}&quot;, value);
+}
+
+/// &lt;inheritdoc /&gt;
+public ulong Allowance(Address owner, Address spender)
+{
+    return PersistentState.GetUInt64($&quot;Allowance:{owner}:{spender}&quot;);
+}
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Allowance</span></code> is effectively a 2D dictionary with two addresses being used to form the key. As the only requirement is to access the allowance for any two addresses, there is no need to keep a record of an index or bounds. In fact, the bounds of the 2D dictionary can grow as required. When storing the allowances in the above code, as far as the smart contract is concerned, it is just persisting individual pieces of data.</p>
+</section>
+<section id="building-and-deploying-the-helloworld2-contract">
+<h1>Building and deploying the HelloWorld2 contract<a class="headerlink" href="#building-and-deploying-the-helloworld2-contract" title="Permalink to this heading">¶</a></h1>
+<p>To build and deploy the “Hello World 2” smart contract, refer to:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../Tutorial2-HelloWorld/deploying-hello-world-contract.html#compiling-the-hello-world-smart-contract-dev"><span class="std std-ref">Compiling the Hello World smart contract</span></a></p></li>
+<li><p><a class="reference internal" href="../Tutorial2-HelloWorld/deploying-hello-world-contract.html#deploying-the-hello-world-smart-contract-dev"><span class="std std-ref">Deploying the HelloWorld contract</span></a></p></li>
+</ul>
+<p>The procedure is exactly the same, except you supply the <code class="docutils literal notranslate"><span class="pre">HelloWorld2.cs</span></code> file to the sct tool instead.</p>
+</section>
+<section id="calling-a-method-on-the-contract-for-the-first-time">
+<h1>Calling a method on the contract for the first time<a class="headerlink" href="#calling-a-method-on-the-contract-for-the-first-time" title="Permalink to this heading">¶</a></h1>
+<p>To begin, we are going to call the <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> again. From examining the code, you will see that the call receipt will give a <code class="docutils literal notranslate"><span class="pre">returnValue</span></code> of “Hello World” no matter how many times the method is called. The <code class="docutils literal notranslate"><span class="pre">Index</span></code> property updates from -1 to 0 and, from then on, remains at 0. To remind yourself how to make a method call, refer to <a class="reference internal" href="../Tutorial2-HelloWorld/deploying-hello-world-contract.html#calling-the-sayhello-method"><span class="std std-ref">Calling the SayHello() method</span></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to check the <code class="docutils literal notranslate"><span class="pre">Index</span></code> value, you could try and create a method to retrieve it. In this case you must redeploy the smart contract. You don’t have to rename the smart contract because, as you saw in the last tutorial, smart contracts are identified by their address. However, it is good from a code management point of view.</p>
+</div>
+</section>
+<section id="adding-multiple-greetings-to-the-smart-contract">
+<h1>Adding multiple greetings to the smart contract<a class="headerlink" href="#adding-multiple-greetings-to-the-smart-contract" title="Permalink to this heading">¶</a></h1>
+<p>The new smart contract method, <code class="docutils literal notranslate"><span class="pre">AddGreeting()</span></code>, takes a single string parameter which specifies the new greeting. To begin with, add the greeting in Polish: <strong>Witaj świecie!</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="s2">&quot;http://localhost:38223/api/contract/PWyA6fYiGFbJxaLqpPq3aSyGkHw9QNv9kY/method/AddGreeting&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;accept: application/json&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;GasPrice: 100&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;GasLimit: 100000&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Amount: 0&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;FeeAmount: 0.01&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;WalletName: cirrusdev&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;WalletPassword: stratis&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Sender: P9zz49VdoPrirKhU2DBytwVTdCupcR4wYh&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="o">-</span><span class="n">d</span> <span class="s2">&quot;{ </span><span class="se">\&quot;</span><span class="s2">helloMessage</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">Witaj świecie!</span><span class="se">\&quot;</span><span class="s2">}&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure you are specifying a Sender address that has a balance to fund the transaction.</p>
+</div>
+<p>After making the call to the AddGreeting method, we will get a response similiar to what we saw before.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;fee&quot;</span><span class="p">:</span> <span class="mi">11000000</span><span class="p">,</span>
+        <span class="s2">&quot;hex&quot;</span><span class="p">:</span> <span class="s2">&quot;0100000002eecc4fdc3caa2cccdb3af3b3593a41bcbc2cfa363c1e5860ce03af643d168b59010000006b483045022100dbb471cf296ac203d36f0e70e7136d396e4bc0a4475e2e1e919e174fc0ed523a022072cb725ac9ce873ba7d1edd3af87747f68b9fe2a60195ce964d1691a486aae84012102d8d7e4e8c427038596e69f4ce944986eeeb1fc3eb7327fe7b39d71eb6b72f0a2ffffffffa94d159db096d6919a7dfc2c3fc5af258d6952344334c8eee94b56a95731101b000000006a4730440220377fb94a7ec06257bc3e9e18502b8735cb1f8d0499d50174df77462445d0de150220725cf93b6e490cc08d64acd3ad241ac7aa8e9ade5a3aa3579dba514199d17054012102d8d7e4e8c427038596e69f4ce944986eeeb1fc3eb7327fe7b39d71eb6b72f0a2ffffffff021c1b5500000000001976a914bf64d5ee5f797568ac5624053fda4a9ee52a5e3f88ac000000000000000049c1010000006400000000000000a0860100000000001b6ed3b8bc4659e2d42e5e5cf037e3f212651c9fdf8b4164644772656574696e6792d19004576974616a20c59b7769656369652100000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Your CALL method AddGreeting transaction was successfully built.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;transactionId&quot;</span><span class="p">:</span> <span class="s2">&quot;997f923d0144e0d8249cea8e9c71efa17df63e33c18b189f192bb8a899e64999&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Let’s get the Transaction ID and pass it to the /SmartContracts/receipt endpoint.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;http://localhost:38223/api/SmartContracts/receipt?txHash=997f923d0144e0d8249cea8e9c71efa17df63e33c18b189f192bb8a899e64999&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;accept: application/json&quot;</span>
+</pre></div>
+</div>
+<p>We can see from the response that <code class="docutils literal notranslate"><span class="pre">'Witaj</span> <span class="pre">świecie!'</span></code> was added as a greeting!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;transactionHash&quot;</span><span class="p">:</span> <span class="s2">&quot;997f923d0144e0d8249cea8e9c71efa17df63e33c18b189f192bb8a899e64999&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;blockHash&quot;</span><span class="p">:</span> <span class="s2">&quot;e9fcb1fde9b4fbf1bc24b3a640468a71338a40feef30c8075a660bc7097d186d&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;postState&quot;</span><span class="p">:</span> <span class="s2">&quot;c61e8e6a9d4d774830c4465be6a9cb1466a7eceac065ef6b72503d09846d1308&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gasUsed&quot;</span><span class="p">:</span> <span class="mi">10792</span><span class="p">,</span>
+        <span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;P9zz49VdoPrirKhU2DBytwVTdCupcR4wYh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;PWyA6fYiGFbJxaLqpPq3aSyGkHw9QNv9kY&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;newContractAddress&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;returnValue&quot;</span><span class="p">:</span> <span class="s2">&quot;Added &#39;Witaj świecie!&#39; as a greeting.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bloom&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;logs&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>After you have added a greeting in Polish, you can add a “Hello World” greeting in some other languages. Here are some suggestions:</p>
+<ul class="simple">
+<li><p>Hallo Welt! - German</p></li>
+<li><p>Привет, мир! - Russian</p></li>
+<li><p>你好，世界！ - Chinese</p></li>
+<li><p>Hej Verden! - Danish</p></li>
+</ul>
+</section>
+<section id="cycling-through-the-greetings">
+<h1>Cycling through the greetings<a class="headerlink" href="#cycling-through-the-greetings" title="Permalink to this heading">¶</a></h1>
+<p>Call the <code class="docutils literal notranslate"><span class="pre">SayHello</span></code> method on the same contract to see the difference in responses.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="s2">&quot;http://localhost:38223/api/contract/PWyA6fYiGFbJxaLqpPq3aSyGkHw9QNv9kY/method/SayHello&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;accept: application/json&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;GasPrice: 100&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;GasLimit: 100000&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Amount: 0&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;FeeAmount: 0.01&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;WalletName: cirrusdev&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;WalletPassword: password&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Sender: P9zz49VdoPrirKhU2DBytwVTdCupcR4wYh&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="o">-</span><span class="n">d</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>The first call will return the below, as we saw in the original HelloWorld contract.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;transactionHash&quot;</span><span class="p">:</span> <span class="s2">&quot;0408673f7cd9584556033ff95c9ded74284d2fd45930b308e9140ae4b39ff1c4&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;blockHash&quot;</span><span class="p">:</span> <span class="s2">&quot;af7fab69533051ceae88cf66c75163515e6191d9a3eee4fd6c7f4aa8dddd2849&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;postState&quot;</span><span class="p">:</span> <span class="s2">&quot;1c0b2cc765d6f0e17a1d0422fed0ba3972beb78aacf6ae659089ed9e9a4a025a&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gasUsed&quot;</span><span class="p">:</span> <span class="mi">10357</span><span class="p">,</span>
+        <span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;P9zz49VdoPrirKhU2DBytwVTdCupcR4wYh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;PWyA6fYiGFbJxaLqpPq3aSyGkHw9QNv9kY&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;newContractAddress&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;returnValue&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bloom&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;logs&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>However, a subsequent call will reutrn something different.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;transactionHash&quot;</span><span class="p">:</span> <span class="s2">&quot;b6211ae4f0345da332aceb9ed84e42d5729a855fbbd558c24d3d6ca0c403fe70&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;blockHash&quot;</span><span class="p">:</span> <span class="s2">&quot;8c4c6078044be2a75201e73d419240c9fabcc80da3ad8f0c4e3487347efdd355&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;postState&quot;</span><span class="p">:</span> <span class="s2">&quot;1be6ba0cdc123f6ea9fb67cab76641e1303f40eb774e1c69265f4910b116404d&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gasUsed&quot;</span><span class="p">:</span> <span class="mi">10360</span><span class="p">,</span>
+        <span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;P9zz49VdoPrirKhU2DBytwVTdCupcR4wYh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;PWyA6fYiGFbJxaLqpPq3aSyGkHw9QNv9kY&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;newContractAddress&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;returnValue&quot;</span><span class="p">:</span> <span class="s2">&quot;Witaj świecie!&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bloom&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;logs&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If you have added all four languages shown previously, they will then be returned with each subsequent call. Assuming “Hej Verden!” was the last greeting added, then after it has been returned, the next call returns “Hello World!” and the cycle begins again.</p>
+</section>
+<section id="what-happens-if-sayhello-is-called-by-a-different-node">
+<h1>What happens if SayHello() is called by a different node?<a class="headerlink" href="#what-happens-if-sayhello-is-called-by-a-different-node" title="Permalink to this heading">¶</a></h1>
+<p>This is an interesting question and answering it can help clarify how smart contracts work. You can also see this in action by running two nodes and alternating the calls to <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> between the nodes. Assuming the smart contract holds all six greetings and the <code class="docutils literal notranslate"><span class="pre">Index</span></code> property begins at 0, the following results are returned:</p>
+<ol class="arabic simple">
+<li><p>Node1: Hello World!</p></li>
+<li><p>Node2: Witaj świecie!</p></li>
+<li><p>Node1: Hallo Welt!</p></li>
+<li><p>Node2: Привет, мир!</p></li>
+<li><p>Node1: 你好，世界！</p></li>
+<li><p>Node2: Hej Verden!</p></li>
+<li><p>Node1: Hello World!</p></li>
+<li><p>and so on…</p></li>
+</ol>
+<p>When <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> accesses the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property, the <code class="docutils literal notranslate"><span class="pre">Index</span></code> property is incremented in the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> get accessor. As you might expect, using the <code class="docutils literal notranslate"><span class="pre">++</span></code> operator invokes the <code class="docutils literal notranslate"><span class="pre">Index</span></code> write accessor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span>
+<span class="p">{</span>
+    <span class="n">PersistentState</span><span class="o">.</span><span class="n">SetInt32</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Every node receives this state update once the related transaction has been mined, and the same is true of any state update made by <code class="docutils literal notranslate"><span class="pre">PersistentState.Set*()</span></code>. Therefore, in terms of cycling through the greetings, the persisting of the index across the network allows each node to carry on where the last one left off.</p>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html" class="btn btn-primary float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="hello-world-extension-tutorial-introduction.html" class="btn btn-neutral" title="Extending the “Hello World” example" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

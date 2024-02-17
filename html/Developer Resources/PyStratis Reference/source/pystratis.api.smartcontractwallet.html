@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SmartContractWallet &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Staking" href="pystratis.api.staking.html" />
+    <link rel="prev" title="SmartContracts" href="pystratis.api.smartcontracts.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pystratis.html">PyStratis Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pystratis.api.html">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.nodes.html">Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.core.html">Core</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pystratis.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../pystratis.html">PyStratis Reference</a> &raquo;</li>
+        
+          <li><a href="modules.html">pyStratis</a> &raquo;</li>
+        
+          <li><a href="pystratis.api.html">API</a> &raquo;</li>
+        
+      <li>SmartContractWallet</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/PyStratis Reference/source/pystratis.api.smartcontractwallet.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="smartcontractwallet">
+<h1>SmartContractWallet<a class="headerlink" href="#smartcontractwallet" title="Permalink to this heading">¶</a></h1>
+<section id="id1">
+<h2>SmartContractWallet<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.SmartContractWallet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SmartContractWallet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.smartcontractwallet.SmartContractWallet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements the smartcontractwallet api endpoints.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.SmartContractWallet.account_addresses">
+<span class="sig-name descname"><span class="pre">account_addresses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pystratis.api.smartcontractwallet.SmartContractWallet.account_addresses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a smart contract account address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of smart contract addresses.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.SmartContractWallet.address_balance">
+<span class="sig-name descname"><span class="pre">address_balance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></span><a class="headerlink" href="#pystratis.api.smartcontractwallet.SmartContractWallet.address_balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the balance at a specific wallet address in STRAX (or the sidechain coin).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The smart contract address being queried.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The smart contract address balance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.SmartContractWallet.history">
+<span class="sig-name descname"><span class="pre">history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">take</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel" title="pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel"><span class="pre">ContractTransactionItemModel</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pystratis.api.smartcontractwallet.SmartContractWallet.history" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the history of a specific smart contract wallet address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The address to query the history.</p></li>
+<li><p><strong>skip</strong> (<em>int</em><em>, </em><em>optional</em>) – Skip this many items. Default=0.</p></li>
+<li><p><strong>take</strong> (<em>int</em><em>, </em><em>optional</em>) – Take this many items.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A history of a smart contract wallet address.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="#pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel" title="pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel"><em>ContractTransactionItemModel</em></a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.SmartContractWallet.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee_amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contract_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_price</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outpoints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.html#pystratis.core.outpoint.Outpoint" title="pystratis.core.outpoint.Outpoint"><span class="pre">Outpoint</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'account</span> <span class="pre">0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></span><a class="headerlink" href="#pystratis.api.smartcontractwallet.SmartContractWallet.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a transaction to create a smart contract and then broadcasts the transaction to the network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>account_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The wallet name. Default=’account 0’</p></li>
+<li><p><strong>outpoints</strong> (<em>List</em><em>[</em><a class="reference internal" href="pystratis.core.html#pystratis.core.outpoint.Outpoint" title="pystratis.core.outpoint.Outpoint"><em>Outpoint</em></a><em>]</em><em>, </em><em>optional</em>) – A list of the outpoints used to construct the transactation.</p></li>
+<li><p><strong>amount</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em><em>, </em><em>optional</em>) – The amount being sent.</p></li>
+<li><p><strong>fee_amount</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The fee amount.</p></li>
+<li><p><strong>password</strong> (<em>SecretStr</em>) – The password.</p></li>
+<li><p><strong>contract_code</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><em>hexstr</em></a><em>, </em><em>str</em>) – The smart contract code hexstring.</p></li>
+<li><p><strong>gas_price</strong> (<em>int</em>) – The amount of gas being used in satoshis.</p></li>
+<li><p><strong>gas_limit</strong> (<em>int</em>) – The maximum amount of gas that can be used in satoshis.</p></li>
+<li><p><strong>sender</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The address of the sending address.</p></li>
+<li><p><strong>parameters</strong> (<em>List</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="pystratis.core.html#pystratis.core.smartcontractparameter.SmartContractParameter" title="pystratis.core.smartcontractparameter.SmartContractParameter"><em>SmartContractParameter</em></a><em>, </em><em>str</em><em>]</em><em>, </em><em>optional</em>) – A list of parameters for the smart contract.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The transaction hash.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><em>uint256</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.SmartContractWallet.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee_amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contract_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_price</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outpoints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.html#pystratis.core.outpoint.Outpoint" title="pystratis.core.outpoint.Outpoint"><span class="pre">Outpoint</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'account</span> <span class="pre">0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel" title="pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel"><span class="pre">BuildContractTransactionModel</span></a></span></span><a class="headerlink" href="#pystratis.api.smartcontractwallet.SmartContractWallet.call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a transaction to call a smart contract method and then broadcasts the transaction to the network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_name</strong> (<em>str</em>) – The wallet name.</p></li>
+<li><p><strong>account_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The wallet name. Default=’account 0’</p></li>
+<li><p><strong>outpoints</strong> (<em>List</em><em>[</em><a class="reference internal" href="pystratis.core.html#pystratis.core.outpoint.Outpoint" title="pystratis.core.outpoint.Outpoint"><em>Outpoint</em></a><em>]</em><em>, </em><em>optional</em>) – A list of the outpoints used to construct the transactation.</p></li>
+<li><p><strong>contract_address</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The smart contract address being called.</p></li>
+<li><p><strong>method_name</strong> (<em>str</em>) – The method name being called.</p></li>
+<li><p><strong>amount</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em><em>, </em><em>optional</em>) – The amount being sent.</p></li>
+<li><p><strong>fee_amount</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><em>Money</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>Decimal</em>) – The fee amount.</p></li>
+<li><p><strong>password</strong> (<em>SecretStr</em>) – The password.</p></li>
+<li><p><strong>gas_price</strong> (<em>int</em>) – The amount of gas being used in satoshis.</p></li>
+<li><p><strong>gas_limit</strong> (<em>int</em>) – The maximum amount of gas that can be used in satoshis.</p></li>
+<li><p><strong>sender</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><em>Address</em></a><em>, </em><em>str</em>) – The address of the sending address.</p></li>
+<li><p><strong>parameters</strong> (<em>List</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="pystratis.core.html#pystratis.core.smartcontractparameter.SmartContractParameter" title="pystratis.core.smartcontractparameter.SmartContractParameter"><em>SmartContractParameter</em></a><em>, </em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – A list of parameters for the smart contract.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A built smart contract transaction.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel" title="pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel"><em>BuildContractTransactionModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.SmartContractWallet.send_transaction">
+<span class="sig-name descname"><span class="pre">send_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transaction_hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.walletsendtransactionmodel.WalletSendTransactionModel" title="pystratis.api.global_responsemodels.walletsendtransactionmodel.WalletSendTransactionModel"><span class="pre">WalletSendTransactionModel</span></a></span></span><a class="headerlink" href="#pystratis.api.smartcontractwallet.SmartContractWallet.send_transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Broadcasts a transaction, which either creates a smart contract or calls a method on a smart contract.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transaction_hex</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><em>hexstr</em></a><em>, </em><em>str</em>) – The transaction hex string.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about the sent transaction.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.walletsendtransactionmodel.WalletSendTransactionModel" title="pystratis.api.global_responsemodels.walletsendtransactionmodel.WalletSendTransactionModel"><em>WalletSendTransactionModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="buildcontracttransactionmodel">
+<h2>BuildContractTransactionModel<a class="headerlink" href="#buildcontracttransactionmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BuildContractTransactionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">success</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transactionId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>A pydantic model for building a smart contact transaction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">fee</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em></dt>
+<dd><p>The transaction fee.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">hex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em></dt>
+<dd><p>The hex serialized transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em></dt>
+<dd><p>The build transaction message.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">success</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em></dt>
+<dd><p>True if build was successful.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">transaction_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em></dt>
+<dd><p>The transaction hash, if build successful.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel">
+<span id="contracttransactionitemmodel"></span><h2>ContractTransactionItemModel<a class="headerlink" href="#module-pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ContractTransactionItemModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blockHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.html#pystratis.core.contracttransactionitemtype.ContractTransactionItemType" title="pystratis.core.contracttransactionitemtype.ContractTransactionItemType"><span class="pre">ContractTransactionItemType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">hash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">to</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">transactionFee</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gasFee</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model representing a contract transaction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.block_height">
+<span class="sig-name descname"><span class="pre">block_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.block_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block height of block containing the transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.item_type">
+<span class="sig-name descname"><span class="pre">item_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.html#pystratis.core.contracttransactionitemtype.ContractTransactionItemType" title="pystratis.core.contracttransactionitemtype.ContractTransactionItemType"><span class="pre">ContractTransactionItemType</span></a></em><a class="headerlink" href="#pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.item_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The contract transaction item type.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.hash">
+<span class="sig-name descname"><span class="pre">hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em><a class="headerlink" href="#pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.to_address">
+<span class="sig-name descname"><span class="pre">to_address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></em><a class="headerlink" href="#pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.to_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>The to address of the contact.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.amount">
+<span class="sig-name descname"><span class="pre">amount</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.amount" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction amount.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.transaction_fee">
+<span class="sig-name descname"><span class="pre">transaction_fee</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.transaction_fee" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction fee.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.gas_fee">
+<span class="sig-name descname"><span class="pre">gas_fee</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.smartcontractwallet.responsemodels.contracttransactionitemmodel.ContractTransactionItemModel.gas_fee" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction’s gas fee.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="transactionoutputmodel">
+<h2>TransactionOutputModel<a class="headerlink" href="#transactionoutputmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TransactionOutputModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">opReturnData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>A pydantic model of a transaction output.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em></dt>
+<dd><p>The address receiving the output.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">amount</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em></dt>
+<dd><p>The output amount.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">op_return_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em></dt>
+<dd><p>The OP_RETURN data, if present.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="walletsendtransactionmodel">
+<h2>WalletSendTransactionModel<a class="headerlink" href="#walletsendtransactionmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WalletSendTransactionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transactionId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel" title="pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel"><span class="pre">TransactionOutputModel</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>A pydantic model for a send transaction response.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">transaction_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em></dt>
+<dd><p>The transaction hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">outputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel" title="pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel"><span class="pre">TransactionOutputModel</span></a><span class="p"><span class="pre">]</span></span></em></dt>
+<dd><p>A list of transaction outputs.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="pystratis.api.staking.html" class="btn btn-primary float-right" title="Staking" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="pystratis.api.smartcontracts.html" class="btn btn-neutral" title="SmartContracts" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

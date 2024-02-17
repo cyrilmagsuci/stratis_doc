@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating a new feature summary &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Proof-of-Stake (PoS) implementation" href="../PoS/PoS-introduction.html" />
+    <link rel="prev" title="Exploring the Base Feature of the Full Node" href="exploring-the-base-feature.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../full-node-introduction.html">Full Node</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ConsoleOutput/ConsoleOutput.html">Console Output</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="features.html">Creating custom builds and extending the feature set</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="console-application-builds.html">The supplied console application builds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exploring-the-base-feature.html">Exploring the Base Feature of the Full Node</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Creating a new feature summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Consensus/consensus-introduction.html">Consensus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ProvenHeaders/proven-headers-introduction.html">Proven Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ColdStaking/ColdStaking.html">Cold Staking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="../full-node-introduction.html">Stratis Full Node</a> &raquo;</li>
+        
+          <li><a href="features.html">Creating custom builds and extending the feature set</a> &raquo;</li>
+        
+      <li>Creating a new feature summary</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Architecture Reference/FullNode/Features/creating-a-new-feature-summary.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="creating-a-new-feature-summary">
+<h1>Creating a new feature summary<a class="headerlink" href="#creating-a-new-feature-summary" title="Permalink to this heading">¶</a></h1>
+<p>This chapter summarizes the steps that you need to take to create a custom feature:</p>
+<ol class="arabic">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">FullNodeBuilder</span></code> extension method for your feature. There is no specific naming convention for these methods, but something like <code class="docutils literal notranslate"><span class="pre">UseFeatureX()</span></code> would be ideal. The extension method will need its own static class. Again, a name like <code class="docutils literal notranslate"><span class="pre">FullNodeBuilderXExtension</span></code> is ideal for the class but this is not enforced.</p></li>
+<li><p>Create a class for the feature, which inherits from <code class="docutils literal notranslate"><span class="pre">FullNodeFeature</span></code>, and implement at least the <code class="docutils literal notranslate"><span class="pre">IFullNodeFeature.InitializeAsync()</span></code> method.</p></li>
+<li><p>Populate your feature extensions method using the same pattern found in the other extension methods:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">FullNodeBuilder.ConfigureFeature()</span></code> with a lambda function as the parameter.</p></li>
+<li><p>Lambda A: Register your feature class with <code class="docutils literal notranslate"><span class="pre">IFeatureCollection.AddFeature()</span></code> and begin a fluid interface.</p></li>
+<li><p>If required, register dependencies by extending the fluid interface with calls to <code class="docutils literal notranslate"><span class="pre">IFeatureRegistration.DependOn()</span></code>.</p></li>
+<li><p>Extend the fluid interface by making a call to <code class="docutils literal notranslate"><span class="pre">IFeatureRegistration.FeatureServices()</span></code> with a lambda function as the parameter.</p></li>
+<li><p>Lambda B: Register your feature interfaces and classes as singleton services using <code class="docutils literal notranslate"><span class="pre">IServiceCollection.AddSingleton()</span></code>.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Place a call to your feature extension method in the Full Node Builder fluid interface found in <code class="docutils literal notranslate"><span class="pre">Main()</span></code>.</p></li>
+</ol>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../PoS/PoS-introduction.html" class="btn btn-primary float-right" title="Proof-of-Stake (PoS) implementation" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="exploring-the-base-feature.html" class="btn btn-neutral" title="Exploring the Base Feature of the Full Node" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

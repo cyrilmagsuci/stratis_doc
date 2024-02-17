@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>STRAX Token Swap Guide for MacOS &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="STRAX Token Swap Guide for Windows" href="../Windows/tokenswap-instructions-windows.html" />
+    <link rel="prev" title="Token Swap" href="../tokenswap-introduction.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../operation-guides-introduction.html">Operation Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cold-Staking/coldstaking-introduction.html">Cold-Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Full%20Node/fullnode-introduction.html">Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../InterFlux%20Masternodes/masternode-introduction.html">InterFlux Masternodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechain/sidechain-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SDA/sda-introduction.html">Stratis Decentralized Accelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../STO/sto-introduction.html">STO</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../tokenswap-introduction.html">Token Swap</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MacOS Operation Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#step-1-obtain-strax-wallet-address">Step 1 - Obtain STRAX Wallet Address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-2-obtain-address-ownership-tool">Step 2 - Obtain Address Ownership Tool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3-stratisx-qt-recovery-process">Step 3 - StratisX/QT Recovery Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3-stratis-core-recovery-process">Step 3 - Stratis Core Recovery Process</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Windows/tokenswap-instructions-windows.html">Windows Operation Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../operation-guides-introduction.html">Operation Guides</a> &raquo;</li>
+        
+          <li><a href="../tokenswap-introduction.html">Token Swap</a> &raquo;</li>
+        
+      <li>STRAX Token Swap Guide for MacOS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Operation Guides/Token Swap/macOS/tokenswap-instructions-macos.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="strax-token-swap-guide-for-macos">
+<h1>STRAX Token Swap Guide for MacOS<a class="headerlink" href="#strax-token-swap-guide-for-macos" title="Permalink to this heading">¶</a></h1>
+<section id="step-1-obtain-strax-wallet-address">
+<h2>Step 1 - Obtain STRAX Wallet Address<a class="headerlink" href="#step-1-obtain-strax-wallet-address" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Download and install the STRAX Wallet from <a class="reference external" href="https://www.stratisplatform.com/wallets/">https://www.stratisplatform.com/wallets/</a>.</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Create a new wallet and ensure you keep a secure record of your mnemonic words and <em>optional</em> passphrase.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Obtain a Receive Address. <strong>Keep note of this address as it will be defined later in the process.</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/receive1.png"><img alt="../../../_images/receive1.png" class="align-center" src="../../../_images/receive1.png" style="width: 900px;" /></a>
+</section>
+<section id="step-2-obtain-address-ownership-tool">
+<h2>Step 2 - Obtain Address Ownership Tool<a class="headerlink" href="#step-2-obtain-address-ownership-tool" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>The <strong>AddressOwnerShipTool</strong> must be used to prove ownership of
+funds; please download the relevant package to your device using the
+release page below.</p></li>
+</ol>
+<blockquote>
+<div><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/releases/tag/1.1.0.0">https://github.com/stratisproject/StratisBitcoinFullNode/releases/tag/1.1.0.0</a></p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Extract the contents of the ZIP Archive to a safe location on the
+device where your Stratis Wallet is located.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image218.png"><img alt="Text Description automatically generated" src="../../../_images/image218.png" style="width: 6.26806in; height: 4.5875in;" /></a>
+<p>There are three wallets that are supported by the
+<strong>AddressOwnershipTool</strong>.</p>
+<p><strong>Only complete the steps relevant to
+the wallet software that contains your STRAT Wallet.</strong></p>
+</section>
+<section id="step-3-stratisx-qt-recovery-process">
+<h2>Step 3 - StratisX/QT Recovery Process<a class="headerlink" href="#step-3-stratisx-qt-recovery-process" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Open the Stratis Qt application that contains your wallet</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image312.png"><img alt="../../../_images/image312.png" src="../../../_images/image312.png" style="width: 4.72599in; height: 3.05833in;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Once loaded; open the console via “Help &gt; Debug Window &gt; Console”</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image49.png"><img alt="../../../_images/image49.png" src="../../../_images/image49.png" style="width: 4.80833in; height: 3.57242in;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Enter the below command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dumpwallet<span class="w"> </span>“&lt;filepath&gt;.txt”
+</pre></div>
+</div>
+<p><strong>Example</strong></p>
+<p>Please change “yourusername” to your own username.</p>
+<a class="reference internal image-reference" href="../../../_images/image59.png"><img alt="../../../_images/image59.png" src="../../../_images/image59.png" style="width: 6.26806in; height: 4.65694in;" /></a>
+<ol class="arabic simple">
+<li><p>Open Terminal and navigate to the location where the
+AddressOwnershipTool was stored.</p></li>
+</ol>
+<blockquote>
+<div><p>The simplest way to do this is to open terminal, type cd and paste
+the AddressOwnerShipTool folder into the terminal. Then press ENTER.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Temporarily disable Gatekeeper with the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>spctl<span class="w"> </span>--master-disable
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Make sure we can run the AddressOwnerShipTool with the following
+command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>./AddressOwnershipTool
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Now call the AddressOwnershipTool executable with the following
+command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./AddressOwnershipTool<span class="w"> </span>-privkeyfile<span class="o">=</span>”/Users/yourusername/Desktop/Wallet.txt”<span class="w"> </span>-destination<span class="o">=</span>destinationaddress
+</pre></div>
+</div>
+<p><strong>Please replace “destinationaddress” with YOUR STRAX Address and
+“yourusername” with YOUR username.</strong></p>
+<ol class="arabic simple" start="5">
+<li><p>Enable Gatekeeper again with the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>spctl<span class="w"> </span>--master-enable
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>A CSV file will be created in the directory where you launched the
+AddressOwnershipTool, named the same as your destination STRAX
+address, containing signatures, signed with your private key for each
+of the addresses contained within your wallet.</p></li>
+</ol>
+<ol class="arabic simple" start="7">
+<li><p>Upload this CSV to <a class="reference external" href="https://www.stratisplatform.com/strax-token-swap-process-form/">STRAX Token Swap Process
+Form</a></p></li>
+</ol>
+</section>
+<section id="step-3-stratis-core-recovery-process">
+<h2>Step 3 - Stratis Core Recovery Process<a class="headerlink" href="#step-3-stratis-core-recovery-process" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Open Terminal and navigate to the location where the
+AddressOwnershipTool was stored.</p></li>
+</ol>
+<blockquote>
+<div><p>The simplest way to do this is to open terminal, type cd and paste
+the AddressOwnerShipTool folder into the terminal. Then press ENTER.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Temporarily disable Gatekeeper with the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>spctl<span class="w"> </span>--master-disable
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Make sure we can run the AddressOwnerShipTool with the following
+command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>./AddressOwnershipTool
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Now call the AddressOwnershipTool executable with the following
+command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./AddressOwnershipTool<span class="w"> </span>-name<span class="o">=</span>StratisCoreWalletName<span class="w"> </span>-password<span class="o">=</span>walletPassword<span class="w"> </span>-destination<span class="o">=</span>STRAXAddress
+</pre></div>
+</div>
+<p><strong>Please replace the all values with your genuine values relating to
+your Stratis Wallet; i.e. walletName, walletPassword, STRAXAddress</strong></p>
+<ol class="arabic simple" start="5">
+<li><p>Enable Gatekeeper again with the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>spctl<span class="w"> </span>--master-enable
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>The AddressOwnerShip Tool will now load your wallet and return a line
+for each discovered address, the ending result will look like the
+below.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SZ5fg1NkRk1qT3JBpNKopZmea4wgDcA7Hp<span class="p">;</span>XU2jNwiac7XF8rQvSk2bgibmwsNLkkhsHV<span class="p">;</span>IGbJN2tg1GBY3MXf9sGq2sQwGCdLy/CqsuD6CROf6lQrASDASDASWXe/MF8+fPrlNjf2vivTmW7gCcYG4Fk3Tak<span class="o">=</span>
+SNR6v9CUxUwDgfkCoAJ1KKennZzeK5hS3D<span class="p">;</span>XU2jNwiac7XF8rQvSk2bgibmwsNLkkhsHV<span class="p">;</span>IM59KY8OtMnlTkdJCdIuGm5FNSDFDSFSDFSDSADASDASDVuO+EANs9hLGK8EqyL+A41/5LnhMIy8xaimLZlddx0<span class="o">=</span>
+SWKAjAnBS44SWM9D5GZMNmTbKmYT7Xi7to<span class="p">;</span>XU2jNwiac7XF8rQvSk2bgibmwsNLkkhsHV<span class="p">;</span>H/QB1rHxSMA2qmaX1FycNFeEcP/dPWzBEw2ESyS2S615CasdasdsadOnAutuGh8SVnH2s/bMBCp7RNzl6o9Q/UI<span class="o">=</span>
+SRib9v44CpufsrkRjHATb9D4bjdzXuQTrp<span class="p">;</span>XU2jNwiac7XF8rQvSk2bgibmwsNLkkhsHV<span class="p">;</span>IDr81471+aNwYIAVaDGMjigB9AmrM/m0nBasdsadsadasJBJJT/aCRZ9TmJsPpopcT4YgCDph6kVXPlGpjNzOJQ<span class="o">=</span>
+SUpWKzs4Rn4CVFrGsBLW9SQzGgUH1g7KPo<span class="p">;</span>XU2jNwiac7XF8rQvSk2bgibmwsNLkkhsHV<span class="p">;</span>IL0GV9SJRmLFMiznalzGsZmDC5uCDFDFDFDFDSFDSFSDF+rcezkpCf22kmvIZXeFVYhAiQOkC2OmDvqkMkyKDj8<span class="o">=</span>
+SXSZ4n944Z92iEyVyLiHhowAB5NBdAuYSY<span class="p">;</span>XU2jNwiac7XF8rQvSk2bgibmwsNLkkhsHV<span class="p">;</span>IPFp7KsX4Yig7bOBuInlNImuLX7F5dpHxUMqosI9DFDFDQ86VGa2EBZWwHn31bdP8Qx1qcr5F+8E4PcMEtZu6Nw<span class="o">=</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>A CSV file will be created in the directory where you launched the
+AddressOwnershipTool, named the same as your destination STRAX
+address, containing signatures, signed with your private key for each
+of the addresses contained within your wallet.</p></li>
+</ol>
+<ol class="arabic simple" start="8">
+<li><p>Upload this CSV to <a class="reference external" href="https://www.stratisplatform.com/strax-token-swap-process-form/">STRAX Token Swap Process
+Form</a></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../Windows/tokenswap-instructions-windows.html" class="btn btn-primary float-right" title="STRAX Token Swap Guide for Windows" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../tokenswap-introduction.html" class="btn btn-neutral" title="Token Swap" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

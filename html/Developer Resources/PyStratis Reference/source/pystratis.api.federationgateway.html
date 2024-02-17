@@ -1,0 +1,810 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FederationGateway &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="FederationWallet" href="pystratis.api.federationwallet.html" />
+    <link rel="prev" title="Federation" href="pystratis.api.federation.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pystratis.html">PyStratis Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pystratis.api.html">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.nodes.html">Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.core.html">Core</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pystratis.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../pystratis.html">PyStratis Reference</a> &raquo;</li>
+        
+          <li><a href="modules.html">pyStratis</a> &raquo;</li>
+        
+          <li><a href="pystratis.api.html">API</a> &raquo;</li>
+        
+      <li>FederationGateway</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/PyStratis Reference/source/pystratis.api.federationgateway.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="federationgateway">
+<h1>FederationGateway<a class="headerlink" href="#federationgateway" title="Permalink to this heading">¶</a></h1>
+<section id="id1">
+<h2>FederationGateway<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.FederationGateway">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FederationGateway</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.federationgateway.FederationGateway" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements the federationgateway api endpoints.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.FederationGateway.deposits">
+<span class="sig-name descname"><span class="pre">deposits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.maturedblockdepositsmodel.MaturedBlockDepositsModel" title="pystratis.api.federationgateway.responsemodels.maturedblockdepositsmodel.MaturedBlockDepositsModel"><span class="pre">MaturedBlockDepositsModel</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pystratis.api.federationgateway.FederationGateway.deposits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves block deposits</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block_height</strong> (<em>int</em>) – The block height at which to obtain deposits.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of matured block deposits.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.maturedblockdepositsmodel.MaturedBlockDepositsModel" title="pystratis.api.federationgateway.responsemodels.maturedblockdepositsmodel.MaturedBlockDepositsModel"><em>MaturedBlockDepositsModel</em></a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.FederationGateway.pending_transfer">
+<span class="sig-name descname"><span class="pre">pending_transfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deposit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">transaction_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel" title="pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel"><span class="pre">CrossChainTransferModel</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pystratis.api.federationgateway.FederationGateway.pending_transfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets pending transfers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deposit_id</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><em>uint256</em></a><em>, </em><em>str</em>) – The deposit id hash.</p></li>
+<li><p><strong>transaction_id</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><em>uint256</em></a><em>, </em><em>str</em>) – The transaction id hash.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of cross chain transfers.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel" title="pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel"><em>CrossChainTransferModel</em></a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.FederationGateway.fullysigned_transfer">
+<span class="sig-name descname"><span class="pre">fullysigned_transfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deposit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">transaction_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel" title="pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel"><span class="pre">CrossChainTransferModel</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pystratis.api.federationgateway.FederationGateway.fullysigned_transfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get fully signed transfers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deposit_id</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><em>uint256</em></a><em>, </em><em>str</em>) – The deposit id hash.</p></li>
+<li><p><strong>transaction_id</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><em>uint256</em></a><em>, </em><em>str</em>) – The transaction id hash.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of cross chain transfers.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel" title="pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel"><em>CrossChainTransferModel</em></a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.FederationGateway.member_info">
+<span class="sig-name descname"><span class="pre">member_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel" title="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel"><span class="pre">FederationMemberInfoModel</span></a></span></span><a class="headerlink" href="#pystratis.api.federationgateway.FederationGateway.member_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets info on the state of a multisig member.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Extra keyword arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information on the current multisig member.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel" title="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel"><em>FederationMemberInfoModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.FederationGateway.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel" title="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel"><span class="pre">FederationGatewayInfoModel</span></a></span></span><a class="headerlink" href="#pystratis.api.federationgateway.FederationGateway.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets info on the state of the federation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Extra keyword arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information on the federation gateway.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel" title="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel"><em>FederationGatewayInfoModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.FederationGateway.ip_add">
+<span class="sig-name descname"><span class="pre">ip_add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipaddr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pystratis.api.federationgateway.FederationGateway.ip_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a federation member’s IP address to the federation IP list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ipaddr</strong> (<em>str</em>) – The endpoint.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response to ip add request.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>str</em></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.FederationGateway.ip_remove">
+<span class="sig-name descname"><span class="pre">ip_remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipaddr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pystratis.api.federationgateway.FederationGateway.ip_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a federation member’s IP address to the federation IP list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ipaddr</strong> (<em>str</em>) – The endpoint.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>response to ip remove request.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>str</em></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.FederationGateway.ip_replace">
+<span class="sig-name descname"><span class="pre">ip_replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipaddrtouse</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipaddr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pystratis.api.federationgateway.FederationGateway.ip_replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace a federation member’s IP from the federation IP list with another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ipaddrtouse</strong> (<em>str</em>) – The new endpoint.</p></li>
+<li><p><strong>ipaddr</strong> (<em>str</em>) – The endpoint being replaced.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response to ip replace request.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>str</em></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.FederationGateway.verify_transfer">
+<span class="sig-name descname"><span class="pre">verify_transfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deposit_id_transaction_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.validatetransactionresultmodel.ValidateTransactionResultModel" title="pystratis.api.federationgateway.responsemodels.validatetransactionresultmodel.ValidateTransactionResultModel"><span class="pre">ValidateTransactionResultModel</span></a></span></span><a class="headerlink" href="#pystratis.api.federationgateway.FederationGateway.verify_transfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate a transfer transaction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deposit_id_transaction_id</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><em>uint256</em></a><em>, </em><em>str</em>) – The transaction id containing the deposit with the deposit id.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A model describing the validity of the transfer.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Union</em>[<em>str</em>, <a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.validatetransactionresultmodel.ValidateTransactionResultModel" title="pystratis.api.federationgateway.responsemodels.validatetransactionresultmodel.ValidateTransactionResultModel"><em>ValidateTransactionResultModel</em></a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.FederationGateway.transfers_delete_suspended">
+<span class="sig-name descname"><span class="pre">transfers_delete_suspended</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pystratis.api.federationgateway.FederationGateway.transfers_delete_suspended" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a suspended transfer transaction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Extra keyword arguments.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A message about the deletion request.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>str</em></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.FederationGateway.transfer">
+<span class="sig-name descname"><span class="pre">transfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deposit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel" title="pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel"><span class="pre">CrossChainTransferModel</span></a></span></span><a class="headerlink" href="#pystratis.api.federationgateway.FederationGateway.transfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets pending transfers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deposit_id</strong> (<a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><em>uint256</em></a><em>, </em><em>str</em>) – The deposit id hash.</p></li>
+<li><p><strong>**kwargs</strong> – Extra keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A cross chain transfer.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel" title="pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel"><em>CrossChainTransferModel</em></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.html#pystratis.api.apierror.APIError" title="pystratis.api.apierror.APIError"><strong>APIError</strong></a> – Error thrown by node API. See message for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.federationgateway.responsemodels.crosschaintransfermodel">
+<span id="crosschaintransfermodel"></span><h2>CrosschainTransferModel<a class="headerlink" href="#module-pystratis.api.federationgateway.responsemodels.crosschaintransfermodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CrossChainTransferModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depositAmount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">depositId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">depositHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transferStatus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.html#pystratis.core.crosschaintransferstatus.CrossChainTransferStatus" title="pystratis.core.crosschaintransferstatus.CrossChainTransferStatus"><span class="pre">CrossChainTransferStatus</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">tx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.transactionmodel.TransactionModel" title="pystratis.api.global_responsemodels.transactionmodel.TransactionModel"><span class="pre">TransactionModel</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model of a cross chain transfer.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel.deposit_amount">
+<span class="sig-name descname"><span class="pre">deposit_amount</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel.deposit_amount" title="Permalink to this definition">¶</a></dt>
+<dd><p>The amount deposited.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel.deposit_id">
+<span class="sig-name descname"><span class="pre">deposit_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel.deposit_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The hash of the deposit transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel.deposit_height">
+<span class="sig-name descname"><span class="pre">deposit_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel.deposit_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The height of the deposit transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel.transfer_status">
+<span class="sig-name descname"><span class="pre">transfer_status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.html#pystratis.core.crosschaintransferstatus.CrossChainTransferStatus" title="pystratis.core.crosschaintransferstatus.CrossChainTransferStatus"><span class="pre">CrossChainTransferStatus</span></a></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel.transfer_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transfer status.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.transactionmodel.TransactionModel" title="pystratis.api.global_responsemodels.transactionmodel.TransactionModel"><span class="pre">TransactionModel</span></a></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.crosschaintransfermodel.CrossChainTransferModel.tx" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction model of the cross chain transaction.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel">
+<span id="federationgatewayinfomodel"></span><h2>FederationGatewayInfoModel<a class="headerlink" href="#module-pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FederationGatewayInfoModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">active</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mainchain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multisigPubKey</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.html#pystratis.core.pubkey.PubKey" title="pystratis.core.pubkey.PubKey"><span class="pre">PubKey</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">federationMultisigPubKeys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.html#pystratis.core.pubkey.PubKey" title="pystratis.core.pubkey.PubKey"><span class="pre">PubKey</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">miningPubKey</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.html#pystratis.core.pubkey.PubKey" title="pystratis.core.pubkey.PubKey"><span class="pre">PubKey</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">federationMiningPubKeys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.html#pystratis.core.pubkey.PubKey" title="pystratis.core.pubkey.PubKey"><span class="pre">PubKey</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multisigAddress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">multisigRedeemScript</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multisigRedeemScriptPaymentScript</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minconfsmalldeposits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minconfnormaldeposits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minconflargedeposits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minconfdistributiondeposits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model representing information on the federation gateway.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.active">
+<span class="sig-name descname"><span class="pre">active</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.active" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if federation gateway is active.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.mainchain">
+<span class="sig-name descname"><span class="pre">mainchain</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.mainchain" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if called on mainchain node.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.multisig_pubkey">
+<span class="sig-name descname"><span class="pre">multisig_pubkey</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.html#pystratis.core.pubkey.PubKey" title="pystratis.core.pubkey.PubKey"><span class="pre">PubKey</span></a></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.multisig_pubkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>The multisig pubkey.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.federation_multisig_pubkeys">
+<span class="sig-name descname"><span class="pre">federation_multisig_pubkeys</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.html#pystratis.core.pubkey.PubKey" title="pystratis.core.pubkey.PubKey"><span class="pre">PubKey</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.federation_multisig_pubkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of federation multisig pubkeys.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.mining_pubkey">
+<span class="sig-name descname"><span class="pre">mining_pubkey</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.html#pystratis.core.pubkey.PubKey" title="pystratis.core.pubkey.PubKey"><span class="pre">PubKey</span></a></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.mining_pubkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>The mining pubkey.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.federation_mining_pubkeys">
+<span class="sig-name descname"><span class="pre">federation_mining_pubkeys</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.html#pystratis.core.pubkey.PubKey" title="pystratis.core.pubkey.PubKey"><span class="pre">PubKey</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.federation_mining_pubkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>The federation mining pubkeys. Only active if federation mining is active.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.multisig_address">
+<span class="sig-name descname"><span class="pre">multisig_address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.multisig_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>The multisig address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.multisig_redeem_script">
+<span class="sig-name descname"><span class="pre">multisig_redeem_script</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.multisig_redeem_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>The multisig redeem script.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.multisig_redeem_script_payment_script">
+<span class="sig-name descname"><span class="pre">multisig_redeem_script_payment_script</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.multisig_redeem_script_payment_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>The multisig redeem script payment script.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.min_conf_small_deposits">
+<span class="sig-name descname"><span class="pre">min_conf_small_deposits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.min_conf_small_deposits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The minimum confirmations for small deposits.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.min_conf_normal_deposits">
+<span class="sig-name descname"><span class="pre">min_conf_normal_deposits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.min_conf_normal_deposits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The minimum confirmations for normal deposits.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.min_conf_large_deposits">
+<span class="sig-name descname"><span class="pre">min_conf_large_deposits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.min_conf_large_deposits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The minimum confirmations for large deposits.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.min_conf_distribution_deposits">
+<span class="sig-name descname"><span class="pre">min_conf_distribution_deposits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationgatewayinfomodel.FederationGatewayInfoModel.min_conf_distribution_deposits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The minimum confirmations for distribution deposits.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel">
+<span id="federationmemberconnectioninfomodel"></span><h2>FederationMemberConnectionInfoModel<a class="headerlink" href="#module-pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel.FederationMemberConnectionInfoModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FederationMemberConnectionInfoModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">federationMemberIp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isConnected</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isBanned</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel.FederationMemberConnectionInfoModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for federation member connections.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel.FederationMemberConnectionInfoModel.federation_member_ip">
+<span class="sig-name descname"><span class="pre">federation_member_ip</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel.FederationMemberConnectionInfoModel.federation_member_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>The federation member ip.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel.FederationMemberConnectionInfoModel.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel.FederationMemberConnectionInfoModel.is_connected" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, federation member is connected.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel.FederationMemberConnectionInfoModel.is_banned">
+<span class="sig-name descname"><span class="pre">is_banned</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel.FederationMemberConnectionInfoModel.is_banned" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, federation member is banned.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.federationgateway.responsemodels.federationmemberinfomodel">
+<span id="federationmemberinfomodel"></span><h2>FederationMemberInfoModel<a class="headerlink" href="#module-pystratis.api.federationgateway.responsemodels.federationmemberinfomodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FederationMemberInfoModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">asyncLoopState</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">consensusHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cctsHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cctsNextDepositHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cctsPartials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cctsSuspended</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">federationWalletActive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">federationWalletHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodeVersion</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pubKey</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.html#pystratis.core.pubkey.PubKey" title="pystratis.core.pubkey.PubKey"><span class="pre">PubKey</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">federationConnectionState</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">federationMemberConnections</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel.FederationMemberConnectionInfoModel" title="pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel.FederationMemberConnectionInfoModel"><span class="pre">FederationMemberConnectionInfoModel</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model representing information about the current federation member.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.async_loop_state">
+<span class="sig-name descname"><span class="pre">async_loop_state</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.async_loop_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>The async loop state.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.consensus_height">
+<span class="sig-name descname"><span class="pre">consensus_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.consensus_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current consensus height.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.ccts_height">
+<span class="sig-name descname"><span class="pre">ccts_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.ccts_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node’s CCTS height.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.ccts_next_deposit_height">
+<span class="sig-name descname"><span class="pre">ccts_next_deposit_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.ccts_next_deposit_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The next CCTS deposit height.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.ccts_partials">
+<span class="sig-name descname"><span class="pre">ccts_partials</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.ccts_partials" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of partial CCTS transactions.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.ccts_suspended">
+<span class="sig-name descname"><span class="pre">ccts_suspended</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.ccts_suspended" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of suspended CCTS transactions.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.federation_wallet_active">
+<span class="sig-name descname"><span class="pre">federation_wallet_active</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.federation_wallet_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, the federation wallet is active.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.federation_wallet_height">
+<span class="sig-name descname"><span class="pre">federation_wallet_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.federation_wallet_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The local federation wallet height.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.node_version">
+<span class="sig-name descname"><span class="pre">node_version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.node_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node version.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.pubkey">
+<span class="sig-name descname"><span class="pre">pubkey</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.html#pystratis.core.pubkey.PubKey" title="pystratis.core.pubkey.PubKey"><span class="pre">PubKey</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.pubkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>The member’s pubkey. Could be None.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.federation_connection_state">
+<span class="sig-name descname"><span class="pre">federation_connection_state</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.federation_connection_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>The federation connection state.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.federation_member_connections">
+<span class="sig-name descname"><span class="pre">federation_member_connections</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel.FederationMemberConnectionInfoModel" title="pystratis.api.federationgateway.responsemodels.federationmemberconnectioninfomodel.FederationMemberConnectionInfoModel"><span class="pre">FederationMemberConnectionInfoModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.federationmemberinfomodel.FederationMemberInfoModel.federation_member_connections" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of connected federation members.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.federationgateway.responsemodels.maturedblockdepositsmodel">
+<span id="maturedblockdepositsmodel"></span><h2>MaturedBlockDepositsModel<a class="headerlink" href="#module-pystratis.api.federationgateway.responsemodels.maturedblockdepositsmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.maturedblockdepositsmodel.MaturedBlockDepositsModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MaturedBlockDepositsModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deposits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.html#pystratis.core.deposit.Deposit" title="pystratis.core.deposit.Deposit"><span class="pre">Deposit</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blockInfo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.maturedblockinfomodel.MaturedBlockInfoModel" title="pystratis.api.global_responsemodels.maturedblockinfomodel.MaturedBlockInfoModel"><span class="pre">MaturedBlockInfoModel</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.maturedblockdepositsmodel.MaturedBlockDepositsModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for matured block deposits.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.maturedblockdepositsmodel.MaturedBlockDepositsModel.deposits">
+<span class="sig-name descname"><span class="pre">deposits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.html#pystratis.core.deposit.Deposit" title="pystratis.core.deposit.Deposit"><span class="pre">Deposit</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.maturedblockdepositsmodel.MaturedBlockDepositsModel.deposits" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of deposits.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.maturedblockdepositsmodel.MaturedBlockDepositsModel.block_info">
+<span class="sig-name descname"><span class="pre">block_info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.global_responsemodels.html#pystratis.api.global_responsemodels.maturedblockinfomodel.MaturedBlockInfoModel" title="pystratis.api.global_responsemodels.maturedblockinfomodel.MaturedBlockInfoModel"><span class="pre">MaturedBlockInfoModel</span></a></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.maturedblockdepositsmodel.MaturedBlockDepositsModel.block_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Matured block information model.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.federationgateway.responsemodels.serializableresult">
+<span id="serializableresult"></span><h2>SerializableResult<a class="headerlink" href="#module-pystratis.api.federationgateway.responsemodels.serializableresult" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.serializableresult.SerializableResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SerializableResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.serializableresult.SerializableResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a serializable result.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.serializableresult.SerializableResult.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.serializableresult.SerializableResult.value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.serializableresult.SerializableResult.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.serializableresult.SerializableResult.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.federationgateway.responsemodels.validatetransactionresultmodel">
+<span id="validatetransactionresultmodel"></span><h2>ValidateTransactionResultModel<a class="headerlink" href="#module-pystratis.api.federationgateway.responsemodels.validatetransactionresultmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.validatetransactionresultmodel.ValidateTransactionResultModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ValidateTransactionResultModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isValid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.validatetransactionresultmodel.ValidateTransactionResultModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a validate transaction result.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.validatetransactionresultmodel.ValidateTransactionResultModel.is_valid">
+<span class="sig-name descname"><span class="pre">is_valid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.validatetransactionresultmodel.ValidateTransactionResultModel.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, transaction is valid.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.federationgateway.responsemodels.validatetransactionresultmodel.ValidateTransactionResultModel.errors">
+<span class="sig-name descname"><span class="pre">errors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.federationgateway.responsemodels.validatetransactionresultmodel.ValidateTransactionResultModel.errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transaction validation errors.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="pystratis.api.federationwallet.html" class="btn btn-primary float-right" title="FederationWallet" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="pystratis.api.federation.html" class="btn btn-neutral" title="Federation" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

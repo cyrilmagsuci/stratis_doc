@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Account Abstraction Layer &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Working with Contracts" href="working-with-contracts.html" />
+    <link rel="prev" title="Uses of Smart Contracts" href="uses-of-smart-contracts.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../FullNode/full-node-introduction.html">Full Node</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="smartcontracts-introduction.html">Smart Contracts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="smart-contracts-basic-theory.html">Basic Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uses-of-smart-contracts.html">Uses of Smart Contracts</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Account Abstraction Layer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#contract-accounts">Contract Accounts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transactions">Transactions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#limitations">Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="working-with-contracts.html">Working with Contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contracts-in-depth.html">Smart Contracts In-Depth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auction-smart-contract.html">The Auction Smart Contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing-locally-with-testchain.html">Testing Locally with TestChain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix-future-enhancements-to-smart-contracts.html">Appendix - Future Enhancements to Stratis Smart Contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix-gas-prices.html">Appendix - Gas Prices and Memory Limit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="smartcontracts-introduction.html">Stratis Smart Contracts</a> &raquo;</li>
+        
+      <li>Account Abstraction Layer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Architecture Reference/SmartContracts/account-abstraction-layer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="account-abstraction-layer">
+<h1>Account Abstraction Layer<a class="headerlink" href="#account-abstraction-layer" title="Permalink to this heading">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>The Stratis blockchain is based on a <a class="reference external" href="https://en.wikipedia.org/wiki/Unspent_transaction_output">UTXO</a> transaction model. This lends itself well to financial transactions but adds a degree of complexity for smart contracts.</p>
+<p>To make developing and interacting with contracts easier, Stratis’ smart contracts implementation adds the concept of an account abstraction layer (AAL). The AAL provides a wrapper around the underlying UTXO-based transaction model and allows contracts to be interacted with as though they were accounts in an accounts-based transaction model.</p>
+<p>This approach is desirable for several reasons:</p>
+<ul class="simple">
+<li><p>Contract developers do not need to manage UTXOs.</p></li>
+<li><p>Code and state are stored against a single address.</p></li>
+<li><p>Interactions with a contract are done at a single address.</p></li>
+</ul>
+<p>From the outside, interacting with a contract is still done by the same mechanism as before - by creating and sending transactions.</p>
+</section>
+<section id="contract-accounts">
+<h2>Contract Accounts<a class="headerlink" href="#contract-accounts" title="Permalink to this heading">¶</a></h2>
+<p>A contract account in the AAL has these properties:</p>
+<ul class="simple">
+<li><p>Address - A unique address for interacting with the contract that does not change.</p></li>
+<li><p>Balance - The sum of all funds sent from and received by the contract.</p></li>
+<li><p>Code - The contract’s bytecode.</p></li>
+<li><p>State - A key-value store of data.</p></li>
+</ul>
+</section>
+<section id="transactions">
+<h2>Transactions<a class="headerlink" href="#transactions" title="Permalink to this heading">¶</a></h2>
+<p>In the AAL, each contract’s balance is maintained in a single UTXO. Transactions that change a contract’s balance produce a new UTXO that holds the contract’s latest balance. The contract state database is updated with a reference to the new UTXO.</p>
+<section id="funds-transfers">
+<h3>Funds Transfers<a class="headerlink" href="#funds-transfers" title="Permalink to this heading">¶</a></h3>
+<p>Internal (to another contract) and external funds transfers generated during contract execution are condensed into a single transaction, known as the “condensing transaction”.</p>
+<p>Consider a single contract execution which performs two functions: transfer of funds to a standard (non-contract) P2PKH address, and transfer of funds to another contract. After successful execution, these two transfers are condensed into a single transaction which is added to the block. For the non-contract P2PKH transfer, a standard P2PKH UTXO is produced and added to the transaction. For the contract-to-contract transfer, new UTXOs reflecting each contract’s final balance are produced using the special <code class="docutils literal notranslate"><span class="pre">OP_INTERNALCONTRACTTRANSFER</span></code> opcode. This opcode ensures a UTXO can only be spent by the recipient contract.</p>
+</section>
+</section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading">¶</a></h2>
+<p>There are a few limitations of using an AAL.</p>
+<p>The UTXO spent to create a contract create/call transaction must use a P2PK or P2PKH script. This ensures that the sender’s address is always obtainable. The sender address is used to provide the gas refund and as context during contract execution.</p>
+<p>There is a reduction of privacy as a degree of address reuse is required. For example, if your ownership of a token is recorded in a contract, you must always interact with that contract using the same address.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="working-with-contracts.html" class="btn btn-primary float-right" title="Working with Contracts" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="uses-of-smart-contracts.html" class="btn btn-neutral" title="Uses of Smart Contracts" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

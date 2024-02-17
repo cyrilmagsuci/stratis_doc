@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How Proven Headers provide a “headers first” solution for a Proof-of-Stake blockchain &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Cold Staking" href="../ColdStaking/ColdStaking.html" />
+    <link rel="prev" title="Proven Headers" href="proven-headers-introduction.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../full-node-introduction.html">Full Node</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ConsoleOutput/ConsoleOutput.html">Console Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Features/features.html">Creating custom builds and extending the feature set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Consensus/consensus-introduction.html">Consensus</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="proven-headers-introduction.html">Proven Headers</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">How Proven Headers provide a “headers first” solution for a Proof-of-Stake blockchain</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ColdStaking/ColdStaking.html">Cold Staking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="../full-node-introduction.html">Stratis Full Node</a> &raquo;</li>
+        
+          <li><a href="proven-headers-introduction.html">Proven Headers</a> &raquo;</li>
+        
+      <li>How Proven Headers provide a “headers first” solution for a Proof-of-Stake blockchain</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Architecture Reference/FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="how-proven-headers-provide-a-headers-first-solution-for-a-proof-of-stake-blockchain">
+<h1>How Proven Headers provide a “headers first” solution for a Proof-of-Stake blockchain<a class="headerlink" href="#how-proven-headers-provide-a-headers-first-solution-for-a-proof-of-stake-blockchain" title="Permalink to this heading">¶</a></h1>
+<p>Standard header syncing causes vulnerability on Proof-of-Stake blockchains. The Stratis Full Node solution basically involves extending the information available with each header when it is broadcast to the network. This allows peers receiving headers to not only check the headers are valid but also that they represent a valid block. The PoS Header Validation ruleset was extended to include rules for checking proven headers.</p>
+<p>One check which the proven header rules carry out determines whether the coinstake kernel, which is or was a staker’s UTXO, can generate a hash that hits the target. In order for a block to have been written, one UTXO must have been able to do this and thereby become what is known as the coinstake kernel for the PoS block.</p>
+<p>The extra information supplied allows the PoS consensus engine to check that:</p>
+<ol class="arabic simple">
+<li><p>The <a class="reference internal" href="../PoS/PoS-exploring-the-code.html#coinstake-tx-definition"><span class="std std-ref">coinstake transaction</span></a> (which references the coinstake kernel) is present in the block the header represents.</p></li>
+<li><p>The coinstake kernel is valid, which includes checking that the UTXO is old enough. If the transaction that created the UTXO hasn’t been in the blockchain long enough, it cannot be part of a stake.</p></li>
+</ol>
+<p>The <a class="reference internal" href="../PoS/PoS-exploring-the-code.html#coinstake-hash-params-table"><span class="std std-ref">formula</span></a> for calculating a coinstake hash actually requires, in addition to a coinstake kernel, a Stake Modifier V2, which is taken from the previous block. As with the full blockchain, a received batch of proven headers must be valid in its entirety, with each header reliant on the one before when attempting to hit the target. The checks carried out on proven headers are actually more involved than just checking the coinstake kernel is valid, and we will take a look at them in greater detail in a later section in this chapter.</p>
+<p>In addition to extending the header information available, the protocol had to be extended with messages specific to proven headers. The next section contains more information on these messages.</p>
+<section id="proven-header-messages">
+<h2>Proven header messages<a class="headerlink" href="#proven-header-messages" title="Permalink to this heading">¶</a></h2>
+<p>Standard header syncing uses the <a class="reference external" href="https://en.bitcoin.it/wiki/Protocol_documentation#sendheaders">sendheaders</a>, <a class="reference external" href="https://en.bitcoin.it/wiki/Protocol_documentation#getheaders">getheaders</a>, and <a class="reference external" href="https://en.bitcoin.it/wiki/Protocol_documentation#headers">headers</a> messages. Two new proven header messages were implemented for the Stratis protocol:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Message</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Related C# class</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>getprovhdr</p></td>
+<td><p>Requests proven headers.</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/P2P/Protocol/Payloads/GetProvenHeadersPayload.cs">GetProvenHeadersPayload</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>provhdr</p></td>
+<td><p>Returns a payload of up to 2000 proven headers.</p></td>
+<td><p><a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/P2P/Protocol/Payloads/ProvenHeadersPayload.cs">ProvenHeadersPayload</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>A proven headers version of the <cite>sendheaders</cite> message was not required, and this existing Bitcoin protocol message is used to permit nodes to announce new blocks via a <cite>provhdr</cite> message (instead of <cite>inv</cite>). During a handshake with another peer, the node checks the version of the Stratis protocol the peer is running. An estimate is made as to whether the peer is able to supply proven headers, and if it is not, no <cite>sendheaders</cite> message is sent.</p>
+</section>
+<section id="how-the-headers-were-extended-to-become-block-headers">
+<h2>How the headers were extended to become block headers?<a class="headerlink" href="#how-the-headers-were-extended-to-become-block-headers" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/NBitcoin/ProvenBlockHeader.cs">ProvenBlockHeader</a> class inherits from the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/NBitcoin/BlockStake.cs">PosBlockHeader</a> class and ultimately from <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/NBitcoin/BlockHeader.cs">BlockHeader</a>. <code class="docutils literal notranslate"><span class="pre">PoSBlockHeader</span></code> doesn’t extend <code class="docutils literal notranslate"><span class="pre">BlockHeader</span></code> with any new members. However, <code class="docutils literal notranslate"><span class="pre">ProvenBlockHeader</span></code> contains several additional members used to check if the block the header represents is valid. The following table describes these additional members:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Member</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Coinstake</p></td>
+<td><p>The coinstake transaction, which contains, as an input, the UTXO that is the coinstake kernel for the represented block.</p></td>
+</tr>
+<tr class="row-odd"><td><p>MerkleProof</p></td>
+<td><p>A merkle proof that proves the coinstake transaction is in the represented block.</p></td>
+</tr>
+<tr class="row-even"><td><p>Signature</p></td>
+<td><p>Contains the signature for the represented block. A hash of the block is signed by the private key which corresponds to the public key locking the coinstake transaction’s second output.</p></td>
+</tr>
+<tr class="row-odd"><td><p>HeaderSize</p></td>
+<td><p>The total size of the proven header including the size of the <code class="docutils literal notranslate"><span class="pre">BlockHeader</span></code> plus the <code class="docutils literal notranslate"><span class="pre">Coinstake</span></code>, <code class="docutils literal notranslate"><span class="pre">MerkleProof</span></code>, and <code class="docutils literal notranslate"><span class="pre">Signature</span></code> members.</p></td>
+</tr>
+<tr class="row-even"><td><p>StakeModifierV2</p></td>
+<td><p>A value linking a block to the previous block and the transaction its coinstake kernel is from. Used locally and not sent over the network.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The signature for a header’s represented block is actually the same as a “header’s signature”. In both cases, exactly the same pieces of information (the exact same bytes) are first hashed and then signed. <em>Neither all the bytes in the header or all the bytes in the block are used.</em></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The sizes of the <code class="docutils literal notranslate"><span class="pre">Coinstake</span></code>, <code class="docutils literal notranslate"><span class="pre">MerkleProof</span></code>, and <code class="docutils literal notranslate"><span class="pre">Signature</span></code> members are also public properties of the class, but these have been omitted from the table.</p>
+</div>
+</section>
+<section id="why-coinstake-age-was-adjusted">
+<h2>Why coinstake age was adjusted?<a class="headerlink" href="#why-coinstake-age-was-adjusted" title="Permalink to this heading">¶</a></h2>
+<p>Coinstake Age is the minimum amount of confirmations a block must have in order that the block’s UTXOs can participate in staking. A confirmation is when a block is added on top of a block, so a block with 50 confirmations is 50 blocks under the consensus tip.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a node is synced up to x blocks, it has the information to validate proven headers which represent blocks from x + 1 to x + Coinstake Age. For any proven header within this range, the node can check if a coinstake kernel is actually a valid UTXO from the blocks it has synced.</p>
+</div>
+<p>The Maximum Reorganization Length defines the maximum length of any reorganization the node will except. In other words, if the Maximum Reorganization Length is set to 500, then blocks which are more than 500 blocks under the consensus tip cannot be altered; they are “set in stone” so to speak. The Stratis Mainnet has a Maximum Reorganization Length of 500.</p>
+<p>Introducing the proven header feature meant that Coinstake Age had to be set to 500 as well; otherwise UTXOs from blocks with the potential to undergo reorganization can become coinstake kernels. Coinstake kernels that can potentially undergo reorganization cannot be validated with a small proof. The complexities introduced by adding a more complex proof would make the solution inferior to just syncing with <code class="docutils literal notranslate"><span class="pre">inv</span></code> messages; therefore, the decision was made to increase Coinstake Age.</p>
+<p>In the code, Coinstake Age is retrieved by calling <code class="docutils literal notranslate"><span class="pre">PosConsensusOptions.GetStakeMinConfirmations()</span></code>. <a class="reference internal" href="../Consensus/customising-consensus-rule-engines.html#consensus-options"><span class="std std-ref">Consensus options</span></a> goes into more depth about the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/NBitcoin/ConsensusOptions.cs">PosConsensusOptions</a> class.</p>
+<p>Maximum Reorganization Length is held in the <code class="docutils literal notranslate"><span class="pre">MaxReorgLength</span></code> property of the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/NBitcoin/Consensus.cs">Consensus</a> class. The value is assigned to the property when an instance of the <code class="docutils literal notranslate"><span class="pre">Consensus</span></code> class is created in <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Networks/StratisMain.cs">StratisMain</a>.</p>
+</section>
+<section id="exploring-the-proven-header-rules-in-detail">
+<span id="id1"></span><h2>Exploring the proven header rules in detail<a class="headerlink" href="#exploring-the-proven-header-rules-in-detail" title="Permalink to this heading">¶</a></h2>
+<p>Before reading this section, it is recommended that you familiarize yourself with the material in <a class="reference internal" href="../Consensus/customising-consensus-rule-engines.html"><span class="doc">Customizing consensus rule engines and their rulesets</span></a> and the other “consensus” chapters.</p>
+<p>There are two proven header rules: <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/Rules/ProvenHeaderRules/ProvenHeaderSizeRule.cs">ProvenHeaderSizeRule</a> and <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/Rules/ProvenHeaderRules/ProvenHeaderCoinstakeRule.cs">ProvenHeaderCoinstakeRule</a>. There is also a base class, <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/Rules/ProvenHeaderRules/ProvenHeaderRuleBase.cs">ProvenHeaderRuleBase</a>, which contains functionality for checking whether proven headers are activated on the network and whether a header is a proven header.</p>
+<p>The following subsections detail the checks that are made by the derived rule classes:</p>
+<section id="checking-the-sizes-of-proven-header-members">
+<h3>Checking the sizes of proven header members<a class="headerlink" href="#checking-the-sizes-of-proven-header-members" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ProvenHeaderSizeRule</span></code> checks that the serialized sizes of the three proven header members (<code class="docutils literal notranslate"><span class="pre">Coinstake</span></code>, <code class="docutils literal notranslate"><span class="pre">MerkleProof</span></code>, and <code class="docutils literal notranslate"><span class="pre">Signature</span></code>) do not exceed the maximum sizes permitted for each member. You can find the maximum sizes in <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/NBitcoin/ConsensusOptions.cs">PosConsensusOptions</a>.</p>
+</section>
+<section id="checking-if-the-proven-header-has-a-valid-coinstake-transaction">
+<h3>Checking if the proven header has a valid coinstake transaction<a class="headerlink" href="#checking-if-the-proven-header-has-a-valid-coinstake-transaction" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ProvenHeaderCoinstakeRule</span></code> first checks if the supplied coinstake transaction meets the requirements to be a coinstake transaction.</p>
+</section>
+<section id="checking-if-the-proven-header-has-valid-timestamps">
+<h3>Checking if the proven header has valid timestamps<a class="headerlink" href="#checking-if-the-proven-header-has-valid-timestamps" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ProvenHeaderCoinstakeRule.CheckHeaderAndCoinstakeTimes()</span></code> checks that the timestamp for the header matches the timestamp for the coinstake transaction. It also checks that the timestamp is divisible by 16 seconds, which is a requirement on the Stratis Mainchain network. You can find the stake timestamp mask in <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/NBitcoin/ConsensusOptions.cs">PosConsensusOptions</a>.</p>
+</section>
+<section id="checking-if-the-coinstake-kernel-is-old-enough">
+<h3>Checking if the coinstake kernel is old enough<a class="headerlink" href="#checking-if-the-coinstake-kernel-is-old-enough" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ProvenHeaderCoinstakeRule.GetAndValidatePreviousUtxo()</span></code> retrieves the coinstake kernel from coinstake transaction and <code class="docutils literal notranslate"><span class="pre">ProvenHeaderCoinstakeRule.CheckCoinstakeAgeRequirement()</span></code> checks to see if the kernel is of the required age.</p>
+</section>
+<section id="checking-the-coinstake-kernel-was-spent-correctly">
+<h3>Checking the coinstake kernel was spent correctly<a class="headerlink" href="#checking-the-coinstake-kernel-was-spent-correctly" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ProvenHeaderCoinstakeRule.CheckSignature()</span></code> verifies the coinstake kernel was spent correctly in the coinstake transaction. This proves that the creator of the block also owned the coinstake kernel UTXO.</p>
+</section>
+<section id="checking-the-hash-generated-by-the-coinstake-kernel-hits-the-target">
+<h3>Checking the hash generated by the coinstake kernel hits the target<a class="headerlink" href="#checking-the-hash-generated-by-the-coinstake-kernel-hits-the-target" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ProvenHeaderCoinstakeRule.CheckStakeKernelHash()</span></code> checks the hash generated by the coinstake kernel is <em>lower</em> than the target, which means the target was hit and the right to mine a block granted. The target is weighted by multiplying it by the value of the coinstake kernel. A more valuable coinstake kernel means a higher (easier) target. <a class="reference internal" href="../PoS/PoS-exploring-the-code.html#looking-at-the-coinstake-kernel-calculations"><span class="std std-ref">Looking at the coinstake kernel calculations in code</span></a> takes a detailed look at these calculations.</p>
+</section>
+<section id="checking-that-the-coinstake-transaction-is-in-the-block-represented-by-the-proven-header">
+<h3>Checking that the coinstake transaction is in the block represented by the proven header<a class="headerlink" href="#checking-that-the-coinstake-transaction-is-in-the-block-represented-by-the-proven-header" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ProvenHeaderCoinstakeRule.CheckCoinstakeMerkleProof()</span></code> uses the merkle proof to check that the coinstake transaction is in the <a class="reference external" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch09.asciidoc#merkle-trees">merkle tree</a> and therefore included in the block.</p>
+</section>
+<section id="checking-the-proven-header-s-signature-was-made-by-the-miner-who-owns-the-coinstake-transaction-output">
+<h3>Checking the proven header’s signature was made by the miner who owns the coinstake transaction output.<a class="headerlink" href="#checking-the-proven-header-s-signature-was-made-by-the-miner-who-owns-the-coinstake-transaction-output" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ProvenHeaderCoinstakeRule.CheckHeaderSignatureWithCoinstakeKernel()</span></code> checks that <a class="reference external" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asciidoc#pay-to-public-key-hash-p2pkh">the signature of the represented block’s hash matches the public key used in the coinstake transaction’s second output locking script</a>. A match means the same private key was behind both.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../ColdStaking/ColdStaking.html" class="btn btn-primary float-right" title="Cold Staking" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="proven-headers-introduction.html" class="btn btn-neutral" title="Proven Headers" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

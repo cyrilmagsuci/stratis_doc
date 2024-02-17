@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial #1 - Basic plugin usage &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Tutorial #2 - Interacting with smart contracts" href="../Tutorial_2_Smart_Contracts/Tutorial_2_Blueprint.html" />
+    <link rel="prev" title="Tutorial #1 - Basic plugin usage" href="Tutorial_1_Blueprint.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PyStratis%20Reference/pystratis.html">PyStratis Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../unreal-engine-introduction.html">Unreal Engine</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_0_Plugin_set_up/Tutorial_0.html">Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tutorial_1_Blueprint.html">Tutorial #1 - Basic plugin usage (Blueprint Edition)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tutorial #1 - Basic plugin usage (C++ Edition)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisite">Prerequisite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-stratisunrealmanager-and-creating-a-wallet">Setting up StratisUnrealManager and creating a wallet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-a-wallet-balance">Getting a wallet balance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-unspent-transaction-outputs">Getting unspent transaction outputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sending-coins-waiting-for-a-receipt">Sending coins &amp; waiting for a receipt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-s-next">What’s next?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_2_Smart_Contracts/Tutorial_2_Blueprint.html">Tutorial #2 - Interacting with smart contracts (Blueprint Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_2_Smart_Contracts/Tutorial_2_CPP.html">Tutorial #2 - Interacting with smart contracts (C++ Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_3_NFT/Tutorial_3_Blueprint.html">Tutorial #3 - Working with NFT (Blueprint Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_3_NFT/Tutorial_3_CPP.html">Tutorial #3 - Working with NFT (C++ Edition)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../unreal-engine-introduction.html">Unreal Engine Plugin</a> &raquo;</li>
+        
+      <li>Tutorial #1 - Basic plugin usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/Unreal Engine/Tutorial_1_Basic_usage/Tutorial_1_CPP.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="tutorial-1-basic-plugin-usage">
+<h1>Tutorial #1 - Basic plugin usage<a class="headerlink" href="#tutorial-1-basic-plugin-usage" title="Permalink to this heading">¶</a></h1>
+<p>In this tutorial we’ll show you how to use the basic functionality of the Stratis Unreal plugin: create a wallet, check your balance and unspent transaction outputs (UTXOs), and send coins to another address.</p>
+<p><strong>Of we go!</strong></p>
+<section id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this heading">¶</a></h2>
+<p>You need to set up your project and Stratis Unreal Plugin within it. If you looking for a tutorial about basic project setup, please check our <a class="reference internal" href="../Tutorial_0_Plugin_set_up/Tutorial_0.html"><span class="doc">Tutorial #0</span></a>.</p>
+</section>
+<section id="setting-up-stratisunrealmanager-and-creating-a-wallet">
+<h2>Setting up StratisUnrealManager and creating a wallet<a class="headerlink" href="#setting-up-stratisunrealmanager-and-creating-a-wallet" title="Permalink to this heading">¶</a></h2>
+<p>First of all, we need to set up <code class="docutils literal notranslate"><span class="pre">StratisUnrealManager</span></code> to be able to use all of the API methods provided by the plugin.</p>
+<p>Let’s open the <strong>Source</strong> path of your project and create a new header named <code class="docutils literal notranslate"><span class="pre">StratisHandler.h</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma once</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;CoreMinimal.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;UStratisUnrealManager.h&quot;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;StratisHandler.generated.h&quot;</span>
+
+<span class="n">UCLASS</span><span class="p">(</span><span class="n">minimalapi</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UStratisHandler</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">UObject</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">GENERATED_BODY</span><span class="p">()</span>
+
+<span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="n">UStratisHandler</span><span class="p">();</span>
+
+<span class="w">  </span><span class="n">UPROPERTY</span><span class="p">()</span>
+<span class="w">  </span><span class="n">UStratisUnrealManager</span><span class="w"> </span><span class="o">*</span><span class="n">stratisManager</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">UWorld</span><span class="w"> </span><span class="o">*</span><span class="nf">GetWorld</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">UFUNCTION</span><span class="p">(</span><span class="n">BlueprintCallable</span><span class="p">,</span><span class="w"> </span><span class="n">Category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;StratisHandler&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">RunSomeLogic</span><span class="p">();</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>We’ll use this class to set up and hold the <code class="docutils literal notranslate"><span class="pre">UStratisUnrealManager</span></code> instance and to run some code inside the <code class="docutils literal notranslate"><span class="pre">RunSomeLogic</span></code> method later.</p>
+<p>Okay, now we’re going to implement the <code class="docutils literal notranslate"><span class="pre">StratisHandler</span></code> class we defined above:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;StratisHandler.h&quot;</span>
+
+<span class="n">UStratisHandler</span><span class="o">::</span><span class="n">UStratisHandler</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">stratisManager</span><span class="w"> </span><span class="o">=</span>
+<span class="w">      </span><span class="n">CreateDefaultSubobject</span><span class="o">&lt;</span><span class="n">UStratisUnrealManager</span><span class="o">&gt;</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;StratisManager&quot;</span><span class="p">));</span>
+
+<span class="w">  </span><span class="c1">//TODO: Initialize stratisManager</span>
+<span class="p">}</span>
+
+<span class="n">UWorld</span><span class="w"> </span><span class="o">*</span><span class="n">UStratisHandler</span><span class="o">::</span><span class="n">GetWorld</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">GetOuter</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetWorld</span><span class="p">();</span><span class="w"> </span><span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">UStratisHandler</span><span class="o">::</span><span class="n">RunSomeLogic</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//TODO: print balance, utxos etc</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now we’re going to set up base URL, network, and wallet mnemonic.</p>
+<p>Let’s walk through the steps:</p>
+<ol class="arabic simple">
+<li><p>Set base URL. To use Stratis Unreal Plugin, you need a full node to be running locally or remotely. Find your node’s address (IP or domain) if you’re running a remote node, or use <code class="docutils literal notranslate"><span class="pre">http://localhost:44336</span></code> if you’re running your node locally.</p></li>
+<li><p>Set the network you want to operate on. Use <code class="docutils literal notranslate"><span class="pre">ENetwork::CIRRUS</span></code> and <code class="docutils literal notranslate"><span class="pre">ENetwork::CIRRUS_TEST</span></code> for production and testing respectively.</p></li>
+<li><p>Set a mnemonic for your wallet. Mnemonic is a sequence of words used to define the private key of your wallet. You can create mnemonic <a class="reference external" href="https://armantheparman.com/dicev1/">using just a pen, a paper, and a dice</a>, or use different hardware &amp; software mnemonic generators.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">UStratisHandler</span><span class="o">::</span><span class="n">UStratisHandler</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">stratisManager</span><span class="w"> </span><span class="o">=</span>
+<span class="w">      </span><span class="n">CreateDefaultSubobject</span><span class="o">&lt;</span><span class="n">UStratisUnrealManager</span><span class="o">&gt;</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;StratisManager&quot;</span><span class="p">));</span>
+
+<span class="w">  </span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">setBaseUrl</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;http://148.251.15.126:44336&quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">setPredefinedNetwork</span><span class="p">(</span><span class="n">ENetwork</span><span class="o">::</span><span class="n">CIRRUS_TEST</span><span class="p">);</span>
+<span class="w">  </span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">setMnemonic</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;legal door leopard &quot;</span>
+<span class="w">                                   </span><span class="s">&quot;fire attract stove &quot;</span>
+<span class="w">                                   </span><span class="s">&quot;similar response photo &quot;</span>
+<span class="w">                                   </span><span class="s">&quot;prize seminar frown&quot;</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now, let’s write something interesting inside of the <code class="docutils literal notranslate"><span class="pre">RunSomeLogic</span></code> method - print current wallet’s address to log console:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">UStratisHandler::RunSomeLogic</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Display</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;Address: %s&quot;</span><span class="p">),</span>
+<span class="w">         </span><span class="o">*</span><span class="p">(</span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">()));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The last thing we need to do is to make use of our <code class="docutils literal notranslate"><span class="pre">UStratisHandler</span></code>.
+Open <strong>…Character.h</strong> and add lines below to the class declaration:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">UPROPERTY</span><span class="p">(</span><span class="n">VisibleAnywhere</span><span class="p">,</span><span class="w"> </span><span class="n">BlueprintReadOnly</span><span class="p">,</span><span class="w"> </span><span class="n">meta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">AllowPrivateAccess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">))</span>
+<span class="n">UStratisHandler</span><span class="o">*</span><span class="w"> </span><span class="n">stratisHandler</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>And now add object initialization code into the character’s class constructor definition:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">stratisHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CreateDefaultSubobject</span><span class="o">&lt;</span><span class="n">UStratisHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;StratisHandler&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Add <code class="docutils literal notranslate"><span class="pre">RunSomeLogic</span></code> call to the end of <code class="docutils literal notranslate"><span class="pre">OnFire</span></code> event definition:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">stratisHandler</span><span class="o">-&gt;</span><span class="n">RunSomeLogic</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Now we need to compile code and run the game. An address of our wallet will be printed on every shot we make.</p>
+</section>
+<section id="getting-a-wallet-balance">
+<h2>Getting a wallet balance<a class="headerlink" href="#getting-a-wallet-balance" title="Permalink to this heading">¶</a></h2>
+<p>Now let’s learn how we can get a balance of our wallet.</p>
+<p>Put the code below inside the <code class="docutils literal notranslate"><span class="pre">RunSomeLogic</span></code> method:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">getBalance</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">isSuccessful</span><span class="p">(</span><span class="n">result</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Display</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;Balance in satoshis: %llu&quot;</span><span class="p">),</span>
+<span class="w">            </span><span class="n">result</span><span class="o">::</span><span class="n">getValue</span><span class="p">(</span><span class="n">result</span><span class="p">));</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">),</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">getError</span><span class="p">(</span><span class="n">result</span><span class="p">).</span><span class="n">message</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>In this example, we’re using the <code class="docutils literal notranslate"><span class="pre">getBalance</span></code> method with <code class="docutils literal notranslate"><span class="pre">TFunction</span></code> parameter. You can also use another overloaded version of this method which takes delegates as parameters.</p>
+<p>This code will print your balance if the call succeeds, and print an error otherwise.</p>
+</section>
+<section id="getting-unspent-transaction-outputs">
+<h2>Getting unspent transaction outputs<a class="headerlink" href="#getting-unspent-transaction-outputs" title="Permalink to this heading">¶</a></h2>
+<p>Okay, now we will try to find unspent transaction outputs for our wallet.</p>
+<p>Put the code below inside the <code class="docutils literal notranslate"><span class="pre">RunSomeLogic</span></code> method:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">getCoins</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">isSuccessful</span><span class="p">(</span><span class="n">result</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">utxos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="o">::</span><span class="n">getValue</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">utxo</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">utxos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Display</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;UTXO #%i, hash: %s, satoshis: %llu&quot;</span><span class="p">),</span>
+<span class="w">                    </span><span class="n">utxo</span><span class="p">.</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">utxo</span><span class="p">.</span><span class="n">hash</span><span class="p">),</span><span class="w"> </span><span class="n">utxo</span><span class="p">.</span><span class="n">satoshis</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">),</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">getError</span><span class="p">(</span><span class="n">result</span><span class="p">).</span><span class="n">message</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Here we’re using a range-based for loop to iterate over <strong>TArray</strong> of <strong>FUTXO</strong> items.</p>
+<p>This code will print all of your utxos to log console one-by-one if the call is successful, and print error otherwise.</p>
+</section>
+<section id="sending-coins-waiting-for-a-receipt">
+<h2>Sending coins &amp; waiting for a receipt<a class="headerlink" href="#sending-coins-waiting-for-a-receipt" title="Permalink to this heading">¶</a></h2>
+<p>Now let’s try to implement a more complex logic: send some coins <em>and</em> await for transaction’s receipt.</p>
+<p>At first, define a couple of variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">destinationAddress</span></code>: in this example, we’re using <code class="docutils literal notranslate"><span class="pre">tD5aDZSu4Go4A23R7VsjuJTL51YMyeoLyS</span></code> for <strong>Cirrus Test network</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: the number of satoshis we want to send. Let’s send 10.000 satoshis (= 0.0001 STRAX).</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">FString</span><span class="w"> </span><span class="n">destinationAddress</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;tD5aDZSu4Go4A23R7VsjuJTL51YMyeoLyS&quot;</span><span class="p">));</span>
+<span class="n">int64</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Now, send <code class="docutils literal notranslate"><span class="pre">amount</span></code> of coins to <code class="docutils literal notranslate"><span class="pre">destinationAddress</span></code> with the code shown below:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">sendCoinsTransaction</span><span class="p">(</span>
+<span class="w">      </span><span class="n">destinationAddress</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">isSuccessful</span><span class="p">(</span><span class="n">result</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">transactionID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="o">::</span><span class="n">getValue</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+
+<span class="w">          </span><span class="c1">// TODO: now we need to await receipt</span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">),</span>
+<span class="w">                 </span><span class="o">*</span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">getError</span><span class="p">(</span><span class="n">result</span><span class="p">).</span><span class="n">message</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">});</span>
+</pre></div>
+</div>
+<p>Well, now we want to know when the receipt for this transaction is available.
+To achieve this, use the code shown below:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="o">-&gt;</span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">waitTillReceiptAvailable</span><span class="p">(</span>
+<span class="w">    </span><span class="n">transactionID</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">transactionID</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">isSuccessful</span><span class="p">(</span><span class="n">result</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Display</span><span class="p">,</span>
+<span class="w">                </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;Coins had been sent successfuly, transaction &quot;</span>
+<span class="w">                    </span><span class="s">&quot;id: %s&quot;</span><span class="p">),</span>
+<span class="w">                </span><span class="o">*</span><span class="n">transactionID</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">),</span>
+<span class="w">                </span><span class="o">*</span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">getError</span><span class="p">(</span><span class="n">result</span><span class="p">).</span><span class="n">message</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="what-s-next">
+<h2>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this heading">¶</a></h2>
+<p>In this tutorial, we’ve learned how to use some core plugin functions: get balance, send coins, and wait for a receipt. In the next tutorial, we’ll cover more advanced functionality of the plugin - interacting with smart contracts.</p>
+<p>If you found a problem, you can <a class="reference external" href="https://github.com/stratisproject/UnrealEnginePlugin/issues">open an issue</a> on the project’s Github page.
+If you still have questions, feel free to ask them in <a class="reference external" href="https://discord.gg/9tDyfZs">our Discord channel</a>.</p>
+<p>Stay tuned!</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../Tutorial_2_Smart_Contracts/Tutorial_2_Blueprint.html" class="btn btn-primary float-right" title="Tutorial #2 - Interacting with smart contracts" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="Tutorial_1_Blueprint.html" class="btn btn-neutral" title="Tutorial #1 - Basic plugin usage" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

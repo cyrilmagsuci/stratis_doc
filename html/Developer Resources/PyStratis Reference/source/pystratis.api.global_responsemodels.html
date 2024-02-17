@@ -1,0 +1,1413 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Global_ResponseModels &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Nodes" href="pystratis.nodes.html" />
+    <link rel="prev" title="Wallet" href="pystratis.api.wallet.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pystratis.html">PyStratis Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pystratis.api.html">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.nodes.html">Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.core.html">Core</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pystratis.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../pystratis.html">PyStratis Reference</a> &raquo;</li>
+        
+          <li><a href="modules.html">pyStratis</a> &raquo;</li>
+        
+          <li><a href="pystratis.api.html">API</a> &raquo;</li>
+        
+      <li>Global_ResponseModels</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/PyStratis Reference/source/pystratis.api.global_responsemodels.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="global-responsemodels">
+<h1>Global_ResponseModels<a class="headerlink" href="#global-responsemodels" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="module-pystratis.api.global_responsemodels.accountbalancemodel">
+<span id="accountbalancemodel"></span><h2>AccountBalanceModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.accountbalancemodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AccountBalanceModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accountName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accountHdPath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coinType</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.html#pystratis.core.cointype.CoinType" title="pystratis.core.cointype.CoinType"><span class="pre">CoinType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">amountConfirmed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">amountUnconfirmed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">spendableAmount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addresses</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.addressmodel.AddressModel" title="pystratis.api.global_responsemodels.addressmodel.AddressModel"><span class="pre">AddressModel</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for account balance.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.account_name">
+<span class="sig-name descname"><span class="pre">account_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.account_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The account name. Will be None for multisig.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.account_hd_path">
+<span class="sig-name descname"><span class="pre">account_hd_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.account_hd_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>The account HD path. Will be None for multisig.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.coin_type">
+<span class="sig-name descname"><span class="pre">coin_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.html#pystratis.core.cointype.CoinType" title="pystratis.core.cointype.CoinType"><span class="pre">CoinType</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.coin_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The coin type.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.amount_confirmed">
+<span class="sig-name descname"><span class="pre">amount_confirmed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.amount_confirmed" title="Permalink to this definition">¶</a></dt>
+<dd><p>The amount confirmed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.amount_unconfirmed">
+<span class="sig-name descname"><span class="pre">amount_unconfirmed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.amount_unconfirmed" title="Permalink to this definition">¶</a></dt>
+<dd><p>The amount unconfirmed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.spendable_amount">
+<span class="sig-name descname"><span class="pre">spendable_amount</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.spendable_amount" title="Permalink to this definition">¶</a></dt>
+<dd><p>The spendable amount. Will be None for multisig.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.addresses">
+<span class="sig-name descname"><span class="pre">addresses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.addressmodel.AddressModel" title="pystratis.api.global_responsemodels.addressmodel.AddressModel"><span class="pre">AddressModel</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel.addresses" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of addresses.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.addressbalancemodel">
+<span id="addressbalancemodel"></span><h2>AddressBalanceModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.addressbalancemodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressbalancemodel.AddressBalanceModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AddressBalanceModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">coinType</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.html#pystratis.core.cointype.CoinType" title="pystratis.core.cointype.CoinType"><span class="pre">CoinType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">amountConfirmed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">amountUnconfirmed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">spendableAmount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.addressbalancemodel.AddressBalanceModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for an address balance.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressbalancemodel.AddressBalanceModel.address">
+<span class="sig-name descname"><span class="pre">address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressbalancemodel.AddressBalanceModel.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>The address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressbalancemodel.AddressBalanceModel.coin_type">
+<span class="sig-name descname"><span class="pre">coin_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.html#pystratis.core.cointype.CoinType" title="pystratis.core.cointype.CoinType"><span class="pre">CoinType</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressbalancemodel.AddressBalanceModel.coin_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The coin type.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressbalancemodel.AddressBalanceModel.amount_confirmed">
+<span class="sig-name descname"><span class="pre">amount_confirmed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressbalancemodel.AddressBalanceModel.amount_confirmed" title="Permalink to this definition">¶</a></dt>
+<dd><p>The confirmed amount.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressbalancemodel.AddressBalanceModel.amount_unconfirmed">
+<span class="sig-name descname"><span class="pre">amount_unconfirmed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressbalancemodel.AddressBalanceModel.amount_unconfirmed" title="Permalink to this definition">¶</a></dt>
+<dd><p>The unconfirmed amount.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressbalancemodel.AddressBalanceModel.spendable_amount">
+<span class="sig-name descname"><span class="pre">spendable_amount</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressbalancemodel.AddressBalanceModel.spendable_amount" title="Permalink to this definition">¶</a></dt>
+<dd><p>The spendable amount.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.addressdescriptor">
+<span id="addressdescriptor"></span><h2>AddressDescriptor<a class="headerlink" href="#module-pystratis.api.global_responsemodels.addressdescriptor" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AddressDescriptor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyPath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addressType</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model of an address descriptor.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor.address">
+<span class="sig-name descname"><span class="pre">address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>The address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor.key_path">
+<span class="sig-name descname"><span class="pre">key_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor.key_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>The key path.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor.address_type">
+<span class="sig-name descname"><span class="pre">address_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor.address_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The address type.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.addressesmodel">
+<span id="addressesmodel"></span><h2>AddressesModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.addressesmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressesmodel.AddressesModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AddressesModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addresses</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.addressmodel.AddressModel" title="pystratis.api.global_responsemodels.addressmodel.AddressModel"><span class="pre">AddressModel</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.addressesmodel.AddressesModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a list of addressmodels.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressesmodel.AddressesModel.addresses">
+<span class="sig-name descname"><span class="pre">addresses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.addressmodel.AddressModel" title="pystratis.api.global_responsemodels.addressmodel.AddressModel"><span class="pre">AddressModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressesmodel.AddressesModel.addresses" title="Permalink to this definition">¶</a></dt>
+<dd><p>The list of address models.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.addressmodel">
+<span id="addressmodel"></span><h2>AddressModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.addressmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressmodel.AddressModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AddressModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUsed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isChange</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amountConfirmed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">amountUnconfirmed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.addressmodel.AddressModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model representing an address with balance.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressmodel.AddressModel.address">
+<span class="sig-name descname"><span class="pre">address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressmodel.AddressModel.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>The address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressmodel.AddressModel.is_used">
+<span class="sig-name descname"><span class="pre">is_used</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressmodel.AddressModel.is_used" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, the address is used.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressmodel.AddressModel.is_change">
+<span class="sig-name descname"><span class="pre">is_change</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressmodel.AddressModel.is_change" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, the address is a change address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressmodel.AddressModel.amount_confirmed">
+<span class="sig-name descname"><span class="pre">amount_confirmed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressmodel.AddressModel.amount_confirmed" title="Permalink to this definition">¶</a></dt>
+<dd><p>The amount confirmed in the address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.addressmodel.AddressModel.amount_unconfirmed">
+<span class="sig-name descname"><span class="pre">amount_unconfirmed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.addressmodel.AddressModel.amount_unconfirmed" title="Permalink to this definition">¶</a></dt>
+<dd><p>The amount unconfirmed in the address.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.blockmodel">
+<span id="blockmodel"></span><h2>BlockModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.blockmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BlockModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">confirmations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">versionHex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merkleroot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">tx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mediantime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nonce</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">difficulty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chainwork</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nTx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">previousblockhash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nextblockhash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifierv2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hashproof</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocktrust</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chaintrust</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model of a block.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.hash">
+<span class="sig-name descname"><span class="pre">hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.confirmations">
+<span class="sig-name descname"><span class="pre">confirmations</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.confirmations" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of confirmations.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.size">
+<span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>The size of the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.weight">
+<span class="sig-name descname"><span class="pre">weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>The weight of the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.height">
+<span class="sig-name descname"><span class="pre">height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The height of the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.version">
+<span class="sig-name descname"><span class="pre">version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block version.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.version_hex">
+<span class="sig-name descname"><span class="pre">version_hex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.version_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block version in hex.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.merkleroot">
+<span class="sig-name descname"><span class="pre">merkleroot</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.merkleroot" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block merkleroot.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.tx" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of transactions in the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time the block was produced.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.median_time">
+<span class="sig-name descname"><span class="pre">median_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.median_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The median time.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.nonce">
+<span class="sig-name descname"><span class="pre">nonce</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.nonce" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block’s nonce.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.bits">
+<span class="sig-name descname"><span class="pre">bits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block bits.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.difficulty">
+<span class="sig-name descname"><span class="pre">difficulty</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.difficulty" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block difficulty.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.chainwork">
+<span class="sig-name descname"><span class="pre">chainwork</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.chainwork" title="Permalink to this definition">¶</a></dt>
+<dd><p>The chain work.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.n_tx">
+<span class="sig-name descname"><span class="pre">n_tx</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.n_tx" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of transactions in the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.previous_blockhash">
+<span class="sig-name descname"><span class="pre">previous_blockhash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.previous_blockhash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The previous block hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.next_blockhash">
+<span class="sig-name descname"><span class="pre">next_blockhash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.next_blockhash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The next block hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.signature">
+<span class="sig-name descname"><span class="pre">signature</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.signature" title="Permalink to this definition">¶</a></dt>
+<dd><p>The signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.modifier_v2">
+<span class="sig-name descname"><span class="pre">modifier_v2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.modifier_v2" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block modifier.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.flags">
+<span class="sig-name descname"><span class="pre">flags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.flags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Block flags.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.hashproof">
+<span class="sig-name descname"><span class="pre">hashproof</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.hashproof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Block hashproof.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.blocktrust">
+<span class="sig-name descname"><span class="pre">blocktrust</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.blocktrust" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blocktrust.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blockmodel.BlockModel.chaintrust">
+<span class="sig-name descname"><span class="pre">chaintrust</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blockmodel.BlockModel.chaintrust" title="Permalink to this definition">¶</a></dt>
+<dd><p>Chaintrust.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.blocktransactiondetailsmodel">
+<span id="blocktransactiondetailsmodel"></span><h2>BlockTransactionDetailsModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.blocktransactiondetailsmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BlockTransactionDetailsModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">confirmations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">versionHex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merkleroot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">tx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mediantime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nonce</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">difficulty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chainwork</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nTx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">previousblockhash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nextblockhash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifierv2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hashproof</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocktrust</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chaintrust</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Transactions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel" title="pystratis.api.global_responsemodels.transactionmodel.TransactionModel"><span class="pre">TransactionModel</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for block transaction details.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.transactions">
+<span class="sig-name descname"><span class="pre">transactions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel" title="pystratis.api.global_responsemodels.transactionmodel.TransactionModel"><span class="pre">TransactionModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.transactions" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of transactions.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.hash">
+<span class="sig-name descname"><span class="pre">hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.confirmations">
+<span class="sig-name descname"><span class="pre">confirmations</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.confirmations" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of confirmations.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.size">
+<span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>The size of the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.weight">
+<span class="sig-name descname"><span class="pre">weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>The weight of the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.height">
+<span class="sig-name descname"><span class="pre">height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The height of the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.version">
+<span class="sig-name descname"><span class="pre">version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block version.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.version_hex">
+<span class="sig-name descname"><span class="pre">version_hex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.version_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block version in hex.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.merkleroot">
+<span class="sig-name descname"><span class="pre">merkleroot</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.merkleroot" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block merkleroot.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.tx" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of transactions in the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time the block was produced.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.median_time">
+<span class="sig-name descname"><span class="pre">median_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.median_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The median time.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.nonce">
+<span class="sig-name descname"><span class="pre">nonce</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.nonce" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block’s nonce.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.bits">
+<span class="sig-name descname"><span class="pre">bits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block bits.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.difficulty">
+<span class="sig-name descname"><span class="pre">difficulty</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.difficulty" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block difficulty.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.chainwork">
+<span class="sig-name descname"><span class="pre">chainwork</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.chainwork" title="Permalink to this definition">¶</a></dt>
+<dd><p>The chain work.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.n_tx">
+<span class="sig-name descname"><span class="pre">n_tx</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.n_tx" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of transactions in the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.previous_blockhash">
+<span class="sig-name descname"><span class="pre">previous_blockhash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.previous_blockhash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The previous block hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.next_blockhash">
+<span class="sig-name descname"><span class="pre">next_blockhash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.next_blockhash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The next block hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.signature">
+<span class="sig-name descname"><span class="pre">signature</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.signature" title="Permalink to this definition">¶</a></dt>
+<dd><p>The signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.modifier_v2">
+<span class="sig-name descname"><span class="pre">modifier_v2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.modifier_v2" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block modifier.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.flags">
+<span class="sig-name descname"><span class="pre">flags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.flags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Block flags.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.hashproof">
+<span class="sig-name descname"><span class="pre">hashproof</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.hashproof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Block hashproof.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.blocktrust">
+<span class="sig-name descname"><span class="pre">blocktrust</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.blocktrust" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blocktrust.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.chaintrust">
+<span class="sig-name descname"><span class="pre">chaintrust</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.blocktransactiondetailsmodel.BlockTransactionDetailsModel.chaintrust" title="Permalink to this definition">¶</a></dt>
+<dd><p>Chaintrust.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.buildcontracttransactionmodel">
+<span id="buildcontracttransactionmodel"></span><h2>BuildContractTransactionModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.buildcontracttransactionmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BuildContractTransactionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">success</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transactionId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for building a smart contact transaction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel.fee">
+<span class="sig-name descname"><span class="pre">fee</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel.fee" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction fee.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel.hex">
+<span class="sig-name descname"><span class="pre">hex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel.hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>The hex serialized transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel.message" title="Permalink to this definition">¶</a></dt>
+<dd><p>The build transaction message.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel.success">
+<span class="sig-name descname"><span class="pre">success</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel.success" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if build was successful.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel.transaction_id">
+<span class="sig-name descname"><span class="pre">transaction_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcontracttransactionmodel.BuildContractTransactionModel.transaction_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction hash, if build successful.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel">
+<span id="buildcreatecontracttransactionmodel"></span><h2>BuildCreateContractTransactionModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BuildCreateContractTransactionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">success</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transactionId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newContractAddress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a create smart contact transaction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel.new_contract_address">
+<span class="sig-name descname"><span class="pre">new_contract_address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel.new_contract_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>The new address associated with the smart contract.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel.fee">
+<span class="sig-name descname"><span class="pre">fee</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel.fee" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction fee.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel.hex">
+<span class="sig-name descname"><span class="pre">hex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel.hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>The hex serialized transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel.message" title="Permalink to this definition">¶</a></dt>
+<dd><p>The build transaction message.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel.success">
+<span class="sig-name descname"><span class="pre">success</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel.success" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if build was successful.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel.transaction_id">
+<span class="sig-name descname"><span class="pre">transaction_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildcreatecontracttransactionmodel.BuildCreateContractTransactionModel.transaction_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction hash, if build successful.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.buildofflinesignmodel">
+<span id="buildofflinesignmodel"></span><h2>BuildOfflineSignModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.buildofflinesignmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BuildOfflineSignModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walletName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walletAccount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsignedTransaction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">utxos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor" title="pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor"><span class="pre">UtxoDescriptor</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addresses</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor" title="pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor"><span class="pre">AddressDescriptor</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a built offline sign request.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel.wallet_name">
+<span class="sig-name descname"><span class="pre">wallet_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel.wallet_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The wallet name.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel.wallet_account">
+<span class="sig-name descname"><span class="pre">wallet_account</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel.wallet_account" title="Permalink to this definition">¶</a></dt>
+<dd><p>The wallet account.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel.unsigned_transaction">
+<span class="sig-name descname"><span class="pre">unsigned_transaction</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel.unsigned_transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>The unsigned transaction hex.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel.fee">
+<span class="sig-name descname"><span class="pre">fee</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel.fee" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction fee.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel.utxos">
+<span class="sig-name descname"><span class="pre">utxos</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor" title="pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor"><span class="pre">UtxoDescriptor</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel.utxos" title="Permalink to this definition">¶</a></dt>
+<dd><p>The utxos included in the transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel.addresses">
+<span class="sig-name descname"><span class="pre">addresses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor" title="pystratis.api.global_responsemodels.addressdescriptor.AddressDescriptor"><span class="pre">AddressDescriptor</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildofflinesignmodel.BuildOfflineSignModel.addresses" title="Permalink to this definition">¶</a></dt>
+<dd><p>The addresses and amounts receiving outputs.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.buildtransactionmodel">
+<span id="buildtransactionmodel"></span><h2>BuildTransactionModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.buildtransactionmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildtransactionmodel.BuildTransactionModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BuildTransactionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">transactionId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.buildtransactionmodel.BuildTransactionModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a built transaction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildtransactionmodel.BuildTransactionModel.fee">
+<span class="sig-name descname"><span class="pre">fee</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildtransactionmodel.BuildTransactionModel.fee" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction fee.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildtransactionmodel.BuildTransactionModel.hex">
+<span class="sig-name descname"><span class="pre">hex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildtransactionmodel.BuildTransactionModel.hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction hex.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.buildtransactionmodel.BuildTransactionModel.transaction_id">
+<span class="sig-name descname"><span class="pre">transaction_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.buildtransactionmodel.BuildTransactionModel.transaction_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction hash.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.maturedblockinfomodel">
+<span id="maturedblockinfomodel"></span><h2>MaturedBlockInfoModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.maturedblockinfomodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.maturedblockinfomodel.MaturedBlockInfoModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MaturedBlockInfoModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blockHash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">blockHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blockTime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.maturedblockinfomodel.MaturedBlockInfoModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model representing a married block.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.maturedblockinfomodel.MaturedBlockInfoModel.block_hash">
+<span class="sig-name descname"><span class="pre">block_hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.maturedblockinfomodel.MaturedBlockInfoModel.block_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.maturedblockinfomodel.MaturedBlockInfoModel.block_height">
+<span class="sig-name descname"><span class="pre">block_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.maturedblockinfomodel.MaturedBlockInfoModel.block_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block height.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.maturedblockinfomodel.MaturedBlockInfoModel.block_time">
+<span class="sig-name descname"><span class="pre">block_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.maturedblockinfomodel.MaturedBlockInfoModel.block_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time block was produced.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.pollviewmodel">
+<span id="pollviewmodel"></span><h2>PollViewModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.pollviewmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.pollviewmodel.PollViewModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PollViewModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IsPending</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IsExecuted</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PollVotedInFavorBlockDataHash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PollVotedInFavorBlockDataHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PollStartFavorBlockDataHash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PollStartFavorBlockDataHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PollExecutedBlockDataHash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PollExecutedBlockDataHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PubKeysHexVotedInFavor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.html#pystratis.core.pubkey.PubKey" title="pystratis.core.pubkey.PubKey"><span class="pre">PubKey</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VotingDataString</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.pollviewmodel.PollViewModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for polling data.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.is_pending">
+<span class="sig-name descname"><span class="pre">is_pending</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.is_pending" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, poll is pending.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.is_executed">
+<span class="sig-name descname"><span class="pre">is_executed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.is_executed" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, poll has been executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_id">
+<span class="sig-name descname"><span class="pre">poll_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The poll id.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_voted_in_favor_blockdata_hash">
+<span class="sig-name descname"><span class="pre">poll_voted_in_favor_blockdata_hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_voted_in_favor_blockdata_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>If voted in favor, the block of the vote.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_voted_in_favor_blockdata_height">
+<span class="sig-name descname"><span class="pre">poll_voted_in_favor_blockdata_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_voted_in_favor_blockdata_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>If voted in favor, the height of the block.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_start_favor_blockdata_hash">
+<span class="sig-name descname"><span class="pre">poll_start_favor_blockdata_hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_start_favor_blockdata_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block hash when polling started.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_start_favor_blockdata_height">
+<span class="sig-name descname"><span class="pre">poll_start_favor_blockdata_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_start_favor_blockdata_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block height when polling started.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_executed_blockdata_hash">
+<span class="sig-name descname"><span class="pre">poll_executed_blockdata_hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_executed_blockdata_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block hash when poll was executed, if executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_executed_blockdata_height">
+<span class="sig-name descname"><span class="pre">poll_executed_blockdata_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.poll_executed_blockdata_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The block height when poll was executed, if executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.pubkeys_hex_voted_in_favor">
+<span class="sig-name descname"><span class="pre">pubkeys_hex_voted_in_favor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pystratis.core.html#pystratis.core.pubkey.PubKey" title="pystratis.core.pubkey.PubKey"><span class="pre">PubKey</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.pubkeys_hex_voted_in_favor" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of pubkeys voting in favor of poll.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.voting_data_string">
+<span class="sig-name descname"><span class="pre">voting_data_string</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.pollviewmodel.PollViewModel.voting_data_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Voting data.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.removedtransactionmodel">
+<span id="removedtransactionmodel"></span><h2>RemovedTransactionModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.removedtransactionmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.removedtransactionmodel.RemovedTransactionModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RemovedTransactionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transactionId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">creationTime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.removedtransactionmodel.RemovedTransactionModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a removed transaction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.removedtransactionmodel.RemovedTransactionModel.transaction_id">
+<span class="sig-name descname"><span class="pre">transaction_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.removedtransactionmodel.RemovedTransactionModel.transaction_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The removed transaction hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.removedtransactionmodel.RemovedTransactionModel.creation_time">
+<span class="sig-name descname"><span class="pre">creation_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.removedtransactionmodel.RemovedTransactionModel.creation_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The creation time of the removed transaction.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.scriptpubkey">
+<span id="scriptpubkey"></span><h2>ScriptPubKey<a class="headerlink" href="#module-pystratis.api.global_responsemodels.scriptpubkey" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ScriptPubKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">asm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reqSigs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addresses</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>A ScriptPubKey.</p>
+<p>A ScriptPubKey is a part of transaction’s output, and is the second half of a script.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Learn more about <a class="reference external" href="https://en.bitcoin.it/wiki/Transaction">transaction structure</a>.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The type of script. The list of supported types can be found in <a class="reference external" href="https://github.com/stratisproject/StratisFullNode/blob/master/src/Stratis.Bitcoin/Controllers/Models/TransactionModel.cs#L327">sources</a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey.req_sigs">
+<span class="sig-name descname"><span class="pre">req_sigs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey.req_sigs" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of required signatures.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey.asm">
+<span class="sig-name descname"><span class="pre">asm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey.asm" title="Permalink to this definition">¶</a></dt>
+<dd><p>The assembly representation of the script.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey.hex">
+<span class="sig-name descname"><span class="pre">hex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey.hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>The hex representation of the script.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey.addresses">
+<span class="sig-name descname"><span class="pre">addresses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey.addresses" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of output addresses.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.scriptsig">
+<span id="scriptsig"></span><h2>ScriptSig<a class="headerlink" href="#module-pystratis.api.global_responsemodels.scriptsig" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.scriptsig.ScriptSig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ScriptSig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">asm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.scriptsig.ScriptSig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents ScriptSig.</p>
+<p>A ScriptSig is a part of transaction’s input, and is the first half of a script.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Learn more about <a class="reference external" href="https://en.bitcoin.it/wiki/Transaction#Input">transaction structure</a>.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.scriptsig.ScriptSig.asm">
+<span class="sig-name descname"><span class="pre">asm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.scriptsig.ScriptSig.asm" title="Permalink to this definition">¶</a></dt>
+<dd><p>The assembly representation of the script.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.scriptsig.ScriptSig.hex">
+<span class="sig-name descname"><span class="pre">hex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.scriptsig.ScriptSig.hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>The hex representation of the script.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.transactionmodel">
+<span id="transactionmodel"></span><h2>TransactionModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.transactionmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TransactionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">txid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">hash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locktime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.vin.VIn" title="pystratis.api.global_responsemodels.vin.VIn"><span class="pre">VIn</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.vout.VOut" title="pystratis.api.global_responsemodels.vout.VOut"><span class="pre">VOut</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blockhash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">confirmations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocktime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a transaction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.hex">
+<span class="sig-name descname"><span class="pre">hex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.hexstr.hexstr" title="pystratis.core.types.hexstr.hexstr"><span class="pre">hexstr</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction hex.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.txid">
+<span class="sig-name descname"><span class="pre">txid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.txid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.hash">
+<span class="sig-name descname"><span class="pre">hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.version">
+<span class="sig-name descname"><span class="pre">version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction version.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.size">
+<span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction size.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.vsize">
+<span class="sig-name descname"><span class="pre">vsize</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.vsize" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction vsize.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.weight">
+<span class="sig-name descname"><span class="pre">weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction weight.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.locktime">
+<span class="sig-name descname"><span class="pre">locktime</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.locktime" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction locktime.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.vin">
+<span class="sig-name descname"><span class="pre">vin</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.vin.VIn" title="pystratis.api.global_responsemodels.vin.VIn"><span class="pre">VIn</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.vin" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of VIn.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.vout">
+<span class="sig-name descname"><span class="pre">vout</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.vout.VOut" title="pystratis.api.global_responsemodels.vout.VOut"><span class="pre">VOut</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.vout" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of VOut.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.blockhash">
+<span class="sig-name descname"><span class="pre">blockhash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.blockhash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The hash of the block containing the transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.confirmations">
+<span class="sig-name descname"><span class="pre">confirmations</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.confirmations" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of confirmations of the transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction time.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionmodel.TransactionModel.blocktime">
+<span class="sig-name descname"><span class="pre">blocktime</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionmodel.TransactionModel.blocktime" title="Permalink to this definition">¶</a></dt>
+<dd><p>The blocktime.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.transactionoutputmodel">
+<span id="transactionoutputmodel"></span><h2>TransactionOutputModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.transactionoutputmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TransactionOutputModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">opReturnData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model of a transaction output.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel.address">
+<span class="sig-name descname"><span class="pre">address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.address.Address" title="pystratis.core.types.address.Address"><span class="pre">Address</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>The address receiving the output.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel.amount">
+<span class="sig-name descname"><span class="pre">amount</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel.amount" title="Permalink to this definition">¶</a></dt>
+<dd><p>The output amount.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel.op_return_data">
+<span class="sig-name descname"><span class="pre">op_return_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel.op_return_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>The OP_RETURN data, if present.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.utxodescriptor">
+<span id="utxodescriptor"></span><h2>UtxoDescriptor<a class="headerlink" href="#module-pystratis.api.global_responsemodels.utxodescriptor" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UtxoDescriptor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transactionId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scriptPubKey</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model of a utxo descriptor.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor.transaction_id">
+<span class="sig-name descname"><span class="pre">transaction_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor.transaction_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction hash off the utxo.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor.index">
+<span class="sig-name descname"><span class="pre">index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>The index of the utxo in the transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor.script_pubkey">
+<span class="sig-name descname"><span class="pre">script_pubkey</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor.script_pubkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>The scriptpubkey of the utxo.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor.amount">
+<span class="sig-name descname"><span class="pre">amount</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.utxodescriptor.UtxoDescriptor.amount" title="Permalink to this definition">¶</a></dt>
+<dd><p>The amount in the utxo.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.vin">
+<span id="vin"></span><h2>VIn<a class="headerlink" href="#module-pystratis.api.global_responsemodels.vin" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.vin.VIn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VIn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coinbase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">txid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scriptSig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pystratis.api.global_responsemodels.scriptsig.ScriptSig" title="pystratis.api.global_responsemodels.scriptsig.ScriptSig"><span class="pre">ScriptSig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.vin.VIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents transaction’s input.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Learn more about <a class="reference external" href="https://en.bitcoin.it/wiki/Transaction#Input">transaction input structure</a>.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.vin.VIn.coinbase">
+<span class="sig-name descname"><span class="pre">coinbase</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.vin.VIn.coinbase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Three scriptSig off this was a coinbase transaction.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.vin.VIn.txid">
+<span class="sig-name descname"><span class="pre">txid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.vin.VIn.txid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.vin.VIn.vout">
+<span class="sig-name descname"><span class="pre">vout</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.vin.VIn.vout" title="Permalink to this definition">¶</a></dt>
+<dd><p>The index of the output.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.vin.VIn.script_sig">
+<span class="sig-name descname"><span class="pre">script_sig</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#pystratis.api.global_responsemodels.scriptsig.ScriptSig" title="pystratis.api.global_responsemodels.scriptsig.ScriptSig"><span class="pre">ScriptSig</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.vin.VIn.script_sig" title="Permalink to this definition">¶</a></dt>
+<dd><p>The scriptSig.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.vin.VIn.sequence">
+<span class="sig-name descname"><span class="pre">sequence</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.vin.VIn.sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction’s sequence number.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.vout">
+<span id="vout"></span><h2>VOut<a class="headerlink" href="#module-pystratis.api.global_responsemodels.vout" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.vout.VOut">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VOut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scriptPubKey</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey" title="pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey"><span class="pre">ScriptPubKey</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.vout.VOut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents transaction’s output.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Learn more about <a class="reference external" href="https://en.bitcoin.it/wiki/Transaction#Output">transaction output structure and scriptPubKey</a>.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.vout.VOut.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.money.Money" title="pystratis.core.types.money.Money"><span class="pre">Money</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.vout.VOut.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The value of a transaction’s output.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.vout.VOut.n">
+<span class="sig-name descname"><span class="pre">n</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.vout.VOut.n" title="Permalink to this definition">¶</a></dt>
+<dd><p>The index of the output.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.vout.VOut.script_pubkey">
+<span class="sig-name descname"><span class="pre">script_pubkey</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey" title="pystratis.api.global_responsemodels.scriptpubkey.ScriptPubKey"><span class="pre">ScriptPubKey</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.vout.VOut.script_pubkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>The output’s scriptPubKey.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.walletbalancemodel">
+<span id="walletbalancemodel"></span><h2>WalletBalanceModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.walletbalancemodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletbalancemodel.WalletBalanceModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WalletBalanceModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">balances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel" title="pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel"><span class="pre">AccountBalanceModel</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.walletbalancemodel.WalletBalanceModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a wallet balance.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletbalancemodel.WalletBalanceModel.balances">
+<span class="sig-name descname"><span class="pre">balances</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel" title="pystratis.api.global_responsemodels.accountbalancemodel.AccountBalanceModel"><span class="pre">AccountBalanceModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.walletbalancemodel.WalletBalanceModel.balances" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of account balances.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.walletgeneralinfomodel">
+<span id="walletgeneralinfomodel"></span><h2>WalletGeneralInfoModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.walletgeneralinfomodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WalletGeneralInfoModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walletName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">creationTime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isDecrypted</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lastBlockSyncedHeight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chainTip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isChainSynced</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectedNodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A model representing general wallet info.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.wallet_name">
+<span class="sig-name descname"><span class="pre">wallet_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.wallet_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the wallet. Will be None for multisig.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.network">
+<span class="sig-name descname"><span class="pre">network</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.network" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the network the wallet is operating on.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.creation_time">
+<span class="sig-name descname"><span class="pre">creation_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.creation_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The datetime of wallet creation</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.is_decrypted">
+<span class="sig-name descname"><span class="pre">is_decrypted</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.is_decrypted" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, wallet is decrypted.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.last_block_synced_height">
+<span class="sig-name descname"><span class="pre">last_block_synced_height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.last_block_synced_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The height of last block synced by wallet.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.chain_tip">
+<span class="sig-name descname"><span class="pre">chain_tip</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.chain_tip" title="Permalink to this definition">¶</a></dt>
+<dd><p>The height off the chain tip.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.is_chain_synced">
+<span class="sig-name descname"><span class="pre">is_chain_synced</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.is_chain_synced" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, chain is synced.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.connected_nodes">
+<span class="sig-name descname"><span class="pre">connected_nodes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.walletgeneralinfomodel.WalletGeneralInfoModel.connected_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of connected nodes.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pystratis.api.global_responsemodels.walletsendtransactionmodel">
+<span id="walletsendtransactionmodel"></span><h2>WalletSendTransactionModel<a class="headerlink" href="#module-pystratis.api.global_responsemodels.walletsendtransactionmodel" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletsendtransactionmodel.WalletSendTransactionModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WalletSendTransactionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transactionId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel" title="pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel"><span class="pre">TransactionOutputModel</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.api.global_responsemodels.walletsendtransactionmodel.WalletSendTransactionModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pydantic model for a send transaction response.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletsendtransactionmodel.WalletSendTransactionModel.transaction_id">
+<span class="sig-name descname"><span class="pre">transaction_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.core.types.html#pystratis.core.types.uint256.uint256" title="pystratis.core.types.uint256.uint256"><span class="pre">uint256</span></a></em><a class="headerlink" href="#pystratis.api.global_responsemodels.walletsendtransactionmodel.WalletSendTransactionModel.transaction_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transaction hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pystratis.api.global_responsemodels.walletsendtransactionmodel.WalletSendTransactionModel.outputs">
+<span class="sig-name descname"><span class="pre">outputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel" title="pystratis.api.global_responsemodels.transactionoutputmodel.TransactionOutputModel"><span class="pre">TransactionOutputModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pystratis.api.global_responsemodels.walletsendtransactionmodel.WalletSendTransactionModel.outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of transaction outputs.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="pystratis.nodes.html" class="btn btn-primary float-right" title="Nodes" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="pystratis.api.wallet.html" class="btn btn-neutral" title="Wallet" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Working with Contracts &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Smart Contracts In-Depth" href="contracts-in-depth.html" />
+    <link rel="prev" title="Account Abstraction Layer" href="account-abstraction-layer.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../FullNode/full-node-introduction.html">Full Node</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="smartcontracts-introduction.html">Smart Contracts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="smart-contracts-basic-theory.html">Basic Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uses-of-smart-contracts.html">Uses of Smart Contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="account-abstraction-layer.html">Account Abstraction Layer</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Working with Contracts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#writing-a-contract">Writing a contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#validating-a-contract">Validating a contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compiling-a-contract">Compiling a contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deploying-a-contract">Deploying a contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interacting-with-a-contract">Interacting with a contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameter-serialization">Parameter Serialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gas">Gas</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="contracts-in-depth.html">Smart Contracts In-Depth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auction-smart-contract.html">The Auction Smart Contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing-locally-with-testchain.html">Testing Locally with TestChain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix-future-enhancements-to-smart-contracts.html">Appendix - Future Enhancements to Stratis Smart Contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix-gas-prices.html">Appendix - Gas Prices and Memory Limit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="smartcontracts-introduction.html">Stratis Smart Contracts</a> &raquo;</li>
+        
+      <li>Working with Contracts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Architecture Reference/SmartContracts/working-with-contracts.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="working-with-contracts">
+<h1>Working with Contracts<a class="headerlink" href="#working-with-contracts" title="Permalink to this heading">¶</a></h1>
+<section id="writing-a-contract">
+<h2>Writing a contract<a class="headerlink" href="#writing-a-contract" title="Permalink to this heading">¶</a></h2>
+<p>Stratis smart contracts are CIL bytecode that is executed on top of the dotnet core runtime. Tooling and support are currently provided for writing and compiling contracts in the C# language.</p>
+<p>Contracts can be written in any editor that supports C#, however Visual Studio is the recommended contract development environment.</p>
+<section id="creating-a-contract-from-a-template">
+<h3>Creating a contract from a template<a class="headerlink" href="#creating-a-contract-from-a-template" title="Permalink to this heading">¶</a></h3>
+<p>To get started with a basic contract quickly, install the smartcontract CLI template.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dotnet</span> <span class="n">new</span> <span class="o">--</span><span class="n">install</span> <span class="n">Stratis</span><span class="o">.</span><span class="n">SmartContracts</span><span class="o">.</span><span class="n">Templates</span><span class="o">.</span><span class="n">CLI</span>
+</pre></div>
+</div>
+<p>Then, create a new directory and run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dotnet</span> <span class="n">new</span> <span class="n">smartcontract</span> <span class="o">-</span><span class="n">n</span> <span class="n">YOUR_PROJECT_NAME</span>
+</pre></div>
+</div>
+<p>This will scaffold a basic contract with the necessary NuGet package references.</p>
+</section>
+<section id="using-visual-studio-for-a-contract">
+<h3>Using Visual Studio for a contract<a class="headerlink" href="#using-visual-studio-for-a-contract" title="Permalink to this heading">¶</a></h3>
+<p>Alternatively, once you installed Smart Contract template CLI using the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dotnet</span> <span class="n">new</span> <span class="o">--</span><span class="n">install</span> <span class="n">Stratis</span><span class="o">.</span><span class="n">SmartContracts</span><span class="o">.</span><span class="n">Templates</span><span class="o">.</span><span class="n">CLI</span>
+</pre></div>
+</div>
+<p>You can create a Smart Contract using Visual Studio. Open Visual Studio, click on Create new project.</p>
+<figure class="align-center">
+<img alt="Create Project in Visual Studio" src="../../_images/CreateProject.jpg" />
+</figure>
+<p>Then, type Stratis in search box and search for Stratis Smart Contract. You can see the Stratis Smart Contract template in the list as depicted below. Select the template and click on Next.</p>
+<figure class="align-center">
+<img alt="Select Stratis Smart Contract" src="../../_images/selecttemplate.jpg" />
+</figure>
+<p>Give Project Name, Folder location and solution name as usual. Then, your Smart contract project will be created where you will get default MyContract class as illustrated below.</p>
+<figure class="align-center">
+<img alt="Select Stratis Smart Contract" src="../../_images/stratissmartcontract.jpg" />
+</figure>
+<p>Hence, your basic Smart Contract with necessary NuGet package references is ready to use.</p>
+</section>
+</section>
+<section id="validating-a-contract">
+<h2>Validating a contract<a class="headerlink" href="#validating-a-contract" title="Permalink to this heading">¶</a></h2>
+<p>A Stratis smart contract must not contain any non-deterministic elements. This restricts the standard .NET libraries that can be used when writing a contract. There are additional constraints around the format of the contract that are required to be met before it can be executed.</p>
+<p>All contracts are validated by a node when the contract is being deployed. Invalid contracts will fail validation on-chain. Because of this, it is recommended to validate contracts locally before deployment.</p>
+<p>Validation can be done using the <code class="docutils literal notranslate"><span class="pre">sct</span></code> command line tool which you can download <a class="reference external" href="https://github.com/stratisproject/Stratis.SmartContracts.Tools.Sct">here</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dotnet</span> <span class="n">run</span> <span class="o">--</span> <span class="n">validate</span> <span class="p">[</span><span class="n">CONTRACT_PATH_HERE</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="compiling-a-contract">
+<h2>Compiling a contract<a class="headerlink" href="#compiling-a-contract" title="Permalink to this heading">¶</a></h2>
+<p>Contracts can be compiled using the <code class="docutils literal notranslate"><span class="pre">sct</span></code> command line tool.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">src</span><span class="o">/</span><span class="n">Stratis</span><span class="o">.</span><span class="n">SmartContracts</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">Sct</span>
+<span class="n">dotnet</span> <span class="n">run</span> <span class="o">--</span> <span class="n">validate</span> <span class="p">[</span><span class="n">CONTRACT_PATH_HERE</span><span class="p">]</span> <span class="o">-</span><span class="n">sb</span>
+</pre></div>
+</div>
+<p>If compilation is successful, the output will be the compiled bytecode of the contract.</p>
+</section>
+<section id="deploying-a-contract">
+<h2>Deploying a contract<a class="headerlink" href="#deploying-a-contract" title="Permalink to this heading">¶</a></h2>
+<p>Contracts can be deployed in several ways:</p>
+<ul class="simple">
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">sct</span></code> command line tool.</p></li>
+<li><p>Via the <a class="reference external" href="../../Swagger/index.html">API</a>.</p></li>
+<li><p>Via the wallet.</p></li>
+</ul>
+<p>Please see the documentation of each for more details.</p>
+</section>
+<section id="interacting-with-a-contract">
+<h2>Interacting with a contract<a class="headerlink" href="#interacting-with-a-contract" title="Permalink to this heading">¶</a></h2>
+<p>Interaction with a contract comes in two forms:</p>
+<ul class="simple">
+<li><p>Interacting with a contract through a transaction - a contract call</p></li>
+<li><p>Interacting with a contract without a transaction - a local call</p></li>
+</ul>
+<section id="calls-and-local-calls">
+<h3>Calls and Local Calls<a class="headerlink" href="#calls-and-local-calls" title="Permalink to this heading">¶</a></h3>
+<p>A contract call uses a regular transaction that is broadcast to the network. The call parameters are encapsulated in the transaction and handled by the network in the same way as any other transaction. Every node in the network will execute a contract call. If a contract call modifies the state database, the global state is changed.</p>
+<p>A local call does not require a transaction. Instead, it passes the call data directly to the local node and executes it on the local machine only. A local call runs against a copy of the state database. If the local call makes changes to the state, these changes are discarded after execution.</p>
+<p>Local calls can be used to read the contract state without expending gas (to query the value of a property for example). A local call can also aid in estimating gas costs without needing to broadcast transactions to the main network.</p>
+<p>Interacting with a contract can be done in several ways:</p>
+<ul class="simple">
+<li><p>Via the <a class="reference external" href="../../Swagger/index.html">API</a>.</p></li>
+<li><p>Via the wallet.</p></li>
+</ul>
+<p>At the moment, it is only possible to make local calls via the API.</p>
+</section>
+</section>
+<section id="parameter-serialization">
+<span id="id2"></span><h2>Parameter Serialization<a class="headerlink" href="#parameter-serialization" title="Permalink to this heading">¶</a></h2>
+<p>When deploying or interacting with a contract via the wallet, the API, or SCT, contract parameters must be provided as a string. This requires that a parameter is serialized to a string in the format that the API is expecting.</p>
+<p>Additionally, when using the API or SCT, the type of each parameter must be provided in the format “{0}#{1}”, where: {0} is an integer representing the Type of the serialized data and {1} is the serialized data itself.</p>
+<p>Refer to the following table to see the mapping between a type and its integer representation, the serializer for the type, and an example of using the type as a parameter.</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Param Type Serialization</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Integer representing
+serialized type</p></th>
+<th class="head"><p>Serializer</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>System.Boolean</p></td>
+<td><p>1</p></td>
+<td><p>System.Boolean.ToString()</p></td>
+<td><p>1#true</p></td>
+</tr>
+<tr class="row-odd"><td><p>System.Byte</p></td>
+<td><p>2</p></td>
+<td><p>System.Byte.ToString()</p></td>
+<td><p>2#255</p></td>
+</tr>
+<tr class="row-even"><td><p>System.Char</p></td>
+<td><p>3</p></td>
+<td><p>System.Char.ToString()</p></td>
+<td><p>3#c</p></td>
+</tr>
+<tr class="row-odd"><td><p>System.String</p></td>
+<td><p>4</p></td>
+<td><p>System.String</p></td>
+<td><p>4#Stratis</p></td>
+</tr>
+<tr class="row-even"><td><p>System.UInt32</p></td>
+<td><p>5</p></td>
+<td><p>System.UInt32.ToString()</p></td>
+<td><p>5#123</p></td>
+</tr>
+<tr class="row-odd"><td><p>System.Int32</p></td>
+<td><p>6</p></td>
+<td><p>System.Int32.ToString()</p></td>
+<td><p>6#-123</p></td>
+</tr>
+<tr class="row-even"><td><p>System.UInt64</p></td>
+<td><p>7</p></td>
+<td><p>System.UInt64.ToString()</p></td>
+<td><p>7#456</p></td>
+</tr>
+<tr class="row-odd"><td><p>System.Int64</p></td>
+<td><p>8</p></td>
+<td><p>System.Int64.ToString()</p></td>
+<td><p>8#-456</p></td>
+</tr>
+<tr class="row-even"><td><p>Stratis.SmartContracts.Address</p></td>
+<td><p>9</p></td>
+<td><p>Base58Address.ToString()</p></td>
+<td><p>9#mtXWDB6k5yC5v7TcwKZHB89SUp85yCKshy</p></td>
+</tr>
+<tr class="row-odd"><td><p>System.Byte[]</p></td>
+<td><p>10</p></td>
+<td><p>BitConverter.ToString()</p></td>
+<td><p>10#04A6B9</p></td>
+</tr>
+<tr class="row-even"><td><p>Stratis.SmartContracts.UInt128</p></td>
+<td><p>11</p></td>
+<td><p>Stratis.SmartContracts.UInt128.ToString()</p></td>
+<td><p>11#789</p></td>
+</tr>
+<tr class="row-odd"><td><p>Stratis.SmartContracts.UInt256</p></td>
+<td><p>12</p></td>
+<td><p>Stratis.SmartContracts.UInt256.ToString()</p></td>
+<td><p>12#987</p></td>
+</tr>
+</tbody>
+</table>
+<p>The parameters must be provided in the order they occur in the method signature. For example, calling a method with the signature <code class="docutils literal notranslate"><span class="pre">SomeMethod(Address</span> <span class="pre">myAddress,</span> <span class="pre">byte[]</span> <span class="pre">someData)</span></code> with the values <code class="docutils literal notranslate"><span class="pre">myAddress</span> <span class="pre">=</span> <span class="pre">mtXWDB6k5yC5v7TcwKZHB89SUp85yCKshy</span></code>, <code class="docutils literal notranslate"><span class="pre">someData</span> <span class="pre">=</span> <span class="pre">0xFF00AA</span></code> looks like:</p>
+<p>In the API:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">&quot;9#mtXWDB6k5yC5v7TcwKZHB89SUp85yCKshy&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;10#FF00AA&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>As parameters to SCT:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">param</span><span class="o">=</span><span class="s2">&quot;9#mtXWDB6k5yC5v7TcwKZHB89SUp85yCKshy&quot;</span> <span class="o">-</span><span class="n">param</span><span class="o">=</span><span class="s2">&quot;10#FF00AA&quot;</span>
+</pre></div>
+</div>
+<p>In the wallet:</p>
+<figure class="align-center" id="id4">
+<img alt="Wallet Params" src="../../_images/wallet-params.png" />
+<figcaption>
+<p><span class="caption-text">Entering contract parameters in the wallet</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="gas">
+<h2>Gas<a class="headerlink" href="#gas" title="Permalink to this heading">¶</a></h2>
+<p>Contracts require ‘gas’ to run. How much gas is needed is related to the amount of processing required to execute the contract. Gas is an additional expenditure to transaction fees and is different from STRAX. Its relationship to STRAX is defined by <code class="docutils literal notranslate"><span class="pre">strat</span> <span class="pre">=</span> <span class="pre">gas</span> <span class="pre">*</span> <span class="pre">gasPrice</span></code>.</p>
+<p>All contract transactions contain a gas price and gas limit specified by the sender of the transaction. When a miner mines the contract transaction, they receive the gas as a fee for the work they had to do to execute the contract. Miners can choose to prioritize transactions based on profitability by mining transactions with a higher gas price first.</p>
+<p>Gas fees are charged according to the <a class="reference internal" href="appendix-gas-prices.html"><span class="doc">gas price schedule</span></a>. When a contract execution takes place, gas is consumed until the gas limit is reached. If execution completes before the gas limit is reached, the gas will be refunded to the sender of the transaction. If execution exhausts all available gas, the execution will fail, the contract state will not change, and no gas will be refunded.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="contracts-in-depth.html" class="btn btn-primary float-right" title="Smart Contracts In-Depth" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="account-abstraction-layer.html" class="btn btn-neutral" title="Account Abstraction Layer" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

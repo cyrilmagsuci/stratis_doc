@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>A breakdown of the Two-Way Federated Peg solution &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Support" href="support.html" />
+    <link rel="prev" title="Stratis Sidechains" href="sidechains-introduction.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../FullNode/full-node-introduction.html">Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="sidechains-introduction.html">Sidechains</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">A breakdown of the Two-Way Federated Peg solution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-creation-of-the-cirrus-sidechain">The creation of the Cirrus sidechain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-role-of-the-federation">The role of the federation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#more-on-sidechain-deposits-and-withdrawals">More on sidechain deposits and withdrawals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mining-on-the-sidechain">Mining on the sidechain</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="sidechains-introduction.html">Stratis Sidechains</a> &raquo;</li>
+        
+      <li>A breakdown of the Two-Way Federated Peg solution</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Architecture Reference/Sidechains/two-way-federated-peg-solution.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="a-breakdown-of-the-two-way-federated-peg-solution">
+<h1>A breakdown of the Two-Way Federated Peg solution<a class="headerlink" href="#a-breakdown-of-the-two-way-federated-peg-solution" title="Permalink to this heading">¶</a></h1>
+<p>This chapter details the specific mechanics of a Two-Way Federated Peg sidechain solution from initial creation of the sidechain to mining the transactions made on it. Before these steps are covered, it is useful to define the four different types of sidechain user.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>User</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sidechain creator</p></td>
+<td><p>Sets up and configures the sidechain. Not necessarily a federation member.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Federation member</p></td>
+<td><p>Authorizes cross-chain transactions in conjunction with other federation members.</p></td>
+</tr>
+<tr class="row-even"><td><p>Sidechain funder</p></td>
+<td><p>Deposits funds on the sidechain and withdraws funds from sidechain.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sidechain user</p></td>
+<td><p>Makes transaction on the sidechain but does not deposit or withdraw funds. In other words, they make no cross-chain transactions.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Depending on the business case, there may be one sidechain funder or many. For example, a single deposit might be made at the start of a sidechain’s life followed by a single withdrawal at the end of its life. Alternatively, cross-chain transactions from several users might be a common occurrence.</p>
+</div>
+<section id="the-creation-of-the-cirrus-sidechain">
+<h2>The creation of the Cirrus sidechain<a class="headerlink" href="#the-creation-of-the-cirrus-sidechain" title="Permalink to this heading">¶</a></h2>
+<p>The creation of an Cirrus sidechain involves mining the genesis block and premine block, which are the first and second blocks on the sidechain respectively. The premine block contains the “premine” of 100 million APEX coins.</p>
+<p>The following figure shows the creation of the CRS sidechain:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/Sidechain_Creation.svg" id="image1"><img alt="Sidechains Creation" class="align-center" id="image1" src="../../_images/Sidechain_Creation.svg" width="793px" /></a>
+</div></blockquote>
+<p>The UTXO for the premine is shown inside the premine block. The “locked padlock” symbol indicates that at this point the UTXO is unspent, but it is ready to be spent by the federation when they honour STRAX deposits made on the mainchain. A sidechain funder who owns 100 STRAX is also shown in the figure, and their single UTXO of 100 STRAX is shown inside one of the mainchain blocks.</p>
+<p>The previous figure is the first of 3 figures. In the subsequent figures, the sidechain funder deposits 100 STRAX on the sidechain and, finally, they withdraw 50 STRAX back.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the term “locked” is used in relation to individual UTXOs, it refers to the fact they are spendable (when unlocked using the correct signature/s) and contribute to a balance in a wallet. Unlocked UTXOs are spent and no longer contribute to anyone’s balance. You may have encountered references to STRAX being locked on the sidechain. In this case, the text is describing in general terms the deposits made by sidechain funders which remain held by the federation until they are withdrawn.</p>
+</div>
+<p>The next section discusses the role played by the federation and the significance of the P2SH addresses.</p>
+</section>
+<section id="the-role-of-the-federation">
+<h2>The role of the federation<a class="headerlink" href="#the-role-of-the-federation" title="Permalink to this heading">¶</a></h2>
+<p>The role of a federation is to sign-off the deposits from the mainchain to the sidechain and sign-off withdrawals from the sidechain to the mainchain. To achieve this, Stratis Sidechains take advantage of an existing technology already built into the Stratis nodes: <a class="reference external" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch07.asciidoc#p2sh-addresses">Pay-To-Script-Hash addresses</a>. P2SH addresses are a convenient way to make payments to an organization that requires <a class="reference external" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch07.asciidoc#multisignature">UTXOs with multisignature locking scripts</a>, and they are adaptable to federation requirements. Although spending payments sent to P2SH addresses requires multiple signatories, not all the possible signatories are usually required. For example, only 4 of 5 signatories may be required to spend a payment. When a predefined minimum number of signatories is required from a group for an operation to proceed, this is also known as a quorum. The deposits and withdrawals that the federation controls also require the approval of a quorum.</p>
+<p>When a STRAX deposit is made, the federation signs for the release of CRS on the sidechain. When a STRAX withdrawal is made, the federation signs for the release of STRAX on the mainchain.</p>
+<p>To achieve this, the Stratis Sidechains solution employs two P2SH addresses:</p>
+<ol class="arabic simple">
+<li><p>The federation members supply private keys from their mainchain wallets and a mainchain P2SH address is created. STRAX sidechain deposits are sent to this P2SH address and remain there until they are withdrawn from the sidechain. Withdrawal of STRAX from this P2SH address requires multisignature unlocking.</p></li>
+<li><p>The federation members supply private keys from their sidechain wallets, and a sidechain P2SH address is created. The premine of the 100 million TAPEX coins is sent to this P2SH address, which is shown in the previous figure. CRS are the issued from this P2SH address, subject to multisignature unlocking, when STRAX are deposited. When STRAX are withdrawn, CRS are returned to this address.</p></li>
+</ol>
+<p>Creation of each P2SH address requires a public key from each federation member, which is shown in the <a class="reference internal" href="#image1"><span class="std std-ref">previous figure</span></a>. All supplied keys are hashed before they are used in the locking script. More information on this is available <a class="reference external" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch07.asciidoc#pay-to-script-hash-p2sh">here</a>.</p>
+</section>
+<section id="more-on-sidechain-deposits-and-withdrawals">
+<h2>More on sidechain deposits and withdrawals<a class="headerlink" href="#more-on-sidechain-deposits-and-withdrawals" title="Permalink to this heading">¶</a></h2>
+<p>This section follows on from the previous section by describing a sidechain deposit and withdrawal in more detail. This includes examining these transactions at the level of the UTXOs involved. A case study which follows on from the <a class="reference internal" href="#image1"><span class="std std-ref">previous figure</span></a> is used to describe these two processes. Before looking at the case study, two more topics are covered. The first is federated gateways. These are special nodes, which keep the connection between the mainchain and the sidechain, and make withdrawals and deposits possible. Next, the process by which the signatures are collected for the quorum is examined.</p>
+<section id="federated-gateways">
+<h3>Federated gateways<a class="headerlink" href="#federated-gateways" title="Permalink to this heading">¶</a></h3>
+<p>Sidechain deposits and withdrawals are different from standard transactions because they require something to be done on the other chain. Only certain nodes on both the mainchain or sidechain, which are known as federated gateways, react to deposits or withdrawals in a special way; other nodes just treat them as normal transactions. Deposits and withdrawals include an address for the transaction on the target chain. Federated gateways monitor transactions to see if there are any which require the other chain to be contacted. Each federation member runs two federated gateway nodes: one on the mainchain and one on the sidechain.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In any transaction federated gateways receive as part of a validated block, they scan for an individual UTXO that is being sent to the federation’s P2SH address (for that chain). This flags the transaction up as something special. Deposit and withdrawal transactions must include a second UTXO containing a <a class="reference external" href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch07.asciidoc#data-recording-output-return">RETURN output</a>.  This second UTXO is used to “transmit” the address (on the targeted chain) to which the deposit or withdrawal will be transferred. After identifying a special transaction, the federated gateway also scans the transaction for the RETURN output UTXO.</p>
+</div>
+</section>
+<section id="signature-collection">
+<h3>Signature collection<a class="headerlink" href="#signature-collection" title="Permalink to this heading">¶</a></h3>
+<p>Each time a transaction occurs, one federation member has the task of co-ordinating the signature collection. The member chosen changes for each block, and this member is responsible for co-ordinating all the transactions in the given block. If a member is not available, an attempt is made to assign the co-ordination task to the next member and so on. Not giving any particular node the responsibility of co-ordinating the signature collection increases the robustness of the solution.</p>
+<p>From now on in this document, the term “boss” is used for the federation member who takes on the co-ordination task for a given block.</p>
+</section>
+<section id="sidechain-deposits">
+<h3>Sidechain deposits<a class="headerlink" href="#sidechain-deposits" title="Permalink to this heading">¶</a></h3>
+<p>For an example of a sidechain deposit, the following figure shows a sidechain funder, <a class="reference internal" href="#image1"><span class="std std-ref">who has been introduced previously</span></a>, making a deposit of 100 STRAX on the sidechain:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/Sidechain_Deposit.svg" id="image2"><img alt="Sidechains Creation" class="align-center" id="image2" src="../../_images/Sidechain_Deposit.svg" width="906px" /></a>
+</div></blockquote>
+<p>The sequence of events is as follows:</p>
+<ol class="arabic simple">
+<li><p>The sidechain funder obtains a sidechains wallet.</p></li>
+<li><p>The sidechain funder makes a payment of 100 STRAX to the federation’s mainchain P2SH address. They supply a CRS address from their sidechain wallet with this transaction. The journey of this address, via a RETURN output UTXO, is shown in red. In this case, the sidechain funder’s 100 STRAX were held in a single UTXO (shown in purple), which is spent (unlocked) in this transaction.</p></li>
+<li><p>One of the mainchain federated gateways detects the transaction containing the deposit. The gateway must now wait for 10 blocks to be mined on top of the block containing the 100 STRAX deposit. The number of blocks to wait is defined by <code class="docutils literal notranslate"><span class="pre">MAX_REORG</span></code>. In other words, the federation waits until it is impossible to undo the deposit on the mainchain before proceeding to honour the deposit on the sidechain.</p></li>
+<li><p>A federation boss is assigned to co-ordinate this sidechain deposit and all subsequent deposits that are made on this block.</p></li>
+<li><p>The federation boss contacts one other federation member for their signature after providing their own. The size of the quorum in this federation is 2. The signatures are required to spend (unlock) the UTXO of 100 million CRS that was premined.</p></li>
+<li><p>A transaction is created that pays 100 CRS to the sidechain funder’s wallet. The two UTXOs that make up the transaction are shown in the latest sidechain block. The red UTXO is sent (locked) to the sidechain address supplied by the sidechain funder. The green UTXO pays the change (99,999,900 CRS) back to the federation’s sidechain P2SH address.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At the end of this deposit, the federation has 100 STRAX locked in the mainchain P2SH address and 99,999,900 CRS locked in the sidechain P2SH address.</p>
+</div>
+</section>
+<section id="sidechain-withdrawals">
+<h3>Sidechain withdrawals<a class="headerlink" href="#sidechain-withdrawals" title="Permalink to this heading">¶</a></h3>
+<p>For an example of a sidechain withdrawal, the following figure shows the sidechain funder (who made the deposit of 100 TSRAT) making a withdrawal of 50 CRS from the sidechain:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/Sidechain_Withdrawal.svg" id="image3"><img alt="Sidechains Withdrawal" class="align-center" id="image3" src="../../_images/Sidechain_Withdrawal.svg" width="906px" /></a>
+</div></blockquote>
+<p>The sequence of events is as follows:</p>
+<ol class="arabic simple">
+<li><p>The sidechain funder makes a payment of 50 CRS to the federation’s sidechain P2SH address. They supply a STRAX address from their mainchain wallet with this transaction. The journey of this address, via a RETURN output UTXO, is shown in purple. In this case, the sidechain funder’s 50 CRS were held in the single 100 CRS UTXO generated previously, which is spent (unlocked) in this transaction. Another UTXO is also created in the transaction that pays 50 CRS change back to the sidechain funder.</p></li>
+<li><p>One of the sidechain federated gateways detects the transaction containing the withdrawal. The gateway must now wait for 10 blocks to be mined on top of the block containing the 50 CRS withdrawal. The number of blocks to wait is defined by <code class="docutils literal notranslate"><span class="pre">MAX_REORG</span></code>. In other words, the federation waits until it is impossible to undo the withdrawal on the sidechain before proceeding to honour the withdrawal on the mainchain.</p></li>
+<li><p>A federation boss is assigned to co-ordinate the withdrawal to the mainchain.</p></li>
+<li><p>The federation boss contacts one other federation member for their signature after providing their own. The size of the quorum in this federation is 2. The signatures are required to spend (unlock) the UTXO of 100 STRAX that was previously deposited.</p></li>
+<li><p>A transaction is created that pays 50 STRAX to the sidechain funder’s mainchain wallet. The two UTXOs that make up the transaction are shown in the block. The purple UTXO is sent (locked) to the mainchain address supplied by the sidechain funder. The blue UTXO pays the change (50 STRAX) back to the federation’s mainchain P2SH address.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At the end of this withdrawal, the federation has 50 STRAX locked in the mainchain P2SH address and 99,999,950 CRS locked in the sidechain P2SH address.</p>
+</div>
+</section>
+</section>
+<section id="mining-on-the-sidechain">
+<h2>Mining on the sidechain<a class="headerlink" href="#mining-on-the-sidechain" title="Permalink to this heading">¶</a></h2>
+<p>The sidechain uses Proof-of-Authority mining exclusively. Mining is performed by the sidechain federated gateway nodes as well as standard full nodes running on the sidechain. There is no reward CRS for mining a block on the sidechain.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="support.html" class="btn btn-primary float-right" title="Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="sidechains-introduction.html" class="btn btn-neutral" title="Stratis Sidechains" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

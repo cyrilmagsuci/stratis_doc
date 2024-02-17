@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The supplied console application builds &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exploring the Base Feature of the Full Node" href="exploring-the-base-feature.html" />
+    <link rel="prev" title="Creating custom builds and extending the feature set" href="features.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../full-node-introduction.html">Full Node</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ConsoleOutput/ConsoleOutput.html">Console Output</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="features.html">Creating custom builds and extending the feature set</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">The supplied console application builds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exploring-the-base-feature.html">Exploring the Base Feature of the Full Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="creating-a-new-feature-summary.html">Creating a new feature summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Consensus/consensus-introduction.html">Consensus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ProvenHeaders/proven-headers-introduction.html">Proven Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ColdStaking/ColdStaking.html">Cold Staking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="../full-node-introduction.html">Stratis Full Node</a> &raquo;</li>
+        
+          <li><a href="features.html">Creating custom builds and extending the feature set</a> &raquo;</li>
+        
+      <li>The supplied console application builds</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Architecture Reference/FullNode/Features/console-application-builds.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="the-supplied-console-application-builds">
+<h1>The supplied console application builds<a class="headerlink" href="#the-supplied-console-application-builds" title="Permalink to this heading">¶</a></h1>
+<p>When you open up the Stratis.FullNode solution in Visual Studio, you will notice that nine projects at the top level. Six of these projects build the Full Node as a console application, and we will be taking a closer look at these. The following table describes the purpose of the six projects:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Project</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stratis.StraxD</p></td>
+<td><p>Runs the Full Node as a daemon on the Stratis network.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Stratis.StraxDnsD</p></td>
+<td><p>Runs the Full Node with a DNS service for initial peer discovery.</p></td>
+</tr>
+<tr class="row-even"><td><p>Stratis.CirrusD</p></td>
+<td><p>Runs the Full Node as a daemon on the Cirrus network.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Stratis.CirrusDnsD</p></td>
+<td><p>Runs the Full Node with a DNS service for initial peer discovery.</p></td>
+</tr>
+<tr class="row-even"><td><p>Stratis.CirrusMinerD</p></td>
+<td><p>Runs the Full Node with the Miner Feature on the Cirrus Network (Masternode)</p></td>
+</tr>
+</tbody>
+</table>
+<p>If you look inside any of these projects, you will notice a single C# file, program.cs, which contains the entry point, <code class="docutils literal notranslate"><span class="pre">Main()</span></code>, for the application.</p>
+<section id="what-happens-in-main">
+<h2>What happens in Main()?<a class="headerlink" href="#what-happens-in-main" title="Permalink to this heading">¶</a></h2>
+<p>It is in the <code class="docutils literal notranslate"><span class="pre">Main()</span></code> function that the settings for a Full Node are registered and its features are added in. Let’s take a look at what happens in <code class="docutils literal notranslate"><span class="pre">Main()</span></code> at the code level using the Stratis.StraxD project as an example.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        try
+        {
+            var nodeSettings = new NodeSettings(networksSelector: Networks.Strax, protocolVersion: ProtocolVersion.PROVEN_HEADER_VERSION, args: args)
+            {
+                MinProtocolVersion = ProtocolVersion.PROVEN_HEADER_VERSION
+            };
+
+            Console.Title = $&quot;Strax Full Node {nodeSettings.Network.NetworkType}&quot;;
+
+            DbType dbType = nodeSettings.GetDbType();
+
+            IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
+                .UseNodeSettings(nodeSettings, dbType)
+                .UseBlockStore(dbType)
+                .UsePosConsensus(dbType)
+                .UseMempool()
+                .UseColdStakingWallet()
+                .AddSQLiteWalletRepository()
+                .AddPowPosMining(true)
+                .UseApi()
+                .UseUnity3dApi()
+                .AddRPC()
+                .AddSignalR(options =&gt;
+                {
+                    DaemonConfiguration.ConfigureSignalRForStrax(options);
+                })
+                .UseDiagnosticFeature();
+
+            IFullNode node = nodeBuilder.Build();
+
+            if (node != null)
+                await node.RunAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(&quot;There was a problem initializing the node. Details: &#39;{0}&#39;&quot;, ex);
+        }
+    }
+}
+</pre></div>
+</div>
+<p>Two classes are instantiated in the <code class="docutils literal notranslate"><span class="pre">Main()</span></code> function: <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Configuration/NodeSettings.cs">NodeSettings</a> and <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Builder/FullNodeBuilder.cs">FullNodeBuilder</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">NodeSettings</span></code> contains the configuration for the node, and <code class="docutils literal notranslate"><span class="pre">FullNodeBuilder</span></code> is responsible for adding features to the node. Take a look at the fluid interface that creates the instance of the node. To make the settings available to the Full Node Builder, the instance of <code class="docutils literal notranslate"><span class="pre">NodeSettings</span></code> needs to first be supplied using <code class="docutils literal notranslate"><span class="pre">UseNodeSettings()</span></code>. Next, all the features are added. Finally, <code class="docutils literal notranslate"><span class="pre">Build()</span></code> is called, which returns an <code class="docutils literal notranslate"><span class="pre">IFullNode</span></code> interface. A call is made to <code class="docutils literal notranslate"><span class="pre">IFullNode.RunAsync()</span></code>, and the node is up and running. All six of the console applications follow this pattern.</p>
+<p>If you look at the <code class="docutils literal notranslate"><span class="pre">FullNodeBuilder</span></code> class, you will notice that <code class="docutils literal notranslate"><span class="pre">Build()</span></code> is the only function, out of those called in <code class="docutils literal notranslate"><span class="pre">Main()</span></code>, that is declared in the class. The other functions, which pull in the features, are <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods">extension methods</a>. <code class="docutils literal notranslate"><span class="pre">UseNodeSettings()</span></code> is, for example, declared in the static <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Builder/FullNodeBuilderNodeSettingsExtension.cs">FullNodeBuilderNodeSettingsExtension</a> class. The other functions are also declared in static extension classes. As you will see, if you create your own Full Node feature, you will create an extension function to register it.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">UseNodeSettings()</span></code> function is a useful entry point to the next topic. You will notice that the last line in the function makes a call to <code class="docutils literal notranslate"><span class="pre">UseBaseFeature()</span></code>. The next chapter will explore how features (components) are defined in the Full Node using the Base Feature as an example. Adding the Base Feature in is, in fact, an obligatory step, when building the Full Node, and for this reason, calling <code class="docutils literal notranslate"><span class="pre">UseBaseFeature()</span></code> before the <code class="docutils literal notranslate"><span class="pre">Build()</span></code> call is an obligatory step too.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your goal is to create a build of the Full Node which uses a different set of features to any of the supplied builds, you should be able to create your own modified build now. Look at the existing builds to see the functions that pull in the feature sets. Then create your own project with a modified Program.cs.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="exploring-the-base-feature.html" class="btn btn-primary float-right" title="Exploring the Base Feature of the Full Node" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="features.html" class="btn btn-neutral" title="Creating custom builds and extending the feature set" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

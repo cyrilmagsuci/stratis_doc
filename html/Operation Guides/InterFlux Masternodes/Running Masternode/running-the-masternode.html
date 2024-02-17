@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Masternode Requirements &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Stratis Sidechains" href="../../Sidechain/sidechain-introduction.html" />
+    <link rel="prev" title="Introduction" href="../Creating%20Masternode/creating-a-masternode.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../operation-guides-introduction.html">Operation Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cold-Staking/coldstaking-introduction.html">Cold-Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Full%20Node/fullnode-introduction.html">Full Node</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../masternode-introduction.html">InterFlux Masternodes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Creating%20Masternode/creating-a-masternode.html">Creating an InterFlux Masternode</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Running an InterFlux Masternode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#obtaining-launch-script">Obtaining Launch Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verifying-the-launch-script">Verifying the Launch Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#executing-the-launch-script">Executing the Launch Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechain/sidechain-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SDA/sda-introduction.html">Stratis Decentralized Accelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../STO/sto-introduction.html">STO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Token%20Swap/tokenswap-introduction.html">Token Swap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../operation-guides-introduction.html">Operation Guides</a> &raquo;</li>
+        
+          <li><a href="../masternode-introduction.html">InterFlux Masternodes</a> &raquo;</li>
+        
+      <li>Masternode Requirements</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Operation Guides/InterFlux Masternodes/Running Masternode/running-the-masternode.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="masternode-requirements">
+<h1>Masternode Requirements<a class="headerlink" href="#masternode-requirements" title="Permalink to this heading">¶</a></h1>
+<p>To successfully configure your Masternode you will need to have a record
+of the data that was returned from running the Stratis KeyGen Utility,
+these are highlighted below.</p>
+<ul class="simple">
+<li><p>Passphrase (That was entered into the Stratis KeyGen Utility</p></li>
+<li><p>FederationKey.DAT</p></li>
+</ul>
+<section id="obtaining-launch-script">
+<h2>Obtaining Launch Script<a class="headerlink" href="#obtaining-launch-script" title="Permalink to this heading">¶</a></h2>
+<p>Once the above steps have been completed and confirmed, you are now able
+to launch an InterFlux Masternode.</p>
+<p>To configure and launch the InterFlux Masternode, you will have to
+execute a PowerShell Core script provided and signed by Stratis Group
+Ltd.</p>
+<p>This script can be obtained from the below URL</p>
+<p><a class="reference external" href="https://www.stratisplatform.com/wp-content/uploads/2022/02/STRAX-Masternode-Launch-Script-v2.zip">https://www.stratisplatform.com/wp-content/uploads/2022/02/STRAX-Masternode-Launch-Script-v2.zip</a></p>
+</section>
+<section id="verifying-the-launch-script">
+<h2>Verifying the Launch Script<a class="headerlink" href="#verifying-the-launch-script" title="Permalink to this heading">¶</a></h2>
+<p>Stratis Group Ltd will digitally sign any PowerShell Script that they
+provide for operating one of their products.</p>
+<p>This can be verified by right-clicking the PS1 script, selecting
+properties and viewing the digital signature.</p>
+<a class="reference internal image-reference" href="../../../_images/image210.png"><img alt="../../../_images/image210.png" src="../../../_images/image210.png" style="width: 4.21875in; height: 5.30208in;" /></a>
+<p>Highlight the listed signature and select “Details”</p>
+<a class="reference internal image-reference" href="../../../_images/image35.png"><img alt="../../../_images/image35.png" src="../../../_images/image35.png" style="width: 3.69785in; height: 4.64583in;" /></a>
+<p>Select “View Certificate”</p>
+<a class="reference internal image-reference" href="../../../_images/image44.png"><img alt="../../../_images/image44.png" src="../../../_images/image44.png" style="width: 3.58661in; height: 4.27559in;" /></a>
+<p>Verify the issuing information in the certificate to ensure the
+authenticity of the PowerShell Script.</p>
+<a class="reference internal image-reference" href="../../../_images/image54.png"><img alt="../../../_images/image54.png" src="../../../_images/image54.png" style="width: 4.21875in; height: 5.36458in;" /></a>
+</section>
+<section id="executing-the-launch-script">
+<h2>Executing the Launch Script<a class="headerlink" href="#executing-the-launch-script" title="Permalink to this heading">¶</a></h2>
+<p>As the script is written in PowerShell Core, it needs to be called from
+an instance of PowerShell Core and not the standard PowerShell that is
+shipped with all latest versions of Windows Operating Systems.</p>
+<p>To launch PowerShell Core, you will need to invoke it from the command
+line or run command.</p>
+<a class="reference internal image-reference" href="../../../_images/image64.png"><img alt="../../../_images/image64.png" src="../../../_images/image64.png" style="width: 4.15625in; height: 2.14583in;" /></a>
+<p>Clicking OK on the above will launch a new instance of PowerShell Core</p>
+<a class="reference internal image-reference" href="../../../_images/image73.png"><img alt="../../../_images/image73.png" src="../../../_images/image73.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<p>Assuming that the launch script is located on the desktop, you will need
+to navigate to the desktop, this can be achieved by executing the below
+command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Set-Location<span class="w"> </span>.<span class="se">\D</span>esktop<span class="se">\</span>
+</pre></div>
+</div>
+<p>The PowerShell Core script can now be invoked from the PowerShell Core
+window using the below command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">&amp;</span><span class="w"> </span><span class="s1">&#39;.\STRAX Masternode Launch Script.ps1&#39;</span>
+</pre></div>
+</div>
+<p>The PowerShell Core instance should look something like the below.</p>
+<a class="reference internal image-reference" href="../../../_images/image83.png"><img alt="../../../_images/image83.png" src="../../../_images/image83.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<p>Hit Return/Enter to invoke the PowerShell Core Script.</p>
+<a class="reference internal image-reference" href="../../../_images/image92.png"><img alt="../../../_images/image92.png" src="../../../_images/image92.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<p>Enter the passphrase that was supplied to the Stratis KeyGen Utility and
+hit Return/Enter.</p>
+<p>You will now be prompted to enter in the full path to the
+federationKey.dat file. This will then subsequently be copied to the
+relevant folder. Enter the full path to the federationKey.dat.</p>
+<a class="reference internal image-reference" href="../../../_images/image102.png"><img alt="../../../_images/image102.png" src="../../../_images/image102.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<p>Upon hitting enter, the mainchain node will be launched, the PowerShell
+Core Script will advise you of the progress.</p>
+<a class="reference internal image-reference" href="../../../_images/image112.png"><img alt="../../../_images/image112.png" src="../../../_images/image112.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<p>Once peers have been found and the mainchain node has begun syncing the
+chain, the node will also index all addresses. This can take some time,
+so please be patient. The PowerShell Core window will advise you of
+progress.</p>
+<a class="reference internal image-reference" href="../../../_images/image122.png"><img alt="../../../_images/image122.png" src="../../../_images/image122.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<p>Once the synchronization and indexing have completed, the sidechain node
+will automatically be launched, this will also be evidenced in the
+PowerShell Core window.</p>
+<a class="reference internal image-reference" href="../../../_images/image132.png"><img alt="../../../_images/image132.png" src="../../../_images/image132.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<p>You can confirm that the sidechain node is operational by viewing your
+agent string in the sidechain node console.</p>
+<a class="reference internal image-reference" href="../../../_images/image142.png"><img alt="../../../_images/image142.png" src="../../../_images/image142.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<p>The agent string of a sidechain node is <strong>StratisNode:1.0.7.2 (80000)</strong></p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../../Sidechain/sidechain-introduction.html" class="btn btn-primary float-right" title="Stratis Sidechains" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../Creating%20Masternode/creating-a-masternode.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

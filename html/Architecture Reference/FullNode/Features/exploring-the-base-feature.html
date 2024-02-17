@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exploring the Base Feature of the Full Node &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Creating a new feature summary" href="creating-a-new-feature-summary.html" />
+    <link rel="prev" title="The supplied console application builds" href="console-application-builds.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../full-node-introduction.html">Full Node</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ConsoleOutput/ConsoleOutput.html">Console Output</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="features.html">Creating custom builds and extending the feature set</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="console-application-builds.html">The supplied console application builds</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Exploring the Base Feature of the Full Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="creating-a-new-feature-summary.html">Creating a new feature summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Consensus/consensus-introduction.html">Consensus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ProvenHeaders/proven-headers-introduction.html">Proven Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ColdStaking/ColdStaking.html">Cold Staking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="../full-node-introduction.html">Stratis Full Node</a> &raquo;</li>
+        
+          <li><a href="features.html">Creating custom builds and extending the feature set</a> &raquo;</li>
+        
+      <li>Exploring the Base Feature of the Full Node</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Architecture Reference/FullNode/Features/exploring-the-base-feature.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="exploring-the-base-feature-of-the-full-node">
+<h1>Exploring the Base Feature of the Full Node<a class="headerlink" href="#exploring-the-base-feature-of-the-full-node" title="Permalink to this heading">¶</a></h1>
+<p>This chapter takes a look at how the Base Feature is declared and implemented.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">UseBaseFeature()</span></code> function, which we saw in the previous chapter being called from <code class="docutils literal notranslate"><span class="pre">UseNodeSettings()</span></code>, is an extension method as well. It is defined in the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Base/BaseFeature.cs">FullNodeBuilderBaseFeatureExtension</a> class and extends the Full Node Builder too.</p>
+<p>Features have their own classes, and in the case of the Base Feature, this is the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Base/BaseFeature.cs">BaseFeature</a> class. Feature classes inherit from the abstract <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Builder/Feature/FullNodeFeature.cs">FullNodeFeature</a> class, which implements the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Builder/Feature/FullNodeFeature.cs">IFullNodeFeature</a> interface. The only requirement of <code class="docutils literal notranslate"><span class="pre">FullNodeFeature</span></code> subclasses is to implement the <code class="docutils literal notranslate"><span class="pre">InitializeAsync()</span></code> method, although they may need to override the empty <code class="docutils literal notranslate"><span class="pre">Dispose()</span></code> and <code class="docutils literal notranslate"><span class="pre">ValidateDependencies()</span></code> methods. In addition, the subclasses will have their own feature-specific methods and properties.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">UseBaseFeature()</span></code> function typifies how a feature is added to a build of the Full Node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">static</span> <span class="n">IFullNodeBuilder</span> <span class="n">UseBaseFeature</span><span class="p">(</span><span class="n">this</span> <span class="n">IFullNodeBuilder</span> <span class="n">fullNodeBuilder</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">fullNodeBuilder</span><span class="o">.</span><span class="n">ConfigureFeature</span><span class="p">(</span><span class="n">features</span> <span class="o">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">features</span>
+        <span class="o">.</span><span class="n">AddFeature</span><span class="o">&lt;</span><span class="n">BaseFeature</span><span class="o">&gt;</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">FeatureServices</span><span class="p">(</span><span class="n">services</span> <span class="o">=&gt;</span>
+        <span class="p">{</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">fullNodeBuilder</span><span class="o">.</span><span class="n">Network</span><span class="o">.</span><span class="n">Consensus</span><span class="o">.</span><span class="n">ConsensusFactory</span><span class="p">);</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">DBreezeSerializer</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">fullNodeBuilder</span><span class="o">.</span><span class="n">NodeSettings</span><span class="o">.</span><span class="n">LoggerFactory</span><span class="p">);</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">fullNodeBuilder</span><span class="o">.</span><span class="n">NodeSettings</span><span class="o">.</span><span class="n">DataFolder</span><span class="p">);</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">INodeLifetime</span><span class="p">,</span> <span class="n">NodeLifetime</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IPeerBanning</span><span class="p">,</span> <span class="n">PeerBanning</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">FullNodeFeatureExecutor</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ISignals</span><span class="p">,</span> <span class="n">Signals</span><span class="o">.</span><span class="n">Signals</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ISubscriptionErrorHandler</span><span class="p">,</span> <span class="n">DefaultSubscriptionErrorHandler</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">FullNode</span><span class="o">&gt;</span><span class="p">()</span><span class="o">.</span><span class="n">AddSingleton</span><span class="p">((</span><span class="n">provider</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">FullNode</span><span class="o">&gt;</span><span class="p">()</span> <span class="k">as</span> <span class="n">IFullNode</span><span class="p">;</span> <span class="p">});</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">new</span> <span class="n">ChainIndexer</span><span class="p">(</span><span class="n">fullNodeBuilder</span><span class="o">.</span><span class="n">Network</span><span class="p">));</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">DateTimeProvider</span><span class="o">.</span><span class="n">Default</span><span class="p">);</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IInvalidBlockHashStore</span><span class="p">,</span> <span class="n">InvalidBlockHashStore</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IChainState</span><span class="p">,</span> <span class="n">ChainState</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IChainRepository</span><span class="p">,</span> <span class="n">ChainRepository</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IFinalizedBlockInfoRepository</span><span class="p">,</span> <span class="n">FinalizedBlockInfoRepository</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ITimeSyncBehaviorState</span><span class="p">,</span> <span class="n">TimeSyncBehaviorState</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">NodeDeployments</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IInitialBlockDownloadState</span><span class="p">,</span> <span class="n">InitialBlockDownloadState</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IKeyValueRepository</span><span class="p">,</span> <span class="n">KeyValueRepository</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ITipsManager</span><span class="p">,</span> <span class="n">TipsManager</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IAsyncProvider</span><span class="p">,</span> <span class="n">AsyncProvider</span><span class="o">&gt;</span><span class="p">();</span>
+
+            <span class="o">//</span> <span class="n">Consensus</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ConsensusSettings</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ICheckpoints</span><span class="p">,</span> <span class="n">Checkpoints</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ConsensusRulesContainer</span><span class="o">&gt;</span><span class="p">();</span>
+
+            <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">ruleType</span> <span class="ow">in</span> <span class="n">fullNodeBuilder</span><span class="o">.</span><span class="n">Network</span><span class="o">.</span><span class="n">Consensus</span><span class="o">.</span><span class="n">ConsensusRules</span><span class="o">.</span><span class="n">HeaderValidationRules</span><span class="p">)</span>
+                <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">IHeaderValidationConsensusRule</span><span class="p">),</span> <span class="n">ruleType</span><span class="p">);</span>
+
+            <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">ruleType</span> <span class="ow">in</span> <span class="n">fullNodeBuilder</span><span class="o">.</span><span class="n">Network</span><span class="o">.</span><span class="n">Consensus</span><span class="o">.</span><span class="n">ConsensusRules</span><span class="o">.</span><span class="n">IntegrityValidationRules</span><span class="p">)</span>
+                <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">IIntegrityValidationConsensusRule</span><span class="p">),</span> <span class="n">ruleType</span><span class="p">);</span>
+
+            <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">ruleType</span> <span class="ow">in</span> <span class="n">fullNodeBuilder</span><span class="o">.</span><span class="n">Network</span><span class="o">.</span><span class="n">Consensus</span><span class="o">.</span><span class="n">ConsensusRules</span><span class="o">.</span><span class="n">PartialValidationRules</span><span class="p">)</span>
+                <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">IPartialValidationConsensusRule</span><span class="p">),</span> <span class="n">ruleType</span><span class="p">);</span>
+
+            <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">ruleType</span> <span class="ow">in</span> <span class="n">fullNodeBuilder</span><span class="o">.</span><span class="n">Network</span><span class="o">.</span><span class="n">Consensus</span><span class="o">.</span><span class="n">ConsensusRules</span><span class="o">.</span><span class="n">FullValidationRules</span><span class="p">)</span>
+                <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">IFullValidationConsensusRule</span><span class="p">),</span> <span class="n">ruleType</span><span class="p">);</span>
+
+            <span class="o">//</span> <span class="n">Connection</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">INetworkPeerFactory</span><span class="p">,</span> <span class="n">NetworkPeerFactory</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">NetworkPeerConnectionParameters</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IConnectionManager</span><span class="p">,</span> <span class="n">ConnectionManager</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ConnectionManagerSettings</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">new</span> <span class="n">PayloadProvider</span><span class="p">()</span><span class="o">.</span><span class="n">DiscoverPayloads</span><span class="p">());</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IVersionProvider</span><span class="p">,</span> <span class="n">VersionProvider</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IBlockPuller</span><span class="p">,</span> <span class="n">BlockPuller</span><span class="o">&gt;</span><span class="p">();</span>
+
+            <span class="o">//</span> <span class="n">Peer</span> <span class="n">address</span> <span class="n">manager</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IPeerAddressManager</span><span class="p">,</span> <span class="n">PeerAddressManager</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IPeerConnector</span><span class="p">,</span> <span class="n">PeerConnectorAddNode</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IPeerConnector</span><span class="p">,</span> <span class="n">PeerConnectorConnectNode</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IPeerConnector</span><span class="p">,</span> <span class="n">PeerConnectorDiscovery</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IPeerDiscovery</span><span class="p">,</span> <span class="n">PeerDiscovery</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ISelfEndpointTracker</span><span class="p">,</span> <span class="n">SelfEndpointTracker</span><span class="o">&gt;</span><span class="p">();</span>
+
+            <span class="o">//</span> <span class="n">Consensus</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IConsensusManager</span><span class="o">&gt;</span><span class="p">(</span><span class="n">provider</span> <span class="o">=&gt;</span> <span class="n">new</span> <span class="n">ConsensusManager</span><span class="p">(</span>
+                <span class="n">chainedHeaderTree</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IChainedHeaderTree</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">network</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">Network</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">loggerFactory</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">ILoggerFactory</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">chainState</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IChainState</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">integrityValidator</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IIntegrityValidator</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">partialValidator</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IPartialValidator</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">fullValidator</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IFullValidator</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">consensusRules</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IConsensusRuleEngine</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">finalizedBlockInfo</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IFinalizedBlockInfoRepository</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">signals</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">ISignals</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">peerBanning</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IPeerBanning</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">ibdState</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IInitialBlockDownloadState</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">chainIndexer</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">ChainIndexer</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">blockPuller</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IBlockPuller</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">blockStore</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IBlockStore</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">connectionManager</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IConnectionManager</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">nodeStats</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">INodeStats</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">nodeLifetime</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">INodeLifetime</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">consensusSettings</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">ConsensusSettings</span><span class="o">&gt;</span><span class="p">(),</span>
+                <span class="n">dateTimeProvider</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">IDateTimeProvider</span><span class="o">&gt;</span><span class="p">()));</span>
+
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IChainedHeaderTree</span><span class="p">,</span> <span class="n">ChainedHeaderTree</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IHeaderValidator</span><span class="p">,</span> <span class="n">HeaderValidator</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IIntegrityValidator</span><span class="p">,</span> <span class="n">IntegrityValidator</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IPartialValidator</span><span class="p">,</span> <span class="n">PartialValidator</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IFullValidator</span><span class="p">,</span> <span class="n">FullValidator</span><span class="o">&gt;</span><span class="p">();</span>
+
+            <span class="o">//</span> <span class="n">Console</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">INodeStats</span><span class="p">,</span> <span class="n">NodeStats</span><span class="o">&gt;</span><span class="p">();</span>
+
+            <span class="o">//</span> <span class="n">Controller</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddTransient</span><span class="o">&lt;</span><span class="n">NodeController</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+
+    <span class="k">return</span> <span class="n">fullNodeBuilder</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you supply a parameter via a lambda function, the code in the lambda function is only executed when the parameter is first used in the function. Keeping this in mind can help when visualizing the exact sequence of events in the code above.</p>
+</div>
+<p>There are four basic steps to the process:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FullNodeBuilder.ConfigureFeature()</span></code> is called. The function takes an <code class="docutils literal notranslate"><span class="pre">IFeatureCollection</span></code> interface and expects the collection to hold one or more features.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IFeatureCollection.AddFeature()</span></code> adds the <code class="docutils literal notranslate"><span class="pre">BaseFeature</span></code> to the collection. <code class="docutils literal notranslate"><span class="pre">AddFeature()</span></code> creates a Feature Registration for the feature and returns an <code class="docutils literal notranslate"><span class="pre">IFeatureRegistration</span></code> interface.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IFeatureRegistration.FeatureServices()</span></code> is called. The function takes an <code class="docutils literal notranslate"><span class="pre">IServiceCollection</span></code> interface and expects the collection to hold the services required for the feature.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IServiceCollection.AddSingleton()</span></code> adds classes and interfaces to the collection and specifies that they should be singletons. When adding an interface, a class that implements the interface must be supplied as the second parameter.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Full Node uses a Direct Injection design pattern. For example, if you search the Full Node code for a place where a <code class="docutils literal notranslate"><span class="pre">ConsensusManager</span></code> constructor is called, you will not find it. When a class depends on <code class="docutils literal notranslate"><span class="pre">ConsensusManager</span></code>, an instance of <code class="docutils literal notranslate"><span class="pre">ConsensusManager</span></code> will be created, or if an instance already exists, this will be used. This behavior is defined by <code class="docutils literal notranslate"><span class="pre">AddSingleton()</span></code> and by making this call you inform the Direct Injection implementation how to provide the service. The Full Node relies exclusively on the singleton design pattern when providing services and you should continue this pattern with any features that you create or modify.</p>
+</div>
+<p>Essentially, the feature <code class="docutils literal notranslate"><span class="pre">FullNodeBuilder.ConfigureFeature()</span></code> receives has the services it requires fully defined. If you need to create your own feature or customize an existing one by adding some extra services, you should follow the pattern above.</p>
+<section id="other-full-node-features">
+<h2>Other Full Node features<a class="headerlink" href="#other-full-node-features" title="Permalink to this heading">¶</a></h2>
+<p>Each Full Node feature usually has its own project in the source code, and every feature has its own Full Node Builder extension method, which is declared in a static class. As a general rule, the static class is named FullNodeBuilder*Extension.cs and held in a file called *Feature.cs (found at the top level of a feature project) where * is the name of the feature. The feature class (*Feature) is also usually declared in this file too.</p>
+<p>It is a good idea to look at the code for including some of the other features in a build. Comparing the code of the different features can help cement the ideas behind the Full Node Builder in your mind.</p>
+<p><a class="reference internal" href="../Consensus/customising-consensus-rule-engines.html#registering-consensus-features"><span class="std std-ref">Registering consensus features</span></a> discusses the registration of consensus features. In particular, it focusses on how you would adapt an existing registration to create the code for your own custom consensus feature.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="creating-a-new-feature-summary.html" class="btn btn-primary float-right" title="Creating a new feature summary" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="console-application-builds.html" class="btn btn-neutral" title="The supplied console application builds" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

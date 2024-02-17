@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Nodes &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Core" href="pystratis.core.html" />
+    <link rel="prev" title="Global_ResponseModels" href="pystratis.api.global_responsemodels.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pystratis.html">PyStratis Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pystratis.api.html">API</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pystratis.core.html">Core</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pystratis.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../pystratis.html">PyStratis Reference</a> &raquo;</li>
+        
+          <li><a href="modules.html">pyStratis</a> &raquo;</li>
+        
+      <li>Nodes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/PyStratis Reference/source/pystratis.nodes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="nodes">
+<h1>Nodes<a class="headerlink" href="#nodes" title="Permalink to this heading">¶</a></h1>
+<section id="straxnode">
+<h2>StraxNode<a class="headerlink" href="#straxnode" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StraxNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipaddress:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">http://localhost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network:</span> <span class="pre">Union[StraxMain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StraxTest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StraxRegTest]</span> <span class="pre">=</span> <span class="pre">StraxMain()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Strax Node.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.coldstaking">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">coldstaking</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.coldstaking.html#pystratis.api.coldstaking.ColdStaking" title="pystratis.api.coldstaking.coldstaking.ColdStaking"><span class="pre">ColdStaking</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.coldstaking" title="Permalink to this definition">¶</a></dt>
+<dd><p>The coldstaking route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A ColdStaking instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.coldstaking.html#pystratis.api.coldstaking.ColdStaking" title="pystratis.api.coldstaking.ColdStaking"><em>ColdStaking</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.diagnostic">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">diagnostic</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.diagnostic.html#pystratis.api.diagnostic.Diagnostic" title="pystratis.api.diagnostic.diagnostic.Diagnostic"><span class="pre">Diagnostic</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.diagnostic" title="Permalink to this definition">¶</a></dt>
+<dd><p>The diagnostic route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A Diagnostic instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.diagnostic.html#pystratis.api.diagnostic.Diagnostic" title="pystratis.api.diagnostic.Diagnostic"><em>Diagnostic</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.externalapi">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">externalapi</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.externalapi.html#pystratis.api.externalapi.ExternalAPI" title="pystratis.api.externalapi.externalapi.ExternalAPI"><span class="pre">ExternalAPI</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.externalapi" title="Permalink to this definition">¶</a></dt>
+<dd><p>The externalapi route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A ExternalAPI instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.externalapi.html#pystratis.api.externalapi.ExternalAPI" title="pystratis.api.externalapi.ExternalAPI"><em>ExternalAPI</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.mining">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mining</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.mining.html#pystratis.api.mining.Mining" title="pystratis.api.mining.mining.Mining"><span class="pre">Mining</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.mining" title="Permalink to this definition">¶</a></dt>
+<dd><p>The mining route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A Mining instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.mining.html#pystratis.api.mining.Mining" title="pystratis.api.mining.Mining"><em>Mining</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.signalr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">signalr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.signalr.html#pystratis.api.signalr.SignalR" title="pystratis.api.signalr.signalr.SignalR"><span class="pre">SignalR</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.signalr" title="Permalink to this definition">¶</a></dt>
+<dd><p>The signalr route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A SignalR instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.signalr.html#pystratis.api.signalr.SignalR" title="pystratis.api.signalr.SignalR"><em>SignalR</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.staking">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">staking</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.staking.html#pystratis.api.staking.Staking" title="pystratis.api.staking.staking.Staking"><span class="pre">Staking</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.staking" title="Permalink to this definition">¶</a></dt>
+<dd><p>The staking route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A Staking instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.staking.html#pystratis.api.staking.Staking" title="pystratis.api.staking.Staking"><em>Staking</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.addressbook">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">addressbook</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.addressbook.html#pystratis.api.addressbook.AddressBook" title="pystratis.api.addressbook.addressbook.AddressBook"><span class="pre">AddressBook</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.addressbook" title="Permalink to this definition">¶</a></dt>
+<dd><p>The addressbook route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An addressbook instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.addressbook.html#pystratis.api.addressbook.AddressBook" title="pystratis.api.addressbook.AddressBook"><em>AddressBook</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.blockchainnetwork">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">blockchainnetwork</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BaseNetwork</span></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.blockchainnetwork" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node’s network type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The node’s network.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>BaseNetwork</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.blockstore">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">blockstore</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.blockstore.html#pystratis.api.blockstore.BlockStore" title="pystratis.api.blockstore.blockstore.BlockStore"><span class="pre">BlockStore</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.blockstore" title="Permalink to this definition">¶</a></dt>
+<dd><p>The blockstore route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A BlockStore instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.blockstore.html#pystratis.api.blockstore.BlockStore" title="pystratis.api.blockstore.BlockStore"><em>BlockStore</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.check_all_endpoints_implemented">
+<span class="sig-name descname"><span class="pre">check_all_endpoints_implemented</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.check_all_endpoints_implemented" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries a running node’s swagger schema and compares the pystratis implemented endpoints with those defined by the swagger schema.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if all endpoints are implemented, otherwise False.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.connection_manager">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connection_manager</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.connectionmanager.html#pystratis.api.connectionmanager.ConnectionManager" title="pystratis.api.connectionmanager.connectionmanager.ConnectionManager"><span class="pre">ConnectionManager</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.connection_manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>The connectionmanager route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A ConnectionManager instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.connectionmanager.html#pystratis.api.connectionmanager.ConnectionManager" title="pystratis.api.connectionmanager.ConnectionManager"><em>ConnectionManager</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.consensus">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">consensus</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.consensus.html#pystratis.api.consensus.Consensus" title="pystratis.api.consensus.consensus.Consensus"><span class="pre">Consensus</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.consensus" title="Permalink to this definition">¶</a></dt>
+<dd><p>The consensus route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A Consensus instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.consensus.html#pystratis.api.consensus.Consensus" title="pystratis.api.consensus.Consensus"><em>Consensus</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.dashboard">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dashboard</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.dashboard.html#pystratis.api.dashboard.Dashboard" title="pystratis.api.dashboard.dashboard.Dashboard"><span class="pre">Dashboard</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.dashboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>The dashboard route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A Dashboard instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.dashboard.html#pystratis.api.dashboard.Dashboard" title="pystratis.api.dashboard.Dashboard"><em>Dashboard</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.ipaddr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ipaddr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.ipaddr" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node’s ip address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The specified ip address of the node.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>str</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.mempool">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mempool</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.mempool.html#pystratis.api.mempool.Mempool" title="pystratis.api.mempool.mempool.Mempool"><span class="pre">Mempool</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.mempool" title="Permalink to this definition">¶</a></dt>
+<dd><p>The mempool route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A Mempool instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.mempool.html#pystratis.api.mempool.Mempool" title="pystratis.api.mempool.Mempool"><em>Mempool</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node’s name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The node name.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>str</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.network">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">network</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.network.html#pystratis.api.network.Network" title="pystratis.api.network.network.Network"><span class="pre">Network</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.network" title="Permalink to this definition">¶</a></dt>
+<dd><p>The netowrk route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A Network instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.network.html#pystratis.api.network.Network" title="pystratis.api.network.Network"><em>Network</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.node">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.node.html#pystratis.api.node.Node" title="pystratis.api.node.node.Node"><span class="pre">Node</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.node" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A Node instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.node.html#pystratis.api.node.Node" title="pystratis.api.node.Node"><em>Node</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.rpc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rpc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.rpc.html#pystratis.api.rpc.RPC" title="pystratis.api.rpc.rpc.RPC"><span class="pre">RPC</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.rpc" title="Permalink to this definition">¶</a></dt>
+<dd><p>The RPC route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A RPC instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.rpc.html#pystratis.api.rpc.RPC" title="pystratis.api.rpc.RPC"><em>RPC</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.stop_node">
+<span class="sig-name descname"><span class="pre">stop_node</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.stop_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method for stopping node.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pystratis.nodes.straxnode.StraxNode.wallet">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wallet</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="pystratis.api.wallet.html#pystratis.api.wallet.Wallet" title="pystratis.api.wallet.wallet.Wallet"><span class="pre">Wallet</span></a></em><a class="headerlink" href="#pystratis.nodes.straxnode.StraxNode.wallet" title="Permalink to this definition">¶</a></dt>
+<dd><p>The wallet route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A Wallet instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pystratis.api.wallet.html#pystratis.api.wallet.Wallet" title="pystratis.api.wallet.Wallet"><em>Wallet</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="cirrusnode">
+<h2>CirrusNode<a class="headerlink" href="#cirrusnode" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="interfluxstraxnode">
+<h2>InterfluxStraxNode<a class="headerlink" href="#interfluxstraxnode" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="interfluxcirrusnode">
+<h2>InterfluxCirrusNode<a class="headerlink" href="#interfluxcirrusnode" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="straxmasternode">
+<h2>StraxMasternode<a class="headerlink" href="#straxmasternode" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="cirrusmasternode">
+<h2>CirrusMasternode<a class="headerlink" href="#cirrusmasternode" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="pystratis.core.html" class="btn btn-primary float-right" title="Core" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="pystratis.api.global_responsemodels.html" class="btn btn-neutral" title="Global_ResponseModels" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

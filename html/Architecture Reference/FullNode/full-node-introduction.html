@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Stratis Full Node &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Components and Features Overview" href="ComponentsOverview/full-node-components-and-features-overview.html" />
+    <link rel="prev" title="Architecture Reference" href="../architecture-reference-introduction.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Full Node</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConsoleOutput/ConsoleOutput.html">Console Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Features/features.html">Creating custom builds and extending the feature set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Consensus/consensus-introduction.html">Consensus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProvenHeaders/proven-headers-introduction.html">Proven Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ColdStaking/ColdStaking.html">Cold Staking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+      <li>Stratis Full Node</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Architecture Reference/FullNode/full-node-introduction.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="stratis-full-node">
+<h1>Stratis Full Node<a class="headerlink" href="#stratis-full-node" title="Permalink to this heading">¶</a></h1>
+<p>The Stratis Full Node is the backbone of the Stratis Platform. It implements the STRAX protocol and maintains an up-to-date copy of the STRAX and sidechain blockchains. Because of this, Full Nodes can:</p>
+<ol class="arabic simple">
+<li><p>Autonomously and authoritatively validate blocks and transactions.</p></li>
+<li><p>Serve blocks and transactions to other peers on the STRAX or sidechain blockchain networks.</p></li>
+</ol>
+<p>The Full Node is open source software and is built in C# using the .NET Core platform.
+The design of the Full Node is modular and several of its features can be included or excluded from a build depending on requirements.</p>
+<p>The audience for this document is anyone who wants to get involved with further developing the capabilities of the Full Node. Here are two reasons for getting involved:</p>
+<ol class="arabic simple">
+<li><p>You want to contribute to ongoing development work on the Full Node project.</p></li>
+<li><p>You want to fork the source code and adapt it for your own project. For example, you might want to add a new feature or modify the block size.</p></li>
+</ol>
+<p>A knowledge of C# is also assumed. However, if you are new to C# or even programming, you can continue to explore the Full Node as part of your C# learning experience. However, exploring Stratis Smart Contracts will give you “easier wins” and still enable you to have experience with blockchain-related code. More resources on the C# language are available <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/">here</a>.</p>
+<p>A background knowledge of <a class="reference external" href="https://en.wikipedia.org/wiki/Peer-to-peer">peer-to-peer (P2P)</a> computing including its uses prior to the invention of cryptocurrency will also be helpful.</p>
+<p>The purpose of this document is to provide a high-level overview of the Full Node, so you can gain an idea of how the components work together. It does not touch on individual C# classes.</p>
+<p>The Full Node is open source, and you can find the source here on GitHub: <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode">https://github.com/stratisproject/StratisBitcoinFullNode</a>.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ComponentsOverview/full-node-components-and-features-overview.html#accessing-the-network">Accessing the network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ComponentsOverview/full-node-components-and-features-overview.html#syncing-with-the-blockchain">Syncing with the blockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ComponentsOverview/full-node-components-and-features-overview.html#mining-new-blocks">Mining new blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ComponentsOverview/full-node-components-and-features-overview.html#node-wide-libraries">Node-wide Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ComponentsOverview/full-node-components-and-features-overview.html#interfacing-with-the-full-node">Interfacing with the Full Node</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ConsoleOutput/ConsoleOutput.html">Console Output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ConsoleOutput/ConsoleOutput.html#page-1-node-benchmarks">Page 1 - Node benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConsoleOutput/ConsoleOutput.html#page-2-node-data">Page 2 - Node data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Features/features.html">Creating custom builds and extending the feature set</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Features/console-application-builds.html">The supplied console application builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Features/exploring-the-base-feature.html">Exploring the Base Feature of the Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Features/creating-a-new-feature-summary.html">Creating a new feature summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PoS/PoS-algorithm.html">Hitting the target with a Proof-of-Stake algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PoS/PoS-exploring-the-code.html">Exploring the Proof-of-Stake code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PoA/the-role-of-the-federation.html">The role of the federation on PoA networks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Consensus/consensus-introduction.html">Consensus</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Consensus/consensus-architecture.html">Consensus architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Consensus/customising-consensus-rule-engines.html">Customizing consensus rule engines and their rulesets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Consensus/custom-consensus-algorithm-steps.html">Creating a custom consensus algorithm summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ProvenHeaders/proven-headers-introduction.html">Proven Headers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ProvenHeaders/how-proven-headers-provide-a-solution.html">How Proven Headers provide a “headers first” solution for a Proof-of-Stake blockchain</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ColdStaking/ColdStaking.html">Cold Staking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ColdStaking/ColdStaking.html#introduction-what-is-cold-staking">Introduction - what is Cold Staking?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ColdStaking/ColdStaking.html#motivation-why-get-involved-in-cold-staking">Motivation - why get involved in Cold Staking?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ColdStaking/ColdStaking.html#pre-requisites-for-cold-staking-with-stratis">Pre-requisites for Cold Staking with Stratis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ColdStaking/ColdStaking.html#stepping-through-the-stratis-cold-staking-process">Stepping through the Stratis Cold Staking process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ColdStaking/ColdStaking.html#cold-wallet-requirements">Cold wallet requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ColdStaking/ColdStaking.html#roll-out-of-cold-staking">Roll-out of Cold Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ColdStaking/ColdStaking.html#future-plans-for-cold-staking">Future plans for Cold Staking</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="ComponentsOverview/full-node-components-and-features-overview.html" class="btn btn-primary float-right" title="Components and Features Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../architecture-reference-introduction.html" class="btn btn-neutral" title="Architecture Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

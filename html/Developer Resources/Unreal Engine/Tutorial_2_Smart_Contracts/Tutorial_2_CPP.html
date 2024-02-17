@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial #2 - Interacting with smart contracts &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Tutorial #3 - NFT" href="../Tutorial_3_NFT/Tutorial_3_Blueprint.html" />
+    <link rel="prev" title="Tutorial #2 - Interacting with smart contracts" href="Tutorial_2_Blueprint.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PyStratis%20Reference/pystratis.html">PyStratis Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../unreal-engine-introduction.html">Unreal Engine</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_0_Plugin_set_up/Tutorial_0.html">Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_1_Basic_usage/Tutorial_1_Blueprint.html">Tutorial #1 - Basic plugin usage (Blueprint Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_1_Basic_usage/Tutorial_1_CPP.html">Tutorial #1 - Basic plugin usage (C++ Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tutorial_2_Blueprint.html">Tutorial #2 - Interacting with smart contracts (Blueprint Edition)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tutorial #2 - Interacting with smart contracts (C++ Edition)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisite">Prerequisite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transaction-level-api">Transaction-level API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#smart-contract-wrappers">Smart contract wrappers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_3_NFT/Tutorial_3_Blueprint.html">Tutorial #3 - Working with NFT (Blueprint Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_3_NFT/Tutorial_3_CPP.html">Tutorial #3 - Working with NFT (C++ Edition)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../unreal-engine-introduction.html">Unreal Engine Plugin</a> &raquo;</li>
+        
+      <li>Tutorial #2 - Interacting with smart contracts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/Unreal Engine/Tutorial_2_Smart_Contracts/Tutorial_2_CPP.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="tutorial-2-interacting-with-smart-contracts">
+<h1>Tutorial #2 - Interacting with smart contracts<a class="headerlink" href="#tutorial-2-interacting-with-smart-contracts" title="Permalink to this heading">¶</a></h1>
+<p>In this tutorial, we will learn how to deploy and interact with <a class="reference external" href="https://academy.stratisplatform.com/Architecture%20Reference/SmartContracts/smartcontracts-introduction.html">smart contracts</a> supported by the Stratis blockchain.
+Let’s get started!</p>
+<section id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this heading">¶</a></h2>
+<p>For this tutorial, you need to fully-setup the <code class="docutils literal notranslate"><span class="pre">StratisUnrealManager</span></code> instance, as described in Tutorial #0.</p>
+</section>
+<section id="transaction-level-api">
+<h2>Transaction-level API<a class="headerlink" href="#transaction-level-api" title="Permalink to this heading">¶</a></h2>
+<p>At first, let’s see how we can interact with smart contracts using low-level (i.e. transaction-level) API.</p>
+<section id="deploying-a-smart-contract">
+<h3>Deploying a smart contract<a class="headerlink" href="#deploying-a-smart-contract" title="Permalink to this heading">¶</a></h3>
+<p>To deploy a smart contract, we should use the method <code class="docutils literal notranslate"><span class="pre">sendCreateContractTransaction</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">UStratisUnrealManager</span><span class="o">::</span><span class="n">sendCreateContractTransaction</span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">contractCode</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">TArray</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">parameters</span><span class="p">,</span>
+<span class="w">    </span><span class="n">int64</span><span class="w"> </span><span class="n">money</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TFunction</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">TResult</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">contractCode</span></code> - hex-encoded bytecode of the contract. You can compile your contract using <a class="reference external" href="https://academy.stratisplatform.com/Architecture%20Reference/SmartContracts/working-with-contracts.html#compiling-a-contract">sct tool</a>,
+or you can use one of the whitelisted contracts from the <code class="docutils literal notranslate"><span class="pre">UWhitelistedSmartContracts</span></code> class.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parameters</span></code> - <a class="reference external" href="https://academy.stratisplatform.com/Architecture%20Reference/SmartContracts/working-with-contracts.html#parameter-serialization">serialized</a> arguments passed to contract’s constructor.
+You can encode parameters using <code class="docutils literal notranslate"><span class="pre">USmartContractsParametersEncoder</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">money</span></code> - the number of satoshis to deposit on the contract’s balance.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> - error-aware callback, returns either <code class="docutils literal notranslate"><span class="pre">transactionID</span></code> of contract creation or error.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TArray</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parameters</span><span class="p">{</span>
+<span class="w">    </span><span class="n">USmartContractsParametersEncoder</span><span class="o">::</span><span class="n">encodeString</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
+<span class="w">    </span><span class="n">USmartContractsParametersEncoder</span><span class="o">::</span><span class="n">encodeString</span><span class="p">(</span><span class="n">symbol</span><span class="p">),</span>
+<span class="w">    </span><span class="n">USmartContractsParametersEncoder</span><span class="o">::</span><span class="n">encodeString</span><span class="p">(</span><span class="n">tokenURIFormat</span><span class="p">),</span>
+<span class="w">    </span><span class="n">USmartContractsParametersEncoder</span><span class="o">::</span><span class="n">encodeBoolean</span><span class="p">(</span><span class="n">ownerOnlyMinting</span><span class="p">)};</span>
+
+<span class="k">this</span><span class="o">-&gt;</span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">sendCreateContractTransaction</span><span class="p">(</span>
+<span class="w">    </span><span class="n">UWhitelistedSmartContracts</span><span class="o">::</span><span class="n">GetNFTContractCode</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">parameters</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="n">callback</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">TResult</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">callback</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="calling-contract-s-methods">
+<h3>Calling contract’s methods<a class="headerlink" href="#calling-contract-s-methods" title="Permalink to this heading">¶</a></h3>
+<p>To call contract’s methods, we need to use the <code class="docutils literal notranslate"><span class="pre">sendCallContractTransaction</span></code> method:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">UStratisUnrealManager</span><span class="o">::</span><span class="n">sendCallContractTransaction</span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">contractAddress</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">methodName</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">TArray</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">parameters</span><span class="p">,</span>
+<span class="w">    </span><span class="n">uint64</span><span class="w"> </span><span class="n">money</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TFunction</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">TResult</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">contractAddress</span></code> - transaction ID of contract deployment transaction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">methodName</span></code> - name of the method we want to call.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parameters</span></code> - serialized parameters list. See more in <strong>Deploying smart contract</strong> section.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">money</span></code> - amount of satoshis to send to contract.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> - error-aware callback, returns either <code class="docutils literal notranslate"><span class="pre">transactionID</span></code> of contract call or error.</p>
+<p>Example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="o">-&gt;</span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">sendCallContractTransaction</span><span class="p">(</span>
+<span class="w">     </span><span class="cm">/* contractAddress */</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">contractAddress</span><span class="p">,</span>
+<span class="w">     </span><span class="cm">/* methodName */</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;TransferFrom&quot;</span><span class="p">),</span>
+<span class="w">     </span><span class="cm">/* parameters */</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="n">USmartContractsParametersEncoder</span><span class="o">::</span><span class="n">encodeAddress</span><span class="p">(</span><span class="n">fromAddress</span><span class="p">),</span>
+<span class="w">         </span><span class="n">USmartContractsParametersEncoder</span><span class="o">::</span><span class="n">encodeAddress</span><span class="p">(</span><span class="n">toAddress</span><span class="p">),</span>
+<span class="w">         </span><span class="n">USmartContractsParametersEncoder</span><span class="o">::</span><span class="n">encodeULong</span><span class="p">(</span><span class="n">tokenID</span><span class="p">)</span>
+<span class="w">     </span><span class="p">},</span>
+<span class="w">     </span><span class="cm">/* money */</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">     </span><span class="cm">/* callback */</span><span class="w"> </span><span class="p">[</span><span class="n">callback</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">TResult</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">callback</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="making-a-local-call">
+<h3>Making a local call<a class="headerlink" href="#making-a-local-call" title="Permalink to this heading">¶</a></h3>
+<p>Sometimes, we want to get some information from the smart contract, but we don’t want to post any updates to the blockchain. In this case, we can use a <a class="reference external" href="https://academy.stratisplatform.com/Architecture%20Reference/SmartContracts/working-with-contracts.html#calls-and-local-calls">local call functionality</a>.</p>
+<p>To make a local call, we need to use the <code class="docutils literal notranslate"><span class="pre">makeLocalCall</span></code> method:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">UStratisUnrealManager</span><span class="o">::</span><span class="n">makeLocalCall</span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">FLocalCallData</span><span class="o">&amp;</span><span class="w"> </span><span class="n">data</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TFunction</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">TResult</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code> - structure containing the all necessary information to resolve smart contract’s method call.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> - error-aware callback, returns either string-encoded return value or error.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">FLocalCallData</span><span class="w"> </span><span class="n">localCallData</span><span class="p">;</span>
+<span class="n">localCallData</span><span class="p">.</span><span class="n">gasPrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span>
+<span class="n">localCallData</span><span class="p">.</span><span class="n">gasLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">250000</span><span class="p">;</span>
+<span class="n">localCallData</span><span class="p">.</span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">localCallData</span><span class="p">.</span><span class="n">contractAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">contractAddress</span><span class="p">;</span>
+<span class="n">localCallData</span><span class="p">.</span><span class="n">methodName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;Owner&quot;</span><span class="p">);</span>
+<span class="n">localCallData</span><span class="p">.</span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">();</span>
+
+<span class="k">this</span><span class="o">-&gt;</span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">makeLocalCall</span><span class="p">(</span>
+<span class="w">    </span><span class="n">localCallData</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="n">callback</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">TResult</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">callback</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="smart-contract-wrappers">
+<h2>Smart contract wrappers<a class="headerlink" href="#smart-contract-wrappers" title="Permalink to this heading">¶</a></h2>
+<p>Although, we can use any method of any of smart contracts with 3 methods we discussed above,
+this requires a lot of boilerplate code for each call.</p>
+<p>That’s why we have wrappers for some of the white-listed contracts, such as the NFT contract.
+These wrappers encapsulate all of the necessary boilerplate, giving you a simple and powerful interface.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">¶</a></h2>
+<p>In this tutorial, we’ve learned how to interact with smart contracts using low-level and high-level APIs.
+In the next tutorial we will see how we can use Stratis Unreal plugin to integrate NFT into your game.</p>
+<p>If you found a problem, you can <a class="reference external" href="https://github.com/stratisproject/UnrealEnginePlugin/issues">open an issue</a> on the project’s Github page.
+If you still have questions, feel free to ask them in <a class="reference external" href="https://discord.gg/9tDyfZs">our Discord channel</a>.</p>
+<p>Stay tuned!</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../Tutorial_3_NFT/Tutorial_3_Blueprint.html" class="btn btn-primary float-right" title="Tutorial #3 - NFT" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="Tutorial_2_Blueprint.html" class="btn btn-neutral" title="Tutorial #2 - Interacting with smart contracts" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

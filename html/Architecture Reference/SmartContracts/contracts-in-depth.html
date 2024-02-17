@@ -1,0 +1,596 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Smart Contracts In-Depth &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The Auction Smart Contract" href="auction-smart-contract.html" />
+    <link rel="prev" title="Working with Contracts" href="working-with-contracts.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../FullNode/full-node-introduction.html">Full Node</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="smartcontracts-introduction.html">Smart Contracts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="smart-contracts-basic-theory.html">Basic Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uses-of-smart-contracts.html">Uses of Smart Contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="account-abstraction-layer.html">Account Abstraction Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="working-with-contracts.html">Working with Contracts</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Smart Contracts In-Depth</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compiled-contract-assembly">Compiled contract assembly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-stratis-smartcontract-object">The Stratis.SmartContract object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#persistent-state">Persistent State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-persistentstate-iscontract-function">The PersistentState.IsContract function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-receive-function">The Receive function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#contract-validation">Contract Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auction-smart-contract.html">The Auction Smart Contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing-locally-with-testchain.html">Testing Locally with TestChain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix-future-enhancements-to-smart-contracts.html">Appendix - Future Enhancements to Stratis Smart Contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix-gas-prices.html">Appendix - Gas Prices and Memory Limit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="smartcontracts-introduction.html">Stratis Smart Contracts</a> &raquo;</li>
+        
+      <li>Smart Contracts In-Depth</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Architecture Reference/SmartContracts/contracts-in-depth.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="smart-contracts-in-depth">
+<h1>Smart Contracts In-Depth<a class="headerlink" href="#smart-contracts-in-depth" title="Permalink to this heading">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>This document provides an in-depth examination of C# smart contracts on the Stratis platform.</p>
+</section>
+<section id="compiled-contract-assembly">
+<h2>Compiled contract assembly<a class="headerlink" href="#compiled-contract-assembly" title="Permalink to this heading">¶</a></h2>
+<p>All Stratis CIL contracts must be deployed as <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.reflection.assembly">assemblies</a> which contain one or more <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Types</a>.</p>
+<p>A contract maps one-to-one with a type in the assembly. Multiple types are allowed in an assembly, but this requires that the primary type is denoted with the <code class="docutils literal notranslate"><span class="pre">[Deploy]</span></code> attribute. If multiple types are present, only the primary type will be deployed in a CREATE transaction. During execution, the primary type has access to the other types defined in an assembly and can use these to deploy new contracts.</p>
+<p>Contracts exist as object instances in the dotnet runtime. Conceptually, they can be thought of as singletons with an infinite lifetime. CREATE transactions invoke the type’s constructor to create an instance of the type. On deployment, each contract is assigned an address, which can be thought of as a reference to the object instance. CALL transactions invoke methods on the instance and are the means of interacting with a contract.</p>
+<p>Unlike a .NET object, a contract’s state is not stored in fields on the object. Instead, it must be explicitly accessed using the <code class="docutils literal notranslate"><span class="pre">PersistentState</span></code> object exposed on the <code class="docutils literal notranslate"><span class="pre">Stratis.SmartContract</span></code> base class.</p>
+</section>
+<section id="the-stratis-smartcontract-object">
+<h2>The Stratis.SmartContract object<a class="headerlink" href="#the-stratis-smartcontract-object" title="Permalink to this heading">¶</a></h2>
+<p>All contracts must inherit from the <code class="docutils literal notranslate"><span class="pre">Stratis.SmartContract</span></code> type, which exposes useful members to the contract. Contracts must contain a single constructor whose first parameter is an <code class="docutils literal notranslate"><span class="pre">ISmartContractState</span></code> object. The <code class="docutils literal notranslate"><span class="pre">ISmartContractState</span></code> object is injected at runtime and provides the current state and services used within a contract.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Stratis.SmartContract base class methods</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Address</p></td>
+<td><p>The address of this contract</p></td>
+</tr>
+<tr class="row-odd"><td><p>Balance</p></td>
+<td><p>The balance of this contract</p></td>
+</tr>
+<tr class="row-even"><td><p>Block</p></td>
+<td><p>The current block height and coinbase</p></td>
+</tr>
+<tr class="row-odd"><td><p>Message</p></td>
+<td><p>The current contract’s address, sender, and value</p></td>
+</tr>
+<tr class="row-even"><td><p>PersistentState</p></td>
+<td><p>Access to the contract’s key/value store</p></td>
+</tr>
+<tr class="row-odd"><td><p>Serializer</p></td>
+<td><p>Access to serialization methods</p></td>
+</tr>
+<tr class="row-even"><td><p>Transfer</p></td>
+<td><p>Used to send funds to an address</p></td>
+</tr>
+<tr class="row-odd"><td><p>Call</p></td>
+<td><p>Used to call a method on another contract</p></td>
+</tr>
+<tr class="row-even"><td><p>Create&lt;T&gt;</p></td>
+<td><p>Used to create a new contract of type <code class="docutils literal notranslate"><span class="pre">T</span></code> from the current contract’s assembly</p></td>
+</tr>
+<tr class="row-odd"><td><p>Keccak256</p></td>
+<td><p>Used to keccak256 hash a byte array</p></td>
+</tr>
+<tr class="row-even"><td><p>Assert</p></td>
+<td><p>Used to halt execution if a condition is false</p></td>
+</tr>
+<tr class="row-odd"><td><p>Log&lt;T&gt;</p></td>
+<td><p>Used to log an event of type T</p></td>
+</tr>
+<tr class="row-even"><td><p>Receive</p></td>
+<td><p>Used to process incoming funds</p></td>
+</tr>
+</tbody>
+</table>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
+<p>The contract below represents a simple use case of storing a value provided on contract creation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Contract</span> <span class="p">:</span> <span class="n">SmartContract</span>
+<span class="p">{</span>
+  <span class="n">public</span> <span class="n">Contract</span><span class="p">(</span><span class="n">ISmartContractState</span> <span class="n">state</span><span class="p">,</span> <span class="n">ulong</span> <span class="n">value</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">this</span><span class="o">.</span><span class="n">PersistentState</span><span class="o">.</span><span class="n">SetUInt64</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The execution flow of the contract creation is then:</p>
+<ul class="simple">
+<li><p>Constructor called with <code class="docutils literal notranslate"><span class="pre">IPersistentState</span></code> object injected and constructor params injected</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PersistentState</span></code> called and state database updated with <code class="docutils literal notranslate"><span class="pre">value</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="persistent-state">
+<h2>Persistent State<a class="headerlink" href="#persistent-state" title="Permalink to this heading">¶</a></h2>
+<p>A contract’s state is stored in a key/value store where both the key and the value are byte arrays. Access to the state is exposed to a contract through the <code class="docutils literal notranslate"><span class="pre">PersistentState</span></code> object. <code class="docutils literal notranslate"><span class="pre">PersistentState</span></code> can access the k/v store directly using byte arrays through the <code class="docutils literal notranslate"><span class="pre">SetBytes</span></code> method.</p>
+<p>PersistentState also exposes methods which perform de/serialization before storing or retrieving a byte array. These methods are provided for <strong>convenience only</strong>. Internally, they use <code class="docutils literal notranslate"><span class="pre">Stratis.SmartContract.Serializer</span></code> to convert a value to its byte array representation before persisting or returning it.</p>
+<p>The following are equivalent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PersistentState</span><span class="o">.</span><span class="n">SetUInt32</span><span class="p">(</span><span class="mi">100_000</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">serialized</span> <span class="o">=</span> <span class="n">Serializer</span><span class="o">.</span><span class="n">Serialize</span><span class="p">(</span><span class="mi">100_000</span><span class="n">U</span><span class="p">);</span>
+<span class="n">PersistentState</span><span class="o">.</span><span class="n">SetBytes</span><span class="p">(</span><span class="n">serialized</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All methods except for <code class="docutils literal notranslate"><span class="pre">GetBytes</span></code> and <code class="docutils literal notranslate"><span class="pre">SetBytes</span></code> are convenience methods. It is <strong>highly</strong> important that you understand exactly how these work before using them. Pay particular attention to the default values returned when errors occur. To be certain what is happening in your code, perform the serialization yourself.</p>
+</div>
+<section id="serialization">
+<h3>Serialization<a class="headerlink" href="#serialization" title="Permalink to this heading">¶</a></h3>
+<p>Serialization of primitive types to byte arrays can be performed using the <code class="docutils literal notranslate"><span class="pre">Serializer</span></code> object exposed on <code class="docutils literal notranslate"><span class="pre">Stratis.SmartContracts</span></code>. Serialization should always be successful, except when attempting to serialize a <code class="docutils literal notranslate"><span class="pre">null</span></code> reference type, which will return <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+</section>
+<section id="deserialization">
+<h3>Deserialization<a class="headerlink" href="#deserialization" title="Permalink to this heading">¶</a></h3>
+<p>Deserialization can be thought of as a means to ‘interpret’ a byte array as a particular type. For example, the same byte array can be interpreted as an Int32 using <code class="docutils literal notranslate"><span class="pre">Serializer.ToUInt32</span></code>, or as a string using <code class="docutils literal notranslate"><span class="pre">Serializer.ToString</span></code>.</p>
+<p>Interpreting a byte array as a particular type will not always be successful. A byte array that is 2 bytes long cannot be interpreted as an Int32 because an Int32 is a minimum of 4 bytes wide. When this occurs, the serializer will return a default object.</p>
+<p>The table below outlines the behaviour when a byte array is interpreted unsuccessfully.</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">byte[] deserialization table</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Deserialization method</p></th>
+<th class="head"><p>Error Condition</p></th>
+<th class="head"><p>Return value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ToBool</p></td>
+<td><p>bytes == null || bytes.Length == 0</p></td>
+<td><p>default(bool)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ToAddress</p></td>
+<td><p>bytes == null || bytes.Length != 20</p></td>
+<td><p>Address.Zero</p></td>
+</tr>
+<tr class="row-even"><td><p>ToInt32</p></td>
+<td><p>bytes == null || bytes.Length &lt; 4</p></td>
+<td><p>default(int)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ToUInt32</p></td>
+<td><p>bytes == null || bytes.Length &lt; 4</p></td>
+<td><p>default(uint)</p></td>
+</tr>
+<tr class="row-even"><td><p>ToInt64</p></td>
+<td><p>bytes == null || bytes.Length &lt; 8</p></td>
+<td><p>default(int)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ToUInt64</p></td>
+<td><p>bytes == null || bytes.Length &lt; 8</p></td>
+<td><p>default(uint)</p></td>
+</tr>
+<tr class="row-even"><td><p>ToUInt128</p></td>
+<td><p>bytes == null || bytes.Length &lt; 16</p></td>
+<td><p>UInt128.Zero</p></td>
+</tr>
+<tr class="row-odd"><td><p>ToUInt256</p></td>
+<td><p>bytes == null || bytes.Length &lt; 32</p></td>
+<td><p>UInt256.Zero</p></td>
+</tr>
+<tr class="row-even"><td><p>ToString</p></td>
+<td><p>bytes == null || bytes.Length &lt; sizeof(char)</p></td>
+<td><p>string.Empty</p></td>
+</tr>
+<tr class="row-odd"><td><p>ToChar</p></td>
+<td><p>bytes == null || bytes.Length &lt; sizeof(char)</p></td>
+<td><p>default(char)</p></td>
+</tr>
+<tr class="row-even"><td><p>ToArray&lt;T&gt;</p></td>
+<td><p>bytes == null || bytes.Length == 0</p></td>
+<td><p>T[0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>ToStruct&lt;T&gt;</p></td>
+<td><p>bytes == null || bytes.Length == 0</p></td>
+<td><p>default(T)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="deserializing-a-base58-address">
+<h3>Deserializing a Base58 Address<a class="headerlink" href="#deserializing-a-base58-address" title="Permalink to this heading">¶</a></h3>
+<p>The serializer contains a special case, <code class="docutils literal notranslate"><span class="pre">Serializer.ToAddress(string</span> <span class="pre">val)</span></code> which will attempt to interpret a string as a base58 encoded address. If the string is <code class="docutils literal notranslate"><span class="pre">null</span></code>, empty, or not a valid base58 address, then <code class="docutils literal notranslate"><span class="pre">Address.Zero</span></code> is returned.</p>
+</section>
+</section>
+<section id="the-persistentstate-iscontract-function">
+<h2>The PersistentState.IsContract function<a class="headerlink" href="#the-persistentstate-iscontract-function" title="Permalink to this heading">¶</a></h2>
+<p>Inside smart contract code, developers have access to the method <cite>this.PersistentState.IsContract(Address address)</cite>. This method, as the name suggests, will return true if a given address is a contract and false if not. Some of the occasions when this information may be useful:</p>
+<ul class="simple">
+<li><p>You want to avoid further processing by calling into another contract within the current transaction.</p></li>
+<li><p>You want to attempt to call a specific contract method if the address is a contract.</p></li>
+</ul>
+<p>Remember that you don’t have to use this just to send funds though. The <cite>Transfer</cite> method will handle this for you, and send funds either to a wallet address as normal, or the <cite>Receive</cite> method if it exists on a contract.</p>
+</section>
+<section id="the-receive-function">
+<h2>The Receive function<a class="headerlink" href="#the-receive-function" title="Permalink to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Receive</span></code> function defines processing that occurs when a contract is sent funds. It accepts no arguments and does not return a value.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Receive</span></code> is invoked when a contract transfers funds to another contract using the <code class="docutils literal notranslate"><span class="pre">Transfer</span></code> method, or when a CALL transaction is made but no method name is specified. If it is invoked by another contract, the maximum amount of gas supplied will be <code class="docutils literal notranslate"><span class="pre">20000</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
+</section>
+<section id="contract-validation">
+<h2>Contract Validation<a class="headerlink" href="#contract-validation" title="Permalink to this heading">¶</a></h2>
+<p>All types in a contract assembly are validated to check for non-deterministic elements and conformance to a specific format.</p>
+<section id="determinism-validation">
+<h3>Determinism Validation<a class="headerlink" href="#determinism-validation" title="Permalink to this heading">¶</a></h3>
+<p>Deterministic execution is enforced by only permitting whitelisted members to be used in a contract.</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Whitelisted members</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Namespace</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Member</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>System</p></td>
+<td><p>Bool</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>System</p></td>
+<td><p>Byte</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>System</p></td>
+<td><p>SByte</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>System</p></td>
+<td><p>Char</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>System</p></td>
+<td><p>Int32</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>System</p></td>
+<td><p>UInt32</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>System</p></td>
+<td><p>Int64</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>System</p></td>
+<td><p>UInt64</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Stratis.SmartContracts</p></td>
+<td><p>UInt128</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Stratis.SmartContracts</p></td>
+<td><p>UInt256</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>System</p></td>
+<td><p>String</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>System</p></td>
+<td><p>Array</p></td>
+<td><p>GetLength</p></td>
+</tr>
+<tr class="row-even"><td><p>System</p></td>
+<td><p>Array</p></td>
+<td><p>Copy</p></td>
+</tr>
+<tr class="row-odd"><td><p>System</p></td>
+<td><p>Array</p></td>
+<td><p>GetValue</p></td>
+</tr>
+<tr class="row-even"><td><p>System</p></td>
+<td><p>Array</p></td>
+<td><p>SetValue</p></td>
+</tr>
+<tr class="row-odd"><td><p>System</p></td>
+<td><p>Array</p></td>
+<td><p>Resize</p></td>
+</tr>
+<tr class="row-even"><td><p>System</p></td>
+<td><p>Void</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>System</p></td>
+<td><p>Object</p></td>
+<td><p>ToString</p></td>
+</tr>
+<tr class="row-even"><td><p>System</p></td>
+<td><p>IteratorStateMachineAttribute</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>System</p></td>
+<td><p>RuntimeHelpers</p></td>
+<td><p>InitializeArray</p></td>
+</tr>
+<tr class="row-even"><td><p>Stratis</p></td>
+<td><p>SmartContract</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>As well as the whitelist, a contract:</p>
+<ul class="simple">
+<li><p>Must not use floating-point arithmetic</p></li>
+<li><p>Must not use the <code class="docutils literal notranslate"><span class="pre">new</span></code> keyword for reference types</p></li>
+<li><p>Must not use object finalizers</p></li>
+</ul>
+</section>
+<section id="format-validation">
+<h3>Format Validation<a class="headerlink" href="#format-validation" title="Permalink to this heading">¶</a></h3>
+<p>Contract assemblies are evaluated using these rules:</p>
+<p>Assembly:</p>
+<ul class="simple">
+<li><p>Must have a type marked with the <code class="docutils literal notranslate"><span class="pre">[Deploy]</span></code> attribute if multiple types are present</p></li>
+<li><p>Must not reference any disallowed assemblies</p></li>
+</ul>
+<p>Types:</p>
+<ul class="simple">
+<li><p>Must not have a namespace</p></li>
+<li><p>Must inherit from <code class="docutils literal notranslate"><span class="pre">Stratis.SmartContract</span></code></p></li>
+<li><p>Must not use fields</p></li>
+<li><p>Must not use generic parameters</p></li>
+<li><p>Must not use static constructors</p></li>
+<li><p>Must have a single constructor</p></li>
+</ul>
+<p>Constructor:</p>
+<ul class="simple">
+<li><p>Must have first param of type <code class="docutils literal notranslate"><span class="pre">ISmartContractState</span></code></p></li>
+</ul>
+<p>Methods:</p>
+<ul class="simple">
+<li><p>Must not use generic parameters</p></li>
+<li><p>Must not use try-catch</p></li>
+<li><p>Must only accept primitive parameters</p></li>
+</ul>
+<p>Nested Types:</p>
+<ul class="simple">
+<li><p>Must be a value type</p></li>
+<li><p>Must not define nested types</p></li>
+<li><p>Must not define methods</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="auction-smart-contract.html" class="btn btn-primary float-right" title="The Auction Smart Contract" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="working-with-contracts.html" class="btn btn-neutral" title="Working with Contracts" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

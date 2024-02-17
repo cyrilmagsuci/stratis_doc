@@ -1,0 +1,582 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Staking STRAX On a Raspberry Pi &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="InterFlux Masternodes" href="../../InterFlux%20Masternodes/masternode-introduction.html" />
+    <link rel="prev" title="Stratis Full Node" href="../fullnode-introduction.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../operation-guides-introduction.html">Operation Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cold-Staking/coldstaking-introduction.html">Cold-Staking</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../fullnode-introduction.html">Full Node</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Staking on a Raspberry Pi</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-ubuntu-server-os">Installing Ubuntu Server OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#booting-the-raspberry-pi">Booting the Raspberry Pi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remote-login">Remote Login</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-net-and-straxfullnode">Installing .NET and StraxFullNode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-straxnode">Installing StraxNode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-strax-wallet">Setting up Strax Wallet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-strax-wallet-cli">Using the Strax Wallet CLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#security-considerations">Security Considerations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#closing-comments">Closing Comments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../InterFlux%20Masternodes/masternode-introduction.html">InterFlux Masternodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechain/sidechain-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SDA/sda-introduction.html">Stratis Decentralized Accelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../STO/sto-introduction.html">STO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Token%20Swap/tokenswap-introduction.html">Token Swap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../operation-guides-introduction.html">Operation Guides</a> &raquo;</li>
+        
+          <li><a href="../fullnode-introduction.html">Stratis Full Node</a> &raquo;</li>
+        
+      <li>Staking STRAX On a Raspberry Pi</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Operation Guides/Full Node/RPiStaking/rpistaking.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="staking-strax-on-a-raspberry-pi">
+<h1>Staking STRAX On a Raspberry Pi<a class="headerlink" href="#staking-strax-on-a-raspberry-pi" title="Permalink to this heading">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>This guide was put together by a Stratis Community member &#64;velo#8907!</p>
+<p><a class="reference external" href="https://strax.miew.org/">https://strax.miew.org/</a></p>
+<p>If you liked the guide so much that you want to donate, his STRAX Address is: <em>XRFYUHNonApGeBtgkipgJceBcE9ZMTQoEF</em></p>
+<p>This guide will teach you how to stake your STRAX’s on a Raspberry Pi. Fortunately, I have tried my best to make this guide, so you don’t have to be tech-savvy or computer genius to follow along.</p>
+<section id="why-would-you-want-to-use-raspberry-pi-instead-of-your-computer-or-vps-for-staking">
+<h3>Why would you want to use Raspberry Pi instead of your computer or VPS for staking?<a class="headerlink" href="#why-would-you-want-to-use-raspberry-pi-instead-of-your-computer-or-vps-for-staking" title="Permalink to this heading">¶</a></h3>
+<p>First of all, a Raspberry Pi consumes almost no electricity. The wattage requirement is practically equivalent to charging your Phone with a fast charger. It is small and mobile. It is essentially a mini-computer.
+Furthermore, you most likely use your PC for all sorts of tasks, for example, browsing the Internet. This can make you vulnerable to malware, whereas, with a Raspberry Pi, you tend to leave it be.</p>
+<p>If you are using a VPS, you trust someone else, for example, a hosting company, to keep your server secure and pay a monthly subscription. Additionally, you would probably need to use an external remote connection to the VPS, which isn’t necessarily insecure. Still, it is less secure than a local remote connection or not remote at all. Using a Raspberry Pi allows you to a greater extent to stay local than a VPS would, generally speaking. Whatever you decide to choose, whether it is PC, VPS, Raspberry Pi, or other, please make sure you are familiar with the risks of Hot Staking.</p>
+</section>
+<section id="benefits-of-raspberry-pi">
+<h3>Benefits of Raspberry Pi<a class="headerlink" href="#benefits-of-raspberry-pi" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Low wattage usage</p></li>
+<li><p>Small and mobile</p></li>
+<li><p>Secure (At least more secure than staking on your PC)</p></li>
+<li><p>Easy to use (If you follow this guide).</p></li>
+<li><p>Low operating cost.</p></li>
+</ul>
+<p>If you are convinced and don’t have a Raspberry Pi yet, you can buy a complete desktop starter kit here: <a class="reference external" href="https://www.raspberrypi.org/products/raspberry-pi-4-desktop-kit/">https://www.raspberrypi.org/products/raspberry-pi-4-desktop-kit/</a>. Select your Country, and it will give you a list of vendors where you can purchase one. If you don’t want to pay extra for a mouse and keyboard because you already have this at home, use what you have and make sure they connect via USB.</p>
+</section>
+<section id="learning-goals">
+<h3>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this heading">¶</a></h3>
+<p>What you will learn.</p>
+<ul class="simple">
+<li><p>How to install an operating system (OS) to your Pi, specifically Ubuntu Server 21.04 64-bit or 32-bit.</p></li>
+<li><p>How to use basic commands in the terminal/console and install packages.</p></li>
+<li><p>How to set up a remote connection to your Pi</p></li>
+<li><p>How to use a user-friendly, awesome CLI.</p></li>
+<li><p>How to run the “Strax Wallet aka CLI”.</p></li>
+<li><p>How to Stake with your Strax Wallet.</p></li>
+<li><p>How to improve and enforce basic security, to avoid intruders… aliens?</p></li>
+</ul>
+</section>
+<section id="equipment">
+<h3>Equipment<a class="headerlink" href="#equipment" title="Permalink to this heading">¶</a></h3>
+<p>For this guide, you will need the following items:</p>
+<ul class="simple">
+<li><p><strong>Raspberry Pi</strong> (any will do, 1Gb+ ram recommended)</p></li>
+<li><p><strong>MicroSD Card</strong> (minimum 8 GB of free storage, 16 GB recommended), get one that has decent read/write speeds. If you don’t know how to choose, just don’t cheap out on it. Normally, if you buy a Raspberry Pi starter kit, a 16 GB microSD card will be included; that should be sufficient.</p></li>
+<li><p><strong>HDMI cable</strong> to connect your Raspberry Pi to a monitor. Depending on your Pi, it might be a different cable!</p></li>
+<li><p><strong>Ethernet cable</strong>, Although most Raspberry Pi’s have WIFI, avoid it for most stable connections and even in some cases security reasons!</p></li>
+<li><p><strong>Power brick</strong> (for your Pi)</p></li>
+<li><p><strong>Keyboard</strong></p></li>
+<li><p><strong>Mouse</strong></p></li>
+<li><p><strong>PC or laptop</strong> (to install the OS to the Raspberry Pi, more on this later)</p></li>
+</ul>
+</section>
+</section>
+<section id="installing-ubuntu-server-os">
+<h2>Installing Ubuntu Server OS<a class="headerlink" href="#installing-ubuntu-server-os" title="Permalink to this heading">¶</a></h2>
+<p>Your Raspberry Pi isn’t really that useful without an OS (operating system), not if you are reading this guide, anyways. So, let’s install an OS on your Pi.</p>
+<section id="preparing-the-sd-card">
+<h3>Preparing the SD Card<a class="headerlink" href="#preparing-the-sd-card" title="Permalink to this heading">¶</a></h3>
+<p>Now, insert your microSD card into your computer, NOT your Pi. You will need an SD card reader for this.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Many<span class="w"> </span>laptops<span class="w"> </span>have<span class="w"> </span>built-in<span class="w"> </span>SD<span class="w"> </span>card<span class="w"> </span>readers,<span class="w"> </span>so<span class="w"> </span>be<span class="w"> </span>sure<span class="w"> </span>to<span class="w"> </span>check<span class="w"> </span>that<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>on<span class="w"> </span>a
+laptop.<span class="w"> </span>In<span class="w"> </span>other<span class="w"> </span>cases,<span class="w"> </span>you<span class="w"> </span>will<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>buy<span class="w"> </span>an<span class="w"> </span>SD<span class="w"> </span>card<span class="w"> </span>reader<span class="w"> </span>that<span class="w"> </span>you<span class="w"> </span>insert<span class="w"> </span>the<span class="w"> </span>card
+into<span class="w"> </span>and<span class="w"> </span>afterward<span class="w"> </span>connect<span class="w"> </span>it<span class="w"> </span>to<span class="w"> </span>your<span class="w"> </span>computer<span class="w"> </span>via<span class="w"> </span>USB<span class="w"> </span>or<span class="w"> </span>other.
+</pre></div>
+</div>
+<p>Now you will need to install an OS to the microSD card. In this guide we will be installing <strong>Ubuntu Server 21.04 (RPI 3/4/400) 64-bit</strong> OS or 32-bit, you could choose a different version, but if you want to make sure there are no compatibility issues, try to use the same one.  To get started, you will need the <strong>Raspberry Pi Imager</strong>.</p>
+<p>You can grab the Pi Imager from the link below, remember to select the one that is compatible with your OS, (Windows, Mac, or Linux) :
+<a class="reference external" href="https://www.raspberrypi.org/software/">https://www.raspberrypi.org/software/</a></p>
+<p>After the installation of the Pi Imager is completed, open it. It should look something like this:</p>
+<img alt="../../../_images/image1.png" src="../../../_images/image1.png" />
+<p>Go ahead and click <strong>CHOOSE OS</strong> then a new popup menu will appear, from here navigate to <strong>Other general purpose OS</strong>. Select <strong>Ubuntu</strong>. Now select <strong>Ubuntu Server 21.04 (RPI 3/4/400)</strong> OS, 64-bit or 32-bit version, as seen in the image below:</p>
+<img alt="../../../_images/image23.png" src="../../../_images/image23.png" />
+<p>After that, you press the next button <strong>CHOOSE STORAGE</strong> and from there you select the name of your microSD card. Usually, there is only one option. If you happen to see no options, your microSD card is not read by your computer. Try re-inserting, or google search for further troubleshooting.</p>
+<p>Finally, press <strong>WRITE</strong>. Now, it should write the chosen OS to your microSD card. This process can take a while. A good time to grab a coffee or a snack. When the process is finished, it will let you know and a popup will tell you it is safe to remove the microSD card from your computer, including the SD card reader.</p>
+</section>
+<section id="inserting-the-microsd-card">
+<h3>Inserting the microSD card<a class="headerlink" href="#inserting-the-microsd-card" title="Permalink to this heading">¶</a></h3>
+<p>I hope you got your Pi ready and set up, more specifically, you have a monitor connected to the Raspberry Pi via an HDMI cable. An Ethernet cable connected to your Router or Switch</p>
+</section>
+</section>
+<section id="booting-the-raspberry-pi">
+<h2>Booting the Raspberry Pi<a class="headerlink" href="#booting-the-raspberry-pi" title="Permalink to this heading">¶</a></h2>
+<p>Insert the <strong>microSD card</strong> into your <strong>Raspberry Pi</strong> and power it up. Remember to ensure that all the cables (USB keyboard, ethernet cable, and HDMI ) needed are firmly attached to your Pi.
+In a few seconds, you should see a bunch of gibberish text on your monitor. This is the initializing phase, and you will just have to wait out until you are prompted with the login screen, it might not have fully loaded, once you see it (<strong>cloud-init</strong> has to finish as well):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Ubuntu<span class="w"> </span><span class="m">21</span>.04<span class="w"> </span>ubuntu<span class="w"> </span>tty1
+
+ubuntu<span class="w"> </span>login:
+</pre></div>
+</div>
+<p>Every fresh installation of ubuntu has the same login details (unless configured beforehand). You can log in with username: <strong>ubuntu</strong> and password: <strong>ubuntu</strong>. So start by typing <strong>ubuntu</strong> and then hit enter on your keyboard.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>You<span class="w"> </span>are<span class="w"> </span>required<span class="w"> </span>to<span class="w"> </span>change<span class="w"> </span>your<span class="w"> </span>password<span class="w"> </span>immediately<span class="w"> </span><span class="o">(</span>administrator<span class="w"> </span>enforced<span class="o">)</span>
+Changing<span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>ubuntu.
+Current<span class="w"> </span>password:
+</pre></div>
+</div>
+<p>Great! You are now logged in. You should be connected to the internet right away if you have your ethernet cable plugged in. You check your internet connection by running the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">4</span><span class="w"> </span>google.com
+</pre></div>
+</div>
+<p>When the ping command has finished running you should see an overview. If you have 0% package loss, that is a good indication, you are connected.</p>
+<section id="update-packages">
+<h3>Update packages<a class="headerlink" href="#update-packages" title="Permalink to this heading">¶</a></h3>
+<p>Let’s see if there are any updates (Everything from security updates to new package versions). Type the command shown below (remember to press ENTER, when finished typing):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+</pre></div>
+</div>
+<p>And run the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
+</pre></div>
+</div>
+<p>It will then list packages that can be upgraded and probably ask you this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span><span class="k">continue</span><span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span>?
+</pre></div>
+</div>
+<p>Here you just type “y” for yes and press enter.</p>
+<p><strong>Optional:</strong> Your keyboard layout might have the wrong layout, you can fix that by typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>loadkeys<span class="w"> </span>&lt;language<span class="w"> </span>abbrivation&gt;
+</pre></div>
+</div>
+<p>Please do a google search for which keys that fit your spoken language and keyboard layout. If you are from the US it would be <em>sudo loadkeys us</em> but it is usually the default one, for Scandinavians use <em>sudo load keys no</em></p>
+</section>
+</section>
+<section id="remote-login">
+<h2>Remote Login<a class="headerlink" href="#remote-login" title="Permalink to this heading">¶</a></h2>
+<p>Instead of typing all the commands manually from the Raspberry Pi, it is possible to remote login to your Pi from your computer with the Pi’s local IP. We can accomplish this from a terminal (<strong>macOS</strong>) or cmd (<strong>Windows</strong>). So, before switching our focus to our computer again, let’s find the local IP of the Pi first.</p>
+<p>A good way to find the IP is by using the package net-tools. We can install it by running this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>net-tools
+</pre></div>
+</div>
+<p>Afterward type <strong>ifconfig</strong> and then write down/memorize the field inet where it starts with <strong>192.168.X.X</strong>. An example of this can be seen below:</p>
+<img alt="../../../_images/image31.png" src="../../../_images/image31.png" />
+<p>Please note your local IP can change on reboot, you might have to check it again. It is possible to make it static, but a dynamic address is always more secure. Okay, so my local IP is <strong>192.168.0.56</strong>, yours MIGHT not be the same. Alright, to continue, go back to your computer.</p>
+<section id="on-the-computer">
+<h3>On the Computer<a class="headerlink" href="#on-the-computer" title="Permalink to this heading">¶</a></h3>
+<section id="for-windows">
+<h4>For Windows<a class="headerlink" href="#for-windows" title="Permalink to this heading">¶</a></h4>
+<p>Press <strong>WIN + R</strong> on your keyboard to open up <strong>Run</strong>. Now type <strong>cmd</strong> and click <strong>OK</strong>. Alternatively, you can usually get away with just searching for <strong>cmd</strong> in the start menu.</p>
+</section>
+<section id="for-macos">
+<h4>For MacOS<a class="headerlink" href="#for-macos" title="Permalink to this heading">¶</a></h4>
+<p>Search for <strong>Terminal</strong> and click it or use the shortcut <strong>Control + Option + Shift + T</strong>.</p>
+<p>Once opened type the ssh cmd below and press <strong>ENTER</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>ubuntu@&lt;YOUR<span class="w"> </span>LOCAL<span class="w"> </span>IP&gt;
+Example:<span class="w"> </span>ssh<span class="w"> </span>ubuntu@192.168.0.56
+</pre></div>
+</div>
+<p>Now it will tell you the <strong>ECDSA key fingerprint</strong> and ask if you are sure you want to connect, here you type <strong>yes</strong>.</p>
+<p>After, It will prompt you for a password, so type your password. Your login screen should something like this:</p>
+<img alt="../../../_images/image42.png" src="../../../_images/image42.png" />
+</section>
+</section>
+</section>
+<section id="installing-net-and-straxfullnode">
+<h2>Installing .NET and StraxFullNode<a class="headerlink" href="#installing-net-and-straxfullnode" title="Permalink to this heading">¶</a></h2>
+<p>Next up, we have to install .NET to run the StraxNode and connect to the main net. We’ll do this to be available to stake. Please be aware there is no graphical user interface. I have made a script that is close to a GUI, which makes everything a lot easier for you, but more on that later. Let’s first install .NET.</p>
+<p>Remember, you can now paste the commands into your console/terminal by copying it and using Right-Click for pasting.</p>
+<p>Run the command below corresponding to your Pi’s computer architecture.</p>
+<section id="for-64-bit-pi">
+<h3>For 64-bit Pi<a class="headerlink" href="#for-64-bit-pi" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>curl<span class="w"> </span>-SL<span class="w"> </span>-o<span class="w"> </span>dotnet.tar.gz<span class="w"> </span>https://dotnetcli.blob.core.windows.net/dotnet/Sdk/master/dotnet-sdk-latest-linux-arm64.tar.gz
+</pre></div>
+</div>
+</section>
+<section id="for-32-bit-pi">
+<h3>For 32-bit Pi<a class="headerlink" href="#for-32-bit-pi" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>curl<span class="w"> </span>-SL<span class="w"> </span>-o<span class="w"> </span>dotnet.tar.gz<span class="w"> </span>https://dotnetcli.blob.core.windows.net/dotnet/Sdk/master/dotnet-sdk-latest-linux-arm.tar.gz
+</pre></div>
+</div>
+<p>After the download is finished, both <strong>64-bit/32-bit</strong> need to run the commands below one by one, please be patient between each command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/usr/share/dotnet
+sudo<span class="w"> </span>tar<span class="w"> </span>-zxf<span class="w"> </span>dotnet.tar.gz<span class="w"> </span>-C<span class="w"> </span>/usr/share/dotnet
+sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/usr/share/dotnet/dotnet<span class="w"> </span>/usr/bin/dotnet
+</pre></div>
+</div>
+<p>Great! You have .NET. Check if the dotnet command works now when typing <strong>dotnet</strong> in cmd/terminal. Try typing it and it should display this:</p>
+<img alt="../../../_images/image52.png" src="../../../_images/image52.png" />
+</section>
+</section>
+<section id="installing-straxnode">
+<h2>Installing StraxNode<a class="headerlink" href="#installing-straxnode" title="Permalink to this heading">¶</a></h2>
+<p>Okay, let’s download the latest <a class="reference external" href="https://github.com/stratisproject/StratisFullNode/releases">StraxFullNode release from Stratis official GitHub</a>. Depending on your Pi’s architecture you can download it for:</p>
+<section id="straxfullnode-for-64-bit">
+<h3>StraxFullNode for 64-bit<a class="headerlink" href="#straxfullnode-for-64-bit" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>SNode.zip<span class="w"> </span>https://github.com/stratisproject/StratisFullNode/releases/latest/download/Stratis.StraxD-linux-arm64.zip
+</pre></div>
+</div>
+</section>
+<section id="straxfullnode-for-32-bit">
+<h3>StraxFullNode for 32-bit<a class="headerlink" href="#straxfullnode-for-32-bit" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>SNode.zip<span class="w"> </span>https://github.com/stratisproject/StratisFullNode/releases/latest/download/Stratis.StraxD-linux-arm.zip
+</pre></div>
+</div>
+<p>Once you have chosen the one that fits your system, install zip, so we can extract it. You can do that by running the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>zip
+</pre></div>
+</div>
+<p>Now extract it using the unzip command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>unzip<span class="w"> </span>SNode.zip<span class="w"> </span>-d<span class="w"> </span>~/StraxNode
+</pre></div>
+</div>
+<p>Awesome, we have the StraxFullNode installed. In the next chapter, we learn how to start the StraxFullNode in the background and how to interact with it.  More specifically, we will be using a CLI that makes it super-easy and user-friendly!</p>
+</section>
+</section>
+<section id="setting-up-strax-wallet">
+<h2>Setting up Strax Wallet<a class="headerlink" href="#setting-up-strax-wallet" title="Permalink to this heading">¶</a></h2>
+<section id="starting-the-straxnode">
+<h3>Starting the StraxNode<a class="headerlink" href="#starting-the-straxnode" title="Permalink to this heading">¶</a></h3>
+<p>First, let us start the StraxFullNode in a way, so it has to opportunity to run in the background. To do that run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>screen<span class="w"> </span>dotnet<span class="w"> </span>~/StraxNode/Stratis.StraxD.dll<span class="w"> </span>run<span class="w"> </span>-mainnet
+</pre></div>
+</div>
+<p>Now the node is actually running and you are downloading blocks from the chain. To make it a background process, use shortcut <strong>Ctrl+A</strong> and then <strong>Ctrl+D</strong>.</p>
+<p>When you have exited the node, you should get a message that tells you the pid of the process <strong>[detached from &lt;x&gt;.pts-0.ubuntu]</strong>:</p>
+<img alt="../../../_images/image62.png" src="../../../_images/image62.png" />
+<p>This is useful when we want to hook the process again. If you forget the id, no worries, you can get a list of active screens running in the background by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>screen<span class="w"> </span>-ls
+</pre></div>
+</div>
+<p>You can hook the process again by runnig the below command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>screen<span class="w"> </span>-r<span class="w"> </span>&lt;id&gt;.
+</pre></div>
+</div>
+<p>Usingthe picture above as an example it would be:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>screen<span class="w"> </span>-r<span class="w"> </span><span class="m">2848</span>
+</pre></div>
+</div>
+<p>You can stop the StraxNode after hooking the process id, by pressing Ctrl+C (but don’t do that now, if you did, please start the node again)</p>
+</section>
+<section id="id1">
+<h3>Setting up Strax Wallet<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>We are finally ready to set up your Strax Wallet. I have written a script, that makes this super easy. Cool, get it by running the following commands.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>wget<span class="w"> </span>https://github.com/stratisproject/StraxCLI/archive/refs/tags/StraxCLI-1.0.0.zip
+sudo<span class="w"> </span>unzip<span class="w"> </span>StraxCLI-1.0.0.zip<span class="w"> </span>-d<span class="w"> </span>~/StraxCLI
+</pre></div>
+</div>
+<p>Alright, now run the script by typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>python3<span class="w"> </span>~/StraxCLI/StraxCLI-StraxCLI-1.0.0/straxcli.py
+</pre></div>
+</div>
+<p>It should start by checking if the StraxNode is online and running, if it for some reason isn’t, repeat the steps on top of this page. After it has checked, you will be represented with different options. These options will be explained in the next chapter! Good job, if you made it this far.</p>
+</section>
+</section>
+<section id="using-the-strax-wallet-cli">
+<h2>Using the Strax Wallet CLI<a class="headerlink" href="#using-the-strax-wallet-cli" title="Permalink to this heading">¶</a></h2>
+<p>The script is now started and you should be presented with this:</p>
+<img alt="../../../_images/image71.png" src="../../../_images/image71.png" />
+<p>There are as of now 7 options. You can select each option by typing a number from 1 to 7. The first thing, we want to do is to recover our wallet. If you don’t have a wallet yet, use your computer to create one and then recover it on your Pi by following these steps.</p>
+<section id="recover-wallet">
+<h3>Recover Wallet<a class="headerlink" href="#recover-wallet" title="Permalink to this heading">¶</a></h3>
+<p>To recover your wallet, type <strong>4</strong> to choose <strong>Recover Wallet</strong>. It will now ask you to fill out the fields below:</p>
+<img alt="../../../_images/image81.png" src="../../../_images/image81.png" />
+<p>Type in your secret words, use a space between each word. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Secret<span class="w"> </span>Words:<span class="w"> </span>word1<span class="w"> </span>word2<span class="w"> </span>word3<span class="w"> </span>word4<span class="w"> </span>word5...
+</pre></div>
+</div>
+<p>When you are done press <strong>ENTER</strong>.</p>
+<p>Now it will ask you for your wallet password and to re-type it for confirmation.</p>
+<p>The next step is the <strong>passphrase</strong>, to leave empty just press <strong>ENTER</strong> if you don’t have a passphrase for your wallet and if you do, please type it.
+After that, you have to give your wallet a name and lastly, it will ask you the date you created your wallet. It uses the format <em>yyyy-mm-dd</em>. For example, <strong>2021-05-06</strong>.</p>
+<p>Once your wallet is recovered, it will automatically re-sync your transactions from the date the wallet was created. This is necessary even if you already were fully synced when recovering the wallet. It will also display the main menu again.</p>
+</section>
+<section id="staking">
+<h3>Staking<a class="headerlink" href="#staking" title="Permalink to this heading">¶</a></h3>
+<p>You can enable staking by selecting the first option <strong>1. Start Staking</strong>, remember you cannot stake before you are fully synced with the network. In the menu, you can see the status <strong>&gt;&gt; Fully Synced: Yes/No&gt;</strong> and the <strong>Current Block</strong> &lt;number&gt; and sync percentage. The current block has to be equal to the latest block on the network before you are synced. Remember the CLI is not live data, you will have to use option <strong>6. Refresh</strong> to refresh the numbers and status.</p>
+<p>We can still enable staking (without actually staking), so select <strong>1.</strong> It will ask you for the name and password of the wallet you want to stake on (unless if you in the same session have recovered a wallet).</p>
+<p>You can see your current wallets in the main menu <strong>Your Wallets:</strong> once the network is fully synced, it should start staking automatically, else try the option again.</p>
+<p>When staking is enabled the option should now have changed to <strong>1. Stop staking</strong> you can select it again to stop staking and vice versa.</p>
+</section>
+<section id="balance">
+<h3>Balance<a class="headerlink" href="#balance" title="Permalink to this heading">¶</a></h3>
+<p>You can check your balance by selecting option <strong>2. Balance</strong> it will then display your current balance. The result won’t be accurate before the wallet is fully synced, it will notify you if this is the case.</p>
+<p>A good way to tell, if you have recovered the right wallet is that the balance matches the amount you know is on it. Remember you probably cannot see your full balance before the network is synced!</p>
+</section>
+<section id="quit">
+<h3>Quit<a class="headerlink" href="#quit" title="Permalink to this heading">¶</a></h3>
+<p>When you are done, you can quit by selection <strong>7. Quit</strong>. NOTE: you don’t have to have the script open when staking. Once you have enabled staking, it is active until the StraxFullNode goes offline, NOT the script.</p>
+</section>
+<section id="other-options">
+<h3>Other Options<a class="headerlink" href="#other-options" title="Permalink to this heading">¶</a></h3>
+<p>All the other options should be self-explanatory, so use them if you need them. Remember to <strong>Refresh</strong> the wallet when you want to update the numbers and status. The wallet is automatically refreshed after selecting any option!</p>
+</section>
+</section>
+<section id="security-considerations">
+<h2>Security Considerations<a class="headerlink" href="#security-considerations" title="Permalink to this heading">¶</a></h2>
+<section id="firewall">
+<h3>Firewall<a class="headerlink" href="#firewall" title="Permalink to this heading">¶</a></h3>
+<section id="disable-remote-ssh-restrict-it-to-local">
+<h4>Disable Remote SSH / Restrict it to local<a class="headerlink" href="#disable-remote-ssh-restrict-it-to-local" title="Permalink to this heading">¶</a></h4>
+<p>Right now, we have configured the Pi using a monitor, keyboard, and mouse and using a remote connection. If you want your Pi as secure as possible, I recommend disabling remote SSH altogether. The next best thing is to only allow local remote connections.</p>
+<p>If you want to disable remote connections altogether, download the <strong>uncomplicated firewall</strong> by running the command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>ufw
+</pre></div>
+</div>
+<p>It is now possible to enable the firewall. If you are on a remote connection - this will lock you out. If you want to restrict it to local, please wait before executing the command below.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span>
+</pre></div>
+</div>
+<p>If you ever need to, you can disable the firewall subsequently by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ufw<span class="w"> </span>disable
+</pre></div>
+</div>
+<p>By default, the firewall, when enabled, blocks any incoming and allows all outbound connections.</p>
+</section>
+<section id="restrict-remote-connection-to-local">
+<h4>Restrict remote connection to local<a class="headerlink" href="#restrict-remote-connection-to-local" title="Permalink to this heading">¶</a></h4>
+<p>If you want to allow remote connections but restrict them to only local. You can set the following firewall rule, please replace <strong>X.Y.Z</strong> with the first three octets of your local IP address.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>from<span class="w"> </span>X.Y.Z.0/24<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">22</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="closing-comments">
+<h2>Closing Comments<a class="headerlink" href="#closing-comments" title="Permalink to this heading">¶</a></h2>
+<p>You can leave the Pi alone; I would recommend checking on it again once the network has completely synchronized to check if staking has changed to Staking Status: YES; if not, try start staking again.</p>
+<p>Again, you don’t need to have the script running (the menu) when staking. You can quit it once you finished selecting options. The next thing to do is to make a startup script that starts the StraxNode and staking automatically. If you want to make it begin staking automatically, please be aware there is NO easy/practical way to hide your wallet password, as this would have to be saved in a text file.</p>
+<p>Furthermore, when you reboot your system, you have to rerun these two commands, remember the first command starts the StraxNode (use <strong>Ctrl+A</strong>, <strong>Ctrl+D</strong>, to make it run in the background), the second one starts up the CLI, so you can enable staking (which requires you to type your password, as of now). If possible try to close the <em>node</em> safely before rebooting by hooking the process, first get the pid <strong>sudo screen -ls</strong> and attach with <strong>sudo screen -r &lt;pid&gt;</strong> (as explained earlier) and press <strong>Ctrl+C</strong> to shut it down. The script will soon be extended, so you can choose to start staking when rebooting automatically.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>screen<span class="w"> </span>dotnet<span class="w"> </span>~/StraxNode/Stratis.StraxD.dll<span class="w"> </span>run<span class="w"> </span>-mainnet
+sudo<span class="w"> </span>python3<span class="w"> </span>~/StraxCLI/StraxCLI-StraxCLI-1.0.0/straxcli.py
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../../InterFlux%20Masternodes/masternode-introduction.html" class="btn btn-primary float-right" title="InterFlux Masternodes" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../fullnode-introduction.html" class="btn btn-neutral" title="Stratis Full Node" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

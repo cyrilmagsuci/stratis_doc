@@ -1,0 +1,511 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Architecture Reference &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Stratis Full Node" href="FullNode/full-node-introduction.html" />
+    <link rel="prev" title="Enter Stratis" href="../Blockchain%20Overview/enter-stratis.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FullNode/full-node-introduction.html">Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Architecture Reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Architecture Reference/architecture-reference-introduction.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="architecture-reference">
+<h1>Architecture Reference<a class="headerlink" href="#architecture-reference" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="FullNode/full-node-introduction.html">Full Node</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#accessing-the-network">Accessing the network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#p2p">P2P</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#an-example-of-the-p2p-component-messaging">An example of the P2P component messaging</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#connection-manager">Connection Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#behaviour-components">Behaviour Components</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#syncing-with-the-blockchain">Syncing with the blockchain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#consensus-manager">Consensus Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#chained-header-tree">Chained Header Tree</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#validators">Validators</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#block-puller">Block Puller</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#ibd-download-strategy">IBD Download Strategy</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#block-store">Block Store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#coin-view">Coin View</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#mining-new-blocks">Mining new blocks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#memory-pool">Memory Pool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#miner">Miner</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#the-stratis-proof-of-stake-algorithm">The Stratis proof-of-stake algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#wallet">Wallet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#broadcast-manager">Broadcast Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#node-wide-libraries">Node-wide Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#core">Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#nbitcoin">NBitcoin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ComponentsOverview/full-node-components-and-features-overview.html#interfacing-with-the-full-node">Interfacing with the Full Node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html">Console Output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#page-1-node-benchmarks">Page 1 - Node benchmarks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#consensus-manager-benchmarks">Consensus Manager benchmarks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#consensus-rules-benchmarks">Consensus Rules benchmarks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#utxo-benchmarks">UTXO Benchmarks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#page-2-node-data">Page 2 - Node data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#node-statistics">Node statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#connection-data">Connection data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#consensus-manager-data">Consensus Manager data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#block-puller-data">Block Puller data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#block-store-data">Block Store data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#proven-header-data">Proven Header data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#mempool-data">Mempool data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ConsoleOutput/ConsoleOutput.html#wallets-data">Wallets data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FullNode/Features/features.html">Creating custom builds and extending the feature set</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/Features/console-application-builds.html">The supplied console application builds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/Features/console-application-builds.html#what-happens-in-main">What happens in Main()?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/Features/exploring-the-base-feature.html">Exploring the Base Feature of the Full Node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/Features/exploring-the-base-feature.html#other-full-node-features">Other Full Node features</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/Features/creating-a-new-feature-summary.html">Creating a new feature summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FullNode/PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/PoS/PoS-algorithm.html">Hitting the target with a Proof-of-Stake algorithm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/PoS/PoS-algorithm.html#how-your-stake-determines-your-chance-to-hit-the-target">How your stake determines your chance to hit the target</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/PoS/PoS-algorithm.html#stakes-consist-of-unspent-transaction-outputs-utxos">Stakes consist of Unspent Transaction Outputs (UTXOs)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/PoS/PoS-algorithm.html#how-an-element-of-randomness-is-added-to-each-utxo-calculation">How an element of randomness is added to each UTXO calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/PoS/PoS-algorithm.html#proof-of-stake-timestamps">Proof-of-Stake timestamps</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/PoS/PoS-algorithm.html#an-example-staking-timeline">An example staking timeline</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/PoS/PoS-exploring-the-code.html">Exploring the Proof-of-Stake code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/PoS/PoS-exploring-the-code.html#what-defines-a-coinstake-transaction">What defines a coinstake transaction?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/PoS/PoS-exploring-the-code.html#how-workers-calculate-if-a-utxo-can-be-the-coinstake-kernel">How workers calculate if a UTXO can be the coinstake kernel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/PoS/PoS-exploring-the-code.html#looking-at-the-coinstake-kernel-calculations-in-code">Looking at the coinstake kernel calculations in code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FullNode/PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/PoA/the-role-of-the-federation.html">The role of the federation on PoA networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/PoA/the-role-of-the-federation.html#is-there-an-optimal-size-for-a-federation">Is there an optimal size for a federation?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/PoA/the-role-of-the-federation.html#do-federation-members-receive-a-reward-for-mining">Do federation members receive a reward for mining?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FullNode/Consensus/consensus-introduction.html">Consensus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/Consensus/consensus-architecture.html">Consensus architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/Consensus/consensus-architecture.html#when-does-the-consensus-manager-request-block-validation">When does the Consensus Manager request block validation?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/Consensus/consensus-architecture.html#when-does-the-chained-header-tree-request-header-validation">When does the Chained Header Tree request header validation?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/Consensus/customising-consensus-rule-engines.html">Customizing consensus rule engines and their rulesets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/Consensus/customising-consensus-rule-engines.html#how-a-consensus-rule-engine-works">How a consensus rule engine works</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/Consensus/customising-consensus-rule-engines.html#defining-your-own-rules">Defining your own rules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/Consensus/customising-consensus-rule-engines.html#consensus-options">Consensus options</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/Consensus/customising-consensus-rule-engines.html#registering-consensus-features">Registering consensus features</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/Consensus/custom-consensus-algorithm-steps.html">Creating a custom consensus algorithm summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FullNode/ProvenHeaders/proven-headers-introduction.html">Proven Headers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html">How Proven Headers provide a “headers first” solution for a Proof-of-Stake blockchain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html#proven-header-messages">Proven header messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html#how-the-headers-were-extended-to-become-block-headers">How the headers were extended to become block headers?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html#why-coinstake-age-was-adjusted">Why coinstake age was adjusted?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html#exploring-the-proven-header-rules-in-detail">Exploring the proven header rules in detail</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html#checking-the-sizes-of-proven-header-members">Checking the sizes of proven header members</a></li>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html#checking-if-the-proven-header-has-a-valid-coinstake-transaction">Checking if the proven header has a valid coinstake transaction</a></li>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html#checking-if-the-proven-header-has-valid-timestamps">Checking if the proven header has valid timestamps</a></li>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html#checking-if-the-coinstake-kernel-is-old-enough">Checking if the coinstake kernel is old enough</a></li>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html#checking-the-coinstake-kernel-was-spent-correctly">Checking the coinstake kernel was spent correctly</a></li>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html#checking-the-hash-generated-by-the-coinstake-kernel-hits-the-target">Checking the hash generated by the coinstake kernel hits the target</a></li>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html#checking-that-the-coinstake-transaction-is-in-the-block-represented-by-the-proven-header">Checking that the coinstake transaction is in the block represented by the proven header</a></li>
+<li class="toctree-l5"><a class="reference internal" href="FullNode/ProvenHeaders/how-proven-headers-provide-a-solution.html#checking-the-proven-header-s-signature-was-made-by-the-miner-who-owns-the-coinstake-transaction-output">Checking the proven header’s signature was made by the miner who owns the coinstake transaction output.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FullNode/ColdStaking/ColdStaking.html">Cold Staking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ColdStaking/ColdStaking.html#introduction-what-is-cold-staking">Introduction - what is Cold Staking?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ColdStaking/ColdStaking.html#motivation-why-get-involved-in-cold-staking">Motivation - why get involved in Cold Staking?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ColdStaking/ColdStaking.html#pre-requisites-for-cold-staking-with-stratis">Pre-requisites for Cold Staking with Stratis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ColdStaking/ColdStaking.html#stepping-through-the-stratis-cold-staking-process">Stepping through the Stratis Cold Staking process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ColdStaking/ColdStaking.html#cold-wallet-requirements">Cold wallet requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ColdStaking/ColdStaking.html#roll-out-of-cold-staking">Roll-out of Cold Staking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FullNode/ColdStaking/ColdStaking.html#future-plans-for-cold-staking">Future plans for Cold Staking</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SmartContracts/smartcontracts-introduction.html">Smart Contracts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SmartContracts/smart-contracts-basic-theory.html">Basic Theory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/smart-contracts-basic-theory.html#using-net-for-smart-contracts">Using .NET for smart contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/smart-contracts-basic-theory.html#gas-for-stratis-smart-contracts">Gas for Stratis smart contracts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContracts/uses-of-smart-contracts.html">Uses of Smart Contracts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/uses-of-smart-contracts.html#financial-uses-of-smart-contracts">Financial uses of smart contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/uses-of-smart-contracts.html#smart-contracts-for-voting">Smart contracts for voting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/uses-of-smart-contracts.html#smart-contracts-in-gaming">Smart contracts in gaming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/uses-of-smart-contracts.html#smart-contracts-in-delay-repay-schemes">Smart contracts in delay repay schemes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContracts/account-abstraction-layer.html">Account Abstraction Layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/account-abstraction-layer.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/account-abstraction-layer.html#contract-accounts">Contract Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/account-abstraction-layer.html#transactions">Transactions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="SmartContracts/account-abstraction-layer.html#funds-transfers">Funds Transfers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/account-abstraction-layer.html#limitations">Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContracts/working-with-contracts.html">Working with Contracts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/working-with-contracts.html#writing-a-contract">Writing a contract</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="SmartContracts/working-with-contracts.html#creating-a-contract-from-a-template">Creating a contract from a template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SmartContracts/working-with-contracts.html#using-visual-studio-for-a-contract">Using Visual Studio for a contract</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/working-with-contracts.html#validating-a-contract">Validating a contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/working-with-contracts.html#compiling-a-contract">Compiling a contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/working-with-contracts.html#deploying-a-contract">Deploying a contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/working-with-contracts.html#interacting-with-a-contract">Interacting with a contract</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="SmartContracts/working-with-contracts.html#calls-and-local-calls">Calls and Local Calls</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/working-with-contracts.html#parameter-serialization">Parameter Serialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/working-with-contracts.html#gas">Gas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContracts/contracts-in-depth.html">Smart Contracts In-Depth</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#compiled-contract-assembly">Compiled contract assembly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#the-stratis-smartcontract-object">The Stratis.SmartContract object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#persistent-state">Persistent State</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#serialization">Serialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#deserialization">Deserialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#deserializing-a-base58-address">Deserializing a Base58 Address</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#the-persistentstate-iscontract-function">The PersistentState.IsContract function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#the-receive-function">The Receive function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#contract-validation">Contract Validation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#determinism-validation">Determinism Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SmartContracts/contracts-in-depth.html#format-validation">Format Validation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContracts/auction-smart-contract.html">The Auction Smart Contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContracts/testing-locally-with-testchain.html">Testing Locally with TestChain</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/testing-locally-with-testchain.html#the-code">The Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContracts/testing.html">Testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/testing.html#the-basics">The Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/testing.html#state-injection">State Injection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/testing.html#an-example">An Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContracts/support.html">Support</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/support.html#report-a-bug">Report a Bug</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContracts/appendix-future-enhancements-to-smart-contracts.html">Appendix - Future Enhancements to Stratis Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SmartContracts/appendix-gas-prices.html">Appendix - Gas Prices and Memory Limit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/appendix-gas-prices.html#gas-pricing">Gas Pricing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SmartContracts/appendix-gas-prices.html#memory-limit">Memory Limit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Sidechains/sidechains-introduction.html">Sidechains</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Sidechains/two-way-federated-peg-solution.html">A breakdown of the Two-Way Federated Peg solution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Sidechains/two-way-federated-peg-solution.html#the-creation-of-the-cirrus-sidechain">The creation of the Cirrus sidechain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sidechains/two-way-federated-peg-solution.html#the-role-of-the-federation">The role of the federation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sidechains/two-way-federated-peg-solution.html#more-on-sidechain-deposits-and-withdrawals">More on sidechain deposits and withdrawals</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Sidechains/two-way-federated-peg-solution.html#federated-gateways">Federated gateways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Sidechains/two-way-federated-peg-solution.html#signature-collection">Signature collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Sidechains/two-way-federated-peg-solution.html#sidechain-deposits">Sidechain deposits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Sidechains/two-way-federated-peg-solution.html#sidechain-withdrawals">Sidechain withdrawals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Sidechains/two-way-federated-peg-solution.html#mining-on-the-sidechain">Mining on the sidechain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Sidechains/support.html">Support</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Sidechains/support.html#report-a-bug">Report a Bug</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DLT/dlt-introduction.html">DLT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DLT/dlt-introduction.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLT/dlt-introduction.html#participants">Participants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLT/dlt-introduction.html#assets">Assets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLT/dlt-introduction.html#implementation">Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DLT/dlt-introduction.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="FullNode/full-node-introduction.html" class="btn btn-primary float-right" title="Stratis Full Node" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../Blockchain%20Overview/enter-stratis.html" class="btn btn-neutral" title="Enter Stratis" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

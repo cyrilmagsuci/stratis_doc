@@ -1,0 +1,1942 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API Reference &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PyStratis Reference" href="../PyStratis%20Reference/pystratis.html" />
+    <link rel="prev" title="Developer Guides" href="../developers-introduction.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#stratis-core-api-reference">Stratis Core API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../PyStratis%20Reference/pystratis.html">PyStratis Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+      <li>API Reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Developer Resources/API Reference/api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading">¶</a></h1>
+<p>Below you can find a list of available endpoints that can be used to interact with the Stratis Full Node and the respective blockchain.</p>
+<p>There is also a public facing instance of the Stratis Full Node API available here:</p>
+<p><a class="reference external" href="../../Swagger/index.html">CirrusMain Swagger</a></p>
+<p>The endpoints here are restricted to stop malicious behaviour.</p>
+<section id="stratis-core-api-reference">
+<span id="developers-api"></span><h2>Stratis Core API Reference<a class="headerlink" href="#stratis-core-api-reference" title="Permalink to this heading">¶</a></h2>
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-AddressBook-address">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/AddressBook/address</span></span><a class="headerlink" href="#post--api-AddressBook-address" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Adds an entry to the address book.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – The address book entry was added</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid address book entry request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10">409 Conflict</a></span> – Address book entry already exists</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – The request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http delete">
+<dt class="sig sig-object http" id="delete--api-AddressBook-address">
+<span class="sig-name descname"><span class="pre">DELETE</span> </span><span class="sig-name descname"><span class="pre">/api/AddressBook/address</span></span><a class="headerlink" href="#delete--api-AddressBook-address" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Removes an entry from the address book.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> (<em>string</em>) – The label of the entry to remove.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – The address book entry was removed</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a></span> – Address book entry not found</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – The label is null or empty</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-AddressBook">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/AddressBook</span></span><a class="headerlink" href="#get--api-AddressBook" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the address book entries with the option to implement pagination</strong></p>
+<p>For example, specifying a value of 40 for skip and a value of 20 for take gets entries 21 to 40. If neither skip or take arguments are provided, then the entire address book is retrieved. An address book can be accessed from a wallet, but it is a standalone feature, which is not attached to any wallet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>skip</strong> (<em>integer</em>) – A value representing how many entries to skip before retrieving the first entry.</p></li>
+<li><p><strong>take</strong> (<em>integer</em>) – A value representing how many entries to retrieve.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the address book</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a></span> – Address book was not found</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-BlockStore-addressindexertip">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/BlockStore/addressindexertip</span></span><a class="headerlink" href="#get--api-BlockStore-addressindexertip" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Retrieves the Stratis.Bitcoin.Features.BlockStore.Controllers.BlockStoreController.addressIndexer’s tip.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the address indexer tip</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-BlockStore-block">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/BlockStore/block</span></span><a class="headerlink" href="#get--api-BlockStore-block" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Retrieves the block which matches the supplied block hash.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Hash</strong> (<em>string</em>) – The hash of the required block.
+(Required)</p></li>
+<li><p><strong>ShowTransactionDetails</strong> (<em>boolean</em>) – A flag that indicates whether to return each block transaction complete with details or simply return transaction hashes (TX IDs).</p></li>
+<li><p><strong>OutputJson</strong> (<em>boolean</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns data about the block or block not found message</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Block hash invalid, or an unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-BlockStore-GetBlockCount">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/BlockStore/GetBlockCount</span></span><a class="headerlink" href="#get--api-BlockStore-GetBlockCount" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the current consensus tip height.</strong></p>
+<p>This is an API implementation of an RPC call.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the block count</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-BlockStore-getaddressesbalances">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/BlockStore/getaddressesbalances</span></span><a class="headerlink" href="#get--api-BlockStore-getaddressesbalances" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Provides balance of the given addresses confirmed with at least minConfirmations confirmations.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>addresses</strong> (<em>string</em>) – A comma delimited set of addresses that will be queried.</p></li>
+<li><p><strong>minConfirmations</strong> (<em>integer</em>) – Only blocks below consensus tip less this parameter will be considered.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns balances for the requested addresses</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-BlockStore-getverboseaddressesbalances">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/BlockStore/getverboseaddressesbalances</span></span><a class="headerlink" href="#get--api-BlockStore-getverboseaddressesbalances" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Provides verbose balance data of the given addresses.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>addresses</strong> (<em>string</em>) – A comma delimited set of addresses that will be queried.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns balances for the requested addresses</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-ConnectionManager-addnode">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/ConnectionManager/addnode</span></span><a class="headerlink" href="#get--api-ConnectionManager-addnode" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Sends a command to the connection manager.</strong></p>
+<p>This is an API implementation of an RPC call.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>endpoint</strong> (<em>string</em>) – The endpoint in string format. Specify an IP address. The default port for the network will be added automatically.</p></li>
+<li><p><strong>command</strong> (<em>string</em>) – The command to run. {add, remove, onetry}</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – The node was added</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – An exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-ConnectionManager-getpeerinfo">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/ConnectionManager/getpeerinfo</span></span><a class="headerlink" href="#get--api-ConnectionManager-getpeerinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets information about this node.</strong></p>
+<p>This is an API implementation of an RPC call.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns peer information list</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Consensus-deploymentflags">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Consensus/deploymentflags</span></span><a class="headerlink" href="#get--api-Consensus-deploymentflags" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Get the threshold states of softforks currently being deployed.</strong></p>
+<p>Allowable states are: Defined, Started, LockedIn, Failed, Active.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the list of deployment flags</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Consensus-getbestblockhash">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Consensus/getbestblockhash</span></span><a class="headerlink" href="#get--api-Consensus-getbestblockhash" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the hash of the block at the consensus tip.</strong></p>
+<p>This is an API implementation of an RPC call.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the block hash</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Consensus-getblockhash">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Consensus/getblockhash</span></span><a class="headerlink" href="#get--api-Consensus-getblockhash" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the hash of the block at a given height.</strong></p>
+<p>This is an API implementation of an RPC call.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>height</strong> (<em>integer</em>) – The height of the block to get the hash for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the block hash</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Dashboard-Stats">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Dashboard/Stats</span></span><a class="headerlink" href="#get--api-Dashboard-Stats" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets a web page containing the last log output for this node.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns webpage result</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Dashboard-AsyncLoopsStats">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Dashboard/AsyncLoopsStats</span></span><a class="headerlink" href="#get--api-Dashboard-AsyncLoopsStats" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Returns a web page with Async Loops statistics</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns webpage result</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-DefaultVoting-fedmembers">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/DefaultVoting/fedmembers</span></span><a class="headerlink" href="#get--api-DefaultVoting-fedmembers" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Retrieves a list of active federation members.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the active members</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-DefaultVoting-pendingpolls">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/DefaultVoting/pendingpolls</span></span><a class="headerlink" href="#get--api-DefaultVoting-pendingpolls" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Retrieves a list of active polls.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the active polls</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-DefaultVoting-finishedpolls">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/DefaultVoting/finishedpolls</span></span><a class="headerlink" href="#get--api-DefaultVoting-finishedpolls" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Retrieves a list of finished polls.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the finished polls</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-DefaultVoting-whitelistedhashes">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/DefaultVoting/whitelistedhashes</span></span><a class="headerlink" href="#get--api-DefaultVoting-whitelistedhashes" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Retrieves a list of whitelisted hashes.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the hashes</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-DefaultVoting-schedulevote-whitelisthash">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/DefaultVoting/schedulevote-whitelisthash</span></span><a class="headerlink" href="#post--api-DefaultVoting-schedulevote-whitelisthash" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Votes to add a hash to the whitelist.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Voted to add hash to whitelist</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, node is not a federation member, or an unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – The request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-DefaultVoting-schedulevote-removehash">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/DefaultVoting/schedulevote-removehash</span></span><a class="headerlink" href="#post--api-DefaultVoting-schedulevote-removehash" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Votes to remove a hash from the whitelist.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Voted to remove hash from whitelist</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, node is not a federation member, or an unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – The request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-DefaultVoting-scheduledvotes">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/DefaultVoting/scheduledvotes</span></span><a class="headerlink" href="#get--api-DefaultVoting-scheduledvotes" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Retrieves the scheduled voting data.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the voting data</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Diagnostic-GetConnectedPeersInfo">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Diagnostic/GetConnectedPeersInfo</span></span><a class="headerlink" href="#get--api-Diagnostic-GetConnectedPeersInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Returns the connected peers with some information</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns connected peers information</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Diagnostic-GetStatus">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Diagnostic/GetStatus</span></span><a class="headerlink" href="#get--api-Diagnostic-GetStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the Diagnostic Feature status.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the status</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Diagnostic-GetPeerStatistics">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Diagnostic/GetPeerStatistics</span></span><a class="headerlink" href="#get--api-Diagnostic-GetPeerStatistics" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Returns the connected peers with some statistical information.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connectedOnly</strong> (<em>boolean</em>) – if set to {true} returns statistics related to connected peers only.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns connected peers statistics</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Diagnostic-StartCollectingPeerStatistics">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Diagnostic/StartCollectingPeerStatistics</span></span><a class="headerlink" href="#get--api-Diagnostic-StartCollectingPeerStatistics" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Starts collecting peers statistics.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Peer statistics collection started</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Diagnostic-StopCollectingPeerStatistics">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Diagnostic/StopCollectingPeerStatistics</span></span><a class="headerlink" href="#get--api-Diagnostic-StopCollectingPeerStatistics" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Stops collecting peers statistics.</strong></p>
+<p>Stopping a running peer statistic collecotr doesn’t clear obtained results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Peer statistics collection stopped</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-FederationVoting-schedulevote-addfedmember">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/FederationVoting/schedulevote-addfedmember</span></span><a class="headerlink" href="#post--api-FederationVoting-schedulevote-addfedmember" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Votes to add a federation member.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Voted to add member</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, node is not a federation member, or an unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – The request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-FederationVoting-schedulevote-kickfedmember">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/FederationVoting/schedulevote-kickfedmember</span></span><a class="headerlink" href="#post--api-FederationVoting-schedulevote-kickfedmember" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Votes to kick a federation member.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Voted to kick member</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, node is not a federation member, or an unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – The request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Mempool-getrawmempool">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Mempool/getrawmempool</span></span><a class="headerlink" href="#get--api-Mempool-getrawmempool" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets a hash of each transaction in the memory pool.</strong></p>
+<p>A list of the TX IDs for all the transactions in the mempool are retrieved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns memory pool transactions</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Network-disconnect">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Network/disconnect</span></span><a class="headerlink" href="#post--api-Network-disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Disconnects a connected peer.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Peer disconnected</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Network-setban">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Network/setban</span></span><a class="headerlink" href="#post--api-Network-setban" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Adds or remove a peer from the node’s banned peers list.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Ban status updated</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – An exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Network-getbans">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Network/getbans</span></span><a class="headerlink" href="#get--api-Network-getbans" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Retrieves a list of all banned peers.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns banned peers</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Network-clearbanned">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Network/clearbanned</span></span><a class="headerlink" href="#post--api-Network-clearbanned" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Clears the node of all banned peers.</strong></p>
+<p>See “<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Simple_requests">https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Simple_requests</a>”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Bans cleared</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Node-status">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Node/status</span></span><a class="headerlink" href="#get--api-Node-status" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets general information about this node.</strong></p>
+<p>Including the version, protocol version, network name, coin ticker, and consensus height.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns node information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Node-getblockheader">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Node/getblockheader</span></span><a class="headerlink" href="#get--api-Node-getblockheader" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the block header of a block identified by a block hash.</strong></p>
+<p>Binary serialization is not supported with this method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hash</strong> (<em>string</em>) – The hash of the block to retrieve.</p></li>
+<li><p><strong>isJsonFormat</strong> (<em>boolean</em>) – A flag that specifies whether to return the block header in the JSON format. Defaults to true. A value of false is currently not supported.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns block header</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Node-getrawtransaction">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Node/getrawtransaction</span></span><a class="headerlink" href="#get--api-Node-getrawtransaction" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets a raw transaction that is present on this full node.</strong></p>
+<p>This method first searches the transaction pool and then tries the block store.</p>
+<p>Requires <strong>txindex=1</strong>, otherwise only transactions that spend or create UTXOs for a stored wallet can be returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trxid</strong> (<em>string</em>) – The transaction ID (a hash of the trancaction).</p></li>
+<li><p><strong>verbose</strong> (<em>boolean</em>) – A flag that specifies whether to return verbose information about the transaction.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the transaction</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Node-decoderawtransaction">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Node/decoderawtransaction</span></span><a class="headerlink" href="#post--api-Node-decoderawtransaction" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets a JSON representation for a given transaction in hex format.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the transaction</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Node-validateaddress">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Node/validateaddress</span></span><a class="headerlink" href="#get--api-Node-validateaddress" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Validates a bech32 or base58 bitcoin address.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>string</em>) – A Bitcoin address to validate in a string format.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns validation result</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Node-gettxout">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Node/gettxout</span></span><a class="headerlink" href="#get--api-Node-gettxout" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the unspent outputs of a specific vout in a transaction.</strong></p>
+<p>An API implementation of RPC call.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trxid</strong> (<em>string</em>) – The transaction ID as a hash string.</p></li>
+<li><p><strong>vout</strong> (<em>integer</em>) – The vout to get the unspent outputs for.</p></li>
+<li><p><strong>includeMemPool</strong> (<em>boolean</em>) – A flag that specifies whether to include transactions in the mempool.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns transaction output</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Node-shutdown">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Node/shutdown</span></span><a class="headerlink" href="#post--api-Node-shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Triggers a shutdown of this node.</strong></p>
+<p>See <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Simple_requests">https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Simple_requests</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Node was shutdown</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Node-stop">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Node/stop</span></span><a class="headerlink" href="#post--api-Node-stop" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Triggers a shutdown of this node.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Node was shutdown</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http put">
+<dt class="sig sig-object http" id="put--api-Node-loglevels">
+<span class="sig-name descname"><span class="pre">PUT</span> </span><span class="sig-name descname"><span class="pre">/api/Node/loglevels</span></span><a class="headerlink" href="#put--api-Node-loglevels" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Changes the log levels for the specified loggers.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Log level updated</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Request is invalid or an unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Node-logrules">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Node/logrules</span></span><a class="headerlink" href="#get--api-Node-logrules" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Get the enabled log rules.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns log rules</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Node-asyncloops">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Node/asyncloops</span></span><a class="headerlink" href="#get--api-Node-asyncloops" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Get the currently running async loops/delegates/tasks for diagnostic purposes.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns running tasks</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-RPC-callbyname">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/RPC/callbyname</span></span><a class="headerlink" href="#post--api-RPC-callbyname" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Makes a Remote Procedural Call method by name.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns method response</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – An exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.6">405 Method Not Allowed</a></span> – RPC is disabled</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Body is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-RPC-listmethods">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/RPC/listmethods</span></span><a class="headerlink" href="#get--api-RPC-listmethods" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Lists the available Remote Procedural Call methods on this node.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns available methods</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.6">405 Method Not Allowed</a></span> – RPC is disabled</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-SmartContracts-code">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/code</span></span><a class="headerlink" href="#get--api-SmartContracts-code" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the bytecode for a smart contract as a hexadecimal string.</strong></p>
+<p>The bytecode is decompiled to C# source, which is returned as well. Be aware, it is the bytecode which is being executed, so this is the source of truth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>string</em>) – The address of the smart contract to retrieve as bytecode and C# source.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns code response (may be unsuccessful)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-SmartContracts-balance">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/balance</span></span><a class="headerlink" href="#get--api-SmartContracts-balance" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the balance of a smart contract.</strong></p>
+<p>This method only works for smart contract addresses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>string</em>) – The address of the smart contract to retrieve the balance for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns balance</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-SmartContracts-storage">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/storage</span></span><a class="headerlink" href="#get--api-SmartContracts-storage" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets a single piece of smart contract data, which was stored as a key–value pair using the SmartContract.PersistentState property.</strong></p>
+<p>The method performs a lookup in the smart contract state database for the supplied smart contract address and key. The value associated with the given key, deserialized for the specified data type, is returned.</p>
+<p>If the key does not exist or deserialization fails, the method  returns the default value for the specified type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ContractAddress</strong> (<em>string</em>) – The address of the smart contract.
+(Required)</p></li>
+<li><p><strong>StorageKey</strong> (<em>string</em>) – The key for the piece of stored data to retrieve.
+(Required)</p></li>
+<li><p><strong>DataType</strong> (<em>string</em>) – The stored data type.
+(Required)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns data response (may be unsuccessful)</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-SmartContracts-receipt">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/receipt</span></span><a class="headerlink" href="#get--api-SmartContracts-receipt" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets a smart contract transaction receipt.</strong></p>
+<p>Receipts contain information about how a smart contract transaction was executed. This includes the value returned from a smart contract call and how much gas was used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>txHash</strong> (<em>string</em>) – A hash of the smart contract transaction (the transaction ID).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns transaction receipt</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Transaction not found</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-SmartContracts-receipt-search">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/receipt-search</span></span><a class="headerlink" href="#get--api-SmartContracts-receipt-search" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Searches a Smart Contract’s receipts for those which match a specific event.</strong></p>
+<p>The SmartContract.Log() function is capable of storing C# structs, and structs are used to store information about different events occurring on the smart contract.</p>
+<p>For example, a “TransferLog” struct  could contain “From” and “To” fields and be used to log when a smart contract makes a transfer of funds from one wallet to another. The log entries are held inside the smart contract, indexed using the name of the struct, and are linked to individual transaction receipts.</p>
+<p>Therefore, it is possible to return a smart contract’s transaction receipts which match a specific event (as defined by the struct name).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>contractAddress</strong> (<em>string</em>) – The address of the smart contract to retrieve the receipts for.</p></li>
+<li><p><strong>eventName</strong> (<em>string</em>) – The name of the event struct to retrieve matching receipts for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns requested receipts</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Contract does not exist</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-SmartContracts-build-create">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/build-create</span></span><a class="headerlink" href="#post--api-SmartContracts-build-create" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Builds a transaction to create a smart contract.</strong></p>
+<p>Although the transaction is created, the smart contract is not deployed on the network, and no gas or fees are consumed. Instead the created transaction is returned as a hexadecimal string within a JSON object.</p>
+<p>Transactions built using this method can be deployed using /api/SmartContractWallet/send-transaction. However, unless there is a need to closely examine the transaction before deploying it, you should use api/SmartContracts/build-and-send-create.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns create contract response</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or failed to build transaction</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-SmartContracts-build-call">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/build-call</span></span><a class="headerlink" href="#post--api-SmartContracts-build-call" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Builds a transaction to call a smart contract method.</strong></p>
+<p>Although the transaction is created, the call is not made, and no gas or fees are consumed. Instead the created transaction is returned as a JSON object.</p>
+<p>Transactions built using this method can be deployed using /api/SmartContractWallet/send-transaction. However, unless there is a need to closely examine the transaction before deploying it, you should use api/SmartContracts/build-and-send-call.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns call contract response</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or failed to build transaction</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-SmartContracts-build-transaction">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/build-transaction</span></span><a class="headerlink" href="#post--api-SmartContracts-build-transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Builds a transaction to transfer funds on a smart contract network.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns transaction response</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-SmartContracts-estimate-fee">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/estimate-fee</span></span><a class="headerlink" href="#post--api-SmartContracts-estimate-fee" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets a fee estimate for a specific smart contract account-based transfer transaction.</strong></p>
+<p>This differs from fee estimation on standard networks due to the way inputs must be selected for account-based transfers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns estimated fee</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-SmartContracts-build-and-send-create">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/build-and-send-create</span></span><a class="headerlink" href="#post--api-SmartContracts-build-and-send-create" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Builds a transaction to create a smart contract and then broadcasts the transaction to the network.</strong></p>
+<p>If the deployment is successful, methods on the smart contract can be subsequently called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns create transaction response</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, failed to build transaction, or cannot broadcast transaction</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a></span> – No connected peers</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-SmartContracts-build-and-send-call">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/build-and-send-call</span></span><a class="headerlink" href="#post--api-SmartContracts-build-and-send-call" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Builds a transaction to call a smart contract method and then broadcasts the transaction to the network.</strong></p>
+<p>If the call is successful, any changes to the smart contract balance or persistent data are propagated across the network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns call transaction response</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or cannot broadcast transaction</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a></span> – No connected peers</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-SmartContracts-local-call">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/local-call</span></span><a class="headerlink" href="#post--api-SmartContracts-local-call" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Makes a local call to a method on a smart contract that has been successfully deployed.</strong></p>
+<p>A transaction is not created as the call is never propagated across the network. All persistent data held by the smart contract is copied before the call is made.</p>
+<p>Only this copy is altered by the call and the actual data is unaffected. Even if an amount of funds are specified to send with the call, no funds are in fact sent.</p>
+<p>The purpose of this function is to query and test methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns call response</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Unable to deserialize method parameters</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-SmartContracts-address-balances">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContracts/address-balances</span></span><a class="headerlink" href="#get--api-SmartContracts-address-balances" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets all addresses owned by a wallet which have a balance associated with them.</strong></p>
+<p>This method effectively returns the balance of all the UTXOs associated with a wallet.</p>
+<p>In a case where multiple UTXOs are associated with one address, the amounts are tallied to give a total for that address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>walletName</strong> (<em>string</em>) – The name of the wallet to retrieve the addresses from.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns address balances</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-SmartContractWallet-account-addresses">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContractWallet/account-addresses</span></span><a class="headerlink" href="#get--api-SmartContractWallet-account-addresses" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets a smart contract account address.</strong></p>
+<p>This is a single address to use for all smart contract interactions.</p>
+<p>Smart contracts send funds to and store data at this address. For example, an ERC-20 token would store tokens allocated to a user at this address, although the actual data could, in fact, be anything. The address stores a history of smart contract create/call transactions.</p>
+<p>It also holds a UTXO list/balance based on UTXOs sent to it from smart contracts or user wallets. Once a smart contract has written data to this address, you need to use the address to provide gas and fees for smart contract calls involving that stored data (for that smart contract deployment).</p>
+<p>In the case of specific ERC-20 tokens allocated to you, using this address would be a requirement if you were to, for example, send some of the tokens to an exchange. It is therefore recommended that in order to keep an intact history and avoid complications, you use the single smart contract address provided by this function for all interactions with smart contracts.</p>
+<p>In addition, a smart contract address can be used to identify a contract deployer. Some methods, such as a withdrawal method on an escrow smart contract, should only be executed by the deployer, and in this case, it is the smart contract account address that identifies the deployer.</p>
+<dl class="simple">
+<dt>Note that this account differs from “account 0”, which is the “default</dt><dd><p>holder of multiple addresses”. Other address holding accounts can be created, but they should not be confused with the smart contract account, which is represented by a single address.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>walletName</strong> (<em>string</em>) – The name of the wallet to retrieve a smart contract account address for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns account addresses</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Wallet name not provided or unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-SmartContractWallet-address-balance">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContractWallet/address-balance</span></span><a class="headerlink" href="#get--api-SmartContractWallet-address-balance" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the balance at a specific wallet address in STRAX (or the respective token/coin).</strong></p>
+<p>This method gets the UTXOs at the address that the wallet can spend.</p>
+<p>The function can be used to query the balance at a smart contract account address
+supplied by /api/SmartContractWallet/account-addresses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>string</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns address balance</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-SmartContractWallet-history">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContractWallet/history</span></span><a class="headerlink" href="#get--api-SmartContractWallet-history" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the history of a specific wallet address.</strong></p>
+<p>This includes the smart contract create and call transactions.</p>
+<p>This method can be used to query the balance at a smart contract account address supplied by /api/SmartContractWallet/account-addresses.</p>
+<p>It is advisable to use /api/SmartContractWallet/account-addresses to generate an address for all smart contract interactions. If this has been done, and that address is supplied to this method, a list of all smart contract interactions for a wallet will be returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WalletName</strong> (<em>string</em>) – </p></li>
+<li><p><strong>Address</strong> (<em>string</em>) – </p></li>
+<li><p><strong>Skip</strong> (<em>integer</em>) – An optional value allowing (with Take) pagination of the wallet’s history. If given, the member specifies the numbers of records in the wallet’s history to skip before beginning record retrieval; otherwise the wallet history records are retrieved starting from 0.</p></li>
+<li><p><strong>Take</strong> (<em>integer</em>) – An optional value allowing (with Skip) pagination of the wallet’s history. If given, the member specifies the number of records in the wallet’s history to retrieve in this call; otherwise all wallet history records are retrieved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns transaction history</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-SmartContractWallet-create">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContractWallet/create</span></span><a class="headerlink" href="#post--api-SmartContractWallet-create" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Builds a transaction to create a smart contract and then broadcasts the transaction to the network.</strong></p>
+<p>If the deployment is successful, methods on the smart contract can be subsequently called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns build transaction response</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, failed to build transaction, or could not broadcast transaction</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-SmartContractWallet-call">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContractWallet/call</span></span><a class="headerlink" href="#post--api-SmartContractWallet-call" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Builds a transaction to call a smart contract method and then broadcasts the transaction to the network.</strong></p>
+<p>If the call is successful, any changes to the smart contract balance or persistent data are propagated across the network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns build transaction response</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, failed to build transaction, or could not broadcast transaction</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-SmartContractWallet-send-transaction">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/SmartContractWallet/send-transaction</span></span><a class="headerlink" href="#post--api-SmartContractWallet-send-transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Broadcasts a transaction, which either creates a smart contract or calls a method on a smart contract.</strong></p>
+<p>If the contract deployment or method call are successful gas and fees are consumed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns the broadcast transaction</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, failed to broadcast transaction or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null, or no peers are connected</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-mnemonic">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/mnemonic</span></span><a class="headerlink" href="#get--api-Wallet-mnemonic" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Generates a mnemonic to use for an HD wallet.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>language</strong> (<em>string</em>) – The language for the words in the mnemonic. The options are: English, French, Spanish, Japanese, ChineseSimplified and ChineseTraditional.</p></li>
+<li><p><strong>wordCount</strong> (<em>integer</em>) – The number of words in the mnemonic. The options are: 12,15,18,21 or 24.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns mnemonic</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-create">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/create</span></span><a class="headerlink" href="#post--api-Wallet-create" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Creates a new wallet on this node.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns mnemonic</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or problem creating wallet</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10">409 Conflict</a></span> – Wallet already exists</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-signmessage">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/signmessage</span></span><a class="headerlink" href="#post--api-Wallet-signmessage" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Signs a message and returns the signature.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns signature</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-verifymessage">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/verifymessage</span></span><a class="headerlink" href="#post--api-Wallet-verifymessage" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Verifies the signature of a message.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns verification result</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-load">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/load</span></span><a class="headerlink" href="#post--api-Wallet-load" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Loads a previously created wallet.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Wallet loaded</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a></span> – Incorrect password</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a></span> – Wallet not found</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-recover">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/recover</span></span><a class="headerlink" href="#post--api-Wallet-recover" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Recovers an existing wallet.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Wallet recovered</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a></span> – Wallet not found</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10">409 Conflict</a></span> – Wallet already exists</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-recover-via-extpubkey">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/recover-via-extpubkey</span></span><a class="headerlink" href="#post--api-Wallet-recover-via-extpubkey" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Recovers a wallet using its extended public key.</strong></p>
+<p>Note that the recovered wallet will not have a private key and is only suitable for returning the wallet history using further API calls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Wallet recovered</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a></span> – Wallet not found</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10">409 Conflict</a></span> – Wallet already exists</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-general-info">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/general-info</span></span><a class="headerlink" href="#get--api-Wallet-general-info" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets some general information about a wallet.</strong></p>
+<blockquote>
+<div><p>This includes the network the wallet is for, the creation date and time for the wallet, the height of the blocks the wallet currently holds, and the number of connected nodes.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Name</strong> (<em>string</em>) – (Required)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns wallet information</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-history">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/history</span></span><a class="headerlink" href="#get--api-Wallet-history" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the history of a wallet.</strong></p>
+<p>This includes the transactions held by the entire wallet or a single account if one is specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WalletName</strong> (<em>string</em>) – The name of the wallet to recover the history for.
+(Required)</p></li>
+<li><p><strong>AccountName</strong> (<em>string</em>) – Optional. The name of the account to recover the history for. If no account name is specified, the entire history of the wallet is recovered.</p></li>
+<li><p><strong>Address</strong> (<em>string</em>) – Optional. If set, will filter the transaction history for all transactions made to or from the given address.</p></li>
+<li><p><strong>Skip</strong> (<em>integer</em>) – An optional value allowing (with Take) pagination of the wallet’s history. If given, the member specifies the numbers of records in the  wallet’s history to skip before beginning record retrieval; otherwise the wallet history records are retrieved starting from 0.</p></li>
+<li><p><strong>Take</strong> (<em>integer</em>) – An optional value allowing (with Skip) pagination of the wallet’s history. If given, the member specifies the number of records in the wallet’s history to retrieve in this call; otherwise all wallet history records are retrieved.</p></li>
+<li><p><strong>SearchQuery</strong> (<em>string</em>) – <p>An optional string that can be used to match different data in the transaction records.</p>
+<p>It is possible to match on the following:</p>
+<p>The transaction ID, the address at which funds where received and the address to which funds where sent.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns wallet history</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-balance">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/balance</span></span><a class="headerlink" href="#get--api-Wallet-balance" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the balance of a wallet.”</strong></p>
+<p>Both the confirmed and unconfirmed balance are returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WalletName</strong> (<em>string</em>) – The name of the wallet to retrieve the balance for.
+(Required)</p></li>
+<li><p><strong>AccountName</strong> (<em>string</em>) – The name of the account to retrieve the balance for. If no account name is supplied, then the balance for the entire wallet (all accounts) is retrieved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns wallet balances</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-received-by-address">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/received-by-address</span></span><a class="headerlink" href="#get--api-Wallet-received-by-address" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the balance at a specific wallet address.</strong></p>
+<p>Both the confirmed and unconfirmed balance are returned. This method gets the UTXOs at the address which the wallet can spend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Address</strong> (<em>string</em>) – (Required)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns wallet address balances</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-maxbalance">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/maxbalance</span></span><a class="headerlink" href="#get--api-Wallet-maxbalance" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the maximum spendable balance for an account along with the fee required to spend it.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WalletName</strong> (<em>string</em>) – The name of the wallet to retrieve the maximum spendable amount for.
+(Required)</p></li>
+<li><p><strong>AccountName</strong> (<em>string</em>) – The name of the account to retrieve the maximum spendable amount for.</p></li>
+<li><p><strong>FeeType</strong> (<em>string</em>) – The type of fee to use when working out the fee required to spend the amount.
+Specify “low”, “medium”, or “high”.
+(Required)</p></li>
+<li><p><strong>AllowUnconfirmed</strong> (<em>boolean</em>) – A flag that specifies whether to include the unconfirmed amounts held at account addresses as spendable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns spendable balance</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-spendable-transactions">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/spendable-transactions</span></span><a class="headerlink" href="#get--api-Wallet-spendable-transactions" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the spendable transactions for an account with the option to specify how many confirmations a transaction needs to be included.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WalletName</strong> (<em>string</em>) – The name of the wallet to retrieve the spendable transactions for.
+(Required)</p></li>
+<li><p><strong>AccountName</strong> (<em>string</em>) – </p></li>
+<li><p><strong>MinConfirmations</strong> (<em>integer</em>) – <p>The minimum number of confirmations a transaction needs to have to be included.</p>
+<p>To include unconfirmed transactions, set this value to 0.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns spendable transactions</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-estimate-txfee">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/estimate-txfee</span></span><a class="headerlink" href="#post--api-Wallet-estimate-txfee" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets a fee estimate for a specific transaction.</strong></p>
+<p>Fee can be estimated by creating a Stratis.Bitcoin.Features.Wallet.TransactionBuildContext with no  password and then building the transaction and retrieving the fee from the context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns fee estimate</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-build-transaction">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/build-transaction</span></span><a class="headerlink" href="#post--api-Wallet-build-transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Builds a transaction and returns the hex to use when executing the transaction.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns transaction information</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, account not found, change address not found, or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-send-transaction">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/send-transaction</span></span><a class="headerlink" href="#post--api-Wallet-send-transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Sends a transaction that has already been built.</strong></p>
+<p>Use the /api/Wallet/build-transaction call to create transactions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns transaction details</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, cannot broadcast transaction, or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a></span> – No connected peers</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-files">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/files</span></span><a class="headerlink" href="#get--api-Wallet-files" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Lists all the files found in the default wallet folder.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns wallet files</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Unexpected exception occurred</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-account">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/account</span></span><a class="headerlink" href="#post--api-Wallet-account" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Creates a new account for a wallet.</strong></p>
+<p>Accounts are given the name “account i”, where i is an incremental index which starts at 0.</p>
+<p>According to BIP44. an account at index i can only be created when the account at index (i - 1) contains at least one transaction. For example, if three accounts named “account 0”, “account 1” and “account 2” already exist and contain at least one transaction, then the function will create “account 3”.</p>
+<p>However, if “account 2”, for example, instead contains no transactions, then this API call returns “account 2”.</p>
+<p>Accounts are created deterministically, which means that on any device, the accounts and addresses for a given seed (or mnemonic) are always the same.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns account name</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a></span> – Wallet is watch-only</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-accounts">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/accounts</span></span><a class="headerlink" href="#get--api-Wallet-accounts" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets a list of accounts for the specified wallet.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WalletName</strong> (<em>string</em>) – The name of the wallet for which to list the accounts.
+(Required)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns account names</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-unusedaddress">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/unusedaddress</span></span><a class="headerlink" href="#get--api-Wallet-unusedaddress" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets an unused address (in the Base58 format) for a wallet account.</strong></p>
+<p>This address will not have been assigned to any known UTXO (neither to pay funds into the wallet or to pay change back to the wallet).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WalletName</strong> (<em>string</em>) – The name of the wallet from which to get the address.
+(Required)</p></li>
+<li><p><strong>AccountName</strong> (<em>string</em>) – The name of the account for which to get the address.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns address</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-unusedaddresses">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/unusedaddresses</span></span><a class="headerlink" href="#get--api-Wallet-unusedaddresses" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets a specified number of unused addresses (in the Base58 format) for a wallet account.</strong></p>
+<p>These addresses will not have been assigned to any known UTXO (neither to pay funds into the wallet or to pay change back to the wallet).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WalletName</strong> (<em>string</em>) – The name of the wallet from which to get the addresses.
+(Required)</p></li>
+<li><p><strong>AccountName</strong> (<em>string</em>) – The name of the account for which to get the addresses.</p></li>
+<li><p><strong>Count</strong> (<em>string</em>) – The number of addresses to retrieve.
+(Required)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns address list</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null or cannot be parsed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-addresses">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/addresses</span></span><a class="headerlink" href="#get--api-Wallet-addresses" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets all addresses for a wallet account.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WalletName</strong> (<em>string</em>) – The name of the wallet from which to get the addresses.
+(Required)</p></li>
+<li><p><strong>AccountName</strong> (<em>string</em>) – The name of the account for which to get the addresses.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns address information list</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http delete">
+<dt class="sig sig-object http" id="delete--api-Wallet-remove-transactions">
+<span class="sig-name descname"><span class="pre">DELETE</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/remove-transactions</span></span><a class="headerlink" href="#delete--api-Wallet-remove-transactions" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Removes transactions from the wallet.</strong></p>
+<p>You may want to remove transactions from a wallet if some unconfirmed transactions disappear from the blockchain or the transaction fields within the wallet are updated and a refresh is required to populate the new fields.</p>
+<p>In one situation, you might notice several unconfirmed transaction in the wallet, which you now know were never confirmed. You can use this API to correct this by specifying a date and time before the first unconfirmed transaction thereby removing all transactions after this point.</p>
+<p>You can also request a resync as part of the call, which calculates the block height for the earliest removal. The wallet sync manager then proceeds to resync from there reinstating the confirmed transactions in the wallet.</p>
+<p>You can also cherry pick transactions to remove by specifying their transaction ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WalletName</strong> (<em>string</em>) – The name of the wallet to remove the transactions from.
+(Required)</p></li>
+<li><p><strong>ids</strong> (<em>array</em>) – The IDs of the transactions to remove.</p></li>
+<li><p><strong>fromDate</strong> (<em>string</em>) – A date and time after which all transactions should be removed.</p></li>
+<li><p><strong>all</strong> (<em>boolean</em>) – A flag that specifies whether to delete all transactions from a wallet.</p></li>
+<li><p><strong>ReSync</strong> (<em>boolean</em>) – A flag that specifies whether to resync the wallet after removing the transactions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns transaction list</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, or an exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-extpubkey">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/extpubkey</span></span><a class="headerlink" href="#get--api-Wallet-extpubkey" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Gets the extended public key of a specified wallet account.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WalletName</strong> (<em>string</em>) – The name of the wallet from which to get the extended public key.
+(Required)</p></li>
+<li><p><strong>AccountName</strong> (<em>string</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns extended public key</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-sync">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/sync</span></span><a class="headerlink" href="#post--api-Wallet-sync" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Requests the node resyncs from a block specified by its block hash.</strong></p>
+<p>Internally, the specified block is taken as the new wallet tip and all blocks after it are resynced.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Resync requested</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, or block not found</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-sync-from-date">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/sync-from-date</span></span><a class="headerlink" href="#post--api-Wallet-sync-from-date" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Request the node resyncs starting from a given date and time.</strong></p>
+<p>Internally, the first block created on or after the supplied date and time is taken as the new wallet tip and all blocks after it are resynced.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Resync requested</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-Wallet-wallet-stats">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/wallet-stats</span></span><a class="headerlink" href="#get--api-Wallet-wallet-stats" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Retrieves information about the wallet</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WalletName</strong> (<em>string</em>) – The name of the wallet for which to get the stats.
+(Required)</p></li>
+<li><p><strong>AccountName</strong> (<em>string</em>) – </p></li>
+<li><p><strong>MinConfirmations</strong> (<em>integer</em>) – <p>The minimum number of confirmations a transaction needs to have to be included.</p>
+<p>To include unconfirmed transactions, set this value to 0.</p>
+</p></li>
+<li><p><strong>Verbose</strong> (<em>boolean</em>) – Should the request return a more detailed output</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns wallet stats</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-splitcoins">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/splitcoins</span></span><a class="headerlink" href="#post--api-Wallet-splitcoins" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Creates requested amount of UTXOs each of equal value.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns transaction details</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, cannot broadcast transaction, or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a></span> – No connected peers</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="http post">
+<dt class="sig sig-object http" id="post--api-Wallet-distribute-utxos">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/Wallet/distribute-utxos</span></span><a class="headerlink" href="#post--api-Wallet-distribute-utxos" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Splits and distributes UTXOs across wallet addresses</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Status Codes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a></span> – Returns distribution details</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a></span> – Invalid request, requested transactions exceeds number of UTXOs, cannot broadcast transaction, or unexpected exception occurred</p></li>
+<li><p><span><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1">500 Internal Server Error</a></span> – Request is null</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../PyStratis%20Reference/pystratis.html" class="btn btn-primary float-right" title="PyStratis Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../developers-introduction.html" class="btn btn-neutral" title="Developer Guides" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

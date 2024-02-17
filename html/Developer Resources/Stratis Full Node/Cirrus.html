@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Interacting with the Cirrus Node &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Stratis Unity 3D SDK" href="../Unity3D/unity3d-intro.html" />
+    <link rel="prev" title="Interacting with the Stratis Node" href="Interacting.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PyStratis%20Reference/pystratis.html">PyStratis Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="StratisFullNode-Introduction.html">Stratis Full Node</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Running.html">Running the Stratis Full Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Interacting.html">Interacting with the Stratis Node</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Interacting with the Cirrus Node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#obtaining-an-src20-token-balance">Obtaining an SRC20 Token Balance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transferring-src20-tokens">Transferring SRC20 Tokens</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="StratisFullNode-Introduction.html">Getting Started</a> &raquo;</li>
+        
+      <li>Interacting with the Cirrus Node</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Developer Resources/Stratis Full Node/Cirrus.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="interacting-with-the-cirrus-node">
+<h1>Interacting with the Cirrus Node<a class="headerlink" href="#interacting-with-the-cirrus-node" title="Permalink to this heading">¶</a></h1>
+<p>The Cirrus Sidechain is the first Stratis Blockchain that supports Smart
+Contract execution. Governed entirely by members of the Stratis
+Community, presenting a required amount of collateral to secure their
+position as a Masternode.</p>
+<p>Interacting with the Cirrus Sidechain is no different to interacting
+with the Stratis Full Node, however, there is a different and some
+additional methods that can be utilised to leverage the additional
+functionality presented through Smart Contract enablement.</p>
+<p>The Cirrus Sidechain incorporates Stratis Smart Contract technology,
+this enables Smart Contract deployment and interaction. There are
+several endpoints available to interact with Smart Contracts. These
+endpoints are documented and available via the Swagger interface,
+accessible from the below URL.</p>
+<blockquote>
+<div><p><strong>CirrusTest</strong></p>
+<p><a class="reference external" href="http://localhost:38223/Swagger">http://localhost:38223/Swagger</a></p>
+<p><strong>CirrusMain</strong></p>
+<p><a class="reference external" href="http://localhost:37223/Swagger">http://localhost:37223/Swagger</a></p>
+</div></blockquote>
+<p>This document will now progress to detail how an SRC20 Token can be
+interacted with.</p>
+<p>This document will progress with the assumption that a wallet has been
+created as <a class="reference external" href="#creating-a-wallet">detailed previously in this
+document.</a></p>
+<section id="obtaining-an-src20-token-balance">
+<h2>Obtaining an SRC20 Token Balance<a class="headerlink" href="#obtaining-an-src20-token-balance" title="Permalink to this heading">¶</a></h2>
+<p>An SRC20 Token balance can be achieved by utilising the
+<cite>*/api/SmartContracts/local-call*</cite> endpoint.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="s2">&quot;http://localhost:37223/api/SmartContracts/local-call&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;accept: application/json&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json-patch+json&quot;</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{</span><span class="se">\&quot;</span><span class="s1">contractAddress</span><span class="se">\&quot;</span><span class="s1">:</span><span class="se">\&quot;</span><span class="s1">CUwkBGkXrQpMnZeWW2SpAv1Vu9zPvjWNFS</span><span class="se">\&quot;</span><span class="s1">,</span><span class="se">\&quot;</span><span class="s1">methodName</span><span class="se">\&quot;</span><span class="s1">:</span><span class="se">\&quot;</span><span class="s1">GetBalance</span><span class="se">\&quot;</span><span class="s1">,</span><span class="se">\&quot;</span><span class="s1">amount</span><span class="se">\&quot;</span><span class="s1">:</span><span class="se">\&quot;</span><span class="s1">0</span><span class="se">\&quot;</span><span class="s1">,</span><span class="se">\&quot;</span><span class="s1">gasPrice</span><span class="se">\&quot;</span><span class="s1">:100,</span><span class="se">\&quot;</span><span class="s1">gasLimit</span><span class="se">\&quot;</span><span class="s1">:15000,</span><span class="se">\&quot;</span><span class="s1">sender</span><span class="se">\&quot;</span><span class="s1">:</span><span class="se">\&quot;</span><span class="s1">CYgkKbebnkCdJ9y8MGcscQhuZEzRf7YgNJ</span><span class="se">\&quot;</span><span class="s1">,</span><span class="se">\&quot;</span><span class="s1">parameters</span><span class="se">\&quot;</span><span class="s1">:[</span><span class="se">\&quot;</span><span class="s1">9#CVZvejbiAHEeuZCaEJ4zPi1tCYne2CrHru</span><span class="se">\&quot;</span><span class="s1">]}&#39;</span>
+</pre></div>
+</div>
+<p>Executing the above command, we are supplying several parameters,
+highlighted below:</p>
+<p><em>The Token Contract to query.</em></p>
+<p>“<strong>contractAddress</strong>”: “CUwkBGkXrQpMnZeWW2SpAv1Vu9zPvjWNFS”</p>
+<p><em>The name of the Method</em></p>
+<p>“<strong>methodName</strong>”: “GetBalance”</p>
+<p><em>The amount of CRS Tokens (No CRS is required for this call)</em></p>
+<p>“<strong>amount</strong>”: “0”</p>
+<p><em>The minimum GAS Price</em></p>
+<p>“<strong>gasPrice</strong>”: 100</p>
+<p><strong>GAS Prices must be set for the local-call, 100 is the lowest.</strong></p>
+<p><em>The maximum GAS to be spent</em></p>
+<p>“<strong>gasLimit</strong>”: 15000</p>
+<p><em>The address that is making the call</em></p>
+<p>“<strong>sender</strong>”: “CYgkKbebnkCdJ9y8MGcscQhuZEzRf7YgNJ”</p>
+<p><em>Additional parameters for the contract</em></p>
+<p>“<strong>parameters</strong>”:</p>
+<p><em>9# defines the target address</em></p>
+<p>“<strong>9#CVZvejbiAHEeuZCaEJ4zPi1tCYne2CrHru</strong>”</p>
+<p>The above example will provide a response like the below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;internalTransfers&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;gasConsumed&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">10079</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;revert&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;errorMessage&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;return&quot;</span><span class="p">:</span> <span class="mi">289856038578246</span><span class="p">,</span>
+        <span class="s2">&quot;logs&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The important element of the above being the value of the return
+property. The amount displayed is exclusive of a decimal point. The
+value must be divided by 10^x, where x is the number of decimal places
+of the token. Note: this value is for UI purposes only and is not
+defined within the token contract itself. It must be obtained from the
+issuer of a token.</p>
+<p>In this case the decimal value is 8, meaning <em>289856038578246/
+100000000</em> will present us with the correct balance of
+<strong>2,898,560.38578246.</strong></p>
+</section>
+<section id="transferring-src20-tokens">
+<h2>Transferring SRC20 Tokens<a class="headerlink" href="#transferring-src20-tokens" title="Permalink to this heading">¶</a></h2>
+<p>The transferring of SRC20 Coins/Tokens is very similar to the querying
+of a balance, however, there are some subtle differences. For instance,
+a CRS Token balance is required as any SRC20 Transfers will be
+propagated and validated by the Masternodes operating the network.</p>
+<p>The below command will interact with the api/SmartContractWallet/call
+method to create an SRC20 Token Transfer.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="s2">&quot;http://localhost:37223/api/SmartContractWallet/call&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;accept: application/json&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json-patch+json&quot;</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{</span><span class="se">\&quot;</span><span class="s1">walletName</span><span class="se">\&quot;</span><span class="s1">:</span><span class="se">\&quot;</span><span class="s1">Cirrus</span><span class="se">\&quot;</span><span class="s1">,</span><span class="se">\&quot;</span><span class="s1">contractAddress</span><span class="se">\&quot;</span><span class="s1">:</span><span class="se">\&quot;</span><span class="s1">CYNs9kHdizj7Jde8KwAMivrucR3QLDszQh</span><span class="se">\&quot;</span><span class="s1">,</span><span class="se">\&quot;</span><span class="s1">methodName</span><span class="se">\&quot;</span><span class="s1">:</span><span class="se">\&quot;</span><span class="s1">TransferTo</span><span class="se">\&quot;</span><span class="s1">,</span><span class="se">\&quot;</span><span class="s1">amount</span><span class="se">\&quot;</span><span class="s1">:</span><span class="se">\&quot;</span><span class="s1">0</span><span class="se">\&quot;</span><span class="s1">,</span><span class="se">\&quot;</span><span class="s1">feeAmount</span><span class="se">\&quot;</span><span class="s1">:</span><span class="se">\&quot;</span><span class="s1">0.001</span><span class="se">\&quot;</span><span class="s1">,</span><span class="se">\&quot;</span><span class="s1">password</span><span class="se">\&quot;</span><span class="s1">:</span><span class="se">\&quot;</span><span class="s1">GettingStarted</span><span class="se">\&quot;</span><span class="s1">,</span><span class="se">\&quot;</span><span class="s1">gasPrice</span><span class="se">\&quot;</span><span class="s1">:100,</span><span class="se">\&quot;</span><span class="s1">gasLimit</span><span class="se">\&quot;</span><span class="s1">:15000,</span><span class="se">\&quot;</span><span class="s1">sender</span><span class="se">\&quot;</span><span class="s1">:</span><span class="se">\&quot;</span><span class="s1">CYgkKbebnkCdJ9y8MGcscQhuZEzRf7YgNJ</span><span class="se">\&quot;</span><span class="s1">,</span><span class="se">\&quot;</span><span class="s1">parameters</span><span class="se">\&quot;</span><span class="s1">:[</span><span class="se">\&quot;</span><span class="s1">9#CRw6gyKaH7RobsK7fE8ELbCrizzc5mk5u9</span><span class="se">\&quot;</span><span class="s1">,</span><span class="se">\&quot;</span><span class="s1">7#1000000000</span><span class="se">\&quot;</span><span class="s1">]}&#39;</span>
+</pre></div>
+</div>
+<p>Executing the above command, we are supplying several parameters,
+highlighted below:</p>
+<p><em>The name of the wallet</em></p>
+<p>“<strong>walletName</strong>”: “Cirrus”</p>
+<p><em>The address of the Token Contract</em></p>
+<p>“<strong>contractAddress</strong>”: “CYNs9kHdizj7Jde8KwAMivrucR3QLDszQh”</p>
+<p><em>The name of the Method</em></p>
+<p>“<strong>methodName</strong>”: “TransferTo”</p>
+<p><em>The amount of CRS Tokens (No CRS is required for this call)</em></p>
+<p>“<strong>amount</strong>”: “0”</p>
+<p><em>The fee amount to fund the transaction</em></p>
+<p>“<strong>feeAmount</strong>”: “0.001”</p>
+<p><em>The wallet password</em></p>
+<p>“<strong>password</strong>”: “GettingStarted”</p>
+<p><em>The minimum GAS Price</em></p>
+<p>“<strong>gasPrice</strong>”: 100</p>
+<p><em>The maximum GAS to be spent</em></p>
+<p>“<strong>gasLimit</strong>”: 15000</p>
+<p><em>The address that is making the call</em></p>
+<p>“<strong>sender</strong>”: “CYgkKbebnkCdJ9y8MGcscQhuZEzRf7YgNJ”</p>
+<p><em>Additional parameters for the contract</em></p>
+<p>“<strong>parameters</strong>”:</p>
+<p><em>9# defines the target/receiving address</em></p>
+<p>“<strong>9#CRw6gyKaH7RobsK7fE8ELbCrizzc5mk5u9</strong>”</p>
+<p><em>7# defines the number of tokens to transfer, exclusive of any decimal
+places. Eg. To send 1.2345 tokens, use the value 12345</em></p>
+<p>“<strong>7#1000000000</strong>”</p>
+<p>The above example will provide a response like the below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;fee&quot;</span><span class="p">:</span> <span class="mi">1600000</span><span class="p">,</span>
+        <span class="s2">&quot;hex&quot;</span><span class="p">:</span> <span class="s2">&quot;010000000159a5c521e781c142f3da54813d4209e43f18c589545526a3536a43fe34967134000000006a47304402202db7dddaeac08dd19b97864c1ede1c18ae807759d0b1ac52a30c2f43c8e8dddf0220629c65dd3676c784a4837d11bbac9f4f5f80b0132e81c287a50901508aa43ca101210350e4a26fd33b183d1121af583a1a3e272ded8b5e1e96f62ca730ebc09bc07570ffffffff0260de6105000000001976a914b1f088bb6e3416d517b1b1a6591dce470bb27f6488ac000000000000000057c1010000006400000000000000983a000000000000ae8ebf921da2261a624edd6a34c652d6ebd169e4ed8a5472616e73666572546fa1e0950967de7ad877bf83fe70cd312d84a133da060d9e38890700ca9a3b0000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Your CALL method TransferTo transaction was successfully built.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;transactionId&quot;</span><span class="p">:</span> <span class="s2">&quot;738db2dbd8ce2d9299f88a4337a7205c232557533e1916bf68e064524786d07c&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The important elements of the above being the value of the success
+property and the transactionId parameter.</p>
+<p>Propagation of the transaction can be confirmed by querying the
+/api/SmartContracts/receipt endpoint with the transactionId provided in
+the response from the token transfer.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;http://localhost:37223/api/SmartContracts/receipt?txHash=738db2dbd8ce2d9299f88a4337a7205c232557533e1916bf68e064524786d07c&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;accept: application/json&quot;</span>
+</pre></div>
+</div>
+<p>The above will provide a response like the below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;transactionHash&quot;</span><span class="p">:</span> <span class="s2">&quot;738db2dbd8ce2d9299f88a4337a7205c232557533e1916bf68e064524786d07c&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;blockHash&quot;</span><span class="p">:</span> <span class="s2">&quot;cd82b55e782d00b5c4601d5753e7971fe5da85191bf9209f95fc0428e4420bf2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;postState&quot;</span><span class="p">:</span> <span class="s2">&quot;b87df59cef6dcf162b6cdc53270c2989f698d7ebf96f443505a19e9a8016aedd&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gasUsed&quot;</span><span class="p">:</span> <span class="mi">12680</span><span class="p">,</span>
+        <span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;CYgkKbebnkCdJ9y8MGcscQhuZEzRf7YgNJ&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;CYNs9kHdizj7Jde8KwAMivrucR3QLDszQh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;newContractAddress&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;returnValue&quot;</span><span class="p">:</span> <span class="s2">&quot;True&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bloom&quot;</span><span class="p">:</span> <span class="s2">&quot;00000200000000000000000000000000000000000000000000000000000000000000000000000000404000000000000000002000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000020000000000000000000000000000000000000000000080000000000000000000000000080000000000000000000000000000000000008400000000000000000000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;logs&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                        <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;CYNs9kHdizj7Jde8KwAMivrucR3QLDszQh&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;topics&quot;</span><span class="p">:</span> <span class="p">[</span>
+                                <span class="s2">&quot;5472616E736665724C6F67&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;B1F088BB6E3416D517B1B1A6591DCE470BB27F64&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;67DE7AD877BF83FE70CD312D84A133DA060D9E38&quot;</span>
+                        <span class="p">],</span>
+                        <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;F394B1F088BB6E3416D517B1B1A6591DCE470BB27F649467DE7AD877BF83FE70CD312D84A133DA060D9E388800CA9A3B00000000&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;log&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                <span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;CYgkKbebnkCdJ9y8MGcscQhuZEzRf7YgNJ&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;CRw6gyKaH7RobsK7fE8ELbCrizzc5mk5u9&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">1000000000</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>There are several key properties in the above response.</p>
+<p><em>The amount of GAS associated with the Smart Contract call</em></p>
+<p>“<strong>gasUsed</strong>”: 12680</p>
+<p><em>The sender of the transfer</em></p>
+<p>“<strong>from</strong>”: “CYgkKbebnkCdJ9y8MGcscQhuZEzRf7YgNJ”</p>
+<p><em>The Token Contract Address Note: Not the recipient</em></p>
+<p>“<strong>to</strong>”: “CYNs9kHdizj7Jde8KwAMivrucR3QLDszQh”</p>
+<p><em>The status of the transaction</em></p>
+<p>“<strong>success</strong>”: true</p>
+<p><em>The transaction log</em></p>
+<p>“<strong>log</strong>”:</p>
+<p><em>The sender of Tokens</em></p>
+<p>“<strong>from</strong>”: “CYgkKbebnkCdJ9y8MGcscQhuZEzRf7YgNJ”</p>
+<p><em>The recipient of Tokens</em></p>
+<p>“<strong>to</strong>”: “CRw6gyKaH7RobsK7fE8ELbCrizzc5mk5u9”</p>
+<p><em>The amount of Tokens transferred, exclusive of any decimal places. E.g.
+For 1.2345 tokens, this would be 12345</em></p>
+<p>“<strong>amount</strong>”: 1000000000</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../Unity3D/unity3d-intro.html" class="btn btn-primary float-right" title="Stratis Unity 3D SDK" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="Interacting.html" class="btn btn-neutral" title="Interacting with the Stratis Node" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

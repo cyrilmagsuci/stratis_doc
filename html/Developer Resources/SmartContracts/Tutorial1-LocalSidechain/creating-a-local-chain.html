@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating a Network &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="A “Hello World” smart contract" href="../Tutorial2-HelloWorld/hello-world-tutorial-introduction.html" />
+    <link rel="prev" title="Running a local network with its own token" href="local-network-tutorial-introduction.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PyStratis%20Reference/pystratis.html">PyStratis Reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../smartcontracts-introduction.html">Smart Contracts</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="local-network-tutorial-introduction.html">Getting Started</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Creating a Network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#starting-a-network">Starting a Network</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial2-HelloWorld/hello-world-tutorial-introduction.html">HelloWorld!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial3-ExtendingHelloWorld/hello-world-extension-tutorial-introduction.html">Extending HelloWorld!</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unreal%20Engine/unreal-engine-introduction.html">Unreal Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../smartcontracts-introduction.html">Smart Contracts</a> &raquo;</li>
+        
+          <li><a href="local-network-tutorial-introduction.html">Running a local network with its own token</a> &raquo;</li>
+        
+      <li>Creating a Network</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/SmartContracts/Tutorial1-LocalSidechain/creating-a-local-chain.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="creating-a-network">
+<span id="creating-headless-network"></span><h1>Creating a Network<a class="headerlink" href="#creating-a-network" title="Permalink to this heading">¶</a></h1>
+<p>This section specifically focuses on those who are wanting to develop in a headless environment. If you would prefer to complete the tutorials with the use of a GUI, please follow the GUI focused guides on <a class="reference internal" href="../../../Operation%20Guides/SmartContracts/Tutorial1-LocalSidechain/creating-a-local-chain.html#gui-tutorials"><span class="std std-ref">Setup Local Environment</span></a>.</p>
+<section id="pre-requisites">
+<h2>Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading">¶</a></h2>
+<p>This guide requires Docker Community Edition to be installed, this can be obtained from <a class="reference external" href="https://docs.docker.com/install/">here</a></p>
+</section>
+</section>
+<section id="starting-a-network">
+<h1>Starting a Network<a class="headerlink" href="#starting-a-network" title="Permalink to this heading">¶</a></h1>
+<p>To begin, you first need to obtain the relevant Docker Image from the following repository and clone the respective repository.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">stratisplatform</span><span class="o">/</span><span class="n">stratisfullnode</span><span class="p">:</span><span class="n">Stratis</span><span class="o">.</span><span class="n">CirrusMinerD</span><span class="o">-</span><span class="mf">1.1.0.0</span><span class="o">-</span><span class="n">ext</span>
+</pre></div>
+</div>
+<p>Once the Docker Image has been pulled, you can bring up a network of your choosing by executing the below command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">p</span> <span class="mi">38223</span><span class="p">:</span><span class="mi">38223</span> <span class="n">stratisplatform</span><span class="o">/</span><span class="n">stratisfullnode</span><span class="p">:</span><span class="n">Stratis</span><span class="o">.</span><span class="n">CirrusMinerD</span><span class="o">-</span><span class="mf">1.1.0.0</span><span class="o">-</span><span class="n">ext</span>
+</pre></div>
+</div>
+<section id="interacting-with-the-network">
+<h2>Interacting with the Network<a class="headerlink" href="#interacting-with-the-network" title="Permalink to this heading">¶</a></h2>
+<p>Once the network is running, you can interact with each node via RESTFul API, available on <a class="reference external" href="http://localhost:38223/Swagger">http://localhost:38223/Swagger</a> that is presented by the node. The available endponints are documented on the <a class="reference internal" href="../../API%20Reference/api.html#developers-api"><span class="std std-ref">Stratis Core API Reference</span></a> page.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../Tutorial2-HelloWorld/hello-world-tutorial-introduction.html" class="btn btn-primary float-right" title="A “Hello World” smart contract" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="local-network-tutorial-introduction.html" class="btn btn-neutral" title="Running a local network with its own token" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

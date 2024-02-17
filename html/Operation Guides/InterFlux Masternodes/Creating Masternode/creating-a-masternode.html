@@ -1,0 +1,604 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Masternode Requirements" href="../Running%20Masternode/running-the-masternode.html" />
+    <link rel="prev" title="InterFlux Masternodes" href="../masternode-introduction.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../operation-guides-introduction.html">Operation Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cold-Staking/coldstaking-introduction.html">Cold-Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Full%20Node/fullnode-introduction.html">Full Node</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../masternode-introduction.html">InterFlux Masternodes</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating an InterFlux Masternode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pre-requisites">Pre-Requisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wallet-configuration">Wallet Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interflux-masternode-registration">InterFlux Masternode Registration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-interflux-masternode">Running the InterFlux Masternode</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Running%20Masternode/running-the-masternode.html">Running an InterFlux Masternode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechain/sidechain-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SDA/sda-introduction.html">Stratis Decentralized Accelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../STO/sto-introduction.html">STO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Token%20Swap/tokenswap-introduction.html">Token Swap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../operation-guides-introduction.html">Operation Guides</a> &raquo;</li>
+        
+          <li><a href="../masternode-introduction.html">InterFlux Masternodes</a> &raquo;</li>
+        
+      <li>Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Operation Guides/InterFlux Masternodes/Creating Masternode/creating-a-masternode.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h1>
+<p>This guide details the process required for joining the Cirrus
+Sidechain as a Block Producing Node, known as an InterFlux Masternode. The request to join the Cirrus Sidechain as a block
+producer, requires you to effectively setup an InterFlux Masternode, therefore, a request to join the Cirrus Sidechain will be
+made once the Masternode is fully configured.</p>
+<section id="pre-requisites">
+<h2>Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading">¶</a></h2>
+<p>To join as a InterFlux Masternode, there are a number of criteria
+that must be met.</p>
+<section id="wallet-requirements">
+<h3>Wallet Requirements<a class="headerlink" href="#wallet-requirements" title="Permalink to this heading">¶</a></h3>
+<p>You must know the mnemonic and passphrase (if applicable) for a STRAX
+Wallet that contains the required collateral and fee.</p>
+<ul class="simple">
+<li><p><strong>Collateral Amount:</strong> 100,000 STRAX</p></li>
+<li><p><strong>Fee Amount:</strong> 501 STRAX</p></li>
+</ul>
+</section>
+<section id="sidechain-masternode-hardware-requirements">
+<h3>Sidechain Masternode Hardware Requirements<a class="headerlink" href="#sidechain-masternode-hardware-requirements" title="Permalink to this heading">¶</a></h3>
+<p>The below hardware requirements are a minimum.</p>
+<ul class="simple">
+<li><p>2x vCPU / Dual Core</p></li>
+<li><p>8GB RAM</p></li>
+<li><p>50GB SSD / HDD</p></li>
+</ul>
+</section>
+<section id="sidechain-masternode-software-requirements">
+<h3>Sidechain Masternode Software Requirements<a class="headerlink" href="#sidechain-masternode-software-requirements" title="Permalink to this heading">¶</a></h3>
+<p>There are only three pre-requisites software installations that need to
+take place before operating a InterFlux Masternode.</p>
+<section id="net-core-sdk">
+<h4>.NET Core SDK<a class="headerlink" href="#net-core-sdk" title="Permalink to this heading">¶</a></h4>
+<p>.NET Core is the platform that the InterFlux Masternode has been
+developed upon. Therefore, you will need to install the .NET Core SDK.</p>
+<p>Please install the latest version of .NET Core SDK 3.1</p>
+<p><a class="reference external" href="https://dotnet.microsoft.com/download/dotnet-core/3.1">https://dotnet.microsoft.com/download/dotnet-core/3.1</a></p>
+</section>
+<section id="git-for-windows">
+<h4>Git for Windows<a class="headerlink" href="#git-for-windows" title="Permalink to this heading">¶</a></h4>
+<p>Navigate to the URL below to download the Git for Windows Installer.
+This should be the topmost file with .exe extension.</p>
+<p><a class="reference external" href="https://github.com/git-for-windows/git/releases">https://github.com/git-for-windows/git/releases</a></p>
+</section>
+<section id="powershell-core">
+<h4>PowerShell Core<a class="headerlink" href="#powershell-core" title="Permalink to this heading">¶</a></h4>
+<p>To provide cross-platform support moving forward, the script that is
+utilized to configure and launch the InterFlux Masternode uses
+PowerShell Core.</p>
+<p><a class="reference external" href="https://github.com/PowerShell/PowerShell/releases">https://github.com/PowerShell/PowerShell/releases</a></p>
+<ol class="arabic simple">
+<li><p>For simplicity, it is recommended you download and install the MSI
+relevant for your operating system.</p></li>
+</ol>
+</section>
+<section id="network-requirements">
+<h4>Network Requirements<a class="headerlink" href="#network-requirements" title="Permalink to this heading">¶</a></h4>
+<p>There are three firewall rules required to allow connectivity between
+your InterFlux Masternode and other nodes on the network.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Rule Name</strong></p></th>
+<th class="head"><p><strong>Direction</strong></p></th>
+<th class="head"><p><strong>Protocol</strong></p></th>
+<th class="head"><p><strong>Port</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>StraxMain</p></td>
+<td><p>Inbound</p></td>
+<td><p>TCP</p></td>
+<td><p>17105</p></td>
+</tr>
+<tr class="row-odd"><td><p>CirrusMain</p></td>
+<td><p>Inbound</p></td>
+<td><p>TCP</p></td>
+<td><p>16179</p></td>
+</tr>
+<tr class="row-even"><td><p>ICMP</p></td>
+<td><p>Inbound</p></td>
+<td><p>ICMPv4</p></td>
+<td><p>N/A</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="wallet-configuration">
+<h2>Wallet Configuration<a class="headerlink" href="#wallet-configuration" title="Permalink to this heading">¶</a></h2>
+<p>It is recommended that you create a new wallet when completing this
+process, so your STRAX Tokens can be separated from any other STRAX
+Tokens you may hold.</p>
+<ol class="arabic simple">
+<li><p>Download the STRAX Wallet and Create a New Wallet</p></li>
+</ol>
+<p><a class="reference external" href="https://github.com/stratisproject/StraxUI/releases">https://github.com/stratisproject/StraxUI/releases</a></p>
+<ol class="arabic simple" start="2">
+<li><p>Please ensure you take note of your Mnemonic and Passphrase. These
+<strong>will be required</strong> later in the process</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Download Cirrus Core and Create a New Wallet</p></li>
+</ol>
+<p><a class="reference external" href="https://github.com/stratisproject/CirrusCore/releases">https://github.com/stratisproject/CirrusCore/releases</a></p>
+<ol class="arabic simple" start="3">
+<li><p>Please ensure you take note of your Mnemonic and Passphrase. These
+<strong>will be required</strong> later in the process</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Login to your STRAX Wallet</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image2.jpeg"><img alt="../../../_images/image2.jpeg" src="../../../_images/image2.jpeg" style="width: 4.40157in; height: 4.02362in;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Obtain a Receive Address and send 100,501 STRAX to this address</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image32.png"><img alt="../../../_images/image32.png" src="../../../_images/image32.png" style="width: 4.40157in; height: 4.02362in;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>You will have to wait for 100% Wallet Synchronization before seeing
+your balance</p></li>
+<li><p>Login to your Cirrus Core Wallet</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image43.png"><img alt="../../../_images/image43.png" src="../../../_images/image43.png" style="width: 4.57874in; height: 3.86614in;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>Select Address 0</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image53.png"><img alt="../../../_images/image53.png" src="../../../_images/image53.png" style="width: 4.58268in; height: 3.86614in;" /></a>
+<ol class="arabic simple" start="7">
+<li><p>Obtain a Receive Address</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image63.png"><img alt="../../../_images/image63.png" src="../../../_images/image63.png" style="width: 4.58268in; height: 3.86614in;" /></a>
+<ol class="arabic simple" start="8">
+<li><p>Perform a Cross-Chain Transfer of <strong>500.9 STRAX</strong> to your Cirrus
+Address</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image72.png"><img alt="../../../_images/image72.png" src="../../../_images/image72.png" style="width: 4.40157in; height: 4.02362in;" /></a>
+<ol class="arabic simple" start="9">
+<li><p>The Cirrus Core Wallet will receive 500.8~ CRS after 80 Blocks have
+passed on the STRAX Blockchain (~1Hr)</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image82.png"><img alt="../../../_images/image82.png" src="../../../_images/image82.png" style="width: 4.58268in; height: 3.86614in;" /></a>
+<ol class="arabic simple" start="10">
+<li><p>Now, you must consolidate the STRAX Balance to ensure it all resides
+in a single address. To do this, obtain another Receive Address and
+send <strong>100,000 STRAX</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image91.png"><img alt="../../../_images/image91.png" src="../../../_images/image91.png" style="width: 4.1811in; height: 3.82283in;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>You are sending back to an address that you own. Not an external
+address.</p></li>
+</ol>
+<ol class="arabic simple" start="11">
+<li><p>Your resulting balance and transaction history should look very
+similar to the below</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image101.png"><img alt="../../../_images/image101.png" src="../../../_images/image101.png" style="width: 4.1811in; height: 3.82283in;" /></a>
+<ol class="arabic simple" start="12">
+<li><p>Wallet preparation is now complete; you should now be in position of
+the following.</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p><strong>STRAX Wallet that contains 100,000+ STRAX Tokens.</strong></p></li>
+<li><p><strong>The Mnemonic and Passphrase for the aforementioned wallet.</strong></p></li>
+<li><p><strong>Cirrus Wallet that contains 500+ CRS Tokens.</strong></p></li>
+<li><p><strong>The Mnemonic and Passphrase for the aforementioned wallet.</strong></p></li>
+</ol>
+<ol class="arabic simple" start="13">
+<li><p>You must now wait for <strong>80 Confirmations</strong> before the <strong>CRS Tokens</strong>
+are received through the Cross-Chain Transaction, in addition, the
+transaction that was made in <strong>Step 10</strong> also requires 500
+Confirmations.</p></li>
+</ol>
+</section>
+<section id="interflux-masternode-registration">
+<h2>InterFlux Masternode Registration<a class="headerlink" href="#interflux-masternode-registration" title="Permalink to this heading">¶</a></h2>
+<p>Whilst we wait for confirmations, the host that will run your STRAX
+Sidechain Masternode configured and prepared to launch the STRAX
+Federation Join Script.</p>
+<p>Please ensure you meet the requirements set out at the <a class="reference external" href="#sidechain-masternode-hardware-requirements">beginning of
+this guide</a>, before
+you continue.</p>
+<p>You must now create a key-pair that will be used to identify your
+registration on-chain.</p>
+<section id="stratis-keygen-utility">
+<h3>Stratis Keygen Utility<a class="headerlink" href="#stratis-keygen-utility" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Download the Stratis Keygen Utility using the below URL</p></li>
+</ol>
+<p><a class="reference external" href="https://www.stratisplatform.com/wp-content/uploads/2020/11/Stratis-KeyGen-Utility.zip">https://www.stratisplatform.com/wp-content/uploads/2020/11/Stratis-KeyGen-Utility.zip</a></p>
+<ol class="arabic simple" start="2">
+<li><p>Open Stratis KeyGen Utility.zip and extract the contents to a new
+location, in this example we are extracting to C:\Stratis</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image111.png"><img alt="../../../_images/image111.png" src="../../../_images/image111.png" style="width: 6.26806in; height: 3.31528in;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Navigate to “Stratis KeyGen Utility\Stratis KeyGen Utility”</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image121.png"><img alt="../../../_images/image121.png" src="../../../_images/image121.png" style="width: 6.26806in; height: 3.31528in;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Locate the executable named “StratisFederationApp.exe”</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image131.png"><img alt="../../../_images/image131.png" src="../../../_images/image131.png" style="width: 6.26806in; height: 3.31528in;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>Double-Click the “StratisFederationApp.exe” to launch the utility</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image141.png"><img alt="../../../_images/image141.png" src="../../../_images/image141.png" style="width: 5.64584in; height: 7.64584in;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>Select ‘Federated Masternode (100K Collateral Requirement)’ and enter
+a Passphrase</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image151.png"><img alt="../../../_images/image151.png" src="../../../_images/image151.png" style="width: 5.64584in; height: 7.64584in;" /></a>
+<ol class="arabic simple" start="7">
+<li><p>Select a location to save the “federationKey.dat” file</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image151.png"><img alt="../../../_images/image151.png" src="../../../_images/image151.png" style="width: 5.64584in; height: 7.64584in;" /></a>
+<ol class="arabic simple" start="8">
+<li><p>Click the “Generate Keys” button</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image161.png"><img alt="../../../_images/image161.png" src="../../../_images/image161.png" style="width: 5.64584in; height: 7.64584in;" /></a>
+<ol class="arabic simple" start="9">
+<li><p>You <strong>must</strong> take note of the <strong>Public Key</strong>, <strong>Passphrase</strong> and keep
+a secure copy of the <strong>federationKey.dat</strong> file.</p></li>
+</ol>
+</section>
+<section id="obtain-the-interflux-masternode-registration-script">
+<h3>Obtain the InterFlux Masternode Registration Script<a class="headerlink" href="#obtain-the-interflux-masternode-registration-script" title="Permalink to this heading">¶</a></h3>
+<p>A script has been constructed to ease the setup process and ensure
+consistency, the script can be obtained from the below URL.</p>
+<p><a class="reference external" href="https://www.stratisplatform.com/wp-content/uploads/2021/08/STRAX-Sidechain-Registration-Launch-Script.zip">https://www.stratisplatform.com/wp-content/uploads/2021/08/STRAX-Sidechain-Registration-Launch-Script.zip</a></p>
+<p>Extract the STRAX Sidechain Registration Launch Script.PS1 Script to the
+Desktop of the where you are intending to run your Masternode.</p>
+</section>
+<section id="verifying-the-script">
+<h3>Verifying the Script<a class="headerlink" href="#verifying-the-script" title="Permalink to this heading">¶</a></h3>
+<p>Stratis Group Ltd will digitally sign any PowerShell Script that they
+provide for operating one of their products.</p>
+<p>This can be verified by right-clicking the PS1 script, selecting
+properties and viewing the digital signature.</p>
+<ol class="arabic simple">
+<li><p>Highlight the listed signature and select “Details”</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image171.png"><img alt="../../../_images/image171.png" src="../../../_images/image171.png" style="width: 4.00787in; height: 5.03544in;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Select “View Certificate”</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image181.png"><img alt="../../../_images/image181.png" src="../../../_images/image181.png" style="width: 3.58661in; height: 4.27559in;" /></a>
+<p>Verify the issuing information in the Certification Path to ensure the
+authenticity of the script.</p>
+<a class="reference internal image-reference" href="../../../_images/image191.png"><img alt="../../../_images/image191.png" src="../../../_images/image191.png" style="width: 3.16535in; height: 4.02362in;" /></a>
+</section>
+<section id="executing-the-registration-script">
+<h3>Executing the Registration Script<a class="headerlink" href="#executing-the-registration-script" title="Permalink to this heading">¶</a></h3>
+<p>As the script is written in PowerShell Core, it needs to be called from
+an instance of PowerShell Core and not the standard PowerShell that is
+shipped with all latest versions of Windows Operating Systems.</p>
+<p>To launch PowerShell Core, you will need to invoke it from the command
+line or run command.</p>
+<a class="reference internal image-reference" href="../../../_images/image201.png"><img alt="../../../_images/image201.png" src="../../../_images/image201.png" style="width: 4.15625in; height: 2.14583in;" /></a>
+<p>Clicking OK on the above will launch a new instance of PowerShell Core</p>
+<a class="reference internal image-reference" href="../../../_images/image212.png"><img alt="../../../_images/image212.png" src="../../../_images/image212.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<p>Assuming that the launch script is located on the desktop, you will need
+to navigate to the desktop, this can be achieved by executing the below
+command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Set-Location<span class="w"> </span>.<span class="se">\D</span>esktop<span class="se">\</span>
+</pre></div>
+</div>
+<p>The PowerShell Core script can now be invoked from the PowerShell Core
+window using the below command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">&amp;</span><span class="w"> </span><span class="s1">&#39;.\STRAX Sidechain Registration Launch Script.ps1&#39;</span>
+</pre></div>
+</div>
+<p>The PowerShell Core instance should look something like the below.</p>
+<a class="reference internal image-reference" href="../../../_images/image222.png"><img alt="../../../_images/image222.png" src="../../../_images/image222.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<p>The script will now launch and synchronize both the STRAX Blockchain and
+the Cirrus Sidechain, this may take some time and is wholly dependent on
+your specifications. Once complete, you will see the below.</p>
+<a class="reference internal image-reference" href="../../../_images/image231.png"><img alt="../../../_images/image231.png" src="../../../_images/image231.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<ol class="arabic simple">
+<li><p>Enter the Name of your STRAX Wallet from the <a class="reference external" href="#wallet-configuration">Wallet
+Configuration</a> section earlier in this
+guide.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image24.png"><img alt="../../../_images/image24.png" src="../../../_images/image24.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>As the Wallet does not exist (assuming the script is running on a
+different machine as to where the wallets were created) you must
+enter ‘Yes’ to perform the wallet restoration within the script.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image25.png"><img alt="../../../_images/image25.png" src="../../../_images/image25.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Enter the mnemonic that were generated earlier</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image26.png"><img alt="../../../_images/image26.png" src="../../../_images/image26.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Enter your passphrase</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image27.png"><img alt="../../../_images/image27.png" src="../../../_images/image27.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>Enter a password that will be used to encrypt the restored wallet</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image28.png"><img alt="../../../_images/image28.png" src="../../../_images/image28.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>The wallet will now begin to synchronize with the blockchain</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image29.png"><img alt="../../../_images/image29.png" src="../../../_images/image29.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<ol class="arabic simple" start="7">
+<li><p>Once complete, you will be prompted to enter in the Cirrus Core
+Wallet detail</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image30.png"><img alt="../../../_images/image30.png" src="../../../_images/image30.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<ol class="arabic simple" start="8">
+<li><p>Follow the steps as before to restore your wallet, once complete, the
+synchronization may take some time.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image311.png"><img alt="../../../_images/image311.png" src="../../../_images/image311.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<ol class="arabic simple" start="9">
+<li><p>Once complete, you will be prompted to enter the path to your
+federationKey.dat that you generated earlier using the Stratis Keygen
+Utility.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image321.png"><img alt="../../../_images/image321.png" src="../../../_images/image321.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<ol class="arabic simple" start="10">
+<li><p>Now, you must enter the Collateral Address that holds the 100,000
+STRAX. Balances can be queried on the <a class="reference external" href="https://chainz.cryptoid.info/strax/">Block
+Explorer</a> to ensure that the
+correct address is entered.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image33.png"><img alt="../../../_images/image33.png" src="../../../_images/image33.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<ol class="arabic simple" start="11">
+<li><p>After entering the Collateral Address the Registration Transaction
+will be made</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/image34.png"><img alt="../../../_images/image34.png" src="../../../_images/image34.png" style="width: 6.26806in; height: 3.27778in;" /></a>
+<ol class="arabic simple" start="12">
+<li><p>Enter “Yes” to perform the transaction, once complete you will
+receive confirmation. You now have 240 Confirmations before your
+Masternode will be accepted into the federation and able to produce
+blocks.</p></li>
+</ol>
+</section>
+</section>
+<section id="running-the-interflux-masternode">
+<h2>Running the InterFlux Masternode<a class="headerlink" href="#running-the-interflux-masternode" title="Permalink to this heading">¶</a></h2>
+<p>Congratulations, you are now able to operate an InterFlux Masternode!</p>
+<p>Now you have performed registration, you can run your Sidechain
+Masternode by clicking next and following the Running an InterFlux Masternode guide.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../Running%20Masternode/running-the-masternode.html" class="btn btn-primary float-right" title="Masternode Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../masternode-introduction.html" class="btn btn-neutral" title="InterFlux Masternodes" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

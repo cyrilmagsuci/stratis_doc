@@ -1,0 +1,709 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>HTTP Routing Table &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+
+    <script>
+      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
+    </script>
+
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>HTTP Routing Table</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+
+   <h1>HTTP Routing Table</h1>
+
+   <div class="modindex-jumpbox">
+   <a href="#cap-/api"><strong>/api</strong></a>
+   </div>
+
+   <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/api"><td></td><td>
+       <strong>/api</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-AddressBook"><code class="xref">GET /api/AddressBook</code></a></td><td>
+       <em>Gets the address book entries with the option to implement pagination</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-BlockStore-GetBlockCount"><code class="xref">GET /api/BlockStore/GetBlockCount</code></a></td><td>
+       <em>Gets the current consensus tip height.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-BlockStore-addressindexertip"><code class="xref">GET /api/BlockStore/addressindexertip</code></a></td><td>
+       <em>Retrieves the Stratis.Bitcoin.Features.BlockStore.Controllers.BlockStoreController.addressIndexer&#39;s tip.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-BlockStore-block"><code class="xref">GET /api/BlockStore/block</code></a></td><td>
+       <em>Retrieves the block which matches the supplied block hash.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-BlockStore-getaddressesbalances"><code class="xref">GET /api/BlockStore/getaddressesbalances</code></a></td><td>
+       <em>Provides balance of the given addresses confirmed with at least minConfirmations confirmations.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-BlockStore-getverboseaddressesbalances"><code class="xref">GET /api/BlockStore/getverboseaddressesbalances</code></a></td><td>
+       <em>Provides verbose balance data of the given addresses.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-ConnectionManager-addnode"><code class="xref">GET /api/ConnectionManager/addnode</code></a></td><td>
+       <em>Sends a command to the connection manager.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-ConnectionManager-getpeerinfo"><code class="xref">GET /api/ConnectionManager/getpeerinfo</code></a></td><td>
+       <em>Gets information about this node.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Consensus-deploymentflags"><code class="xref">GET /api/Consensus/deploymentflags</code></a></td><td>
+       <em>Get the threshold states of softforks currently being deployed.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Consensus-getbestblockhash"><code class="xref">GET /api/Consensus/getbestblockhash</code></a></td><td>
+       <em>Gets the hash of the block at the consensus tip.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Consensus-getblockhash"><code class="xref">GET /api/Consensus/getblockhash</code></a></td><td>
+       <em>Gets the hash of the block at a given height.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Dashboard-AsyncLoopsStats"><code class="xref">GET /api/Dashboard/AsyncLoopsStats</code></a></td><td>
+       <em>Returns a web page with Async Loops statistics</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Dashboard-Stats"><code class="xref">GET /api/Dashboard/Stats</code></a></td><td>
+       <em>Gets a web page containing the last log output for this node.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-DefaultVoting-fedmembers"><code class="xref">GET /api/DefaultVoting/fedmembers</code></a></td><td>
+       <em>Retrieves a list of active federation members.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-DefaultVoting-finishedpolls"><code class="xref">GET /api/DefaultVoting/finishedpolls</code></a></td><td>
+       <em>Retrieves a list of finished polls.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-DefaultVoting-pendingpolls"><code class="xref">GET /api/DefaultVoting/pendingpolls</code></a></td><td>
+       <em>Retrieves a list of active polls.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-DefaultVoting-scheduledvotes"><code class="xref">GET /api/DefaultVoting/scheduledvotes</code></a></td><td>
+       <em>Retrieves the scheduled voting data.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-DefaultVoting-whitelistedhashes"><code class="xref">GET /api/DefaultVoting/whitelistedhashes</code></a></td><td>
+       <em>Retrieves a list of whitelisted hashes.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Diagnostic-GetConnectedPeersInfo"><code class="xref">GET /api/Diagnostic/GetConnectedPeersInfo</code></a></td><td>
+       <em>Returns the connected peers with some information</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Diagnostic-GetPeerStatistics"><code class="xref">GET /api/Diagnostic/GetPeerStatistics</code></a></td><td>
+       <em>Returns the connected peers with some statistical information.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Diagnostic-GetStatus"><code class="xref">GET /api/Diagnostic/GetStatus</code></a></td><td>
+       <em>Gets the Diagnostic Feature status.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Diagnostic-StartCollectingPeerStatistics"><code class="xref">GET /api/Diagnostic/StartCollectingPeerStatistics</code></a></td><td>
+       <em>Starts collecting peers statistics.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Diagnostic-StopCollectingPeerStatistics"><code class="xref">GET /api/Diagnostic/StopCollectingPeerStatistics</code></a></td><td>
+       <em>Stops collecting peers statistics.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Mempool-getrawmempool"><code class="xref">GET /api/Mempool/getrawmempool</code></a></td><td>
+       <em>Gets a hash of each transaction in the memory pool.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Network-getbans"><code class="xref">GET /api/Network/getbans</code></a></td><td>
+       <em>Retrieves a list of all banned peers.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Node-asyncloops"><code class="xref">GET /api/Node/asyncloops</code></a></td><td>
+       <em>Get the currently running async loops/delegates/tasks for diagnostic purposes.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Node-getblockheader"><code class="xref">GET /api/Node/getblockheader</code></a></td><td>
+       <em>Gets the block header of a block identified by a block hash.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Node-getrawtransaction"><code class="xref">GET /api/Node/getrawtransaction</code></a></td><td>
+       <em>Gets a raw transaction that is present on this full node.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Node-gettxout"><code class="xref">GET /api/Node/gettxout</code></a></td><td>
+       <em>Gets the unspent outputs of a specific vout in a transaction.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Node-logrules"><code class="xref">GET /api/Node/logrules</code></a></td><td>
+       <em>Get the enabled log rules.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Node-status"><code class="xref">GET /api/Node/status</code></a></td><td>
+       <em>Gets general information about this node.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Node-validateaddress"><code class="xref">GET /api/Node/validateaddress</code></a></td><td>
+       <em>Validates a bech32 or base58 bitcoin address.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-RPC-listmethods"><code class="xref">GET /api/RPC/listmethods</code></a></td><td>
+       <em>Lists the available Remote Procedural Call methods on this node.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-SmartContractWallet-account-addresses"><code class="xref">GET /api/SmartContractWallet/account-addresses</code></a></td><td>
+       <em>Gets a smart contract account address.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-SmartContractWallet-address-balance"><code class="xref">GET /api/SmartContractWallet/address-balance</code></a></td><td>
+       <em>Gets the balance at a specific wallet address in STRAX (or the respective token/coin).</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-SmartContractWallet-history"><code class="xref">GET /api/SmartContractWallet/history</code></a></td><td>
+       <em>Gets the history of a specific wallet address.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-SmartContracts-address-balances"><code class="xref">GET /api/SmartContracts/address-balances</code></a></td><td>
+       <em>Gets all addresses owned by a wallet which have a balance associated with them.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-SmartContracts-balance"><code class="xref">GET /api/SmartContracts/balance</code></a></td><td>
+       <em>Gets the balance of a smart contract.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-SmartContracts-code"><code class="xref">GET /api/SmartContracts/code</code></a></td><td>
+       <em>Gets the bytecode for a smart contract as a hexadecimal string.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-SmartContracts-receipt"><code class="xref">GET /api/SmartContracts/receipt</code></a></td><td>
+       <em>Gets a smart contract transaction receipt.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-SmartContracts-receipt-search"><code class="xref">GET /api/SmartContracts/receipt-search</code></a></td><td>
+       <em>Searches a Smart Contract&#39;s receipts for those which match a specific event.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-SmartContracts-storage"><code class="xref">GET /api/SmartContracts/storage</code></a></td><td>
+       <em>Gets a single piece of smart contract data, which was stored as a key–value pair using the SmartContract.PersistentState property.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-accounts"><code class="xref">GET /api/Wallet/accounts</code></a></td><td>
+       <em>Gets a list of accounts for the specified wallet.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-addresses"><code class="xref">GET /api/Wallet/addresses</code></a></td><td>
+       <em>Gets all addresses for a wallet account.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-balance"><code class="xref">GET /api/Wallet/balance</code></a></td><td>
+       <em>Gets the balance of a wallet.&#34;</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-extpubkey"><code class="xref">GET /api/Wallet/extpubkey</code></a></td><td>
+       <em>Gets the extended public key of a specified wallet account.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-files"><code class="xref">GET /api/Wallet/files</code></a></td><td>
+       <em>Lists all the files found in the default wallet folder.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-general-info"><code class="xref">GET /api/Wallet/general-info</code></a></td><td>
+       <em>Gets some general information about a wallet.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-history"><code class="xref">GET /api/Wallet/history</code></a></td><td>
+       <em>Gets the history of a wallet.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-maxbalance"><code class="xref">GET /api/Wallet/maxbalance</code></a></td><td>
+       <em>Gets the maximum spendable balance for an account along with the fee required to spend it.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-mnemonic"><code class="xref">GET /api/Wallet/mnemonic</code></a></td><td>
+       <em>Generates a mnemonic to use for an HD wallet.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-received-by-address"><code class="xref">GET /api/Wallet/received-by-address</code></a></td><td>
+       <em>Gets the balance at a specific wallet address.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-spendable-transactions"><code class="xref">GET /api/Wallet/spendable-transactions</code></a></td><td>
+       <em>Gets the spendable transactions for an account with the option to specify how many confirmations a transaction needs to be included.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-unusedaddress"><code class="xref">GET /api/Wallet/unusedaddress</code></a></td><td>
+       <em>Gets an unused address (in the Base58 format) for a wallet account.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-unusedaddresses"><code class="xref">GET /api/Wallet/unusedaddresses</code></a></td><td>
+       <em>Gets a specified number of unused addresses (in the Base58 format) for a wallet account.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#get--api-Wallet-wallet-stats"><code class="xref">GET /api/Wallet/wallet-stats</code></a></td><td>
+       <em>Retrieves information about the wallet</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-AddressBook-address"><code class="xref">POST /api/AddressBook/address</code></a></td><td>
+       <em>Adds an entry to the address book.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-DefaultVoting-schedulevote-removehash"><code class="xref">POST /api/DefaultVoting/schedulevote-removehash</code></a></td><td>
+       <em>Votes to remove a hash from the whitelist.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-DefaultVoting-schedulevote-whitelisthash"><code class="xref">POST /api/DefaultVoting/schedulevote-whitelisthash</code></a></td><td>
+       <em>Votes to add a hash to the whitelist.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-FederationVoting-schedulevote-addfedmember"><code class="xref">POST /api/FederationVoting/schedulevote-addfedmember</code></a></td><td>
+       <em>Votes to add a federation member.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-FederationVoting-schedulevote-kickfedmember"><code class="xref">POST /api/FederationVoting/schedulevote-kickfedmember</code></a></td><td>
+       <em>Votes to kick a federation member.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Network-clearbanned"><code class="xref">POST /api/Network/clearbanned</code></a></td><td>
+       <em>Clears the node of all banned peers.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Network-disconnect"><code class="xref">POST /api/Network/disconnect</code></a></td><td>
+       <em>Disconnects a connected peer.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Network-setban"><code class="xref">POST /api/Network/setban</code></a></td><td>
+       <em>Adds or remove a peer from the node&#39;s banned peers list.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Node-decoderawtransaction"><code class="xref">POST /api/Node/decoderawtransaction</code></a></td><td>
+       <em>Gets a JSON representation for a given transaction in hex format.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Node-shutdown"><code class="xref">POST /api/Node/shutdown</code></a></td><td>
+       <em>Triggers a shutdown of this node.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Node-stop"><code class="xref">POST /api/Node/stop</code></a></td><td>
+       <em>Triggers a shutdown of this node.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-RPC-callbyname"><code class="xref">POST /api/RPC/callbyname</code></a></td><td>
+       <em>Makes a Remote Procedural Call method by name.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-SmartContractWallet-call"><code class="xref">POST /api/SmartContractWallet/call</code></a></td><td>
+       <em>Builds a transaction to call a smart contract method and then broadcasts the transaction to the network.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-SmartContractWallet-create"><code class="xref">POST /api/SmartContractWallet/create</code></a></td><td>
+       <em>Builds a transaction to create a smart contract and then broadcasts the transaction to the network.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-SmartContractWallet-send-transaction"><code class="xref">POST /api/SmartContractWallet/send-transaction</code></a></td><td>
+       <em>Broadcasts a transaction, which either creates a smart contract or calls a method on a smart contract.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-SmartContracts-build-and-send-call"><code class="xref">POST /api/SmartContracts/build-and-send-call</code></a></td><td>
+       <em>Builds a transaction to call a smart contract method and then broadcasts the transaction to the network.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-SmartContracts-build-and-send-create"><code class="xref">POST /api/SmartContracts/build-and-send-create</code></a></td><td>
+       <em>Builds a transaction to create a smart contract and then broadcasts the transaction to the network.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-SmartContracts-build-call"><code class="xref">POST /api/SmartContracts/build-call</code></a></td><td>
+       <em>Builds a transaction to call a smart contract method.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-SmartContracts-build-create"><code class="xref">POST /api/SmartContracts/build-create</code></a></td><td>
+       <em>Builds a transaction to create a smart contract.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-SmartContracts-build-transaction"><code class="xref">POST /api/SmartContracts/build-transaction</code></a></td><td>
+       <em>Builds a transaction to transfer funds on a smart contract network.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-SmartContracts-estimate-fee"><code class="xref">POST /api/SmartContracts/estimate-fee</code></a></td><td>
+       <em>Gets a fee estimate for a specific smart contract account-based transfer transaction.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-SmartContracts-local-call"><code class="xref">POST /api/SmartContracts/local-call</code></a></td><td>
+       <em>Makes a local call to a method on a smart contract that has been successfully deployed.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-account"><code class="xref">POST /api/Wallet/account</code></a></td><td>
+       <em>Creates a new account for a wallet.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-build-transaction"><code class="xref">POST /api/Wallet/build-transaction</code></a></td><td>
+       <em>Builds a transaction and returns the hex to use when executing the transaction.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-create"><code class="xref">POST /api/Wallet/create</code></a></td><td>
+       <em>Creates a new wallet on this node.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-distribute-utxos"><code class="xref">POST /api/Wallet/distribute-utxos</code></a></td><td>
+       <em>Splits and distributes UTXOs across wallet addresses</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-estimate-txfee"><code class="xref">POST /api/Wallet/estimate-txfee</code></a></td><td>
+       <em>Gets a fee estimate for a specific transaction.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-load"><code class="xref">POST /api/Wallet/load</code></a></td><td>
+       <em>Loads a previously created wallet.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-recover"><code class="xref">POST /api/Wallet/recover</code></a></td><td>
+       <em>Recovers an existing wallet.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-recover-via-extpubkey"><code class="xref">POST /api/Wallet/recover-via-extpubkey</code></a></td><td>
+       <em>Recovers a wallet using its extended public key.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-send-transaction"><code class="xref">POST /api/Wallet/send-transaction</code></a></td><td>
+       <em>Sends a transaction that has already been built.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-signmessage"><code class="xref">POST /api/Wallet/signmessage</code></a></td><td>
+       <em>Signs a message and returns the signature.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-splitcoins"><code class="xref">POST /api/Wallet/splitcoins</code></a></td><td>
+       <em>Creates requested amount of UTXOs each of equal value.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-sync"><code class="xref">POST /api/Wallet/sync</code></a></td><td>
+       <em>Requests the node resyncs from a block specified by its block hash.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-sync-from-date"><code class="xref">POST /api/Wallet/sync-from-date</code></a></td><td>
+       <em>Request the node resyncs starting from a given date and time.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#post--api-Wallet-verifymessage"><code class="xref">POST /api/Wallet/verifymessage</code></a></td><td>
+       <em>Verifies the signature of a message.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#put--api-Node-loglevels"><code class="xref">PUT /api/Node/loglevels</code></a></td><td>
+       <em>Changes the log levels for the specified loggers.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#delete--api-AddressBook-address"><code class="xref">DELETE /api/AddressBook/address</code></a></td><td>
+       <em>Removes an entry from the address book.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="Developer%20Resources/API%20Reference/api.html#delete--api-Wallet-remove-transactions"><code class="xref">DELETE /api/Wallet/remove-transactions</code></a></td><td>
+       <em>Removes transactions from the wallet.</em></td></tr>
+   </table>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

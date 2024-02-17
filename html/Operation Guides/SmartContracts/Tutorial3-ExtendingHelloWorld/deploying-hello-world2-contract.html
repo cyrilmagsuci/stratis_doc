@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deploying the HelloWorld2 Smart Contract Example &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Deploying a Smart Contract on Mainnet" href="../Tutorial4-DeployingOnALiveNetwork/deploying-smart-contract-on-cirrus.html" />
+    <link rel="prev" title="Extending the “Hello World” example" href="hello-world-extension-tutorial-introduction.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../operation-guides-introduction.html">Operation Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cold-Staking/coldstaking-introduction.html">Cold-Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Full%20Node/fullnode-introduction.html">Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../InterFlux%20Masternodes/masternode-introduction.html">InterFlux Masternodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechain/sidechain-introduction.html">Sidechains</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../smartcontracts-introduction.html">Smart Contracts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial1-LocalSidechain/creating-a-local-chain.html">Setup Local Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial2-HelloWorld/hello-world-tutorial-introduction.html">A “HelloWorld” smart contract</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="hello-world-extension-tutorial-introduction.html">Extending the “Hello World” example</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Deploying the HelloWorld2 Smart Contract Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial4-DeployingOnALiveNetwork/deploying-smart-contract-on-cirrus.html">Deploying a Smart Contract on Mainnet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SDA/sda-introduction.html">Stratis Decentralized Accelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../STO/sto-introduction.html">STO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Token%20Swap/tokenswap-introduction.html">Token Swap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../operation-guides-introduction.html">Operation Guides</a> &raquo;</li>
+        
+          <li><a href="../smartcontracts-introduction.html">Stratis Smart Contracts</a> &raquo;</li>
+        
+          <li><a href="hello-world-extension-tutorial-introduction.html">Extending the “Hello World” example</a> &raquo;</li>
+        
+      <li>Deploying the HelloWorld2 Smart Contract Example</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Operation Guides/SmartContracts/Tutorial3-ExtendingHelloWorld/deploying-hello-world2-contract.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="deploying-the-helloworld2-smart-contract-example">
+<h1>Deploying the HelloWorld2 Smart Contract Example<a class="headerlink" href="#deploying-the-helloworld2-smart-contract-example" title="Permalink to this heading">¶</a></h1>
+<p>Let’s now look at extending the functionality of the HelloWorld Smart Contract we previously deployed and interacted with as part of Tutorial 2.</p>
+<section id="building-and-deploying-the-smart-contract">
+<h2>Building and deploying the smart contract<a class="headerlink" href="#building-and-deploying-the-smart-contract" title="Permalink to this heading">¶</a></h2>
+<p>To build and deploy the “Hello World 2” smart contract, refer to:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../Tutorial2-HelloWorld/deploying-hello-world-contract.html#compiling-the-hello-world-smart-contract"><span class="std std-ref">Compiling the HelloWorld smart contract</span></a></p></li>
+<li><p><a class="reference internal" href="../Tutorial2-HelloWorld/deploying-hello-world-contract.html#deploying-the-hello-world-smart-contract"><span class="std std-ref">Deploying the HelloWorld smart contract</span></a></p></li>
+</ul>
+<p>The procedure is exactly the same, except you supply the <code class="docutils literal notranslate"><span class="pre">HelloWorld2.cs</span></code> file to the sct tool instead.</p>
+</section>
+<section id="an-overview-of-the-code">
+<h2>An overview of the code<a class="headerlink" href="#an-overview-of-the-code" title="Permalink to this heading">¶</a></h2>
+<p>The upgrade to the smart contract essentially involves modifying the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property to hold an array of strings. The first thing to be aware of is that smart contracts do not persist arrays, but if you want to store a group of a particular type of data, you can adapt key-value pairs to do this. The accessors for the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property wrap up the logic but rely on two other integer properties to maintain the array: <code class="docutils literal notranslate"><span class="pre">Index</span></code> and <code class="docutils literal notranslate"><span class="pre">Bounds</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">private</span> <span class="nb">int</span> <span class="n">Index</span>
+<span class="p">{</span>
+    <span class="n">get</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">this</span><span class="o">.</span><span class="n">PersistentState</span><span class="o">.</span><span class="n">GetInt32</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nb">set</span>
+    <span class="p">{</span>
+        <span class="n">PersistentState</span><span class="o">.</span><span class="n">SetInt32</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">private</span> <span class="nb">int</span> <span class="n">Bounds</span>
+<span class="p">{</span>
+    <span class="n">get</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">this</span><span class="o">.</span><span class="n">PersistentState</span><span class="o">.</span><span class="n">GetInt32</span><span class="p">(</span><span class="s2">&quot;Bounds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nb">set</span>
+    <span class="p">{</span>
+        <span class="n">PersistentState</span><span class="o">.</span><span class="n">SetInt32</span><span class="p">(</span><span class="s2">&quot;Bounds&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">private</span> <span class="n">string</span> <span class="n">Greeting</span>
+<span class="p">{</span>
+    <span class="n">get</span>
+    <span class="p">{</span>
+        <span class="n">Index</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Index</span> <span class="o">&gt;=</span> <span class="n">Bounds</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">this</span><span class="o">.</span><span class="n">PersistentState</span><span class="o">.</span><span class="n">GetString</span><span class="p">(</span><span class="s2">&quot;Greeting&quot;</span> <span class="o">+</span> <span class="n">Index</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nb">set</span>
+    <span class="p">{</span>
+        <span class="n">PersistentState</span><span class="o">.</span><span class="n">SetString</span><span class="p">(</span><span class="s2">&quot;Greeting&quot;</span> <span class="o">+</span> <span class="n">Bounds</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+        <span class="n">Bounds</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can see that the indexes are built into the keys and as far as the smart contract is concerned, it is just persisting individual pieces of data.</p>
+<p>Because the properties contain the “array maintenance logic”, the <code class="docutils literal notranslate"><span class="pre">AddGreeting()</span></code> method just uses the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property set accessor to add new greetings and, as before, the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property get accessor supplies the <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> method with a greeting.</p>
+<section id="using-a-dictionary-approach">
+<h3>Using a dictionary approach<a class="headerlink" href="#using-a-dictionary-approach" title="Permalink to this heading">¶</a></h3>
+<p>Because smart contracts use the key-value pairs, you may want to approach storing grouped data from a dictionary approach and not iterate through grouped data from start to finish at all. Take a look at this code excerpt from a <a class="reference external" href="https://github.com/stratisproject/StratisSmartContractsSamples/blob/master/src/Stratis.SmartContracts.Samples/Stratis.SmartContracts.Samples/StandardToken.cs">C# version of an ERC-20 smart contract</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>private void SetApproval(Address owner, Address spender, ulong value)
+{
+    PersistentState.SetUInt64($&quot;Allowance:{owner}:{spender}&quot;, value);
+}
+
+/// &lt;inheritdoc /&gt;
+public ulong Allowance(Address owner, Address spender)
+{
+    return PersistentState.GetUInt64($&quot;Allowance:{owner}:{spender}&quot;);
+}
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Allowance</span></code> is effectively a 2D dictionary with two addresses being used to form the key. As the only requirement is to access the allowance for any two addresses, there is no need to keep a record of an index or bounds. In fact, the bounds of the 2D dictionary can grow as required. When storing the allowances in the above code, as far as the smart contract is concerned, it is just persisting individual pieces of data.</p>
+</section>
+</section>
+<section id="calling-a-method-on-the-contract-for-the-first-time">
+<h2>Calling a method on the contract for the first time<a class="headerlink" href="#calling-a-method-on-the-contract-for-the-first-time" title="Permalink to this heading">¶</a></h2>
+<p>To begin, we are going to call the <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> again. From examining the code, you will see that the call receipt will give a <code class="docutils literal notranslate"><span class="pre">returnValue</span></code> of “Hello World” no matter how many times the method is called. The <code class="docutils literal notranslate"><span class="pre">Index</span></code> property updates from -1 to 0 and, from then on, remains at 0. To remind yourself how to make a method call, refer to <a class="reference internal" href="../../../Developer%20Resources/SmartContracts/Tutorial2-HelloWorld/deploying-hello-world-contract.html#calling-the-sayhello-method"><span class="std std-ref">Calling the SayHello() method</span></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to check the <code class="docutils literal notranslate"><span class="pre">Index</span></code> value, you could try and create a method to retrieve it. In this case you must redeploy the smart contract. You don’t have to rename the smart contract because, as you saw in the last tutorial, smart contracts are identified by their address. However, it is good from a code management point of view.</p>
+</div>
+</section>
+<section id="adding-multiple-greetings-to-the-smart-contract">
+<h2>Adding multiple greetings to the smart contract<a class="headerlink" href="#adding-multiple-greetings-to-the-smart-contract" title="Permalink to this heading">¶</a></h2>
+<p>The new smart contract method, <code class="docutils literal notranslate"><span class="pre">AddGreeting()</span></code>, takes a single string parameter which specifies the new greeting. To begin with, add the greeting in Polish: “Witaj świecie!”.</p>
+<p>Again, use the <code class="docutils literal notranslate"><span class="pre">Browse</span> <span class="pre">API</span></code> hyperlink on the <cite>Smart Contracts Dashboard</cite> to make a method call on the smart contract, you will notice that there is now two methods available for the contract opposed to the one method we saw when interacting with the <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> contract in Tutorial1.</p>
+<a class="reference internal image-reference" href="../../../_images/HelloWorld2-AddGreeting.png"><img alt="Add Greeting" class="align-center" src="../../../_images/HelloWorld2-AddGreeting.png" style="width: 900px;" /></a>
+<p>Again, click the <code class="docutils literal notranslate"><span class="pre">Try</span> <span class="pre">it</span> <span class="pre">out</span></code> button to edit the parameters and enter an additional greeting. In this example we are adding <code class="docutils literal notranslate"><span class="pre">Witaj</span> <span class="pre">świecie!</span></code>.</p>
+<a class="reference internal image-reference" href="../../../_images/HelloWorld2-PolishGreeting.png"><img alt="Polish Greeting" class="align-center" src="../../../_images/HelloWorld2-PolishGreeting.png" style="width: 900px;" /></a>
+<p>Click the <code class="docutils literal notranslate"><span class="pre">Execute</span></code> button to add the additional greeting. After executing, you will see the response below.</p>
+<a class="reference internal image-reference" href="../../../_images/HelloWorld2-Response.png"><img alt="Polish Greeting Response" class="align-center" src="../../../_images/HelloWorld2-Response.png" style="width: 900px;" /></a>
+<p>The receipt of the transaction can be seen within the Cirrus Core GUI by selecting the hash on the <code class="docutils literal notranslate"><span class="pre">Smart</span> <span class="pre">Contracts</span> <span class="pre">Dashboard</span></code>.</p>
+<a class="reference internal image-reference" href="../../../_images/SmartContractsDashboardHash.png"><img alt="Polish Greeting Receipt" class="align-center" src="../../../_images/SmartContractsDashboardHash.png" style="width: 900px;" /></a>
+<p>We can now see that <code class="docutils literal notranslate"><span class="pre">Witaj</span> <span class="pre">świecie!</span></code> has been added as a response, this is evidenced by the <code class="docutils literal notranslate"><span class="pre">returnValue</span></code> in the contract call receipt.</p>
+<a class="reference internal image-reference" href="../../../_images/PolishGreetingReceipt.png"><img alt="Polish Greeting Receipt" class="align-center" src="../../../_images/PolishGreetingReceipt.png" style="width: 900px;" /></a>
+<p>After you have added a greeting in Polish, you can add a “Hello World” greeting in some other languages. Here are some suggestions:</p>
+<ul class="simple">
+<li><p>Hallo Welt! - German</p></li>
+<li><p>Привет, мир! - Russian</p></li>
+<li><p>你好，世界！ - Chinese</p></li>
+<li><p>Hej Verden! - Danish</p></li>
+</ul>
+<section id="cycling-through-the-greetings">
+<h3>Cycling through the greetings<a class="headerlink" href="#cycling-through-the-greetings" title="Permalink to this heading">¶</a></h3>
+<p>Use the Swagger interface to make repeat calls to <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code>.</p>
+<a class="reference internal image-reference" href="../../../_images/SayHelloCall1.png"><img alt="SayHello Call" class="align-center" src="../../../_images/SayHelloCall1.png" style="width: 900px;" /></a>
+<p>The first call you make should have a <code class="docutils literal notranslate"><span class="pre">returnValue</span></code> of “Hello World!”.</p>
+<a class="reference internal image-reference" href="../../../_images/HelloWorld2Receipt.png"><img alt="SayHello Call Receipt 1" class="align-center" src="../../../_images/HelloWorld2Receipt.png" style="width: 900px;" /></a>
+<p>If you have added all four languages shown previously, they will then be returned with each subsequent call. Assuming “Hej Verden!” was the last greeting added, then after it has been returned, the next call returns “Hello World!” and the cycle begins again. As an example, the next call to the <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> method returns the below receipt.</p>
+<a class="reference internal image-reference" href="../../../_images/HelloWorld2Receipt2.png"><img alt="SayHello Call Receipt 2" class="align-center" src="../../../_images/HelloWorld2Receipt2.png" style="width: 900px;" /></a>
+<p>A further call returns the next greeting.</p>
+<a class="reference internal image-reference" href="../../../_images/HelloWorld2Receipt3.png"><img alt="SayHello Call Receipt 3" class="align-center" src="../../../_images/HelloWorld2Receipt3.png" style="width: 900px;" /></a>
+<p>Continuing to call the <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> method will see the responses cycle.</p>
+</section>
+<section id="what-happens-if-sayhello-is-called-by-a-different-node">
+<h3>What happens if SayHello() is called by a different node?<a class="headerlink" href="#what-happens-if-sayhello-is-called-by-a-different-node" title="Permalink to this heading">¶</a></h3>
+<p>This is an interesting question and answering it can help clarify how smart contracts work. You can also see this in action by running two nodes and alternating the calls to <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> between the nodes. Assuming the smart contract holds all six greetings and the <code class="docutils literal notranslate"><span class="pre">Index</span></code> property begins at 0, the following results are returned:</p>
+<ol class="arabic simple">
+<li><p>Node1: Hello World!</p></li>
+<li><p>Node2: Witaj świecie!</p></li>
+<li><p>Node1: Hallo Welt!</p></li>
+<li><p>Node2: Привет, мир!</p></li>
+<li><p>Node1: 你好，世界！</p></li>
+<li><p>Node2: Hej Verden!</p></li>
+<li><p>Node1: Hello World!</p></li>
+<li><p>and so on…</p></li>
+</ol>
+<p>When <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> accesses the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> property, the <code class="docutils literal notranslate"><span class="pre">Index</span></code> property is incremented in the <code class="docutils literal notranslate"><span class="pre">Greeting</span></code> get accessor. As you might expect, using the <code class="docutils literal notranslate"><span class="pre">++</span></code> operator invokes the <code class="docutils literal notranslate"><span class="pre">Index</span></code> write accessor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span>
+<span class="p">{</span>
+    <span class="n">PersistentState</span><span class="o">.</span><span class="n">SetInt32</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Every node receives this state update once the related transaction has been mined, and the same is true of any state update made by <code class="docutils literal notranslate"><span class="pre">PersistentState.Set*()</span></code>. Therefore, in terms of cycling through the greetings, the persisting of the index across the network allows each node to carry on where the last one left off.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../Tutorial4-DeployingOnALiveNetwork/deploying-smart-contract-on-cirrus.html" class="btn btn-primary float-right" title="Deploying a Smart Contract on Mainnet" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="hello-world-extension-tutorial-introduction.html" class="btn btn-neutral" title="Extending the “Hello World” example" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

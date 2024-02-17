@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial #3 - NFT &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Operation Guides" href="../../../Operation%20Guides/operation-guides-introduction.html" />
+    <link rel="prev" title="Tutorial #3 - NFT" href="Tutorial_3_Blueprint.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developers-introduction.html">Developer Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API%20Reference/api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PyStratis%20Reference/pystratis.html">PyStratis Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Stratis%20Full%20Node/StratisFullNode-Introduction.html">Stratis Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unity3D/unity3d-intro.html">Unity3D</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../unreal-engine-introduction.html">Unreal Engine</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_0_Plugin_set_up/Tutorial_0.html">Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_1_Basic_usage/Tutorial_1_Blueprint.html">Tutorial #1 - Basic plugin usage (Blueprint Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_1_Basic_usage/Tutorial_1_CPP.html">Tutorial #1 - Basic plugin usage (C++ Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_2_Smart_Contracts/Tutorial_2_Blueprint.html">Tutorial #2 - Interacting with smart contracts (Blueprint Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial_2_Smart_Contracts/Tutorial_2_CPP.html">Tutorial #2 - Interacting with smart contracts (C++ Edition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tutorial_3_Blueprint.html">Tutorial #3 - Working with NFT (Blueprint Edition)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tutorial #3 - Working with NFT (C++ Edition)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisite">Prerequisite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deploying-a-new-nft">Deploying a new NFT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#minting-nft">Minting NFT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-nft-balance">Getting NFT balance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transferring-nft-to-another-address">Transferring NFT to another address</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../developers-introduction.html">Developer Guides</a> &raquo;</li>
+        
+          <li><a href="../unreal-engine-introduction.html">Unreal Engine Plugin</a> &raquo;</li>
+        
+      <li>Tutorial #3 - NFT</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Developer Resources/Unreal Engine/Tutorial_3_NFT/Tutorial_3_CPP.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="tutorial-3-nft">
+<h1>Tutorial #3 - NFT<a class="headerlink" href="#tutorial-3-nft" title="Permalink to this heading">¶</a></h1>
+<p>In this tutorial we will explain how to start using NFTs with
+the Stratis Plugin for Unreal Engine.</p>
+<p>The employment of Blockchain technology within the gaming industry has become more ever more apparent with the launch of several popular play-to-earn models. The Stratis Plugin for Unreal Engine enables game developers to design, build and deploy games using existing programming languages within a familiar environment.</p>
+<p>Non-Fungible Tokens are an area of particular interest for those developing games with in-game valuables. By introducing an NFT, the player can genuinely own in-game items, removing the risk of losing earned items through forgotten login details and account deactivations. This brings the birth of a radical change in gaming marketplaces, with decentralized platforms offering the exchange of in-game items without the need for a trusted intermediary.</p>
+<section id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this heading">¶</a></h2>
+<p>For this tutorial, you need to setup Stratis Full Node, as described in the <a class="reference external" href="https://academy.stratisplatform.com/Developer%20Resources/Unreal%20Engine/Tutorial_0_Plugin_set_up/Tutorial_0.html">Getting started section</a>.</p>
+</section>
+<section id="deploying-a-new-nft">
+<h2>Deploying a new NFT<a class="headerlink" href="#deploying-a-new-nft" title="Permalink to this heading">¶</a></h2>
+<p>At first, we need to generate a new address and fund it. You will need tokens in order to deploy and interact with an NFT.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">UStratisUnrealManager</span><span class="w"> </span><span class="o">*</span><span class="n">stratisManager</span><span class="w"> </span><span class="o">=</span>
+<span class="w">   </span><span class="n">CreateDefaultSubobject</span><span class="o">&lt;</span><span class="n">UStratisUnrealManager</span><span class="o">&gt;</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;StratisManager&quot;</span><span class="p">));</span>
+
+<span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">setBaseUrl</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;http://localhost:44336/&quot;</span><span class="p">));</span>
+
+<span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">setPredefinedNetwork</span><span class="p">(</span><span class="n">ENetwork</span><span class="o">::</span><span class="n">CIRRUS_TEST</span><span class="p">);</span>
+<span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">setMnemonic</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;legal door leopard &quot;</span>
+<span class="w">                                 </span><span class="s">&quot;fire attract stove &quot;</span>
+<span class="w">                                 </span><span class="s">&quot;similar response photo &quot;</span>
+<span class="w">                                 </span><span class="s">&quot;prize seminar frown&quot;</span><span class="p">));</span>
+
+<span class="n">UNFTWrapper</span><span class="w"> </span><span class="o">*</span><span class="nf">wrapper</span><span class="p">(</span><span class="n">UNFTWrapper</span><span class="o">::</span><span class="n">createDefaultInstance</span><span class="p">(</span><span class="n">manager</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">));</span>
+
+<span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Display</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;Address: %s&quot;</span><span class="p">),</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">()));</span>
+</pre></div>
+</div>
+<p>To create instance of UNFTWrapper, we can use <code class="docutils literal notranslate"><span class="pre">createInstance</span></code> or <code class="docutils literal notranslate"><span class="pre">createDefaultInstance</span></code> methods:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">UFUNCTION</span><span class="p">(</span><span class="n">BlueprintCallable</span><span class="p">,</span><span class="w"> </span><span class="n">Category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;NFTWrapper&quot;</span><span class="p">)</span>
+<span class="k">static</span><span class="w"> </span><span class="n">UNFTWrapper</span><span class="o">*</span><span class="w"> </span><span class="n">createInstance</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">contractAddress</span><span class="p">,</span><span class="w"> </span><span class="n">UStratisUnrealManager</span><span class="o">*</span><span class="w"> </span><span class="n">manager</span><span class="p">,</span><span class="w"> </span><span class="n">UObject</span><span class="o">*</span><span class="w"> </span><span class="n">outer</span><span class="p">);</span>
+
+<span class="n">UFUNCTION</span><span class="p">(</span><span class="n">BlueprintCallable</span><span class="p">,</span><span class="w"> </span><span class="n">Category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;NFTWrapper&quot;</span><span class="p">)</span>
+<span class="k">static</span><span class="w"> </span><span class="n">UNFTWrapper</span><span class="o">*</span><span class="w"> </span><span class="n">createDefaultInstance</span><span class="p">(</span><span class="n">UStratisUnrealManager</span><span class="o">*</span><span class="w"> </span><span class="n">manager</span><span class="p">,</span><span class="w"> </span><span class="n">UObject</span><span class="o">*</span><span class="w"> </span><span class="n">outer</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">contractAddress</span></code> - address of deployed contract. For <code class="docutils literal notranslate"><span class="pre">createDefaultInstance</span></code> method, canonical NFT contract address will be used.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">manager</span></code> - valid pointer to <code class="docutils literal notranslate"><span class="pre">UStratisUnrealManager</span></code> instance.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outer</span></code> - “parent” object for our new instance.</p></li>
+</ul>
+<p>To deploy the NFT contract, we need to use the <code class="docutils literal notranslate"><span class="pre">deployNFTContract</span></code> method:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">UNFTWrapper</span><span class="o">::</span><span class="n">deployNFTContract</span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">symbol</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tokenURIFormat</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">ownerOnlyMinting</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TFunction</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">TResult</span><span class="o">&lt;</span><span class="n">FString</span><span class="o">&gt;&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">symbol</span></code>, <code class="docutils literal notranslate"><span class="pre">tokenURIFormat</span></code>, <code class="docutils literal notranslate"><span class="pre">ownerOnlyMinting</span></code> - parameters passed to <a class="reference external" href="https://github.com/stratisproject/CirrusSmartContracts/blob/400e5399e85abf5e0fdb156f07109db5476648b2/Testnet/NonFungibleToken/NonFungibleToken/NonFungibleToken.cs#L159">constructor of the NFT contract</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> - error-aware callback, return either transactionID of contract deployment transaction or error.</p></li>
+</ul>
+<p>Once the transaction is mined it’s executed and your contract is deployed.
+After that you can use transaction id to get a receipt which will contain new
+contract’s address. For example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">wrapper</span><span class="o">-&gt;</span><span class="n">deployNFTContract</span><span class="p">(</span>
+<span class="w">   </span><span class="cm">/* name */</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;GameSwords&quot;</span><span class="p">),</span>
+<span class="w">   </span><span class="cm">/* symbol */</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;SW&quot;</span><span class="p">),</span>
+<span class="w">   </span><span class="cm">/* tokenURIFormat */</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;GameSwords_{0}&quot;</span><span class="p">),</span>
+<span class="w">   </span><span class="cm">/* ownerOnlyMinting */</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span>
+<span class="w">   </span><span class="cm">/* callback */</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">isSuccessful</span><span class="p">(</span><span class="n">result</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">      </span><span class="n">FString</span><span class="w"> </span><span class="nf">transactionID</span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">getValue</span><span class="p">(</span><span class="n">result</span><span class="p">));</span>
+
+<span class="w">      </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">stratisManager</span><span class="o">-&gt;</span><span class="n">waitTillReceiptAvailable</span><span class="p">(</span>
+<span class="w">            </span><span class="n">transactionID</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">transactionID</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">isSuccessful</span><span class="p">(</span><span class="n">result</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">               </span><span class="n">FString</span><span class="w"> </span><span class="nf">contractAddress</span><span class="p">(</span>
+<span class="w">                  </span><span class="n">result</span><span class="o">::</span><span class="n">getValue</span><span class="p">(</span><span class="n">result</span><span class="p">).</span><span class="n">newContractAddress</span><span class="p">);</span>
+
+<span class="w">               </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Display</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;NFT deployed, it&#39;s address: %s&quot;</span><span class="p">),</span>
+<span class="w">                     </span><span class="o">*</span><span class="n">contractAddress</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">),</span>
+<span class="w">                     </span><span class="o">*</span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">getError</span><span class="p">(</span><span class="n">result</span><span class="p">).</span><span class="n">message</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">),</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">getError</span><span class="p">(</span><span class="n">result</span><span class="p">).</span><span class="n">message</span><span class="p">));</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="minting-nft">
+<h2>Minting NFT<a class="headerlink" href="#minting-nft" title="Permalink to this heading">¶</a></h2>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">UNFTWrapper::mint</span></code> with specified target owner address will result in
+minting a new NFT that will belong to that address. For example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">FString</span><span class="w"> </span><span class="n">owner</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;tD5aDZSu4Go4A23R7VsjuJTL51YMyeoLyS&quot;</span><span class="p">));</span>
+
+<span class="n">wrapper</span><span class="o">-&gt;</span><span class="n">contractAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;t8snCz4kQgovGTAGReAryt863NwEYqjJqy&quot;</span><span class="p">);</span>
+
+<span class="n">wrapper</span><span class="o">-&gt;</span><span class="n">mint</span><span class="p">(</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// Do something after mint</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="getting-nft-balance">
+<h2>Getting NFT balance<a class="headerlink" href="#getting-nft-balance" title="Permalink to this heading">¶</a></h2>
+<p>NFT balance of address is the amount of NFTs that this address controls.
+You can get it with <code class="docutils literal notranslate"><span class="pre">UNFTWrapper::getBalanceOf</span></code> like this:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">FString</span><span class="w"> </span><span class="n">owner</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;tD5aDZSu4Go4A23R7VsjuJTL51YMyeoLyS&quot;</span><span class="p">));</span>
+
+<span class="n">wrapper</span><span class="o">-&gt;</span><span class="n">contractAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;t8snCz4kQgovGTAGReAryt863NwEYqjJqy&quot;</span><span class="p">);</span>
+
+<span class="n">wrapper</span><span class="o">-&gt;</span><span class="n">getBalanceOf</span><span class="p">(</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">isSuccessful</span><span class="p">(</span><span class="n">result</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Display</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;NFT balance: %llu&quot;</span><span class="p">),</span>
+<span class="w">         </span><span class="n">result</span><span class="o">::</span><span class="n">getValue</span><span class="p">(</span><span class="n">result</span><span class="p">));</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">),</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">result</span><span class="o">::</span><span class="n">getError</span><span class="p">(</span><span class="n">result</span><span class="p">).</span><span class="n">message</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="transferring-nft-to-another-address">
+<h2>Transferring NFT to another address<a class="headerlink" href="#transferring-nft-to-another-address" title="Permalink to this heading">¶</a></h2>
+<p>To transfer an NFT you need to use <code class="docutils literal notranslate"><span class="pre">UNFTWrapper::transferFrom</span></code> and specify
+address from which transfer should occur, receiver address and id of a
+token you want to transfer.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">uint64</span><span class="w"> </span><span class="n">tokenId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12345</span><span class="p">;</span>
+
+<span class="n">wrapper</span><span class="o">-&gt;</span><span class="n">transferFrom</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;tD5aDZSu4Go4A23R7VsjuJTL51YMyeoLyS&quot;</span><span class="p">),</span>
+<span class="w">                     </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;tP2r8anKBWczcBR89yv7rQ1rsSZA2BANhd&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">tokenId</span><span class="p">,</span>
+<span class="w">                     </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="c1">// wait for receipt, update UI etc</span>
+<span class="w">                     </span><span class="p">});</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../../../Operation%20Guides/operation-guides-introduction.html" class="btn btn-primary float-right" title="Operation Guides" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="Tutorial_3_Blueprint.html" class="btn btn-neutral" title="Tutorial #3 - NFT" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,746 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deploying a Smart Contract on Mainnet &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Stratis Decentralized Accelerator" href="../../SDA/sda-introduction.html" />
+    <link rel="prev" title="Deploying the HelloWorld2 Smart Contract Example" href="../Tutorial3-ExtendingHelloWorld/deploying-hello-world2-contract.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Architecture%20Reference/architecture-reference-introduction.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../operation-guides-introduction.html">Operation Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cold-Staking/coldstaking-introduction.html">Cold-Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Full%20Node/fullnode-introduction.html">Full Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../InterFlux%20Masternodes/masternode-introduction.html">InterFlux Masternodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechain/sidechain-introduction.html">Sidechains</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../smartcontracts-introduction.html">Smart Contracts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial1-LocalSidechain/creating-a-local-chain.html">Setup Local Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial2-HelloWorld/hello-world-tutorial-introduction.html">A “HelloWorld” smart contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial3-ExtendingHelloWorld/hello-world-extension-tutorial-introduction.html">Extending the “Hello World” example</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Deploying a Smart Contract on Mainnet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#development-of-a-smart-contract-in-c">Development of a Smart Contract in C#</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-a-smart-contract-for-review">Submitting a Smart Contract for review</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#acquiring-the-crs-token">Acquiring the CRS Token</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deploying-a-smart-contract-on-cirrus">Deploying a Smart Contract on Cirrus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#querying-a-smart-contract-on-cirrus">Querying a Smart Contract on Cirrus</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SDA/sda-introduction.html">Stratis Decentralized Accelerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../STO/sto-introduction.html">STO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Token%20Swap/tokenswap-introduction.html">Token Swap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../operation-guides-introduction.html">Operation Guides</a> &raquo;</li>
+        
+          <li><a href="../smartcontracts-introduction.html">Stratis Smart Contracts</a> &raquo;</li>
+        
+      <li>Deploying a Smart Contract on Mainnet</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Operation Guides/SmartContracts/Tutorial4-DeployingOnALiveNetwork/deploying-smart-contract-on-cirrus.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="deploying-a-smart-contract-on-mainnet">
+<h1>Deploying a Smart Contract on Mainnet<a class="headerlink" href="#deploying-a-smart-contract-on-mainnet" title="Permalink to this heading">¶</a></h1>
+<p>This tutorial details the process of deploying a Smart Contract in C# on the CirrusMain Sidechain. Dependant on the contract you are wishing to deploy, there may be additional steps required, this tutorial will focus on the deployment of a new Stratis Smart Contract and the steps required to have your contract deployed and executable on the Cirrus Sidechain.</p>
+<p>Unlike other blockchain platforms, there is a level of auditing and review that is required by the public prior to the acceptance of a Smart Contract on the Cirrus Sidechain. This is achieved by whitelisting a hash of the developed contract, allowing for the validation of contracts that have been voted in approval.</p>
+<section id="development-of-a-smart-contract-in-c">
+<h2>Development of a Smart Contract in C#<a class="headerlink" href="#development-of-a-smart-contract-in-c" title="Permalink to this heading">¶</a></h2>
+<p>The process begins by developing a Smart Contract that you want to deploy and utilize. For this example, the Standard Token Issuance contract will be utilized.</p>
+<p>This contract has been designed to replicate the functionality offered by the ERC20 Token Contract.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>using Stratis.SmartContracts;
+using Stratis.SmartContracts.Standards;
+
+/// &lt;summary&gt;
+/// Implementation of a standard token contract for the Stratis Platform.
+/// &lt;/summary&gt;
+public class StandardToken : SmartContract, IStandardToken
+{
+        /// &lt;summary&gt;
+        /// Constructor used to create a new instance of the token. Assigns the total token supply to the creator of the contract.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;smartContractState&quot;&gt;The execution state for the contract.&lt;/param&gt;
+        /// &lt;param name=&quot;totalSupply&quot;&gt;The total token supply.&lt;/param&gt;
+        /// &lt;param name=&quot;name&quot;&gt;The name of the token.&lt;/param&gt;
+        /// &lt;param name=&quot;symbol&quot;&gt;The symbol used to identify the token.&lt;/param&gt;
+        public StandardToken(ISmartContractState smartContractState, ulong totalSupply, string name, string symbol)
+                : base(smartContractState)
+        {
+                this.TotalSupply = totalSupply;
+                this.Name = name;
+                this.Symbol = symbol;
+                this.SetBalance(Message.Sender, totalSupply);
+        }
+
+        public string Symbol
+        {
+                get =&gt; PersistentState.GetString(nameof(this.Symbol));
+                private set =&gt; PersistentState.SetString(nameof(this.Symbol), value);
+        }
+
+        public string Name
+        {
+                get =&gt; PersistentState.GetString(nameof(this.Name));
+                private set =&gt; PersistentState.SetString(nameof(this.Name), value);
+        }
+
+        /// &lt;inheritdoc /&gt;
+        public ulong TotalSupply
+        {
+                get =&gt; PersistentState.GetUInt64(nameof(this.TotalSupply));
+                private set =&gt; PersistentState.SetUInt64(nameof(this.TotalSupply), value);
+        }
+
+        /// &lt;inheritdoc /&gt;
+        public ulong GetBalance(Address address)
+        {
+                return PersistentState.GetUInt64($&quot;Balance:{address}&quot;);
+        }
+
+        private void SetBalance(Address address, ulong value)
+        {
+                PersistentState.SetUInt64($&quot;Balance:{address}&quot;, value);
+        }
+
+        /// &lt;inheritdoc /&gt;
+        public bool TransferTo(Address to, ulong amount)
+        {
+                if (amount == 0)
+                {
+                        Log(new TransferLog { From = Message.Sender, To = to, Amount = 0 });
+
+                        return true;
+                }
+
+                ulong senderBalance = GetBalance(Message.Sender);
+
+                if (senderBalance &lt; amount)
+                {
+                        return false;
+                }
+
+                SetBalance(Message.Sender, senderBalance - amount);
+
+                SetBalance(to, checked(GetBalance(to) + amount));
+
+                Log(new TransferLog { From = Message.Sender, To = to, Amount = amount });
+
+                return true;
+        }
+
+        /// &lt;inheritdoc /&gt;
+        public bool TransferFrom(Address from, Address to, ulong amount)
+        {
+                if (amount == 0)
+                {
+                        Log(new TransferLog { From = from, To = to, Amount = 0 });
+
+                        return true;
+                }
+
+                ulong senderAllowance = Allowance(from, Message.Sender);
+                ulong fromBalance = GetBalance(from);
+
+                if (senderAllowance &lt; amount || fromBalance &lt; amount)
+                {
+                        return false;
+                }
+
+                SetApproval(from, Message.Sender, senderAllowance - amount);
+
+                SetBalance(from, fromBalance - amount);
+
+                SetBalance(to, checked(GetBalance(to) + amount));
+
+                Log(new TransferLog { From = from, To = to, Amount = amount });
+
+                return true;
+        }
+
+        /// &lt;inheritdoc /&gt;
+        public bool Approve(Address spender, ulong currentAmount, ulong amount)
+        {
+                if (Allowance(Message.Sender, spender) != currentAmount)
+                {
+                        return false;
+                }
+
+                SetApproval(Message.Sender, spender, amount);
+
+                Log(new ApprovalLog { Owner = Message.Sender, Spender = spender, Amount = amount, OldAmount = currentAmount });
+
+                return true;
+        }
+
+        private void SetApproval(Address owner, Address spender, ulong value)
+        {
+                PersistentState.SetUInt64($&quot;Allowance:{owner}:{spender}&quot;, value);
+        }
+
+        /// &lt;inheritdoc /&gt;
+        public ulong Allowance(Address owner, Address spender)
+        {
+                return PersistentState.GetUInt64($&quot;Allowance:{owner}:{spender}&quot;);
+        }
+
+        public struct TransferLog
+        {
+                [Index]
+                public Address From;
+
+                [Index]
+                public Address To;
+
+                public ulong Amount;
+        }
+
+        public struct ApprovalLog
+        {
+                [Index]
+                public Address Owner;
+
+                [Index]
+                public Address Spender;
+
+                public ulong OldAmount;
+
+                public ulong Amount;
+        }
+}
+</pre></div>
+</div>
+<section id="best-practice-guidelines">
+<h3>Best Practice Guidelines<a class="headerlink" href="#best-practice-guidelines" title="Permalink to this heading">¶</a></h3>
+<p>Stratis has no control as to what is whitelisted and what is not. Smart Contract developers should follow accepted best practices when writing new smart contracts. Some guidelines include:</p>
+<ol class="arabic simple">
+<li><p>Use properties to store and retrieve data, with nameof(Property) as the PersistentState key.</p></li>
+<li><p>Ensure methods are only public when intended – especially property setters.</p></li>
+<li><p>Validate methods fail early with Asserts.</p></li>
+<li><p>Check the inside of the Asserts are logically correct.</p></li>
+<li><p>Check for possible integer overflows. By default, contracts are compiled with overflow checking enabled which will throw an exception if this occurs. If overflows are desired, explicitly specify this using an unchecked block.</p></li>
+<li><p>Decide whether you want your contract to accept the CRS Token sent from other contracts.  If so, and your contract needs to do any extra accounting, be sure to override SmartContract’s Receive method.</p></li>
+<li><p>Generally, avoid loops and always avoid unbounded loops where the input of dynamic data could cause OutOfGas exceptions or other problems.</p></li>
+<li><p>Be aware of truncation when using integer division.</p></li>
+<li><p>Validate the result of transfers, sends or calls into other contracts - If they aren’t successful, you may not want to be updating the state of the contract being worked on.</p></li>
+<li><p>Perform any updates to the contract’s state after transfers to other addresses has occurred. This avoids re-entrance attacks.</p></li>
+<li><p>In general, make funds transfers in individual calls and require users to “pull” their CRS Token, rather than trying to push the funds as part of a wider method. This prevents malicious actors from denying payment to groups of users.</p></li>
+<li><p>Write unit tests using a mocking framework like <a class="reference external" href="https://github.com/Moq/moq4/wiki/Quickstart">Moq</a> or <a class="reference external" href="https://nsubstitute.github.io/help/getting-started/">NSubstitute</a>. Use these to mock the properties on ISmartContractState and verify that the correct sequence of calls occur.</p></li>
+</ol>
+</section>
+<section id="testing-with-moq-and-xunit">
+<h3>Testing with Moq and XUnit<a class="headerlink" href="#testing-with-moq-and-xunit" title="Permalink to this heading">¶</a></h3>
+<p>The example below illustrates the key portions of testing your smart contract using Moq and XUnit.</p>
+<p>First, we must create our test project and a test class. For this contract we’ll name it StandardTokenTests. We’ll define some private properties that hold common values that tests will use frequently and in the constructor of the class, set those values.</p>
+<p>The first three properties have types of Mock&lt;T&gt; where we are defining properties that will hold mocks of the different Interfaces we will need in our tests. Then we’ll use the Setup method on mockContractState to set instances of the mocks we’ve created.
+There are other Interfaces than can and should be mocked when used such as:</p>
+<ul class="simple">
+<li><p>IInternalHashHelper</p></li>
+<li><p>IInternalTransactionExecutor</p></li>
+<li><p>IMessage</p></li>
+<li><p>ISerializer</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">StandardTokenTests</span>
+    <span class="p">{</span>
+        <span class="n">private</span> <span class="n">readonly</span> <span class="n">Mock</span><span class="o">&lt;</span><span class="n">ISmartContractState</span><span class="o">&gt;</span> <span class="n">mockContractState</span><span class="p">;</span>
+        <span class="n">private</span> <span class="n">readonly</span> <span class="n">Mock</span><span class="o">&lt;</span><span class="n">IPersistentState</span><span class="o">&gt;</span> <span class="n">mockPersistentState</span><span class="p">;</span>
+        <span class="n">private</span> <span class="n">readonly</span> <span class="n">Mock</span><span class="o">&lt;</span><span class="n">IContractLogger</span><span class="o">&gt;</span> <span class="n">mockContractLogger</span><span class="p">;</span>
+        <span class="n">private</span> <span class="n">Address</span> <span class="n">owner</span><span class="p">;</span>
+        <span class="n">private</span> <span class="n">Address</span> <span class="n">sender</span><span class="p">;</span>
+        <span class="n">private</span> <span class="n">Address</span> <span class="n">contract</span><span class="p">;</span>
+        <span class="n">private</span> <span class="n">Address</span> <span class="n">spender</span><span class="p">;</span>
+        <span class="n">private</span> <span class="n">Address</span> <span class="n">destination</span><span class="p">;</span>
+        <span class="n">private</span> <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">private</span> <span class="n">string</span> <span class="n">symbol</span><span class="p">;</span>
+
+        <span class="n">public</span> <span class="n">StandardTokenTests</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">mockContractLogger</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Mock</span><span class="o">&lt;</span><span class="n">IContractLogger</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">mockPersistentState</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Mock</span><span class="o">&lt;</span><span class="n">IPersistentState</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">mockContractState</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Mock</span><span class="o">&lt;</span><span class="n">ISmartContractState</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">mockContractState</span><span class="o">.</span><span class="n">Setup</span><span class="p">(</span><span class="n">s</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">PersistentState</span><span class="p">)</span><span class="o">.</span><span class="n">Returns</span><span class="p">(</span><span class="n">this</span><span class="o">.</span><span class="n">mockPersistentState</span><span class="o">.</span><span class="n">Object</span><span class="p">);</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">mockContractState</span><span class="o">.</span><span class="n">Setup</span><span class="p">(</span><span class="n">s</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">ContractLogger</span><span class="p">)</span><span class="o">.</span><span class="n">Returns</span><span class="p">(</span><span class="n">this</span><span class="o">.</span><span class="n">mockContractLogger</span><span class="o">.</span><span class="n">Object</span><span class="p">);</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="s2">&quot;0x0000000000000000000000000000000000000001&quot;</span><span class="o">.</span><span class="n">HexToAddress</span><span class="p">();</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">sender</span> <span class="o">=</span> <span class="s2">&quot;0x0000000000000000000000000000000000000002&quot;</span><span class="o">.</span><span class="n">HexToAddress</span><span class="p">();</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">contract</span> <span class="o">=</span> <span class="s2">&quot;0x0000000000000000000000000000000000000003&quot;</span><span class="o">.</span><span class="n">HexToAddress</span><span class="p">();</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">spender</span> <span class="o">=</span> <span class="s2">&quot;0x0000000000000000000000000000000000000004&quot;</span><span class="o">.</span><span class="n">HexToAddress</span><span class="p">();</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">destination</span> <span class="o">=</span> <span class="s2">&quot;0x0000000000000000000000000000000000000005&quot;</span><span class="o">.</span><span class="n">HexToAddress</span><span class="p">();</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Test Token&quot;</span><span class="p">;</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">symbol</span> <span class="o">=</span> <span class="s2">&quot;TST&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now that the test class is setup and the constructor has set the properties you can begin writing your tests. See examples below or visit the full
+<a class="reference external" href="https://github.com/stratisproject/CirrusSmartContracts/blob/master/Testnet/StandardToken/StandardToken.Tests/StandardTokenTests.cs">StandardTokenTests.cs file</a>
+on Github.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For contract acceptance and whitelisting, it is important to test all successful and failing scenarios that come to mind. Smart contracts are immutable, once the hash is whitelisted or a contract is deployed, it cannot be modified.</p>
+</div>
+<p><strong>Ensure Constructor Sets the Total Supply</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Fact</span><span class="p">]</span>
+<span class="n">public</span> <span class="n">void</span> <span class="n">Constructor_Sets_TotalSupply</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">ulong</span> <span class="n">totalSupply</span> <span class="o">=</span> <span class="mi">100_000</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">message</span> <span class="n">that</span> <span class="n">would</span> <span class="n">act</span> <span class="k">as</span> <span class="n">the</span> <span class="n">initial</span> <span class="n">transaction</span> <span class="n">to</span> <span class="n">the</span> <span class="n">contract</span><span class="o">.</span>
+    <span class="n">this</span><span class="o">.</span><span class="n">mockContractState</span><span class="o">.</span><span class="n">Setup</span><span class="p">(</span><span class="n">m</span> <span class="o">=&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">Message</span><span class="p">)</span><span class="o">.</span><span class="n">Returns</span><span class="p">(</span><span class="n">new</span> <span class="n">Message</span><span class="p">(</span><span class="n">this</span><span class="o">.</span><span class="n">contract</span><span class="p">,</span> <span class="n">this</span><span class="o">.</span><span class="n">owner</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+
+    <span class="o">//</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">instance</span> <span class="n">of</span> <span class="n">the</span> <span class="n">smart</span> <span class="n">contract</span> <span class="n">class</span><span class="o">.</span>
+    <span class="n">var</span> <span class="n">standardToken</span> <span class="o">=</span> <span class="n">new</span> <span class="n">StandardToken</span><span class="p">(</span><span class="n">this</span><span class="o">.</span><span class="n">mockContractState</span><span class="o">.</span><span class="n">Object</span><span class="p">,</span> <span class="n">totalSupply</span><span class="p">,</span> <span class="n">this</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">this</span><span class="o">.</span><span class="n">symbol</span><span class="p">);</span>
+
+    <span class="o">//</span> <span class="n">Verify</span> <span class="n">that</span> <span class="n">PersistentState</span> <span class="n">was</span> <span class="n">called</span> <span class="k">with</span> <span class="n">the</span> <span class="n">total</span> <span class="n">supply</span>
+    <span class="n">this</span><span class="o">.</span><span class="n">mockPersistentState</span><span class="o">.</span><span class="n">Verify</span><span class="p">(</span><span class="n">s</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">SetUInt64</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">StandardToken</span><span class="o">.</span><span class="n">TotalSupply</span><span class="p">),</span> <span class="n">totalSupply</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Ensure TransferTo Full Balance Returns True</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[Fact]
+public void TransferTo_Full_Balance_Returns_True()
+{
+    ulong balance = 10000;
+    ulong amount = balance;
+    ulong destinationBalance = 123;
+
+    // Setup the Message.Sender address
+    this.mockContractState.Setup(m =&gt; m.Message)
+        .Returns(new Message(this.contract, this.sender, 0));
+
+    var standardToken = new StandardToken(this.mockContractState.Object, 100_000, this.name, this.symbol);
+
+    // Setup the balance of the sender&#39;s address in persistent state
+    this.mockPersistentState.Setup(s =&gt; s.GetUInt64($&quot;Balance:{this.sender}&quot;)).Returns(balance);
+
+    // Setup the balance of the recipient&#39;s address in persistent state
+    this.mockPersistentState.Setup(s =&gt; s.GetUInt64($&quot;Balance:{this.destination}&quot;)).Returns(destinationBalance);
+
+    Assert.True(standardToken.TransferTo(this.destination, amount));
+
+    // Verify we queried the balance
+    this.mockPersistentState.Verify(s =&gt; s.GetUInt64($&quot;Balance:{this.sender}&quot;));
+
+    // Verify we set the sender&#39;s balance
+    this.mockPersistentState.Verify(s =&gt; s.SetUInt64($&quot;Balance:{this.sender}&quot;, balance - amount));
+
+    // Verify we set the receiver&#39;s balance
+    this.mockPersistentState.Verify(s =&gt; s.SetUInt64($&quot;Balance:{this.destination}&quot;, destinationBalance + amount));
+}
+</pre></div>
+</div>
+<p><strong>Ensure TransferFrom Greater Than Owners Balance Returns False</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[Fact]
+public void TransferFrom_Greater_Than_Owners_Balance_Returns_False()
+{
+    ulong balance = 0; // Balance should be less than amount we are trying to send
+    ulong amount = balance + 1;
+    ulong allowance = amount + 1; // Allowance should be more than amount we are trying to send
+
+    // Setup the Message.Sender address
+    this.mockContractState.Setup(m =&gt; m.Message)
+        .Returns(new Message(this.contract, this.sender, 0));
+
+    var standardToken = new StandardToken(this.mockContractState.Object, 100_000, this.name, this.symbol);
+
+    // Setup the balance of the owner in persistent state
+    this.mockPersistentState.Setup(s =&gt; s.GetUInt64($&quot;Balance:{this.owner}&quot;)).Returns(balance);
+
+    // Setup the allowance of the sender in persistent state
+    this.mockPersistentState.Setup(s =&gt; s.GetUInt64($&quot;Allowance:{this.owner}:{this.sender}&quot;)).Returns(allowance);
+
+    Assert.False(standardToken.TransferFrom(this.owner, this.destination, amount));
+
+    // Verify we queried the sender&#39;s allowance
+    this.mockPersistentState.Verify(s =&gt; s.GetUInt64($&quot;Allowance:{this.owner}:{this.sender}&quot;));
+
+    // Verify we queried the owner&#39;s balance
+    this.mockPersistentState.Verify(s =&gt; s.GetUInt64($&quot;Balance:{this.owner}&quot;));
+}
+</pre></div>
+</div>
+</section>
+<section id="generate-contract-hash">
+<h3>Generate Contract Hash<a class="headerlink" href="#generate-contract-hash" title="Permalink to this heading">¶</a></h3>
+<p>To obtain a hash of a contract, you will need to run the Stratis Smart Contracts Test Tool to validate and compile the contract.</p>
+<ol class="arabic simple">
+<li><p>Clone the Stratis.SmartContracts.Tools.SCT Repository</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">stratisproject</span><span class="o">/</span><span class="n">Stratis</span><span class="o">.</span><span class="n">SmartContracts</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">Sct</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Navigate to the Stratis Smart Contract Tools project directory</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Stratis</span><span class="o">.</span><span class="n">SmartContracts</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">Sct</span>\<span class="n">Stratis</span><span class="o">.</span><span class="n">SmartContracts</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">Sct</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Pass the path to the developed contract as a parameter. (In this example, the SRC20 Token Issuance contract is referenced)</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dotnet</span> <span class="n">run</span> <span class="o">--</span> <span class="n">validate</span> <span class="n">C</span><span class="p">:</span>\<span class="n">CirrusSmartContracts</span>\<span class="n">Mainnet</span>\<span class="n">StandardToken</span>\<span class="n">StandardToken</span>\<span class="n">StandardToken</span><span class="o">.</span><span class="n">cs</span> <span class="o">-</span><span class="n">sb</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>The output from the above will provide you with both a hash and the byte code of the given contract.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hash</span>
+<span class="mi">9</span><span class="n">caf44c6c3e0e6d200fdf57e42a489731a77ae31b3cab18074f80e90960b4252</span>
+
+<span class="n">ByteCode</span>
+<span class="mi">4</span><span class="n">D5A90000300000004000000FFFF0000B800000000000000400000000000000000000000000000000000000000000000000000000000000000000000800000000E1FBA0E00B409CD21B8014CCD21546869732070726F6772616D2063616E6E6F742062652072756E20696E20444F53206D6F64652E0D0D0A2400000000000000504500004C010200E1F046E10000000000000000E00022200B013000000E00000002000000000000522C0000002000000040000000000010002000000002000004000000000000000400000000000000006000000002000000000000030040850000100000100000000010000010000000000000100000000000000000000000002C00004F000000000000000000000000000000000000000000000000000000004000000C000000E42B00001C0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000080000000000000000000000082000004800000000000000000000002E74657874000000580C000000200000000E000000020000000000000000000000000000200000602E72656C6F6300000C000000004000000002000000100000000000000000000000000000400000420000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000342C000000000000480000000200050050230000940800000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000C20203280500000A0204280700000602052805000006020E0428030000060202280600000A6F0700000A0428090000062A4602280800000A72010000706F0900000A2A4A02280800000A7201000070036F0A00000A2A4602280800000A720F0000706F0900000A2A4A02280800000A720F000070036F0A00000A2A4602280800000A72190000706F0B00000A2A4A02280800000A7219000070036F0C00000A2A7202280800000A7231000070038C08000001280D00000A6F0B00000A2A7602280800000A7231000070038C08000001280D00000A046F0C00000A2A0013300400A600000001000011042D34021201FE1503000002120102280600000A6F0700000A7D010000041201037D020000041201166A7D0300000407280100002B172A0202280600000A6F0700000A28080000060A06043402162A0202280600000A6F0700000A0604DB280900000602030203280800000604D72809000006021201FE1503000002120102280600000A6F0700000A7D010000041201037D020000041201047D0300000407280100002B172A000013300500AA00000002000011052D2A021202FE15030000021202037D010000041202047D020000041202166A7D0300000408280100002B172A020302280600000A6F0700000A280E0000060A020328080000060B0605370407053402162A020302280600000A6F0700000A0605DB280D00000602030705DB280900000602040204280800000605D72809000006021202FE15030000021202037D010000041202047D020000041202057D0300000408280100002B172A00001330040065000000030000110202280600000A6F0700000A03280E000006042E02162A0202280600000A6F0700000A0305280D000006021200FE1504000002120002280600000A6F0700000A7D040000041200037D050000041200057D070000041200047D0600000406280200002B172A8E02280800000A7249000070038C08000001048C08000001280F00000A056F0C00000A2A8A02280800000A7249000070038C08000001048C08000001280F00000A6F0B00000A2A42534A4201000100000000000C00000076342E302E33303331390000000005006C00000098030000237E0000040400000403000023537472696E67730000000008070000700000002355530078070000100000002347554944000000880700000C01000023426C6F6200000000000000020000015717A201090A000000FA013300160000010000000E00000004000000070000000E00000017000000010000000F00000007000000030000000100000003000000060000000100000003000000020000000200000000007E010100000000000600EB00440206001A0144020600D70010020F00640200000A00A10283020E00C60123020A008B0083020A007302830206008100AD010A000B0183020A00550083020A00B200830206005301AD010600AF02AD01000000001500000000000100010001001000C70100001500010001000A01100066010000250001000F000A0110005A010000250004000F000600BC0174000600DD0174000600C70278000600FE0174000600EE0174000600B60278000600C702780050200000000086180A027B000100812000000000860890018400050093200000000081089B0188000500A6200000000086086A0084000600B820000000008108730088000600CB2000000000E609D5028D000700DD20000000008108E50291000700F02000000000E6013500960008000D2100000000810040009C0009002C2100000000E601D501A3000B00E02100000000E601B401AA000D00982200000000E6013E01B300100009230000000081007201BB0013002D2300000000E6014B00C4001600000001009F0000000200F502000003007C0000000400A601000001003801000001003801000001003801000001007B02000001007B0200000200380100000100E00100000200CE0200000100C10100000200E00100000300CE0200000100F60100000200C00200000300CE0200000100040200000200F60100000300380100000100040200000200F6010200190009000A02010011000A02060019000A020A0051000A02060029000A02100029005E0016005900E3011B002900C3002000610046012500610050012A0061000100300061000B00350069009A023B0029006E01470069009A0264002100230005012E000B00D4002E001300DD002E001B00FC00410023000501810023000501A10023000501410053005A000200010000009F01CC0000007700CC000000E902D000020002000300010003000300020004000500010005000500020006000700010007000700048000000000000000000000000000000000A10200000400000000000000000000006B001E00000000000100020001000000000000000000830200000000010000000000000000000000000023020000000003000200040002001D004E001D005F00000000000047657455496E7436340053657455496E743634003C4D6F64756C653E0053797374656D2E507269766174652E436F72654C69620047657442616C616E63650053657442616C616E636500416C6C6F77616E636500494D657373616765006765745F4D657373616765006765745F4E616D65007365745F4E616D65006E616D650056616C7565547970650049536D617274436F6E7472616374537461746500736D617274436F6E74726163745374617465004950657273697374656E745374617465006765745F50657273697374656E7453746174650044656275676761626C6541747472696275746500436F6D70696C6174696F6E52656C61786174696F6E7341747472696275746500496E6465784174747269627574650052756E74696D65436F6D7061746962696C6974794174747269627574650076616C756500417070726F766500476574537472696E6700536574537472696E6700417070726F76616C4C6F67005472616E736665724C6F6700536574417070726F76616C00536D617274436F6E74726163742E646C6C006765745F53796D626F6C007365745F53796D626F6C0073796D626F6C0053797374656D005472616E7366657246726F6D0066726F6D00495374616E64617264546F6B656E005472616E73666572546F00746F006765745F53656E646572005370656E646572007370656E646572004F776E6572006F776E6572002E63746F720053797374656D2E446961676E6F737469637300537472617469732E536D617274436F6E7472616374732E5374616E64617264730053797374656D2E52756E74696D652E436F6D70696C6572536572766963657300446562756767696E674D6F6465730041646472657373006164647265737300537472617469732E536D617274436F6E74726163747300466F726D617400536D617274436F6E7472616374004F626A656374004F6C64416D6F756E740063757272656E74416D6F756E7400616D6F756E74006765745F546F74616C537570706C79007365745F546F74616C537570706C7900746F74616C537570706C7900000000000D530079006D0062006F006C0000094E0061006D006500001754006F00740061006C0053007500700070006C0079000017420061006C0061006E00630065003A007B0030007D00002341006C006C006F00770061006E00630065003A007B0030007D003A007B0031007D0000000000F5148117F9C6F840A461EEE65ADF72F40004200101080320000105200101111105200101121D042000122D042000112104200012310420010E0E052002010E0E0420010B0E052002010E0B0500020E0E1C0507020B110C06300101011E00040A01110C0607030B0B110C0407011110040A0111100600030E0E1C1C087CEC85D7BEA7798E0306112102060B08200401121D0B0E0E0320000E042001010E0320000B042001010B0520010B11210620020111210B0620020211210B08200302112111210B0720030211210B0B08200301112111210B0720020B112111210328000E0328000B0801000800000000001E01000100540216577261704E6F6E457863657074696F6E5468726F7773010801000200000000000401000000000000000000000000000000000010000000000000000000000000000000282C00000000000000000000422C0000002000000000000000000000000000000000000000000000342C0000000000000000000000005F436F72446C6C4D61696E006D73636F7265652E646C6C0000000000FF250020001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000C000000543C00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="submitting-a-smart-contract-for-review">
+<h2>Submitting a Smart Contract for review<a class="headerlink" href="#submitting-a-smart-contract-for-review" title="Permalink to this heading">¶</a></h2>
+<p>In order for the newly developed Smart Contract to be deployable and executable on the Cirrus Sidechain, a review process needs to take place. The hash of the byte code needs to be accepted by the Sidechain Masternodes that produce blocks on the sidechain.</p>
+<p>A Pull Request must be raised against the CirrusSmartContracts repository under the StratisProject organization. A link to the repository can be found below.</p>
+<p><a class="reference external" href="https://github.com/stratisproject/CirrusSmartContracts">https://github.com/stratisproject/CirrusSmartContracts</a></p>
+<p>The Pull Request will need to conform to a template to provide a level of standardization for Sidechain Masternode operators and developers that may review the pull request.</p>
+<p>An example can be found below.</p>
+<a class="reference internal image-reference" href="../../../_images/PR.png"><img alt="PR Example" class="align-center" src="../../../_images/PR.png" style="width: 900px;" /></a>
+<p>The Pull Request will need to contain a section for each of the below.</p>
+<ul class="simple">
+<li><p>Description</p></li>
+<li><p>Compiler</p></li>
+<li><p>Hash</p></li>
+<li><p>ByteCode</p></li>
+</ul>
+<section id="smart-contract-review">
+<h3>Smart Contract Review<a class="headerlink" href="#smart-contract-review" title="Permalink to this heading">¶</a></h3>
+<p>A member of the Stratis Development Team and/or .NET Developers will provide comment on your pull request relating to the Smart Contract that has been developed.</p>
+<p>These comments can range from advice to suggested changes to improve or validate the functionality of the Smart Contract.
+Comments provided on the pull request should remain constructive and relating to the contract itself, an example of a community developers comments can be found below.</p>
+<a class="reference internal image-reference" href="../../../_images/PR-Review.png"><img alt="PR Review" class="align-center" src="../../../_images/PR-Review.png" style="width: 900px;" /></a>
+<p>Where applicable recommendations should be taken into consideration or discussed on the pull request.</p>
+</section>
+</section>
+<section id="acquiring-the-crs-token">
+<h2>Acquiring the CRS Token<a class="headerlink" href="#acquiring-the-crs-token" title="Permalink to this heading">¶</a></h2>
+<p>Whilst your Smart Contract has been fully developed, it cannot be deployed until it had been voted in by the Sidechain Masternode Operators. Once the Smart Contract hash has been whitelisted by the Sidechain Masternode Operators, the Pull Request will be merged to the repository. This highlights that the contract is available to be deployed by anyone on the Cirrus Sidechain.</p>
+<p>Deploying the contract can be done from within the Cirrus Core wallet. The wallet can be downloaded and installed from the below release page.</p>
+<p><a class="reference external" href="https://github.com/stratisproject/StratisCore/releases">https://github.com/stratisproject/StratisCore/releases</a></p>
+<p>Once you have installed Cirrus Core, you will need to run it either on testnet or mainnet. As this document refers to the StratisTest (TestNet) network, you will need to run the
+wallet in testnet.</p>
+<div class="line-block">
+<div class="line"><strong>On Windows</strong></div>
+<div class="line">From the command line run the following command:</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="s2">&quot;&quot;</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Program Files\Cirrus Core\Cirrus Core.exe&quot;</span> <span class="o">-</span><span class="n">testnet</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>On Mac</strong></div>
+<div class="line">Open ScriptEditor to create a new applescript document and insert the following script:</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">do</span> <span class="n">shell</span> <span class="n">script</span> <span class="s2">&quot;open /Applications/Cirrus</span><span class="se">\\</span><span class="s2"> Core.app --args -testnet&quot;</span>
+</pre></div>
+</div>
+<p>Save the script in the Applications folder with the name of CirrusCoreTest.app and make sure to save it as an application type.</p>
+<p>Once you have Cirrus Core running on testnet, you will need to follow the prompted steps to create a wallet, once this wallet has been created, you will be able to generate addresses that derive from the newly created wallet.</p>
+<a class="reference internal image-reference" href="../../../_images/CirrusAddress.png"><img alt="Cirrus Address" class="align-center" src="../../../_images/CirrusAddress.png" style="width: 900px;" /></a>
+<p>The Cirrus Token is required to deploy a Smart Contract, the amount is wholly dependant on the computational cost defined by the complexity of the Smart Contract.</p>
+<p>Initially you will need to obtain a minimum of 1 STRAX and have it available within the Stratis Core wallet. The Stratis Core wallet can be downloaded and installed from the below release page.</p>
+<p><a class="reference external" href="https://github.com/stratisproject/StratisCore/releases">https://github.com/stratisproject/StratisCore/releases</a></p>
+<p>Once you have installed Stratis Core, you will need to run it either on testnet or mainnet. As this document refers to the StratisTest (TestNet) network, you will need to run the
+wallet in testnet.</p>
+<div class="line-block">
+<div class="line"><strong>On Windows</strong></div>
+<div class="line">From the command line run the following command:</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="s2">&quot;&quot;</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Program Files\Stratis Core\Stratis Core.exe&quot;</span> <span class="o">-</span><span class="n">testnet</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>On Mac</strong></div>
+<div class="line">Open ScriptEditor to create a new applescript document and insert the following script:</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">do</span> <span class="n">shell</span> <span class="n">script</span> <span class="s2">&quot;open /Applications/Stratis</span><span class="se">\\</span><span class="s2"> Core.app --args -testnet&quot;</span>
+</pre></div>
+</div>
+<p>Save the script in the Applications folder with the name of StratisCoreTest.app and make sure to save it as an application type.</p>
+<p>Once you have Stratis Core running on testnet, you will need to follow the prompted steps to create a wallet, once this wallet has been created, send a minimum of 1 STRAX to an address generated from the newly created wallet.</p>
+<a class="reference internal image-reference" href="../../../_images/StratisCore.png"><img alt="Stratis Core Dashboard" class="align-center" src="../../../_images/StratisCore.png" style="width: 900px;" /></a>
+<p>Once the balance is confirmed, you will need to perform a cross-chain transfer to the Cirrus Sidechain.</p>
+<a class="reference internal image-reference" href="../../../_images/StratisCore-Send.png"><img alt="Stratis Core Send" class="align-center" src="../../../_images/StratisCore-Send.png" style="width: 900px;" /></a>
+<p>As this document refers to the StratisTest (TestNet) network, the StratisTest and CirrusTest federation addresses are being utilized.</p>
+<p>Federation detail for both test environments and production environments can be found below:</p>
+<div class="line-block">
+<div class="line"><strong>Production Environment</strong></div>
+<div class="line"><strong>Stratis Federation Address:</strong> sg3WNvfWFxLJXXPYsvhGDdzpc9bT4uRQsN</div>
+<div class="line"><strong>Cirrus Federation Address:</strong> cnYBwudqzHBtGVELyQNUGzviKV4Ym3yiEo</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Test Environment</strong></div>
+<div class="line"><strong>Stratis Federation Address:</strong> 2N1wrNv5NDayLrKuph9YDVk8Fip8Wr8F8nX</div>
+<div class="line"><strong>Cirrus Federation Address:</strong> xH1GHWVNKwdebkgiFPtQtM4qb3vrvNX2Rg</div>
+</div>
+<p>The exchange of STRAX for CRS is known as a Cross-Chain Transfer. Each Cross-Chain Transfer will subject to an exchange fee of 0.001, meaning if you perform a Cross-Chain Transfer of 1 STRAX you will receive 0.999 CRS Tokens.</p>
+<p>A Cross-Chain Transfer is also subject to a larger amount of confirmations, this is to cater for any reorganisations on the network and invalid credits being made on either chain. The confirmation times can be seen below.</p>
+<p><strong>STRAX to CRS:</strong> 500 Blocks (64 Second Block Time x 500 Blocks = 32000 Seconds ÷ 60 = 533 Minutes ÷ 60 = 8 Hours 48 Minutes)</p>
+<p><strong>CRS to STRAX:</strong> 240 Blocks (16 Second Block Time x 240 Blocks = 3840 Seconds ÷ 60 = 64 Minutes)</p>
+<p>Once 500 Blocks have passed after making a Cross-Chain Transfer from STRAX to CRS you will see the CRS Balance appear in your wallet.</p>
+<a class="reference internal image-reference" href="../../../_images/CirrusCore.png"><img alt="Cirrus Core Dashboard" class="align-center" src="../../../_images/CirrusCore.png" style="width: 900px;" /></a>
+</section>
+<section id="deploying-a-smart-contract-on-cirrus">
+<h2>Deploying a Smart Contract on Cirrus<a class="headerlink" href="#deploying-a-smart-contract-on-cirrus" title="Permalink to this heading">¶</a></h2>
+<p>You are now in a position whereby you have the following.</p>
+<ul class="simple">
+<li><p>A Smart Contract in C#</p></li>
+<li><p>The Smart Contract ByteCode</p></li>
+<li><p>The Smart Contract Hash</p></li>
+<li><p>A Cirrus Token Balance</p></li>
+</ul>
+<p>This tutorial will continue with the assumption that you have also received sufficient votes from the Sidechain Masternodes to approve the deployment and execution of your Smart Contract. This will be evidenced by the Pull Request being merged to the repository.</p>
+<p>Within Cirrus Core, navigate to the Smart Contracts tab.</p>
+<a class="reference internal image-reference" href="../../../_images/CirrusCore-Create.png"><img alt="Cirrus Core Create" class="align-center" src="../../../_images/CirrusCore-Create.png" style="width: 900px;" /></a>
+<p>You can now populate this page with information relative to the developed Smart Contract.</p>
+<p><strong>Amount:</strong> 0 (No funds being sent, so the amount can be set to 0)</p>
+<p><strong>Fee:</strong> 0.01 (A fee of 0.01 will allow the transaction to be mined successfully)</p>
+<p><strong>Gas Price:</strong> 100 (The amount of ‘satoshis’ to pay for each unit of gas spent. 100 is the minimum)</p>
+<p><strong>Gas Limit:</strong> 100000 (The maximum possible gas the contract can spend. This is the maximum)</p>
+<p>In addition, you also need to specify the parameters of the contract, this will make the deployment of the contract unique.</p>
+<p>The contract handles three parameters for deployment.</p>
+<ul class="simple">
+<li><p><strong>Token Supply</strong> (ULong)</p></li>
+<li><p><strong>Token Name</strong> (String)</p></li>
+<li><p><strong>Token Symbol</strong> (String)</p></li>
+</ul>
+<p>Finally, you add the ByteCode that was retrieved earlier in the document and enter the password for the wallet.</p>
+<a class="reference internal image-reference" href="../../../_images/CirrusCore-Create2.png"><img alt="Cirrus Core Create2" class="align-center" src="../../../_images/CirrusCore-Create2.png" style="width: 900px;" /></a>
+<p>After ensuring your parameters are set correctly, select the Create Contract button to deploy the contract.</p>
+</section>
+<section id="querying-a-smart-contract-on-cirrus">
+<h2>Querying a Smart Contract on Cirrus<a class="headerlink" href="#querying-a-smart-contract-on-cirrus" title="Permalink to this heading">¶</a></h2>
+<p>The deployed contract will be included in the next block, once the transaction containing the Smart Contract is propagated to other nodes on the network. A successful deployment will be evidenced by history within the Smart Contracts tab.</p>
+<a class="reference internal image-reference" href="../../../_images/CirrusCore-SC.png"><img alt="Cirrus Core SC" class="align-center" src="../../../_images/CirrusCore-SC.png" style="width: 900px;" /></a>
+<p>By selecting the hash of the contract, you can view further detail regarding the Smart Contract deployment.</p>
+<p>The address of the deployed contract will also be displayed as a value of the <em>newContractAddress</em> property.</p>
+<a class="reference internal image-reference" href="../../../_images/CirrusCore-Receipt.png"><img alt="Cirrus Core Receipt" class="align-center" src="../../../_images/CirrusCore-Receipt.png" style="width: 900px;" /></a>
+<p>You can now utilize the Call Contract functionality within Cirrus Core to interact with the contract you just deployed.</p>
+<a class="reference internal image-reference" href="../../../_images/CirrusCore-Call.png"><img alt="Cirrus Core Call" class="align-center" src="../../../_images/CirrusCore-Call.png" style="width: 900px;" /></a>
+<p>To retrieve the balance, you can use the GetBalance method, specifying an address as a parameter for the balance you wish to retrieve.</p>
+<a class="reference internal image-reference" href="../../../_images/CirrusCore-Call2.png"><img alt="Cirrus Core Call2" class="align-center" src="../../../_images/CirrusCore-Call2.png" style="width: 900px;" /></a>
+<p>Select the Call Contract button to query the contract</p>
+<a class="reference internal image-reference" href="../../../_images/CirrusCore-Receipt2.png"><img alt="Cirrus Core Receipt2" class="align-center" src="../../../_images/CirrusCore-Receipt2.png" style="width: 900px;" /></a>
+<p>The above action will generate a transaction querying the balance of the address provided. You will then be returned a receipt that contains the relevant information relating to the operation that was made.</p>
+<p>In this instance you can see that the returnValue equates to the balance of the address specified; 100,000,000.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../../SDA/sda-introduction.html" class="btn btn-primary float-right" title="Stratis Decentralized Accelerator" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../Tutorial3-ExtendingHelloWorld/deploying-hello-world2-contract.html" class="btn btn-neutral" title="Deploying the HelloWorld2 Smart Contract Example" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

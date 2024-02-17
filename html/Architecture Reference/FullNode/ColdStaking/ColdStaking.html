@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cold Staking &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Stratis Smart Contracts" href="../../SmartContracts/smartcontracts-introduction.html" />
+    <link rel="prev" title="How Proven Headers provide a “headers first” solution for a Proof-of-Stake blockchain" href="../ProvenHeaders/how-proven-headers-provide-a-solution.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../full-node-introduction.html">Full Node</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ConsoleOutput/ConsoleOutput.html">Console Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Features/features.html">Creating custom builds and extending the feature set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Consensus/consensus-introduction.html">Consensus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ProvenHeaders/proven-headers-introduction.html">Proven Headers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Cold Staking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction-what-is-cold-staking">Introduction - what is Cold Staking?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#motivation-why-get-involved-in-cold-staking">Motivation - why get involved in Cold Staking?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pre-requisites-for-cold-staking-with-stratis">Pre-requisites for Cold Staking with Stratis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stepping-through-the-stratis-cold-staking-process">Stepping through the Stratis Cold Staking process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cold-wallet-requirements">Cold wallet requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#roll-out-of-cold-staking">Roll-out of Cold Staking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#future-plans-for-cold-staking">Future plans for Cold Staking</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="../full-node-introduction.html">Stratis Full Node</a> &raquo;</li>
+        
+      <li>Cold Staking</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Architecture Reference/FullNode/ColdStaking/ColdStaking.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="cold-staking">
+<h1>Cold Staking<a class="headerlink" href="#cold-staking" title="Permalink to this heading">¶</a></h1>
+<section id="introduction-what-is-cold-staking">
+<h2>Introduction - what is Cold Staking?<a class="headerlink" href="#introduction-what-is-cold-staking" title="Permalink to this heading">¶</a></h2>
+<p>Staking is essential to the Proof of Stake consensus mechanism used on the Stratis mainchain. Blocks are verified and mined by network participants who are willing to set aside a portion of their coins, effectively freezing them so they cannot be spent. In return, these participants are granted the right to verify transactions and earn bonuses paid in coins. The larger the number of coins a participant is willing to stake, the greater the chance that they will be chosen to mine the next block and earn the associated bonus.</p>
+<p>While coins are being staked, they are frozen in a wallet. If the wallet is connected to the blockchain network it is referred to as a hot wallet and such an arrangement incurs some risk since the wallet is effectively online and therefore susceptible to attack. Conversely, if the wallet stores coins off-line (as is possible in the Stratis Core wallet, or a hardware wallet, or even a paper wallet), it is known as a cold wallet and the staking process is referred to as “Cold Staking”. Cold Staking is inherently safer than staking in an online hot wallet since coins are not susceptible to online attack while they are held in an off-line wallet.</p>
+</section>
+<section id="motivation-why-get-involved-in-cold-staking">
+<h2>Motivation - why get involved in Cold Staking?<a class="headerlink" href="#motivation-why-get-involved-in-cold-staking" title="Permalink to this heading">¶</a></h2>
+<p>Staking (using a hot wallet, or a cold wallet) enables coin holders to earn rewards in return for freezing their staked coins so they cannot be otherwise used while they are being staked. Cold Staking has the additional benefit that staked coins are frozen, off-line, where they are not susceptible to being stolen via an on-line attack,</p>
+<p>The average reward you might expect for staking is around 1.5-2% of the value of coins staked, however:</p>
+<ol class="arabic simple">
+<li><p>This is only an average (miners are competing to be the validating node, so they cannot be certain of earning the reward every time; although the average time between rewards is likely to be more consistnet over long periods, it may be quite inaccurate over short periods), and</p></li>
+<li><p>This assumes you are staking all the time, 24x7 (if you stake less frequently, then the rewards you can expect will be correspondingly less).</p></li>
+</ol>
+<p>This percentage can be reduced by the incidence of orphaned blocks. An orphan occurs when two staking nodes create a new block at almost the same time. If the block information is not passed on quickly enough, then someone else’s staking wallet may receive the staking reward for that block, and you will receive nothing (in this case, your block is referred to as an orphan). Steps you can take to try to reduce the number of orphaned blocks include:</p>
+<ul class="simple">
+<li><p>Make sure you have 16 connections. If you have fewer than three connections your chance of receiving orphans may be increased.</p></li>
+<li><p>If your computer is running very slowly it can increase the number of orphans you receive. The more coins you collect the more important it is to get things running efficiently so that blocks get solved and reported on the network as soon as possible.</p></li>
+<li><p>Older wallets with many transactions may start to slow down. By sending your coins to a new address and importing that address into your wallet you can “start afresh” and should receive fewer orphaned blocks.</p></li>
+</ul>
+</section>
+<section id="pre-requisites-for-cold-staking-with-stratis">
+<h2>Pre-requisites for Cold Staking with Stratis<a class="headerlink" href="#pre-requisites-for-cold-staking-with-stratis" title="Permalink to this heading">¶</a></h2>
+<p>To produce blocks on the Stratis network, a miner has to be on-line with a node running and have their wallet open. The chances of earning a reward for staking increases linearly with the number of coins staked, which means the most successful miners are likely to have large numbers of coins frozen in their wallets. This represents a risk if the coins are held in a hot wallet which is compromised. For this reason, Stratis permits Cold Staking where the miner still needs to be on-line with a node running and their hot wallet open, but the coins used for staking can be safely stored off-line in “cold storage”. Their hot wallet need not hold any significant number of coins, or may be completely empty.</p>
+<p>Stratis cold storage is implemented on the node, with the connected wallet only using interfaces provided by the node. The hot wallet should be a HD (Hierarchical Deterministic) wallet and, initially, this must be the Stratis Core wallet which comprises a GUI for controlling the Cold Staking process. In addition, a Cold Staking user needs to have an off-line cold wallet in which to store the staked coins.</p>
+</section>
+<section id="stepping-through-the-stratis-cold-staking-process">
+<h2>Stepping through the Stratis Cold Staking process<a class="headerlink" href="#stepping-through-the-stratis-cold-staking-process" title="Permalink to this heading">¶</a></h2>
+<p>Cold Staking is controlled via the GUI for the Stratis Core hot wallet:</p>
+<ul class="simple">
+<li><p>To start Cold Staking the user first needs to create a special “coinstake” transaction that moves coins to their cold wallet for the purpose of Cold Staking and also makes the hot wallet eligible for mining.</p></li>
+<li><p>Cold Staking can be cancelled at any time, simply by spending (i.e. transferring) the coins they have frozen for Cold Staking. Any movement of these coins from cold storage back to their hot wallet, or to any other address, will automatically cancel Cold Staking for those coins.</p></li>
+</ul>
+<p>Once Cold Staking has been initiated, the hot wallet starts tracking the resulting UTXO (Unspent Transaction Output) from the cold wallet as if were its own. This serves two purposes:</p>
+<ul class="simple">
+<li><p>Having created the coinstake transaction using this UTXO it needs to track the UTXO, and</p></li>
+<li><p>In the event the user cancels Cold Staking by moving coins out of the cold wallet, the hot wallet must be ready to detect the UTXO that signals this movement.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once you have earned a reward for staking, there will be a delay around an hour before it is spenable. This is because the reward transaction needs to be included in 50 blocks before it can be sent to another address, i.e. spent. Since block times are 64 seconds on average, it will be almost an hour before a reward can be spent.</p>
+</div>
+</section>
+<section id="cold-wallet-requirements">
+<h2>Cold wallet requirements<a class="headerlink" href="#cold-wallet-requirements" title="Permalink to this heading">¶</a></h2>
+<p>To support Cold Staking, the cold wallet needs to be able to recognize the coinstake transaction process. When such a transaction is detected on the chain, this allows the cold wallet to manipulate new coins and it informs the user about this transaction in a way that clearly distinguishes this transaction from normal payments to this wallet. The user must be fully aware that such a transaction is specifically intended to set up Cold Staking setup, so that they are not misled into thinking that the transaction was provided as a payment from another party. This distinction is necessary to prevent attackers from sending coins as payment for goods while keeping staking rights for themselves. While the wallet will be in full control of any subsequent movement of the coins, the delegation of staking rights must also be carefully managed to ensure it does not become a security risk.</p>
+<p>The cold wallet should not mix coins for Cold Staking with other coins, since any movement of Cold Staking setup coins cancels the setup. The wallet interface should provide the only mechanism for cancelling Cold Staking and merging the cold staked coins with other coins in the wallet.</p>
+</section>
+<section id="roll-out-of-cold-staking">
+<h2>Roll-out of Cold Staking<a class="headerlink" href="#roll-out-of-cold-staking" title="Permalink to this heading">¶</a></h2>
+<p>Cold Staking will be implemented via a soft fork in the Stratis code. This should not cause any problems for miners who decide not to upgrade, although if someone attempts to spend a Cold Staking transaction that a non-upgraded node flags as invalid, this could result in a delay in validation. To mitigate this problem, the Cold Staking fork will modify the Stratis Full Node by inserting a signal (known as BIP9) into any blocks they produce to indicate the Full Node version they are running. The Cold Staking feature will remain disabled until 90% of the nodes in the network have been upgraded, at which point Cold Staking will be activated and become available for anyone wishing to participate.</p>
+</section>
+<section id="future-plans-for-cold-staking">
+<h2>Future plans for Cold Staking<a class="headerlink" href="#future-plans-for-cold-staking" title="Permalink to this heading">¶</a></h2>
+<p>Although Cold Staking will initially only be possible using Stratis Core as the hot wallet, we plan to make it possible to run Cold Staking with other hot wallet options.</p>
+<p>It is also planned to support a second method of enabling Cold Staking in which, instead of starting with the coins you wish to stake in your hot wallet and creating a Cold Staking transaction to move them to your cold wallet, it will be possible to nominate coins already stored in a hardware wallet for Cold Staking and without the need to move them. This will be done by allowing the hardware wallet directly to sign the special transaction needed to initiate Cold Staking.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="../../SmartContracts/smartcontracts-introduction.html" class="btn btn-primary float-right" title="Stratis Smart Contracts" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="../ProvenHeaders/how-proven-headers-provide-a-solution.html" class="btn btn-neutral" title="How Proven Headers provide a “headers first” solution for a Proof-of-Stake blockchain" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

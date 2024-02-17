@@ -1,0 +1,604 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Customizing consensus rule engines and their rulesets &mdash; Stratis Academy  documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Creating a custom consensus algorithm summary" href="custom-consensus-algorithm-steps.html" />
+    <link rel="prev" title="Consensus architecture" href="consensus-architecture.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Stratis Academy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Blockchain%20Overview/blockchain-overview-introduction.html">Blockchain Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../architecture-reference-introduction.html">Architecture Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../full-node-introduction.html">Full Node</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ComponentsOverview/full-node-components-and-features-overview.html">Components and Features Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ConsoleOutput/ConsoleOutput.html">Console Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Features/features.html">Creating custom builds and extending the feature set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoS/PoS-introduction.html">Proof-of-Stake (PoS) implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PoA/PoA-introduction.html">Proof-of-Authority (PoA) implementation</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="consensus-introduction.html">Consensus</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="consensus-architecture.html">Consensus architecture</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Customizing consensus rule engines and their rulesets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="custom-consensus-algorithm-steps.html">Creating a custom consensus algorithm summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ProvenHeaders/proven-headers-introduction.html">Proven Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ColdStaking/ColdStaking.html">Cold Staking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SmartContracts/smartcontracts-introduction.html">Smart Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sidechains/sidechains-introduction.html">Sidechains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DLT/dlt-introduction.html">DLT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer%20Resources/developers-introduction.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Operation%20Guides/operation-guides-introduction.html">Operation Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stratis Academy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../architecture-reference-introduction.html">Architecture Reference</a> &raquo;</li>
+        
+          <li><a href="../full-node-introduction.html">Stratis Full Node</a> &raquo;</li>
+        
+          <li><a href="consensus-introduction.html">Consensus</a> &raquo;</li>
+        
+      <li>Customizing consensus rule engines and their rulesets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/Architecture Reference/FullNode/Consensus/customising-consensus-rule-engines.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="customizing-consensus-rule-engines-and-their-rulesets">
+<h1>Customizing consensus rule engines and their rulesets<a class="headerlink" href="#customizing-consensus-rule-engines-and-their-rulesets" title="Permalink to this heading">¶</a></h1>
+<p>The purpose of this chapter is to explore how consensus rule engines (and the rulesets they define) are used, customized, and registered on the Stratis Full Node.</p>
+<section id="how-a-consensus-rule-engine-works">
+<h2>How a consensus rule engine works<a class="headerlink" href="#how-a-consensus-rule-engine-works" title="Permalink to this heading">¶</a></h2>
+<p>Custom consensus rule engines inherit from the <code class="docutils literal notranslate"><span class="pre">ConsensusRuleEngine</span></code> class. The <code class="docutils literal notranslate"><span class="pre">HeaderValidator</span></code>, <code class="docutils literal notranslate"><span class="pre">IntegrityValidator</span></code>, <code class="docutils literal notranslate"><span class="pre">PartialValidator</span></code>, and the <code class="docutils literal notranslate"><span class="pre">FullValidator</span></code> singletons call methods from the <code class="docutils literal notranslate"><span class="pre">IConsensusRuleEngine</span></code> base class, which are responsible for executing rule sets. The <code class="docutils literal notranslate"><span class="pre">ConsensusRuleEngine</span></code> base class implements the <code class="docutils literal notranslate"><span class="pre">IConsensusRuleEngine</span></code> interface, and because the implementations of these functions are virtual, it is possible, but not always necessary, to override them in the custom rules engine. For example, <code class="docutils literal notranslate"><span class="pre">PowConsensusRuleEngine</span></code> class overrides <code class="docutils literal notranslate"><span class="pre">FullValidationAsync()</span></code> and implements some code that processes the result returned from running the base version of <code class="docutils literal notranslate"><span class="pre">FullValidationAsync()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">override</span> <span class="k">async</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">ValidationContext</span><span class="o">&gt;</span> <span class="n">FullValidationAsync</span><span class="p">(</span><span class="n">ChainedHeader</span> <span class="n">header</span><span class="p">,</span> <span class="n">Block</span> <span class="n">block</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ValidationContext</span> <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">base</span><span class="o">.</span><span class="n">FullValidationAsync</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">ConfigureAwait</span><span class="p">(</span><span class="n">false</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">((</span><span class="n">result</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">Error</span> <span class="o">==</span> <span class="n">null</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="o">//</span> <span class="n">Notify</span> <span class="n">prefetch</span> <span class="n">manager</span> <span class="n">about</span> <span class="n">block</span> <span class="n">that</span> <span class="n">was</span> <span class="n">validated</span> <span class="n">so</span> <span class="n">prefetch</span> <span class="n">manager</span>
+        <span class="o">//</span> <span class="n">can</span> <span class="n">decide</span> <span class="n">what</span> <span class="n">coins</span> <span class="n">we</span> <span class="n">will</span> <span class="n">most</span> <span class="n">likely</span> <span class="n">need</span> <span class="k">for</span> <span class="n">full</span> <span class="n">validation</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">near</span> <span class="n">future</span><span class="o">.</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">prefetcher</span><span class="o">.</span><span class="n">Prefetch</span><span class="p">(</span><span class="n">header</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Depending on your requirements, you might find it useful to inherit from one of the existing custom rule engines, so it is worth exploring how they are customized. For example, both <code class="docutils literal notranslate"><span class="pre">PosConsensusRuleEngine</span></code> and <code class="docutils literal notranslate"><span class="pre">PoAConsensusRuleEngine</span></code> inherit from <code class="docutils literal notranslate"><span class="pre">PowConsensusRuleEngine</span></code>. You can always override the function implementations you do not want and keep or expand on those that you do. Custom rule engines also provide an opportunity to make objects available to the rules themselves. For example, the <code class="docutils literal notranslate"><span class="pre">SlotsManager</span></code> and <code class="docutils literal notranslate"><span class="pre">PoABlockHeaderValidator</span></code> singletons, which are instances of classes specific to the PoA algorithm, are properties of <code class="docutils literal notranslate"><span class="pre">PoAConsensusRuleEngine</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">PoAConsensusRuleEngine</span> <span class="p">:</span> <span class="n">PowConsensusRuleEngine</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">SlotsManager</span> <span class="n">SlotsManager</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="n">private</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">PoABlockHeaderValidator</span> <span class="n">poaHeaderValidator</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="n">private</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
+
+            <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Next, let’s take a look at the code which executes the rules one by one. There are two private functions in <code class="docutils literal notranslate"><span class="pre">ConsensusRulesEngine</span></code> that do this. The first is <code class="docutils literal notranslate"><span class="pre">ExecuteRules()</span></code>, which executes the two sets of rules that need to be executed synchronously (header and integrity validation):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">private</span> <span class="n">void</span> <span class="n">ExecuteRules</span><span class="p">(</span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">SyncConsensusRule</span><span class="o">&gt;</span> <span class="n">rules</span><span class="p">,</span> <span class="n">RuleContext</span> <span class="n">ruleContext</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="n">ruleContext</span><span class="o">.</span><span class="n">SkipValidation</span> <span class="o">=</span> <span class="n">ruleContext</span><span class="o">.</span><span class="n">ValidationContext</span><span class="o">.</span><span class="n">ChainedHeaderToValidate</span><span class="o">.</span><span class="n">IsAssumedValid</span><span class="p">;</span>
+
+        <span class="n">foreach</span> <span class="p">(</span><span class="n">SyncConsensusRule</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rules</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">using</span> <span class="p">(</span><span class="n">this</span><span class="o">.</span><span class="n">performanceCounter</span><span class="o">.</span><span class="n">MeasureRuleExecutionTime</span><span class="p">(</span><span class="n">rule</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">rule</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="n">ruleContext</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">catch</span> <span class="p">(</span><span class="n">ConsensusErrorException</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">ruleContext</span><span class="o">.</span><span class="n">ValidationContext</span><span class="o">.</span><span class="n">Error</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">ConsensusError</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">catch</span> <span class="p">(</span><span class="ne">Exception</span> <span class="n">exception</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">LogCritical</span><span class="p">(</span><span class="s2">&quot;Unhandled exception in consensus rules engine: </span><span class="si">{0}</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">exception</span><span class="o">.</span><span class="n">ToString</span><span class="p">());</span>
+        <span class="n">throw</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">ExecuteRules()</span></code>, you can see the rules are passed in as a list of <code class="docutils literal notranslate"><span class="pre">SyncConsensusRule</span></code> objects, which the integrity and header validation rules inherit from. Because of this, <code class="docutils literal notranslate"><span class="pre">ExecuteRules()</span></code> is capable of processing any synchronous rule.</p>
+<p>All asynchronous rules (the partial and full validation rulesets) are processed by <code class="docutils literal notranslate"><span class="pre">ExecuteRulesASync()</span></code>, which receives a list of <code class="docutils literal notranslate"><span class="pre">AsyncConsensusRule()</span></code> objects:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">private</span> <span class="k">async</span> <span class="n">Task</span> <span class="n">ExecuteRulesAsync</span><span class="p">(</span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">AsyncConsensusRule</span><span class="o">&gt;</span> <span class="n">asyncRules</span><span class="p">,</span> <span class="n">RuleContext</span> <span class="n">ruleContext</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="n">ruleContext</span><span class="o">.</span><span class="n">SkipValidation</span> <span class="o">=</span> <span class="n">ruleContext</span><span class="o">.</span><span class="n">ValidationContext</span><span class="o">.</span><span class="n">ChainedHeaderToValidate</span><span class="o">.</span><span class="n">IsAssumedValid</span><span class="p">;</span>
+
+        <span class="n">foreach</span> <span class="p">(</span><span class="n">AsyncConsensusRule</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">asyncRules</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">using</span> <span class="p">(</span><span class="n">this</span><span class="o">.</span><span class="n">performanceCounter</span><span class="o">.</span><span class="n">MeasureRuleExecutionTime</span><span class="p">(</span><span class="n">rule</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">await</span> <span class="n">rule</span><span class="o">.</span><span class="n">RunAsync</span><span class="p">(</span><span class="n">ruleContext</span><span class="p">)</span><span class="o">.</span><span class="n">ConfigureAwait</span><span class="p">(</span><span class="n">false</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">catch</span> <span class="p">(</span><span class="n">ConsensusErrorException</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">ruleContext</span><span class="o">.</span><span class="n">ValidationContext</span><span class="o">.</span><span class="n">Error</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">ConsensusError</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">catch</span> <span class="p">(</span><span class="ne">Exception</span> <span class="n">exception</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">LogCritical</span><span class="p">(</span><span class="s2">&quot;Unhandled exception in consensus rules engine: </span><span class="si">{0}</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">exception</span><span class="o">.</span><span class="n">ToString</span><span class="p">());</span>
+        <span class="n">throw</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="defining-your-own-rules">
+<h2>Defining your own rules<a class="headerlink" href="#defining-your-own-rules" title="Permalink to this heading">¶</a></h2>
+<p>You need to implement either the <code class="docutils literal notranslate"><span class="pre">SyncConsensusRule::Run()</span></code> and <code class="docutils literal notranslate"><span class="pre">AsyncConsensusRule::RunAsync()</span></code> abstract functions for any rules that you create. However, rules should in fact inherit from either <code class="docutils literal notranslate"><span class="pre">HeaderValidationConsensusRule</span></code>, <code class="docutils literal notranslate"><span class="pre">IntegrityValidationConsensusRule</span></code>, <code class="docutils literal notranslate"><span class="pre">PartialValidationConsensusRule</span></code>, or <code class="docutils literal notranslate"><span class="pre">FullValidationConsensusRule</span></code> to be future proof. These four classes do not implement any methods and the interfaces they support do not define any although this may change in the future. Here you can find more information about the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/Rules/ConsensusRule.cs">implementations of these base rule classes</a> and the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/NBitcoin/Rules/IConsensusRule.cs">declarations of the interfaces they support</a>.</p>
+<p id="consensus-rules">The following image shows the four rulesets for each of the three consensus engines:</p>
+<a class="reference internal image-reference" href="../../../_images/consensus-rules.svg"><img alt="Consensus Architecture" class="align-center" src="../../../_images/consensus-rules.svg" width="738px" /></a>
+<p>The following table provides a brief description for each rule shown in the figure:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Rule</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Bitcoin Activation</p></td>
+<td><p>Checks that the block is a new enough version for any active deployments the network has upgraded to.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bitcoin Header Version</p></td>
+<td><p>Does nothing currently. Any block version is valid for the Bitcoin network unless the Bitcoin Activation rule detects a problem.</p></td>
+</tr>
+<tr class="row-even"><td><p>Block Merkle Root</p></td>
+<td><p>Checks that the block’s merkle tree root matches the merkle tree root stored in the block header.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Block Size</p></td>
+<td><p>Checks that the block’s weight does not exceed the limit and that the block size in bytes is not too large.</p></td>
+</tr>
+<tr class="row-even"><td><p>Check Difficulty Hybrid</p></td>
+<td><p>Checks that the block hash (calculated using either PoW or PoS) hits the target at the required difficulty. To hit the target, the hash must be less or equal to the target.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Check Difficulty PoS</p></td>
+<td><p>Checks that the correct difficulty was used (on a PoS network) when comparing the block’s hash against the target.</p></td>
+</tr>
+<tr class="row-even"><td><p>Check Difficulty PoW</p></td>
+<td><p>Checks that the correct difficulty was used (on a PoW network) when comparing the block’s hash against the target.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Check PoS Transaction</p></td>
+<td><p>Checks that each transaction in a PoS block is valid.</p></td>
+</tr>
+<tr class="row-even"><td><p>Check PoW Transaction</p></td>
+<td><p>Checks that each transaction in a PoW block is valid.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Check Sig Ops</p></td>
+<td><p>Checks that the block does not have too many signature check operations.</p></td>
+</tr>
+<tr class="row-even"><td><p>Coinbase Height Activation</p></td>
+<td><p>Check that the block’s height is serialized in the script language if <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0034.mediawiki">BIP34</a> is being enforced.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ensure Coinbase</p></td>
+<td><p>Checks that the block has the required single coinbase transaction.</p></td>
+</tr>
+<tr class="row-even"><td><p>Header Time Checks</p></td>
+<td><p>Checks that the block timestamp is greater then the consensus tip timestamp and not more than two hours in the future.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Header Time Checks PoA</p></td>
+<td><p>Checks that a PoA block timestamp is greater than the previous block’s timestamp, is not too far in the future, and is a valid timeslot which respects the target spacing.</p></td>
+</tr>
+<tr class="row-even"><td><p>Header Time Checks PoS</p></td>
+<td><p>Checks that a PoS block timestamp is greater than the previous block’s timestamp.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Load Coin View</p></td>
+<td><p>Checks that the value the block has stored for the previous block’s hash matches the hash of the consensus tip’s block. Next it loads the UTXO set for the block.</p></td>
+</tr>
+<tr class="row-even"><td><p>PoA Coinview</p></td>
+<td><p>Checks the UTXO set from a PoA perspective.</p></td>
+</tr>
+<tr class="row-odd"><td><p>PoA Header Difficulty</p></td>
+<td><p>Checks that a PoA block has specific difficulty which is common across all blocks on a PoA network.</p></td>
+</tr>
+<tr class="row-even"><td><p>PoA Header Signature</p></td>
+<td><p>Checks that a PoA block is signed with the expected federation member’s public key  (based on the timeslot it was written in).</p></td>
+</tr>
+<tr class="row-odd"><td><p>PoA Integrity Signature</p></td>
+<td><p>Checks that a PoA block’s signature matches the signature of the header used to intiate its download.</p></td>
+</tr>
+<tr class="row-even"><td><p>PoS Block Signature</p></td>
+<td><p>Checks that the signature for a PoS block is valid.</p></td>
+</tr>
+<tr class="row-odd"><td><p>PoS Block Signature Representation</p></td>
+<td><p>Checks that the signature for a PoS block is in the canonical format.</p></td>
+</tr>
+<tr class="row-even"><td><p>PoS Coinstake</p></td>
+<td><p>Checks that a PoS block contains a single coinstake transaction has no coinbase transaction and has no transactions with a timestamp after the block timestamp.</p></td>
+</tr>
+<tr class="row-odd"><td><p>PoS Coinview</p></td>
+<td><p>Checks the UTXO set from a PoS perspective including stake checking.</p></td>
+</tr>
+<tr class="row-even"><td><p>PoS Coldstaking</p></td>
+<td><p>Checks a PoS block to see if the coinstake transaction is cold and if so performs checks to see whether the transaction is a valid cold coinstake.</p></td>
+</tr>
+<tr class="row-odd"><td><p>PoS Time Mask</p></td>
+<td><p>Checks that a PoS block coinstake transaction’s timestamp matches the block timestamp and that the timestamp is divisible by 16 seconds. A time of 16 seconds applies for the Stratis mainchain although this can be customised for another blockchain without adjusting the rule.</p></td>
+</tr>
+<tr class="row-even"><td><p>PoW Coinview</p></td>
+<td><p>Checks that the UTXO set from a PoW block’s transactions contain correctly spent inputs and correctly created new outputs.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Proven Header Coinstake</p></td>
+<td><p>Checks that the coinstake transaction supplied with a proven header is valid.</p></td>
+</tr>
+<tr class="row-even"><td><p>Proven Header Size</p></td>
+<td><p>Checks that a proven header’s serialized components are not greater than the maximum size permitted.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Save Coinview</p></td>
+<td><p>Saves the changes made to the coinview if required.</p></td>
+</tr>
+<tr class="row-even"><td><p>Set Activation Deployment Full Validation</p></td>
+<td><p>Not a rule. Sets an instance of <code class="docutils literal notranslate"><span class="pre">RulesContext.Flags</span></code> with the deployments that have been activated. These flags are then queried when other full validation rules are checked.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Set Activation Deployment Partial Validation</p></td>
+<td><p>Not a rule. Sets an instance of <code class="docutils literal notranslate"><span class="pre">RulesContext.Flags</span></code> with the deployments that have been activated. These flags are then queried when other partial validation rules are checked.</p></td>
+</tr>
+<tr class="row-even"><td><p>Stratis Bug Fix PoS Future Drift</p></td>
+<td><p>Makes sure that the block timestamp is not more than 15 seconds in the future. Also protects against a the effects of a bug that has now been fixed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Stratis Header Version</p></td>
+<td><p>Checks that the block version is valid for the Stratis network.</p></td>
+</tr>
+<tr class="row-even"><td><p>Transaction Duplication Activation</p></td>
+<td><p>Checks that the block does not contain duplicate transactions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Transaction Locktime Activation</p></td>
+<td><p>Checks that the block’s transactions are all finalized using a median of the last 11 blocks instead of the block’s timestamp.</p></td>
+</tr>
+<tr class="row-even"><td><p>Witness Commitments</p></td>
+<td><p>Checks that witness commitments for the block are expected and valid.</p></td>
+</tr>
+</tbody>
+</table>
+<p>You can find the source code for most of the rules, including the proven header rules, under <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/tree/master/src/Stratis.Bitcoin.Features.Consensus/Rules">Stratis.Bitcoin.Features.Consensus/Rules</a>. The code for the rules specific to the PoA algorithm is found <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/tree/master/src/Stratis.Bitcoin.Features.PoA/BasePoAFeatureConsensusRules">here</a>.</p>
+<p>Rules may inherit from other rules in much the same way one custom rule engine can inherit from another. For example, <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/Rules/CommonRules/PosCoinviewRule.cs">PosCoinViewRule</a> inherits from <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/Rules/CommonRules/CoinviewRule.cs">CoinViewRule</a>. You can also define abstract classes with abstract methods for specific groups of rules. For example, <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/Rules/ProvenHeaderRules/ProvenHeaderRuleBase.cs">ProvenHeaderRuleBase</a> provides some utility proven header checks and modifies the <code class="docutils literal notranslate"><span class="pre">Run()</span></code> function to carry out some preliminary checks on any headers sent to a class based on it.</p>
+<p>For an example of a rule, let’s look at the code for <code class="docutils literal notranslate"><span class="pre">BlockSizeRule.RunAsync()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">override</span> <span class="n">Task</span> <span class="n">RunAsync</span><span class="p">(</span><span class="n">RuleContext</span> <span class="n">context</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">SkipValidation</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Task</span><span class="o">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+
+    <span class="n">var</span> <span class="n">options</span> <span class="o">=</span> <span class="n">this</span><span class="o">.</span><span class="n">Parent</span><span class="o">.</span><span class="n">Network</span><span class="o">.</span><span class="n">Consensus</span><span class="o">.</span><span class="n">Options</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">After</span> <span class="n">the</span> <span class="n">coinbase</span> <span class="n">witness</span> <span class="n">nonce</span> <span class="ow">and</span> <span class="n">commitment</span> <span class="n">are</span> <span class="n">verified</span><span class="p">,</span>
+    <span class="o">//</span> <span class="n">we</span> <span class="n">can</span> <span class="n">check</span> <span class="k">if</span> <span class="n">the</span> <span class="n">block</span> <span class="n">weight</span> <span class="n">passes</span> <span class="p">(</span><span class="n">before</span> <span class="n">we</span><span class="s1">&#39;ve checked the</span>
+    <span class="o">//</span> <span class="n">coinbase</span> <span class="n">witness</span><span class="p">,</span> <span class="n">it</span> <span class="n">would</span> <span class="n">be</span> <span class="n">possible</span> <span class="k">for</span> <span class="n">the</span> <span class="n">weight</span> <span class="n">to</span> <span class="n">be</span> <span class="n">too</span>
+    <span class="o">//</span> <span class="n">large</span> <span class="n">by</span> <span class="n">filling</span> <span class="n">up</span> <span class="n">the</span> <span class="n">coinbase</span> <span class="n">witness</span><span class="p">,</span> <span class="n">which</span> <span class="n">doesn</span><span class="s1">&#39;t change</span>
+    <span class="o">//</span> <span class="n">the</span> <span class="n">block</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">so</span> <span class="n">we</span> <span class="n">couldn</span><span class="s1">&#39;t mark the block as permanently</span>
+    <span class="o">//</span> <span class="n">failed</span><span class="p">)</span><span class="o">.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">this</span><span class="o">.</span><span class="n">GetBlockWeight</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">ValidationContext</span><span class="o">.</span><span class="n">BlockToValidate</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">options</span><span class="o">.</span><span class="n">MaxBlockWeight</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">LogTrace</span><span class="p">(</span><span class="s2">&quot;(-)[BAD_BLOCK_WEIGHT]&quot;</span><span class="p">);</span>
+        <span class="n">ConsensusErrors</span><span class="o">.</span><span class="n">BadBlockWeight</span><span class="o">.</span><span class="n">Throw</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="n">Block</span> <span class="n">block</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">ValidationContext</span><span class="o">.</span><span class="n">BlockToValidate</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Size</span> <span class="n">limits</span><span class="o">.</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">block</span><span class="o">.</span><span class="n">Transactions</span><span class="o">.</span><span class="n">Count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">block</span><span class="o">.</span><span class="n">Transactions</span><span class="o">.</span><span class="n">Count</span> <span class="o">&gt;</span> <span class="n">options</span><span class="o">.</span><span class="n">MaxBlockBaseSize</span><span class="p">)</span> <span class="o">||</span>
+        <span class="p">(</span><span class="n">GetSize</span><span class="p">(</span><span class="n">this</span><span class="o">.</span><span class="n">Parent</span><span class="o">.</span><span class="n">Network</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">TransactionOptions</span><span class="o">.</span><span class="kc">None</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">options</span><span class="o">.</span><span class="n">MaxBlockBaseSize</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">LogTrace</span><span class="p">(</span><span class="s2">&quot;(-)[BAD_BLOCK_LEN]&quot;</span><span class="p">);</span>
+        <span class="n">ConsensusErrors</span><span class="o">.</span><span class="n">BadBlockLength</span><span class="o">.</span><span class="n">Throw</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">Task</span><span class="o">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can see that an instance of the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/Rules/RuleContext.cs">RuleContext</a> class is passed as a parameter. It is worth familiarizing yourself with the information available in this class. Notice that the first thing that the function does is to refer to the context to check if this rule is even required.</p>
+<p>Next, the block weight is checked to see if it is greater than the maximum block weight allowed using a helper function, <code class="docutils literal notranslate"><span class="pre">GetBlockWeight()</span></code>, which is defined in the class. If the block weight exceeds the maximum allowed, a <code class="docutils literal notranslate"><span class="pre">BadBlockWeight</span></code> consensus error is thrown. You can examine the static <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/ConsensusErrors.cs">ConsensusErrors</a> class to see the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin/Consensus/ConsensusErrorException.cs">ConsensusError</a> objects already defined. Each of the objects can be used to throw an exception, and you may need to expand the existing list to provide exception messages for the rules you create.</p>
+<p>Finally, the block checks if the block has exceeded the maximum block size allowed and if this is the case, an error is thrown.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="../ProvenHeaders/how-proven-headers-provide-a-solution.html#exploring-the-proven-header-rules-in-detail"><span class="std std-ref">Exploring the proven header rules in detail</span></a> takes an in-depth look at how the proven header rules are implemented.</p>
+</div>
+<section id="consensus-options">
+<span id="id1"></span><h3>Consensus options<a class="headerlink" href="#consensus-options" title="Permalink to this heading">¶</a></h3>
+<p>A class that defines the consensus options is available for each consensus algorithm. <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.PoA/PoAConsensusOptions.cs">PoAConsensusOptions</a> and <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/NBitcoin/ConsensusOptions.cs">PoSConsensusOptions</a> classes inherit from <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/NBitcoin/ConsensusOptions.cs">ConsensusOptions</a>, which is used for the PoW algorithm. The instance of one of these classes, which is available at <code class="docutils literal notranslate"><span class="pre">ConsensusRuleEngine.Network.Consensus.Options</span></code>, is created when the custom network object (<a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Networks/BitcoinMain.cs">BitcoinMain</a>, <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Networks/StratisMain.cs">StratisMain</a>, or <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.PoA/PoANetwork.cs">PoANetwork</a>) is created for the Full Node.</p>
+<p>If you want to add access to consensus options that are easily modifiable, and at the same time, available to each rule defined, you need to create a custom consensus options class and make sure it is assigned to <code class="docutils literal notranslate"><span class="pre">Network.Consensus.Options</span></code>. Although it is outside the scope of this document, you may well be creating a custom network class anyway.</p>
+</section>
+</section>
+<section id="registering-consensus-features">
+<span id="id2"></span><h2>Registering consensus features<a class="headerlink" href="#registering-consensus-features" title="Permalink to this heading">¶</a></h2>
+<p>You may find it useful to read <a class="reference internal" href="../Features/features.html"><span class="doc">Creating custom builds and extending the feature set</span></a> before reading this section.</p>
+<p>Full Node features need to be registered before they can be included in a Full Node build. As you have seen, the Consensus features available consist of consensus rules and an engine that processes them (the three different algorithms you have looked at). Therefore, if you make customizations to an engine and its rulesets, you must create a customized feature, which will enable this new option to be registered. The extension methods used to register the PoW and PoS Consensus features are found in <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/FullNodeBuilderConsensusExtension.cs">FullNodeBuilderConsensusExtension.cs</a>, while the extension method used to register the PoA Consensus feature is found in <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.PoA/PoAFeature.cs">PoAFeature.cs</a>. As when customizing the consensus engine itself, you may find it easier to adapt the code that registers one of the existing algorithms.</p>
+<p>Let’s assume you chose to customize the PoW Consensus Engine. In this case, we need to take a look at the code for <code class="docutils literal notranslate"><span class="pre">UsePowConsensus()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">static</span> <span class="n">IFullNodeBuilder</span> <span class="n">UsePowConsensus</span><span class="p">(</span><span class="n">this</span> <span class="n">IFullNodeBuilder</span> <span class="n">fullNodeBuilder</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">LoggingConfiguration</span><span class="o">.</span><span class="n">RegisterFeatureNamespace</span><span class="o">&lt;</span><span class="n">PowConsensusFeature</span><span class="o">&gt;</span><span class="p">(</span><span class="s2">&quot;powconsensus&quot;</span><span class="p">);</span>
+
+    <span class="n">fullNodeBuilder</span><span class="o">.</span><span class="n">ConfigureFeature</span><span class="p">(</span><span class="n">features</span> <span class="o">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">features</span>
+            <span class="o">.</span><span class="n">AddFeature</span><span class="o">&lt;</span><span class="n">PowConsensusFeature</span><span class="o">&gt;</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">FeatureServices</span><span class="p">(</span><span class="n">services</span> <span class="o">=&gt;</span>
+            <span class="p">{</span>
+                <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ConsensusOptions</span><span class="p">,</span> <span class="n">ConsensusOptions</span><span class="o">&gt;</span><span class="p">();</span>
+                <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">DBreezeCoinView</span><span class="o">&gt;</span><span class="p">();</span>
+                <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ICoinView</span><span class="p">,</span> <span class="n">CachedCoinView</span><span class="o">&gt;</span><span class="p">();</span>
+                <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ConsensusController</span><span class="o">&gt;</span><span class="p">();</span>
+                <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IConsensusRuleEngine</span><span class="p">,</span> <span class="n">PowConsensusRuleEngine</span><span class="o">&gt;</span><span class="p">();</span>
+                <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IChainState</span><span class="p">,</span> <span class="n">ChainState</span><span class="o">&gt;</span><span class="p">();</span>
+                <span class="n">services</span><span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ConsensusQuery</span><span class="o">&gt;</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">INetworkDifficulty</span><span class="p">,</span> <span class="n">ConsensusQuery</span><span class="o">&gt;</span><span class="p">(</span><span class="n">provider</span> <span class="o">=&gt;</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">ConsensusQuery</span><span class="o">&gt;</span><span class="p">())</span>
+                    <span class="o">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IGetUnspentTransaction</span><span class="p">,</span> <span class="n">ConsensusQuery</span><span class="o">&gt;</span><span class="p">(</span><span class="n">provider</span> <span class="o">=&gt;</span> <span class="n">provider</span><span class="o">.</span><span class="n">GetService</span><span class="o">&lt;</span><span class="n">ConsensusQuery</span><span class="o">&gt;</span><span class="p">());</span>
+                <span class="n">new</span> <span class="n">PowConsensusRulesRegistration</span><span class="p">()</span><span class="o">.</span><span class="n">RegisterRules</span><span class="p">(</span><span class="n">fullNodeBuilder</span><span class="o">.</span><span class="n">Network</span><span class="o">.</span><span class="n">Consensus</span><span class="p">);</span>
+            <span class="p">});</span>
+    <span class="p">});</span>
+
+    <span class="k">return</span> <span class="n">fullNodeBuilder</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The first step is to check the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Consensus/PowConsensusFeature.cs">PowConsensusFeature</a> class and rename and modify it/subclass it as required. You must also remove the line that adds <code class="docutils literal notranslate"><span class="pre">PowConsensusRuleEngine</span></code> as a singleton and insert a line that adds your customized engine instead. Notice that an instance of the <code class="docutils literal notranslate"><span class="pre">PowConsensusRulesRegistration</span></code> is created and its <code class="docutils literal notranslate"><span class="pre">RegisterRules()</span></code> method is called. Let’s take a look at this class and the method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">PowConsensusRulesRegistration</span> <span class="p">:</span> <span class="n">IRuleRegistration</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">RegisterRules</span><span class="p">(</span><span class="n">IConsensus</span> <span class="n">consensus</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">consensus</span><span class="o">.</span><span class="n">HeaderValidationRules</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IHeaderValidationConsensusRule</span><span class="o">&gt;</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">new</span> <span class="n">HeaderTimeChecksRule</span><span class="p">(),</span>
+            <span class="n">new</span> <span class="n">CheckDifficultyPowRule</span><span class="p">(),</span>
+            <span class="n">new</span> <span class="n">BitcoinActivationRule</span><span class="p">(),</span>
+            <span class="n">new</span> <span class="n">BitcoinHeaderVersionRule</span><span class="p">()</span>
+        <span class="p">};</span>
+
+        <span class="n">consensus</span><span class="o">.</span><span class="n">IntegrityValidationRules</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IIntegrityValidationConsensusRule</span><span class="o">&gt;</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">new</span> <span class="n">BlockMerkleRootRule</span><span class="p">()</span>
+        <span class="p">};</span>
+
+        <span class="n">consensus</span><span class="o">.</span><span class="n">PartialValidationRules</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPartialValidationConsensusRule</span><span class="o">&gt;</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">new</span> <span class="n">SetActivationDeploymentsPartialValidationRule</span><span class="p">(),</span>
+
+            <span class="n">new</span> <span class="n">TransactionLocktimeActivationRule</span><span class="p">(),</span> <span class="o">//</span> <span class="n">implements</span> <span class="n">BIP113</span>
+            <span class="n">new</span> <span class="n">CoinbaseHeightActivationRule</span><span class="p">(),</span> <span class="o">//</span> <span class="n">implements</span> <span class="n">BIP34</span>
+            <span class="n">new</span> <span class="n">WitnessCommitmentsRule</span><span class="p">(),</span> <span class="o">//</span> <span class="n">BIP141</span><span class="p">,</span> <span class="n">BIP144</span>
+            <span class="n">new</span> <span class="n">BlockSizeRule</span><span class="p">(),</span>
+
+            <span class="o">//</span> <span class="n">rules</span> <span class="n">that</span> <span class="n">are</span> <span class="n">inside</span> <span class="n">the</span> <span class="n">method</span> <span class="n">CheckBlock</span>
+            <span class="n">new</span> <span class="n">EnsureCoinbaseRule</span><span class="p">(),</span>
+            <span class="n">new</span> <span class="n">CheckPowTransactionRule</span><span class="p">(),</span>
+            <span class="n">new</span> <span class="n">CheckSigOpsRule</span><span class="p">(),</span>
+        <span class="p">};</span>
+
+        <span class="n">consensus</span><span class="o">.</span><span class="n">FullValidationRules</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IFullValidationConsensusRule</span><span class="o">&gt;</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">new</span> <span class="n">SetActivationDeploymentsFullValidationRule</span><span class="p">(),</span>
+
+            <span class="o">//</span> <span class="n">rules</span> <span class="n">that</span> <span class="n">require</span> <span class="n">the</span> <span class="n">store</span> <span class="n">to</span> <span class="n">be</span> <span class="n">loaded</span> <span class="p">(</span><span class="n">coinview</span><span class="p">)</span>
+            <span class="n">new</span> <span class="n">LoadCoinviewRule</span><span class="p">(),</span>
+            <span class="n">new</span> <span class="n">TransactionDuplicationActivationRule</span><span class="p">(),</span> <span class="o">//</span> <span class="n">implements</span> <span class="n">BIP30</span>
+            <span class="n">new</span> <span class="n">PowCoinviewRule</span><span class="p">(),</span> <span class="o">//</span> <span class="n">implements</span> <span class="n">BIP68</span><span class="p">,</span> <span class="n">MaxSigOps</span> <span class="ow">and</span> <span class="n">BlockReward</span> <span class="n">calculation</span>
+            <span class="n">new</span> <span class="n">SaveCoinviewRule</span><span class="p">()</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>It should be clear how the rules for each ruleset are being built up. You must rename and modify this class so the rulesets include any customization you made to the rules. Rules which are not required should be removed from here and any completely new rules added.</p>
+<p>If you made any adjustments to the code that writes the blocks, you will also need to make adjustments to either the <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.Miner/MiningFeature.cs">PoW/PoS Mining Feature registration code</a> or the mining-related <a class="reference external" href="https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/src/Stratis.Bitcoin.Features.PoA/PoAFeature.cs">PoA Feature registration code</a>.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer-container">
+  <div class="footer-pagination">
+    
+      <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+          <a href="custom-consensus-algorithm-steps.html" class="btn btn-primary float-right" title="Creating a custom consensus algorithm summary" accesskey="n" rel="next">Next <span class="fa fa-arrow-right"></span></a>
+        
+        
+          <a href="consensus-architecture.html" class="btn btn-neutral" title="Consensus architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-left"></span> Previous</a>
+        
+      </div>
+    
+  </div>
+
+  <div role="contentinfo" class="footer-copyright">
+    <div class="footer-logo-copyright">
+      <img src="../../../_static/img/footer-logo.png" alt="Stratis" class="footer-logo">
+      <p>
+          &copy; Copyright 2020, Stratis Group Ltd.
+
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a class="footer-social-link" href="https://twitter.com/stratisplatform" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://github.com/stratisproject" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+      <a class="footer-social-link" href="https://discord.gg/9tDyfZs" target="_blank"><img src="../../../_static/img/discord.png" alt="Discord" style="width: 26px; height: 26px;"></a>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+
+      <div style="clear: both;"></div>
+    </section>
+    
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
